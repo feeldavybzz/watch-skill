@@ -14,9 +14,17 @@ description: Ver y analizar videos o audio (link o archivo) de edición, motion,
    - `--start` y `--end` para enfocar un tramo; `--at 4:32,13:11` para capturas exactas a 1280 px.
    - Reutiliza descargas por id del video. Texto: subtítulos en idioma original primero; sin subtítulos, faster-whisper en la Mac (`--no-whisper` lo desactiva).
    - Fija sola capturas del gancho (videos ≤3 min) y de los momentos en que el presentador señala algo ("fíjate", "como ves"). `--no-hook`, `--no-cues` los desactivan.
-   - Instagram privado o con sesión: `--cookies chrome` solo con permiso de Bryan.
+   - Si la descarga falla, el script imprime `CAUSA[...]` y `HAZ:`: decírselo a Bryan tal cual. Instagram privado o con sesión: `--cookies chrome` solo con permiso explícito de Bryan en esa descarga; si no, plan B «Para analizar».
 4. Leer `informe.md` de la carpeta de trabajo: abrir TODAS las hojas de contacto y TODAS las capturas fijas, leer la transcripción. Si hace falta más detalle en un momento, volver a correr con `--at` o `--start/--end` (reutiliza la descarga).
 5. Motor Gemini (opcional): `--engine gemini` solo si Bryan lo pide y hay `GEMINI_API_KEY` en `~/.config/mukiwa/.env`. Avisar antes que el link o el video se envía a Google. Si falta la clave, el script crea el archivo: Bryan pega la clave ahí o en el chat (escribirla en el archivo con una herramienta de edición, nunca en un comando ni impresa). Lo que responde Gemini son observaciones de Gemini, no capturas revisadas: decirlo. Si Gemini falla, informar y ofrecer `--engine local`; no cambiar de motor sin preguntar.
+
+## Buzón de links (cuando Bryan dice «procesa el buzón», «revisa los links pendientes» o corre la tarea de la noche)
+Bryan (o su atajo del iPhone) deja links en Google Drive → «MUKIWA · Aprender» → `links-pendientes.md`, y videos en «Para analizar/». Nunca se usan cookies ni sesiones aquí.
+1. `python3 scripts/inbox.py run`: escanea, descarga y prepara hasta 5 pendientes (usa el venv: el script lo detecta) y lista lo que está **LISTO PARA ANALIZAR** (con la ruta de su `informe.md`) y los **CON PROBLEMAS**.
+2. Por cada listo: abrir su informe, todas las hojas de contacto y capturas fijas, leer la transcripción; escribir la lección con `references/plantilla-leccion.md` (marcar PARCIAL si el estado es parcial); `scripts/save_lesson.py`; alimentar a los profesores (sección siguiente); `python3 scripts/inbox.py done --url LINK --profes diseno-grafico,... --leccion RUTA`.
+3. Los problemas no se reintentan a mano: están en `estado.md` con causa y qué hacer (429/red se reintentan solos hasta 3 veces). Contárselos a Bryan en una línea cada uno.
+4. Terminar con un resumen por profesor: qué aprendió y cuántas lecciones lleva. No hacer commit ni push desde la tarea de la noche.
+`inbox.py status` reescribe `estado.md`; `requeue --url LINK` devuelve un link a pendiente.
 
 ## Herramientas sueltas
 - `prepare.py VIDEO --out DIR --transcript SUBS` (flujo anterior, sigue funcionando).

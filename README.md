@@ -24,6 +24,12 @@ python3 skills/mukiwa-learn/scripts/profes.py install   # enlaza profes/* en ~/.
 
 Reglas de clasificación y fusión: `skills/mukiwa-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
 
+## Descarga robusta y buzón de links
+
+- `skills/mukiwa-grab/scripts/doctor.py [--online]` revisa yt-dlp (y si hay versión nueva), el runtime de JavaScript que YouTube exige (detecta Node aunque no esté en el PATH), ffmpeg, gallery-dl, whisper y espacio, con el comando exacto de lo que falte.
+- Los fallos se explican (`CAUSA[...]` / `HAZ:`): 429, login, privado, no existe, región, 403, JavaScript, red, 5xx. Reintenta con espera solo lo que lo merece.
+- **Buzón** (`skills/mukiwa-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los profesores. `estado.md` dice qué pasó con cada cosa. Nunca usa cookies ni sesiones.
+
 ## Copia semanal en Google Drive
 
 Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal` ejecuta `tools/sync_drive.py`, que empaqueta todas las skills (MUKIWA, profesores y las propias de `~/.claude/skills`) y las copia a `Mi unidad/MUKIWA · Skills de Claude` mediante Google Drive para escritorio. Solo copia lo que cambió; lo retirado va a `_retiradas/`. A mano: `python3 tools/sync_drive.py`.
