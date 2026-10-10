@@ -79,6 +79,10 @@ ARCHIVO = "Opción A: guarda el video en la carpeta «Para analizar» del buzón
 ERRORES = [
     ("429", r"HTTP Error 429|Too Many Requests", "La plataforma limitó las peticiones (demasiadas seguidas).",
      "Espera 10–15 minutos y reintenta una vez; no lo repitas en bucle. " + ARCHIVO, True),
+    ("cookies", r"could not find .{0,20}cookies|cookies database|Failed to decrypt|cookies.{0,40}(Operation not permitted|not permitted)|Chrome Safe Storage",
+     "No se pudieron leer las cookies de Chrome (sesión).",
+     "Abre Chrome con tu sesión iniciada. Si macOS pide permiso al llavero («Chrome Safe Storage»), elige «Permitir siempre»; si dice «Operation not permitted», "
+     "dale «Acceso total al disco» a la app desde la que corres esto (Ajustes → Privacidad y seguridad). " + ARCHIVO, False),
     ("login", r"Sign in to confirm|confirm you.re not a bot|login required|requiring login|rate-limit reached or login|"
               r"Please log in|empty media response|age-restricted|confirm your age|inappropriate for some users",
      "Este contenido pide sesión iniciada (o la plataforma sospecha que es un bot).",
@@ -137,6 +141,20 @@ def run_capture(cmd):
         sys.stdout.write(line); sys.stdout.flush(); out.append(line)
     p.wait(); return p.returncode, "".join(out)
 
+LAST_FAIL = {}   # última causa explicada (código), para decidir si vale reintentar con sesión
+PERMISOS = os.path.expanduser("~/.config/mukiwa/permisos.json")
+
+def cookies_permitidas(url, path=None):
+    """Navegador cuya sesión Bryan autorizó por escrito para este sitio, o None.
+    Permiso explícito, acotado por sitio y revocable: borrar ~/.config/mukiwa/permisos.json lo quita."""
+    try:
+        with open(path or PERMISOS, encoding="utf-8") as f: cfg = json.load(f)["cookies_navegador"]
+    except (OSError, ValueError, KeyError, TypeError): return None
+    host = urllib.parse.urlparse(url).netloc.lower().split(":")[0]
+    for s in cfg.get("sitios", []):
+        if host == s or host.endswith("." + s): return cfg.get("navegador", "chrome")
+    return None
+
 ERR_LOG = []   # textos de los intentos fallidos de esta descarga, para explicar la causa al final
 
 def run(cmd, retry=False):
@@ -146,7 +164,7 @@ def run(cmd, retry=False):
     return code
 
 def report_failure(texts, folder=None):
-    info = explain("\n".join(texts), js_ok=bool(JS))
+    info = explain("\n".join(texts), js_ok=bool(JS)); LAST_FAIL["code"] = info["code"]
     print("CAUSA[%s]: %s\nHAZ: %s" % (info["code"], info["causa"], info["haz"]))
     if folder:
         with open(os.path.join(folder, "error.json"), "w", encoding="utf-8") as f: json.dump(info, f, ensure_ascii=False)
@@ -271,6 +289,19 @@ def grab(url, a):
         if os.path.exists(ef): run([sys.executable, ef, os.path.join(d, "video.mp4"), "--out", os.path.join(d, "frames_work")])
     return d if got else None
 
+def grab_con_permiso(url, a, grab_fn=None, perms_path=None):
+    """Descarga; si falla por pedir sesión y Bryan autorizó la de su navegador para ESE sitio, reintenta una vez con ella."""
+    grab_fn = grab_fn or grab
+    LAST_FAIL.clear()
+    res = grab_fn(url, a)
+    if res or a.cookies or LAST_FAIL.get("code") != "login": return res
+    browser = cookies_permitidas(url, perms_path)
+    if not browser: return res
+    print("SESION[%s]: el link pide sesión; se usa tu sesión de %s (permiso tuyo para %s)." % (browser, browser, urllib.parse.urlparse(url).netloc))
+    a.cookies = browser
+    try: return grab_fn(url, a)
+    finally: a.cookies = None
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("urls", nargs="*"); ap.add_argument("--out", default=DEFAULT_OUT)
@@ -290,5 +321,5 @@ if __name__ == "__main__":
         print("Eso no es un link v\u00e1lido: %s\nDebe empezar con https:// (c\u00f3pialo desde Instagram/YouTube/TikTok)." % (" ".join(bad) or "(vac\u00edo)"))
         sys.exit(1)
     ensure_tools()
-    results = [grab(url, a) for url in urls]
+    results = [grab_con_permiso(url, a) for url in urls]
     sys.exit(0 if all(results) else 1)

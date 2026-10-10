@@ -15,8 +15,9 @@ Carpeta del buzón (por defecto en Google Drive: «Mi unidad/MUKIWA · Aprender�
   inbox.py requeue --url U          vuelve a ponerlo en pendiente
   inbox.py status                   reescribe estado.md y muestra el resumen
 
-Nunca usa cookies ni sesiones: si un link pide sesión, queda como fallo con la causa y lo que hacer (plan B:
-guardar el video en «Para analizar»). El análisis visual y la lección los hace Claude, no este script."""
+No usa cookies por su cuenta: solo mukiwa-grab puede usar la sesión del navegador, y únicamente para los sitios que
+Bryan autorizó en ~/.config/mukiwa/permisos.json (hoy: instagram.com), cuando el link falla por pedir sesión. Si no hay
+permiso o falla, queda como fallo con la causa y lo que hacer (plan B: guardar el video en «Para analizar»). El análisis visual y la lección los hace Claude, no este script."""
 import argparse, datetime, fcntl, glob, json, os, re, subprocess, sys, tempfile, urllib.parse
 from pathlib import Path
 
@@ -145,6 +146,7 @@ def default_runner(source):
 
 def apply_result(item, res):
     text = res.get("text", ""); item["intentos"] = item.get("intentos", 0) + 1; item["actualizado"] = now()
+    if re.search(r"^SESION\[", text, re.M): item["sesion"] = True      # mukiwa-grab usó la sesión autorizada del navegador
     m = re.search(r"^INFORME: (.+)$", text, re.M)
     if m and res["code"] in (0, 2):
         item.update(estado="listo" if res["code"] == 0 else "parcial", informe=m.group(1).strip(), carpeta=str(Path(m.group(1).strip()).parent))
@@ -210,7 +212,7 @@ def estado_md(state):
     for v in rows:
         if v["estado"] == "fallo": det = "%s. Qué hacer: %s" % (v.get("causa", "").rstrip("."), v.get("haz", ""))
         elif v["estado"] == "aprendido": det = "Profesores: %s" % (", ".join(v.get("profes", [])) or "—")
-        elif v["estado"] in ("listo", "parcial"): det = "Preparado; falta que Claude lo analice"
+        elif v["estado"] in ("listo", "parcial"): det = "Preparado; falta que Claude lo analice" + (" (se usó tu sesión de Chrome)" if v.get("sesion") else "")
         else: det = "En espera"
         L.append("| %s | %s | %s |" % (v["estado"], esc(v["url"]), esc(det)))
     return "\n".join(L) + "\n"

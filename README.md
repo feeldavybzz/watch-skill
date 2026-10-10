@@ -28,7 +28,7 @@ Reglas de clasificación y fusión: `skills/mukiwa-learn/references/profesores.m
 
 - `skills/mukiwa-grab/scripts/doctor.py [--online]` revisa yt-dlp (y si hay versión nueva), el runtime de JavaScript que YouTube exige (detecta Node aunque no esté en el PATH), ffmpeg, gallery-dl, whisper y espacio, con el comando exacto de lo que falte.
 - Los fallos se explican (`CAUSA[...]` / `HAZ:`): 429, login, privado, no existe, región, 403, JavaScript, red, 5xx. Reintenta con espera solo lo que lo merece.
-- **Buzón** (`skills/mukiwa-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los profesores. `estado.md` dice qué pasó con cada cosa. Nunca usa cookies ni sesiones.
+- **Buzón** (`skills/mukiwa-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los profesores. `estado.md` dice qué pasó con cada cosa. Usa la sesión de Chrome solo para sitios que autorizaste en `~/.config/mukiwa/permisos.json` (hoy: instagram.com) y solo si el link falla por pedir sesión; `estado.md` lo anota.
 
 ## Copia semanal en Google Drive
 
