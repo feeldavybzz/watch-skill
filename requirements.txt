@@ -2,3 +2,5 @@ Pillow>=10
 imageio-ffmpeg>=0.5
 yt-dlp
 gallery-dl
+# Opcional: voz a texto en la Mac para videos sin subtítulos (descarga un modelo ~0,5 GB la primera vez)
+# faster-whisper

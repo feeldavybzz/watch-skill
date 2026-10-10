@@ -22,6 +22,42 @@ class EvidenceTests(unittest.TestCase):
         value = '1\n00:00:01,000 --> 00:00:02,000\nMover el plano Mover el plano\n'
         self.assertEqual(ingest.from_srt_vtt(value), [(1.0, 'Mover el plano')])
 
+    def test_youtube_rolling_captions(self):
+        # Formato real de los .srt automáticos de YouTube: renglón en cascada, bloques de 10 ms
+        # que sostienen el texto y una línea en blanco tras el tiempo en el primer bloque.
+        value = ('1\n00:00:00,040 --> 00:00:02,030\n\nParecía que ya no\n\n'
+                 '2\n00:00:02,030 --> 00:00:02,040\nParecía que ya no\n \n\n'
+                 '3\n00:00:02,040 --> 00:00:03,350\nParecía que ya no\nnos podía sorprender\n\n'
+                 '4\n00:00:03,350 --> 00:00:03,360\nnos podía sorprender\n \n\n'
+                 '5\n00:00:03,360 --> 00:00:05,309\nnos podía sorprender\npero ahora sí\n')
+        self.assertEqual(ingest.from_srt_vtt(value), [
+            (0.04, 'Parecía que ya no'), (2.04, 'nos podía sorprender'), (3.36, 'pero ahora sí')])
+
+    def test_rolling_keeps_single_word_repetition(self):
+        value = ('00:00:01.000 --> 00:00:02.000\nDijo que sí\n\n'
+                 '00:00:02.000 --> 00:00:03.000\nsí, claro\n')
+        self.assertEqual(ingest.from_srt_vtt(value), [(1.0, 'Dijo que sí'), (2.0, 'sí, claro')])
+
+    def test_vtt_cue_id_not_merged_into_previous_text(self):
+        value = 'WEBVTT\n\nintro\n00:00:00.000 --> 00:00:01.000\nHola\n\nsegundo\n00:00:01.000 --> 00:00:02.000\nmundo\n'
+        self.assertEqual(ingest.from_srt_vtt(value), [(0.0, 'Hola'), (1.0, 'mundo')])
+
+    def test_save_lesson_ignores_macos_metadata_files(self):
+        with tempfile.TemporaryDirectory() as d:
+            lib = Path(d) / 'library'
+            (lib / 'motion-edicion').mkdir(parents=True)
+            (lib / 'motion-edicion/._vieja.md').write_bytes(b'\x00\x05\x16\x07\x00\x02\xb0\x00')
+            (lib / '._motion-edicion').write_bytes(b'\x00\x05\x16\x07')
+            lesson = Path(d) / 'nueva.md'
+            lesson.write_text('# Nueva\n> Una línea\n', encoding='utf-8')
+            r = subprocess.run([sys.executable, str(SCRIPTS / 'save_lesson.py'), '--library', str(lib),
+                                '--topic', 'motion-edicion', '--slug', 'nueva', '--file', str(lesson)],
+                               capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            index = (lib / 'INDEX.md').read_text(encoding='utf-8')
+            self.assertIn('[Nueva](motion-edicion/nueva.md) — Una línea', index)
+            self.assertNotIn('._', index)
+
     def test_fractional_timestamp(self):
         self.assertEqual(ingest.from_plain('[00:00:01.25] Paso uno'), [(1.25, 'Paso uno')])
 
