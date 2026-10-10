@@ -3,7 +3,7 @@
 (Configuración → Capacidades → Skills → Subir).
 
 Uso: python3 tools/build_skills.py [--out dist] [--allow-dirty]
-Genera dist/mukiwa-grab.skill y dist/mukiwa-learn.skill.
+Genera dist/mukiwa-grab.skill, dist/mukiwa-learn.skill y un dist/profe-<nicho>.skill por profesor.
 
 - Solo entra lo que Git conoce (git ls-files): nada de _descargas/, work/, ._*, venv ni claves.
 - mukiwa-learn lleva una copia de grab.py en scripts/ para descargar aunque se suba sola.
@@ -33,22 +33,24 @@ def frontmatter_keys(text):
 
 
 def build(name, out):
-    files = [f for f in git("ls-files", "-z", f"skills/{name}").split("\0") if f]
+    base = f"skills/{name}" if name in SKILLS else f"profes/{name}"   # profesores: profes/<nicho> -> profe-<nicho>.skill
+    files = [f for f in git("ls-files", "-z", base).split("\0") if f]
     files = [f for f in files if not Path(f).name.startswith(".")]
-    entries = {f[len(f"skills/{name}/"):]: ROOT / f for f in files}
+    entries = {f[len(base) + 1:]: ROOT / f for f in files}
     for arc, src in EXTRA.get(name, {}).items(): entries[arc] = ROOT / src
     if list(entries).count("SKILL.md") != 1 or sum(1 for a in entries if a.endswith("SKILL.md")) != 1:
         raise SystemExit(f"{name}: debe haber exactamente un SKILL.md")
-    keys = frontmatter_keys((ROOT / f"skills/{name}/SKILL.md").read_text(encoding="utf-8"))
+    keys = frontmatter_keys((ROOT / base / "SKILL.md").read_text(encoding="utf-8"))
     if not {"name", "description"} <= keys or keys - ALLOWED_KEYS:
         raise SystemExit(f"{name}: frontmatter con claves no válidas para claude.ai: {sorted(keys - ALLOWED_KEYS)}")
     if len(entries) > MAX_FILES:
         raise SystemExit(f"{name}: {len(entries)} archivos (máximo {MAX_FILES})")
     out.mkdir(parents=True, exist_ok=True)
-    dst = out / f"{name}.skill"
+    pkg = name if name in SKILLS else f"profe-{name}"
+    dst = out / f"{pkg}.skill"
     with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED) as z:
         for arc, src in sorted(entries.items()):
-            info = zipfile.ZipInfo(f"{name}/{arc}", date_time=(2026, 1, 1, 0, 0, 0))
+            info = zipfile.ZipInfo(f"{pkg}/{arc}", date_time=(2026, 1, 1, 0, 0, 0))
             info.external_attr = (0o755 if os.access(src, os.X_OK) else 0o644) << 16
             info.compress_type = zipfile.ZIP_DEFLATED
             z.writestr(info, src.read_bytes())
@@ -59,10 +61,10 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default=str(ROOT / "dist"))
     ap.add_argument("--allow-dirty", action="store_true", help="empaquetar aunque haya cambios sin commit")
     a = ap.parse_args()
-    dirty = git("status", "--porcelain", "--untracked-files=no", "skills/").strip()
+    dirty = git("status", "--porcelain", "--untracked-files=no", "skills/", "profes/").strip()
     if dirty and not a.allow_dirty:
         sys.exit("Hay cambios sin commit en skills/: haz commit antes de empaquetar (o usa --allow-dirty).\n" + dirty)
-    for name in SKILLS:
+    for name in SKILLS + sorted(p.parent.name for p in (ROOT / "profes").glob("*/SKILL.md")):
         dst, n = build(name, Path(a.out))
         print(f"OK {dst} — {n} archivos, {dst.stat().st_size // 1024} KB")
 

@@ -42,4 +42,14 @@ Usar references/plantilla-leccion.md. Guardar notas propias con fuente, tiempos,
 
 Para validar aprendizaje, aplicar el método a una tarea diferente y comprobar el resultado; resumir un tutorial no basta.
 
+## Profesores por nicho (siempre, después de guardar la lección)
+Cada link alimenta mini skills por oficio que crecen con cada video. Sin que Bryan lo pida:
+1. `python3 scripts/profes.py list` y clasificar el video en uno o varios nichos (oficio o resultado, no herramienta: `color-grading` con secciones DaVinci y Premiere, no `davinci`).
+2. Si no existe, `profes.py ensure ...`; luego `profes.py attach --nicho N --leccion RUTA`. Si el nicho ya lo cubre una skill propia de Bryan, `attach --skill RUTA`.
+3. Fusionar lo aprendido en el SKILL.md del profesor como instrucciones para hacer el trabajo, sin repetir y con fuente [n], siguiendo `references/profesores.md`.
+4. `profes.py install` si hay profesor nuevo, y `profes.py check`.
+5. Contar a Bryan en una línea por nicho qué aprendió cada profesor.
+
+Cuando Bryan pida HACER algo de un nicho (gradear, diseñar un logo...), usar el profesor `profe-<nicho>` si existe.
+
 Marca MUKIWA: azul #0068FB, lima #C5ED2E, blanco #FFFFFF y oscuro #232323; usar solo cuando el proyecto lo requiera.
