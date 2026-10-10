@@ -47,7 +47,8 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 - Sistemas de paleta y proporciones: sin fuentes todavía.
 
 ### Composición, retícula y piezas (redes, carteles, editorial)
-- Sin fuentes todavía.
+- Esquemas de composición (tercios, áurea, triángulos, diagonales, curvas, espirales y cómo adaptarlos a 16:9, 5:4, 1:1, 4:5 y 9:16): están en `profe-composicion-visual`; usarlo para colocar el foco de cualquier pieza.
+- Retícula de piezas, redes, carteles y editorial: sin fuentes todavía.
 
 ### Mockups y presentación al cliente
 - Presenta el moodboard con el porqué de cada imagen; así el cliente no rechaza referencias sin contexto [1].

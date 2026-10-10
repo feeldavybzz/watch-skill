@@ -1,6 +1,10 @@
 # Biblioteca VYBZ — índice
 
 
+## composicion
+
+- [Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral)](composicion/composicion-9-esquemas-clase-de-arte.md) — Una clase de arte dibuja nueve guías de composición en una cuadrícula 3×3 y practica dos más (L y curva S): sirve como vocabulario base de plantillas para colocar el foco, el primer plano y el fondo.
+
 ## diseno-grafico
 
 - [Base: diseño gráfico](diseno-grafico/_base.md) — Marco de observación para lecciones de identidad, tipografía, composición y campañas gráficas.
