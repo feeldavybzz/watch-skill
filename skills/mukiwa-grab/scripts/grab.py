@@ -63,8 +63,9 @@ def ensure_tools():
     global YT, GDL, FF
     YT = find_cmd("yt-dlp", "yt_dlp"); rt = find_js_runtime()
     if rt:
-        JS[:] = ["--js-runtimes", "%s:%s" % rt]
-        if rt[0] == "deno": JS.extend(["--remote-components", "ejs:github"])
+        # El runtime ejecuta el solucionador oficial de desafíos de YouTube (yt-dlp/ejs): yt-dlp lo descarga una vez a
+        # ~/.cache/yt-dlp y lo reutiliza. Sin él, algunos videos fallan con «This video is not available».
+        JS[:] = ["--js-runtimes", "%s:%s" % rt, "--remote-components", "ejs:github"]
     GDL = find_cmd("gallery-dl", "gallery_dl"); FF = find_ffmpeg()
     if not YT or not FF:
         print("Faltan herramientas (yt-dlp / ffmpeg). Corre una vez:\n  bash \"%s\"" % os.path.join(HERE, "setup.sh"))
@@ -89,7 +90,7 @@ ERRORES = [
      ARCHIVO + " Opción B: --cookies chrome usa tu sesión de Chrome en esta Mac (solo con tu permiso).", False),
     ("privado", r"Private video|video is private|account is private|This video is only available",
      "Es privado o solo para ciertas personas.", "Pide el archivo a su dueño o súbelo a «Para analizar».", False),
-    ("no-existe", r"[Vv]ideo (is )?(no longer )?unavailable|has been removed|no longer available|does not exist|Video not found|HTTP Error 404",
+    ("no-existe", r"[Vv]ideo (is )?(no longer )?unavailable|video is not available|has been removed|no longer available|does not exist|Video not found|HTTP Error 404",
      "El video ya no existe o fue eliminado.", "Revisa que el link esté completo y siga publicado.", False),
     ("region", r"not available in your country|blocked it in your country|geo.?restrict",
      "Está bloqueado en tu región.", ARCHIVO, False),
@@ -112,6 +113,12 @@ def explain(text, js_ok=True):
     """Traduce el texto de error de yt-dlp/gallery-dl a {code, causa, haz, retry}. Mira solo las líneas de error."""
     lines = [l for l in (text or "").splitlines() if re.search(r"error", l, re.I)] or (text or "").splitlines()
     blob = "\n".join(lines)
+    if re.search(r"n challenge solving failed|challenge solver script|Remote component challenge", text or "", re.I) \
+            and re.search(r"not available|Only images|Requested format", blob, re.I):
+        return {"code": "js", "retry": False,
+                "causa": "YouTube pidió resolver un desafío y no se pudo (falta el runtime de JavaScript o su solucionador oficial).",
+                "haz": "Corre doctor.py. Con Node o deno instalados, yt-dlp baja el solucionador oficial (--remote-components ejs:github) la primera vez; "
+                       "si no hay red a GitHub o bloqueaste la descarga, instala `yt-dlp-ejs` con pip. " + ARCHIVO}
     for code, pat, causa, haz, retry in ERRORES:
         if re.search(pat, blob, re.I): return {"code": code, "causa": causa, "haz": haz, "retry": retry}
     if re.search(r"Requested format is not available|Only images are available", blob, re.I):
@@ -231,7 +238,7 @@ def grab(url, a):
     ck = ["--cookies-from-browser", a.cookies] if a.cookies else []
     title = "descarga"; del ERR_LOG[:]
     if not path.endswith(IMG_EXT + AV_EXT):
-        probe = YT + ["--no-warnings", "--ffmpeg-location", FF] + JS + ["--skip-download", "--playlist-items", "1",
+        probe = YT + ["--ffmpeg-location", FF] + JS + ["--skip-download", "--playlist-items", "1",
                                  "--print", "%(title)s"] + ck + [url]
         box = {}
         def once():

@@ -41,6 +41,16 @@ class ErrorExplanationTests(unittest.TestCase):
         self.assertEqual(self.code(text, js_ok=False), 'js')
         self.assertEqual(self.code(text, js_ok=True), 'formato')
 
+    def test_unsolved_youtube_challenge_is_explained_not_unknown(self):
+        text = ('WARNING: [youtube] [jsc] Remote component challenge solver script (node) was skipped.\n'
+                'WARNING: [youtube] x: n challenge solving failed: Some formats may be missing.\n'
+                'ERROR: [youtube] x: This video is not available')
+        info = grab.explain(text)
+        self.assertEqual(info['code'], 'js')
+        self.assertIn('solucionador', info['causa'])
+        # sin el aviso del desafío, la misma frase es «no disponible»
+        self.assertEqual(grab.explain('ERROR: [youtube] x: This video is not available')['code'], 'no-existe')
+
     def test_warning_alone_is_not_a_failure_cause(self):
         # sin línea de error, una advertencia suelta no debe clasificar como "js" si hay un 429 real
         text = 'WARNING: No supported JavaScript runtime\nERROR: HTTP Error 429: Too Many Requests'
