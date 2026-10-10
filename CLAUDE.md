@@ -7,3 +7,5 @@ Conservar las lecciones existentes. No borrar ni reemplazar toda la carpeta para
 Antes de cambiar algo, revisar git status y conservar cambios ajenos. Usar ramas para las mejoras. No decir que se vio todo el video si solo se revisaron muestras. Distinguir preparación de evidencia, análisis del agente y validación del método.
 
 Pruebas: python3 -m unittest discover -s tests -v
+
+Disco externo (exFAT): macOS crea archivos ocultos "._nombre" junto a cada archivo. Git los ignora y los scripts los saltan. El entorno de Python (venv) va en el disco interno, por ejemplo ~/.venvs/watch-skill: dentro del disco externo Python intenta leer esos ._*.pth y no arranca.

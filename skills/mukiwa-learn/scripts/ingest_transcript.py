@@ -28,21 +28,45 @@ def collapse_repeat(x):
     if n>=4 and n%2==0 and w[:h]==w[h:]: return " ".join(w[:h])
     return x
 
+TIMING=re.compile(r"([\d:.,]+)\s*-->\s*([\d:.,]+)")
+
 def from_srt_vtt(txt):
-    out=[]; blocks=re.split(r"\n\s*\n", txt.replace("\r",""))
-    for b in blocks:
-        m=re.search(r"([\d:.,]+)\s*-->\s*([\d:.,]+)", b)
-        if not m: continue
-        text=" ".join(l.strip() for l in b[m.end():].split("\n") if "-->" not in l and l.strip() and not l.strip().isdigit())
-        text=re.sub(r"<[^>]+>","",text)
+    # Por líneas y no por bloques: los .srt de YouTube a veces dejan una línea en blanco
+    # entre el tiempo y el texto, y partir por "\n\n" perdía ese texto.
+    out=[]; cur=None
+    def push():
+        if cur is None: return
+        text=re.sub(r"<[^>]+>","",cur[1])
         text=collapse_repeat(re.sub(r"\s+"," ",text).strip())
-        if text: out.append((parse_time(m.group(1)), text))
-    # VTT auto-captions de YouTube duplican líneas: dedupe consecutivo
-    ded=[]
-    for t,x in out:
-        if ded and (x==ded[-1][1] ): continue
-        ded.append((t,x))
-    return ded
+        if text: out.append((cur[0], text))
+    lines=txt.replace("\r","").split("\n")
+    for i,line in enumerate(lines):
+        m=TIMING.search(line)
+        if m:
+            push(); cur=[parse_time(m.group(1)), ""]
+        elif i+1<len(lines) and TIMING.search(lines[i+1]): continue   # id del bloque siguiente
+        elif cur is not None and line.strip() and not line.strip().isdigit():
+            cur[1]+=" "+line.strip()
+    push()
+    return merge_rolling(out)
+
+def norm(w): return re.sub(r"[^\w]","",w.lower())
+
+def merge_rolling(segs, min_overlap=2):
+    """Subtítulos automáticos de YouTube en 'cascada': cada bloque repite el renglón anterior
+    y suma uno nuevo, con bloques de ~10 ms que solo sostienen el texto. Se quita el solape
+    entre el final de lo ya escrito y el inicio del bloque nuevo, y queda solo lo nuevo con su
+    tiempo. Solapes de 1 palabra se conservan: pueden ser habla repetida de verdad ("sí... sí")."""
+    out=[]; tail=[]
+    for t,x in segs:
+        w=x.split(); nw=[norm(v) for v in w]; k=0
+        for n in range(min(len(tail),len(nw)), min_overlap-1, -1):
+            if tail[-n:]==nw[:n]: k=n; break
+        if not k and out and x==out[-1][1]: continue   # duplicado exacto consecutivo
+        new=w[k:]
+        if new: out.append((t," ".join(new)))
+        tail=(tail+nw[k:])[-80:]
+    return out
 
 def from_json(txt):
     d=json.loads(txt)

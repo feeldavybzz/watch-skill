@@ -102,7 +102,7 @@ def grab(url, a):
             if any(v in host for v in VIDEO_ONLY) and not a.photos_only: print("yt-dlp falló en un sitio de video; revisa el error de arriba.")
             elif GDL: run(GDL + ["-d", os.path.join(d, "fotos"), "-o", "directory=[]"] + ck + [url])
             else: print("yt-dlp no pudo y gallery-dl no está disponible (corre setup.sh).")
-    files = sorted(os.path.relpath(os.path.join(r, f), d) for r, _, fs in os.walk(d) for f in fs if f != "LEEME.md")
+    files = sorted(os.path.relpath(os.path.join(r, f), d) for r, _, fs in os.walk(d) for f in fs if f != "LEEME.md" and not f.startswith("._"))  # ._x = metadatos macOS en exFAT
     with open(os.path.join(d, "LEEME.md"), "w") as f:
         f.write("# %s\n\n- Fuente: %s\n- Fecha: %s\n- Archivos:\n%s\n" % (
             title, url, datetime.date.today().isoformat(), "\n".join("  - " + x for x in files)))
