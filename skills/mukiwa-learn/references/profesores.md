@@ -5,13 +5,18 @@ trabajo y que mejoren con cada link. Este paso va siempre después de guardar la
 
 ## 1. Clasificar (sin preguntar, salvo duda real)
 1. `python3 scripts/profes.py list`: ver profesores existentes y otras skills de Bryan.
-2. Elegir el o los nichos del video. Un nicho es **un oficio o resultado**, no una herramienta:
-   - Bien: `color-grading`, `diseno-de-logos`, `tipografia-cinetica`, `ritmo-de-edicion`, `ganchos-de-reels`, `sound-design`, `retoque-de-retrato`.
-   - Mal: `davinci`, `premiere`, `after-effects` (eso va como sección dentro del nicho: color grading → DaVinci Resolve y Premiere Pro).
-   - Ni demasiado amplio (`diseno`) ni demasiado estrecho (`curvas-en-davinci-18`).
-3. Reusar antes que crear: si un profesor existente cubre el oficio, alimentar ese. Si lo cubre una skill propia de Bryan (no `profe-*`), usar `attach --skill`.
-4. Un video puede alimentar varios nichos (ej. un tutorial de reel con color y ritmo → `color-grading` y `ritmo-de-edicion`), pero solo si enseña algo real de cada uno.
-5. No crear profesores de temas sin oficio para MUKIWA (noticias, opiniones). Herramientas internas como esta skill no llevan profesor.
+2. **Profesores paraguas (decisión de Bryan, 2026-10-10).** Si el video encaja, va SIEMPRE a uno de estos, dentro del área correspondiente:
+
+   | Profesor | Abarca (todo esto va aquí, en su área) |
+   |---|---|
+   | `diseno-grafico` | briefing y estrategia visual, logos, identidad y branding visual, tipografía, color, composición y retícula, piezas para redes, carteles, editorial, mockups, presentación al cliente |
+   | `motion-graphics` | toda animación: tipografía cinética, animación de logos y títulos, transiciones gráficas, lower thirds, elementos para reels, easing y timing |
+
+3. Para temas fuera de los paraguas, crear un profesor nuevo con un nicho **igual de amplio** (un oficio, no una técnica ni una herramienta). Ejemplos: `color-grading`, `edicion-de-video`, `fotografia`, `sound-design`, `direccion-creativa`. DaVinci, Premiere o After Effects son secciones dentro del profesor, nunca un profesor.
+4. Reusar antes que crear. Si una skill propia de Bryan (no `profe-*`) ya cubre exactamente el tema, como `portfolio-marca-personal`, usar `attach --skill`.
+5. Un video puede alimentar varios profesores: por ejemplo, un reel con diseño de carteles y su animación va a `diseno-grafico` y a `motion-graphics`. Hacerlo solo si enseña algo real de cada uno.
+6. No crear profesores de temas sin oficio para MUKIWA (noticias, opiniones). Herramientas internas como esta skill no llevan profesor.
+7. Aprender **teoría y práctica**: lo que se explica en la voz y lo que se ve hacer en pantalla (paneles, valores, pasos). Si algo solo se dijo y no se vio, o al revés, anotarlo.
 
 ## 2. Crear o alimentar
 ```bash

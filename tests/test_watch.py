@@ -264,7 +264,7 @@ class PackageTests(unittest.TestCase):
             self.assertIn('mukiwa-learn/scripts/grab.py', names)
             self.assertIn('mukiwa-learn/library/INDEX.md', names)
             self.assertIn('mukiwa-learn/scripts/watch.py', names)
-            self.assertTrue((Path(d) / 'profe-identidad-visual.skill').exists())
+            self.assertTrue((Path(d) / 'profe-diseno-grafico.skill').exists())
 
 
 class ProfesTests(unittest.TestCase):

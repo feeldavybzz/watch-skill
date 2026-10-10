@@ -44,7 +44,7 @@ Para validar aprendizaje, aplicar el método a una tarea diferente y comprobar e
 
 ## Profesores por nicho (siempre, después de guardar la lección)
 Cada link alimenta mini skills por oficio que crecen con cada video. Sin que Bryan lo pida:
-1. `python3 scripts/profes.py list` y clasificar el video en uno o varios nichos (oficio o resultado, no herramienta: `color-grading` con secciones DaVinci y Premiere, no `davinci`).
+1. `python3 scripts/profes.py list` y clasificar el video en uno o varios nichos (oficio o resultado, no herramienta: `color-grading` con secciones DaVinci y Premiere, no `davinci`). Todo diseño gráfico va a `diseno-grafico` y toda animación a `motion-graphics`, en su área.
 2. Si no existe, `profes.py ensure ...`; luego `profes.py attach --nicho N --leccion RUTA`. Si el nicho ya lo cubre una skill propia de Bryan, `attach --skill RUTA`.
 3. Fusionar lo aprendido en el SKILL.md del profesor como instrucciones para hacer el trabajo, sin repetir y con fuente [n], siguiendo `references/profesores.md`.
 4. `profes.py install` si hay profesor nuevo, y `profes.py check`.
