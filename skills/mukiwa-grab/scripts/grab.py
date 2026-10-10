@@ -8,7 +8,7 @@ Uso:
                   [--photos-only] [--max-height 1080] [--no-subs] [--frames]
 Genera: video.mp4, audio.mp3, subs *.srt, miniatura, fotos/ (carruseles), info.json, LEEME.md
 """
-import argparse, datetime, glob, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
+import argparse, datetime, glob, json, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_OUT = os.path.abspath(os.path.join(HERE, "..", "..", "_descargas"))
@@ -65,6 +65,54 @@ def direct(url, outdir):
     with urllib.request.urlopen(req) as r, open(dst, "wb") as f: shutil.copyfileobj(r, f)
     return dst
 
+def pick_track(info, lang="auto"):
+    """Elige UNA pista de subtítulos desde info.json, sin pedir nada a YouTube.
+    Orden: manuales antes que automáticos; idioma original del video (YouTube lo marca como
+    'xx-orig' en los automáticos) antes que traducciones automáticas; si el idioma es
+    desconocido, español y luego inglés. Devuelve {key, kind, provenance} o None.
+    Adaptado de Watch (bradautomates/claude-video, download.py, MIT)."""
+    manual = {k: v for k, v in (info.get("subtitles") or {}).items() if v and k != "live_chat"}
+    auto = {k: v for k, v in (info.get("automatic_captions") or {}).items() if v and k != "live_chat"}
+    origs = sorted(k for k in auto if k.endswith("-orig"))
+    original = origs[0][:-5] if len(origs) == 1 else (info.get("language") or None)
+    base = lambda k: k[:-5] if k.endswith("-orig") else k
+    root = lambda k: base(k).split("-")[0]
+    want = original if lang == "auto" else lang
+    for kind, tracks in (("manual", manual), ("automatic", auto)):
+        if want:
+            hits = sorted((k for k in tracks if base(k) == want or root(k) == want.split("-")[0]),
+                          key=lambda k: (not k.endswith("-orig"), k != want, k))
+            if hits:
+                prov = "original" if original and root(hits[0]) == original.split("-")[0] else "traducción pedida"
+                return {"key": hits[0], "kind": kind, "provenance": prov}
+    if lang != "auto": return None
+    for kind, tracks in (("manual", manual), ("automatic", auto)):
+        keys = sorted(tracks, key=lambda k: ({"es": 0, "en": 1}.get(root(k), 2), not k.endswith("-orig"), k))
+        if keys:
+            return {"key": keys[0], "kind": kind,
+                    "provenance": "original" if keys[0].endswith("-orig") else "desconocida (puede ser traducción automática)"}
+    return None
+
+def fetch_subs(url, d, ck, lang="auto"):
+    """Una sola petición de subtítulos (antes eran dos, es.* y en.*, y YouTube respondía 429).
+    Deja video.<pista>.srt y subtitulos.json con la procedencia."""
+    if glob.glob(os.path.join(d, "video.*.srt")): return             # ya están: no pedir de nuevo
+    info_path = os.path.join(d, "video.info.json")
+    if not os.path.exists(info_path):
+        run(YT + ["-o", os.path.join(d, "video.%(ext)s"), "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url])
+    try:
+        with open(info_path, encoding="utf-8") as f: track = pick_track(json.load(f), lang)
+    except (OSError, ValueError):
+        print("Sin info.json: no se pudieron elegir subtítulos."); return
+    if not track:
+        print("Este video no tiene subtítulos" + ("" if lang == "auto" else " en '%s'" % lang) + "."); return
+    run(YT + ["-o", os.path.join(d, "video.%(ext)s"), "--load-info-json", info_path, "--skip-download", "--no-write-info-json",
+              "--write-subs" if track["kind"] == "manual" else "--no-write-subs",
+              "--write-auto-subs" if track["kind"] == "automatic" else "--no-write-auto-subs",
+              "--sub-langs", "-all,^" + re.escape(track["key"]) + "$", "--convert-subs", "srt",
+              "--ffmpeg-location", FF] + JS + ck)
+    with open(os.path.join(d, "subtitulos.json"), "w", encoding="utf-8") as f: json.dump(track, f, ensure_ascii=False)
+
 def grab(url, a):
     u = urllib.parse.urlparse(url); host = u.netloc.lower(); path = u.path.lower()
     os.makedirs(a.out, exist_ok=True)
@@ -95,12 +143,7 @@ def grab(url, a):
                     "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url]) == 0
             elif os.path.exists(have): print("Ya descargado, se reutiliza:", have); ok = True
             else: ok = run(cmd + ["--ffmpeg-location", FF] + JS + ck + [url]) == 0
-            if not a.no_subs:  # subtítulos aparte y NO fatales (YouTube da 429 a veces); se borran los .vtt sueltos si hay .srt
-                for langs in ("es.*", "en.*"):
-                    if glob.glob(os.path.join(d, "video.%s.srt" % langs)): continue   # ya están: no pedir de nuevo (evita 429)
-                    run(YT + ["-o", os.path.join(d, "video.%(ext)s"), "--skip-download", "--write-subs", "--write-auto-subs",
-                              "--sub-langs", langs, "--convert-subs", "srt", "--sleep-subtitles", "2", "--no-playlist",
-                              "--ffmpeg-location", FF] + JS + ck + [url])
+            if not a.no_subs: fetch_subs(url, d, ck, a.sub_lang)   # NO fatal: un video sin subtítulos sigue siendo útil
             if ok and not a.audio_only and os.path.exists(os.path.join(d, "video.mp4")) and not os.path.exists(os.path.join(d, "audio.mp3")):
                 run([FF, "-y", "-loglevel", "error", "-i", os.path.join(d, "video.mp4"), "-vn", "-q:a", "2",
                      os.path.join(d, "audio.mp3")])
@@ -129,6 +172,7 @@ if __name__ == "__main__":
     ap.add_argument("--max-height", type=int, default=1080); ap.add_argument("--no-subs", action="store_true")
     ap.add_argument("--frames", action="store_true")
     ap.add_argument("--subs-only", action="store_true", help="solo subtítulos + info, sin bajar el video (nivel transcript)")
+    ap.add_argument("--sub-lang", default="auto", help="auto = idioma original del video; o un código: es, en, pt...")
     a = ap.parse_args()
     urls = a.urls
     if not urls:  # modo interactivo: pegar el link cuando lo pida

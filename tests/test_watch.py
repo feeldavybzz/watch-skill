@@ -214,3 +214,53 @@ class WatchTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+import importlib.util  # noqa: E402
+import zipfile  # noqa: E402
+_spec = importlib.util.spec_from_file_location('grab', ROOT / 'skills/mukiwa-grab/scripts/grab.py')
+grab = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(grab)
+
+
+class CaptionTrackTests(unittest.TestCase):
+    T = [{'ext': 'vtt'}]
+
+    def test_original_auto_track_beats_translations(self):
+        info = {'automatic_captions': {'en-orig': self.T, 'en': self.T, 'es': self.T}, 'language': None}
+        self.assertEqual(grab.pick_track(info), {'key': 'en-orig', 'kind': 'automatic', 'provenance': 'original'})
+
+    def test_manual_in_original_language_first(self):
+        info = {'language': 'es', 'subtitles': {'es': self.T, 'en': self.T}, 'automatic_captions': {'es-orig': self.T}}
+        self.assertEqual(grab.pick_track(info)['key'], 'es')
+        self.assertEqual(grab.pick_track(info)['kind'], 'manual')
+
+    def test_requested_language_and_missing(self):
+        info = {'automatic_captions': {'pt-orig': self.T, 'es': self.T}}
+        self.assertEqual(grab.pick_track(info, 'es'), {'key': 'es', 'kind': 'automatic', 'provenance': 'traducción pedida'})
+        self.assertIsNone(grab.pick_track(info, 'fr'))
+        self.assertIsNone(grab.pick_track({}))
+
+    def test_unknown_language_prefers_spanish(self):
+        info = {'subtitles': {'en': self.T, 'es': self.T, 'live_chat': self.T}}
+        self.assertEqual(grab.pick_track(info)['key'], 'es')
+
+
+class PackageTests(unittest.TestCase):
+    def test_skill_packages(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = subprocess.run([sys.executable, str(ROOT / 'tools/build_skills.py'), '--out', d, '--allow-dirty'],
+                               capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            for name in ('mukiwa-grab', 'mukiwa-learn'):
+                with zipfile.ZipFile(Path(d) / f'{name}.skill') as z:
+                    names = z.namelist()
+                self.assertTrue(all(n.startswith(name + '/') for n in names))
+                self.assertEqual([n for n in names if n.endswith('SKILL.md')], [f'{name}/SKILL.md'])
+                self.assertFalse([n for n in names if '/._' in n or '_descargas' in n or '/work/' in n])
+                self.assertLess(len(names), 200)
+            with zipfile.ZipFile(Path(d) / 'mukiwa-learn.skill') as z:
+                names = z.namelist()
+            self.assertIn('mukiwa-learn/scripts/grab.py', names)
+            self.assertIn('mukiwa-learn/library/INDEX.md', names)
+            self.assertIn('mukiwa-learn/scripts/watch.py', names)
