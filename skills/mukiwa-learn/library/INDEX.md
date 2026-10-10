@@ -11,6 +11,10 @@
 - [Proceso de identidad visual, parte 1: investigación y concepto](diseno-grafico/identidad-visual-pt1-investigacion-concepto.md) — Antes de abrir Illustrator: briefing propio, análisis de competencia local, palabras clave, moodboard con notas y muchos bocetos.
 - [Portfolio de diseño: qué mostrar y cómo presentarlo](diseno-grafico/portfolio-de-diseno-profesional.md) — Elige proyectos del tipo de trabajo que quieres, muéstralos con proceso y contexto, y crea proyectos propios si no tienes: pocos y buenos.
 
+## edicion
+
+- [Editar un video en crudo con Claude Code: flujo de editor asistente (video largo, reels y carrusel)](edicion/editor-asistente-claude-flujo-reels-carrusel.md) — Una creadora le pasa a Claude Code un video grabado en crudo y una skill empaquetada; Claude responde unas preguntas de estilo y devuelve el MP4 editado, reels verticales y un carrusel. Sirve como flujo de trabajo, no como receta de cortes: la skill en sí no se muestra.
+
 ## herramientas-ia
 
 - [Watch en Claude Code: cómo hacer que Claude "vea" un video](herramientas-ia/watch-claude-code-video.md) — Skill /watch (bradautomates/claude-video): yt-dlp descarga, ffmpeg saca fotogramas, subtítulos nativos o Whisper (Groq/OpenAI) ponen el texto, y Claude lee ambos con tiempos. Útil para auditar hooks, entender charlas largas y documentar sesiones grabadas.
