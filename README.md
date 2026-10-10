@@ -13,6 +13,17 @@ Dentro de una sesión de Claude Code:
 
 Seguir la indicación de activación del cliente. Los nombres de las skills pueden aparecer con el prefijo del plugin. También se puede abrir este repositorio en Claude Code y pedir que lea `CLAUDE.md` y las skills directamente, antes de instalar globalmente.
 
+## Profesores por nicho
+
+Cada video analizado alimenta **mini skills por oficio** en `profes/<nicho>/` (color grading, diseño de logos, tipografía cinética…). Si el profesor no existe se crea; si existe, aprende más; si el tema ya lo cubre una skill propia de Bryan, se le añade el conocimiento en `references/aprendido-mukiwa.md`. Las herramientas (DaVinci, Premiere, After Effects…) son secciones dentro de cada profesor. Se escriben como instrucciones para hacer el trabajo, con fuente [n] por técnica.
+
+```bash
+python3 skills/mukiwa-learn/scripts/profes.py list      # profesores y skills existentes
+python3 skills/mukiwa-learn/scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/profe-*
+```
+
+Reglas de clasificación y fusión: `skills/mukiwa-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
+
 ## Usar en claude.ai (app de Claude)
 
 ```bash

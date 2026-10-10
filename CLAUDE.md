@@ -11,3 +11,5 @@ Pruebas: python3 -m unittest discover -s tests -v
 Disco externo (exFAT): macOS crea archivos ocultos "._nombre" junto a cada archivo. Git los ignora y los scripts los saltan. El entorno de Python (venv) va en el disco interno, por ejemplo ~/.venvs/watch-skill: dentro del disco externo Python intenta leer esos ._*.pth y no arranca.
 
 Para ver un video en un paso: python3 skills/mukiwa-learn/scripts/watch.py "LINK-O-ARCHIVO" --question "..." (detalle en skills/mukiwa-learn/SKILL.md). Gemini solo con --engine gemini y si Bryan lo pide.
+
+Después de cada lección: clasificar en nichos y alimentar los profesores de profes/ (skills/mukiwa-learn/references/profesores.md). No borrar ni reescribir profesores enteros: fusionar.

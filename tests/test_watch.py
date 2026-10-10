@@ -264,3 +264,55 @@ class PackageTests(unittest.TestCase):
             self.assertIn('mukiwa-learn/scripts/grab.py', names)
             self.assertIn('mukiwa-learn/library/INDEX.md', names)
             self.assertIn('mukiwa-learn/scripts/watch.py', names)
+            self.assertTrue((Path(d) / 'profe-identidad-visual.skill').exists())
+
+
+class ProfesTests(unittest.TestCase):
+    def run_profes(self, env, *args):
+        return subprocess.run([sys.executable, str(SCRIPTS / 'profes.py'), *args], capture_output=True, text=True, env=env)
+
+    def test_create_feed_install_and_existing_skill(self):
+        import os
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            env = dict(os.environ, MUKIWA_PROFES=str(d / 'profes'), HOME=str(d / 'home'))
+            lesson = d / 'grading-basico.md'
+            lesson.write_text('# Grading básico en DaVinci\n> x\n\n- **Fuente**: https://youtu.be/abc · canal\n', encoding='utf-8')
+            r = self.run_profes(env, 'ensure', '--nicho', 'color-grading', '--nombre', 'Color grading',
+                                '--herramientas', 'DaVinci Resolve,Premiere Pro', '--cuando', 'gradear o crear un look')
+            self.assertEqual(r.returncode, 0, r.stderr)
+            skill = d / 'profes/color-grading/SKILL.md'
+            text = skill.read_text(encoding='utf-8')
+            self.assertIn('name: profe-color-grading', text)
+            self.assertIn('### DaVinci Resolve', text)
+            self.assertIn('### Premiere Pro', text)
+            self.assertIn('gradear o crear un look', text)
+            for _ in range(2):   # alimentar dos veces la misma lección no la duplica
+                self.assertEqual(self.run_profes(env, 'attach', '--nicho', 'color-grading', '--leccion', str(lesson)).returncode, 0)
+            text = skill.read_text(encoding='utf-8')
+            self.assertEqual(text.count('- [1] Grading básico en DaVinci'), 1)
+            self.assertIn('  lecciones: 1', text)
+            self.assertTrue((d / 'profes/color-grading/references/lecciones/grading-basico.md').exists())
+            self.assertIn('1 lección', (d / 'profes/INDEX.md').read_text(encoding='utf-8'))
+            self.assertEqual(self.run_profes(env, 'install').returncode, 0)
+            link = d / 'home/.claude/skills/profe-color-grading'
+            self.assertTrue(link.is_symlink())
+            self.assertEqual(self.run_profes(env, 'check').returncode, 0)
+            # Skill propia existente: se añade una línea y el conocimiento va a references/
+            own = d / 'home/.claude/skills/mi-skill'
+            own.mkdir(parents=True)
+            (own / 'SKILL.md').write_text('---\nname: mi-skill\ndescription: algo\n---\n\n# Mi skill\n', encoding='utf-8')
+            for _ in range(2):
+                self.assertEqual(self.run_profes(env, 'attach', '--skill', str(own), '--leccion', str(lesson)).returncode, 0)
+            self.assertEqual((own / 'SKILL.md').read_text(encoding='utf-8').count('Aprendido de referencias'), 1)
+            self.assertEqual((own / 'references/aprendido-mukiwa.md').read_text(encoding='utf-8').count('- [1]'), 1)
+            r = self.run_profes(env, 'list')
+            self.assertIn('color-grading', r.stdout)
+            self.assertIn('mi-skill', r.stdout)
+
+    def test_rejects_bad_niche(self):
+        import os
+        with tempfile.TemporaryDirectory() as d:
+            env = dict(os.environ, MUKIWA_PROFES=str(Path(d) / 'p'), HOME=d)
+            r = self.run_profes(env, 'ensure', '--nicho', 'Color Grading', '--nombre', 'x')
+            self.assertNotEqual(r.returncode, 0)
