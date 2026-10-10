@@ -7,6 +7,10 @@
 - [Proceso de identidad visual, parte 1: investigación y concepto](diseno-grafico/identidad-visual-pt1-investigacion-concepto.md) — Antes de abrir Illustrator: briefing propio, análisis de competencia local, palabras clave, moodboard con notas y muchos bocetos.
 - [Portfolio de diseño: qué mostrar y cómo presentarlo](diseno-grafico/portfolio-de-diseno-profesional.md) — Elige proyectos del tipo de trabajo que quieres, muéstralos con proceso y contexto, y crea proyectos propios si no tienes: pocos y buenos.
 
+## herramientas-ia
+
+- [Watch en Claude Code: cómo hacer que Claude "vea" un video](herramientas-ia/watch-claude-code-video.md) — Skill /watch (bradautomates/claude-video): yt-dlp descarga, ffmpeg saca fotogramas, subtítulos nativos o Whisper (Groq/OpenAI) ponen el texto, y Claude lee ambos con tiempos. Útil para auditar hooks, entender charlas largas y documentar sesiones grabadas.
+
 ## motion-edicion
 
 - [Base: motion y edición](motion-edicion/_base.md) — Marco de observación para lecciones de edición, motion graphics y post. Se enriquece con cada lección.
