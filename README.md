@@ -24,6 +24,10 @@ python3 skills/mukiwa-learn/scripts/profes.py install   # enlaza profes/* en ~/.
 
 Reglas de clasificación y fusión: `skills/mukiwa-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
 
+## Copia semanal en Google Drive
+
+Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal` ejecuta `tools/sync_drive.py`, que empaqueta todas las skills (MUKIWA, profesores y las propias de `~/.claude/skills`) y las copia a `Mi unidad/MUKIWA · Skills de Claude` mediante Google Drive para escritorio. Solo copia lo que cambió; lo retirado va a `_retiradas/`. A mano: `python3 tools/sync_drive.py`.
+
 ## Usar en claude.ai (app de Claude)
 
 ```bash

@@ -49,6 +49,9 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 ## Cómo trabajar
 1. (procedimiento general, del primer paso a la entrega)
 
+## Áreas
+- (subtemas del oficio; cada técnica en su área)
+
 ## Por herramienta
 {secciones}
 ## Recetas
