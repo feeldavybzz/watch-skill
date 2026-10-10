@@ -7,3 +7,4 @@ skills/_descargas/
 skills/*/bin/
 .DS_Store
 ._*
+dist/

@@ -26,8 +26,11 @@ import argparse, datetime, glob, json, os, re, subprocess, sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-ROOT = HERE.parents[2]
-GRAB = ROOT / "skills" / "mukiwa-grab" / "scripts" / "grab.py"
+# Dentro del repo: work/ y _descargas/ en la raíz. Instalada suelta (~/.claude/skills, claude.ai): carpeta actual.
+ROOT = HERE.parents[2] if (HERE.parents[2] / "CLAUDE.md").exists() else Path.cwd()
+# Skill hermana (repo o instalación con ambas) o la copia que el paquete .skill lleva en scripts/.
+GRAB = next((p for p in (HERE.parents[1] / "mukiwa-grab" / "scripts" / "grab.py", HERE / "grab.py") if p.exists()),
+            HERE.parents[1] / "mukiwa-grab" / "scripts" / "grab.py")
 sys.path.insert(0, str(HERE))
 import cues as cuesmod, extract_frames as ef, gemini  # noqa: E402
 
@@ -76,7 +79,7 @@ def fetch(url, a, need_video):
 
 
 def grab(url, a, subs_only):
-    args = [url, "--out", a.downloads, "--max-height", "720"] + (["--subs-only"] if subs_only else [])
+    args = [url, "--out", a.downloads, "--max-height", "720", "--sub-lang", a.lang or "auto"] + (["--subs-only"] if subs_only else [])
     if a.cookies: args += ["--cookies", a.cookies]
     r = run(GRAB, *args)
     m = re.search(r"^OK -> (.+)$", r.stdout, re.M)
@@ -94,6 +97,13 @@ def pick_captions(folder, lang=None):
     try: original = read_json(os.path.join(folder, "video.info.json")).get("language")
     except (OSError, ValueError): pass
     def code(p): return os.path.basename(p).split(".")[-2] if os.path.basename(p).count(".") >= 2 else ""
+    try:   # mukiwa-grab deja la procedencia de la pista que eligió
+        t = read_json(os.path.join(folder, "subtitulos.json"))
+        for s in subs:
+            if code(s) == t["key"] and (not lang or code(s).split("-")[0] == lang.split("-")[0]):
+                kind = "manuales" if t["kind"] == "manual" else "automáticos"
+                return s, f"subtítulos {kind}, idioma {t['provenance']} ({t['key']})"
+    except (OSError, ValueError, KeyError, TypeError): pass
     for want, why in ((lang, "idioma pedido"), (original, "idioma original del video"), ("es", "español"), ("en", "inglés")):
         if not want: continue
         for s in subs:
