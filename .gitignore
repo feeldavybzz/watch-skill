@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+work/
+_descargas/
+skills/_descargas/
+skills/*/bin/
+.DS_Store

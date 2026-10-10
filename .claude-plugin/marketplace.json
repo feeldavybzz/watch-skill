@@ -1,0 +1,1 @@
+{"name":"watch-skill","description":"Skills de MUKIWA DEPARTMENT para descargar referencias y aprender de video con evidencia.","owner":{"name":"MUKIWA Dept."},"plugins":[{"name":"mukiwa-video","source":"./","description":"Descarga de referencias y aprendizaje audiovisual con evidencia."}]}
