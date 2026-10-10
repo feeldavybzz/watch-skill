@@ -5,6 +5,11 @@ Uso:
   python extract_frames.py VIDEO --out DIR [--mode scene|uniform|both] [--max 60]
                            [--every 5] [--threshold 0.30] [--width 960]
                            [--start 0] [--end SEG] [--sheet-cols 3]
+                           [--at 13:11,4:32] [--at-width 1280] [--no-dedup]
+  --at      capturas fijas en segundos exactos, a resolución alta para leer texto/código.
+  --max 0   solo las capturas de --at.
+  Las capturas casi idénticas se descartan (salvo las fijas); manifest.json informa cuántas
+  y el hueco máximo entre capturas, para saber qué tanto del video quedó sin mirar.
 Genera:
   DIR/frames/f_0001_t00-12.40.jpg ...   (un frame por momento clave)
   DIR/sheets/sheet_01.jpg ...           (cuadrículas con timestamp grabado, 9 frames c/u)
@@ -12,7 +17,7 @@ Genera:
 Modos:
   scene   = cambios de plano/corte (ffmpeg select scene) -> ideal para ediciones rápidas
   uniform = un frame cada N seg  -> ideal para tutoriales de pantalla/lentos
-  both    = unión de ambos (default), recortada a --max
+  both    = unión de ambos (default), repartida por tramos de tiempo hasta --max
 """
 import argparse, json, os, re, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -60,9 +65,67 @@ def thin(times, max_n):
     if max_n == 1: return [times[0]]
     return [times[round(i*(len(times)-1)/(max_n-1))] for i in range(max_n)]
 
+def spread(times, start, end, max_n):
+    """Reparte el presupuesto por tramos iguales de tiempo: en cada tramo, el candidato
+    (corte de escena) más cercano a su centro, o el centro si el tramo no tiene cortes.
+    Evita que una intro con muchos cortes se coma todas las capturas (thin las amontonaba)."""
+    times = sorted(set(round(t,2) for t in times))
+    if len(times) <= max_n: return times
+    if max_n <= 2: return thin(times, max_n)
+    first, last = times[0], times[-1]                 # primer y último instante siempre (el hook vive en el 0)
+    start, end, max_n = first, last, max_n-2
+    times = [t for t in times if first < t < last]
+    step = (end-start)/max_n; out = [first, last]
+    for i in range(max_n):
+        a, b = start+i*step, start+(i+1)*step; mid = (a+b)/2
+        inside = [t for t in times if a <= t < b]
+        out.append(min(inside, key=lambda t: abs(t-mid)) if inside else round(mid,2))
+    return sorted(set(out))
+
+def max_gap(times, start, end):
+    pts = [start] + sorted(times) + [end]
+    return round(max(b-a for a,b in zip(pts, pts[1:])), 2)
+
+DEDUP_THUMB, DEDUP_THRESHOLD = 16, 2.0   # mismos valores que Watch (bradautomates/claude-video)
+
+def thumb(path):
+    try: return Image.open(path).convert("RGB").resize((DEDUP_THUMB,DEDUP_THUMB)).tobytes()
+    except Exception: return b""
+
+def dedupe(frames, threshold=DEDUP_THRESHOLD, max_hole=None):
+    """Descarta capturas casi idénticas a la última conservada (diferencia media por píxel
+    en miniaturas de 16x16). Las fijadas con --at, la primera y la última nunca se descartan.
+    max_hole: no descartar si eso deja más de N s sin captura (Watch muestrea denso; aquí las
+    capturas están espaciadas y descartar sin tope abría huecos de minutos).
+    Cambios sutiles de código/texto pueden perderse: para eso --no-dedup o --at."""
+    kept, last, last_t, dropped = [], b"", None, 0
+    for i,f in enumerate(frames):
+        th = thumb(f["file"])
+        protect = f.get("reason") != "detail" or i == len(frames)-1 or not last or not th or len(th) != len(last)
+        if not protect and max_hole is not None and i+1 < len(frames) and frames[i+1]["t"]-last_t > max_hole:
+            protect = True
+        if not protect and sum(abs(x-y) for x,y in zip(th,last))/len(th) <= threshold:
+            os.remove(f["file"]); dropped += 1
+        else:
+            kept.append(f); last = th or last; last_t = f["t"]
+    return kept, dropped
+
+def parse_at(value):
+    """'13:11,4:32.5,95' -> [791.0, 272.5, 95.0]"""
+    out = []
+    for part in (value or "").split(","):
+        part = part.strip()
+        if not part: continue
+        if not re.fullmatch(r"\d+(?::\d{1,2}){0,2}(?:\.\d+)?", part):
+            raise ValueError("tiempo inválido en --at: %r (usar SS, MM:SS o HH:MM:SS)" % part)
+        secs = 0.0
+        for p in part.split(":"): secs = secs*60 + float(p)
+        out.append(secs)
+    return sorted(set(out))
+
 def grab(p, t, outp, width):
     sh(["ffmpeg","-y","-hide_banner","-loglevel","error","-ss",f"{t:.2f}","-i",p,
-        "-frames:v","1","-vf",f"scale={width}:-2","-q:v","3",outp])
+        "-frames:v","1","-vf",f"scale='min({width},iw)':-2","-q:v","3",outp])   # nunca agrandar: no agrega detalle
     return os.path.exists(outp)
 
 def sheets(frames, out, cols, tile_w=480):
@@ -102,34 +165,53 @@ def main():
     ap.add_argument("--width", type=int, default=960)
     ap.add_argument("--start", type=float, default=0); ap.add_argument("--end", type=float, default=0)
     ap.add_argument("--sheet-cols", type=int, default=3)
+    ap.add_argument("--at", default="", help="tiempos fijos SS, MM:SS o HH:MM:SS separados por coma (capturas a --at-width)")
+    ap.add_argument("--at-width", type=int, default=1280, help="ancho de las capturas fijas, para leer texto")
+    ap.add_argument("--no-dedup", action="store_true", help="conservar capturas casi idénticas")
     a = ap.parse_args()
-    if a.max < 1 or a.every < 0 or a.width < 2 or a.sheet_cols < 1 or a.start < 0:
+    if a.max < 0 or a.every < 0 or a.width < 2 or a.at_width < 2 or a.sheet_cols < 1 or a.start < 0:
         ap.error("Parámetros de muestreo inválidos")
+    try: pinned = parse_at(a.at)
+    except ValueError as e: ap.error(str(e))
     fdir = os.path.join(a.out,"frames"); os.makedirs(fdir, exist_ok=True)
     dur = duration(a.video); end = min(a.end or dur, dur)
     if dur <= 0 or a.start >= end:
         ap.error("Archivo sin duración válida o rango vacío")
-    times = []
-    if a.mode in ("scene","both"):
-        times += scene_times(a.video, a.threshold, a.start, a.end or None)
+    outside = [t for t in pinned if not (a.start <= t < end)]
+    pinned = [t for t in pinned if a.start <= t < end]
+    times = []; cuts = None
+    if a.max == 0: pass                                   # solo capturas fijas (--at)
+    elif a.mode in ("scene","both"):
+        cuts = scene_times(a.video, a.threshold, a.start, a.end or None)
+        times += cuts
         if len(times) < 4 and a.mode == "scene":      # pocos cortes -> bajar umbral
             times = scene_times(a.video, a.threshold/2, a.start, a.end or None)
-    if a.mode in ("uniform","both") or len(times) < 4:
+    if a.max and (a.mode in ("uniform","both") or len(times) < 4):
         every = a.every or max(2.0, (end-a.start)/min(a.max, 40))
         t = a.start + every/2
         while t < end: times.append(t); t += every
-    times = [a.start+0.05] + times if (a.start+0.05) not in times else times
-    times.append(max(a.start, end - 0.1))
-    times = thin([t for t in times if a.start <= t < end], a.max)
+    if a.max:
+        times = [a.start+0.05] + times if (a.start+0.05) not in times else times
+        times.append(max(a.start, end - 0.1))
+        times = [t for t in times if a.start <= t < end]
+        times = thin(times, a.max) if a.mode == "uniform" else spread(times, a.start, end, a.max)
+    plan = sorted([(t,"detail") for t in times if round(t,2) not in [round(p,2) for p in pinned]] +
+                  [(t,"pinned") for t in pinned])
     frames = []
-    for i,t in enumerate(times,1):
-        fp = os.path.join(fdir, f"f_{i:04d}_t{t:08.2f}.jpg")
-        if grab(a.video, t, fp, a.width): frames.append({"file":fp,"t":t})
+    for i,(t,reason) in enumerate(plan,1):
+        fp = os.path.join(fdir, f"f_{i:04d}_t{t:08.2f}{'_fija' if reason=='pinned' else ''}.jpg")
+        if grab(a.video, t, fp, a.at_width if reason=="pinned" else a.width): frames.append({"file":fp,"t":round(t,2),"reason":reason})
     if not frames: sys.exit("NO_FRAMES: no se extrajo ninguna imagen")
+    dropped = 0
+    if not a.no_dedup: frames, dropped = dedupe(frames, max_hole=2*(end-a.start)/max(a.max, 1))
     sh_paths = sheets(frames, os.path.join(a.out,"sheets"), a.sheet_cols)
-    man = {"video":a.video,"duration_s":dur,"n_frames":len(frames),"evidence_type":"sampled_frames","range_s":[a.start,end],"mode":a.mode,"frames":frames,"sheets":sh_paths}
+    man = {"video":a.video,"duration_s":dur,"n_frames":len(frames),"evidence_type":"sampled_frames","range_s":[a.start,end],"mode":a.mode,
+           "max_gap_s":max_gap([f["t"] for f in frames], a.start, end),"dedup_dropped":dropped,
+           "scene_cuts":None if cuts is None else sorted(round(t,2) for t in cuts),"scene_threshold":a.threshold,
+           "pinned":[f["file"] for f in frames if f["reason"]=="pinned"],"pinned_outside_range":outside,
+           "frames":frames,"sheets":sh_paths}
     json.dump(man, open(os.path.join(a.out,"manifest.json"),"w"), indent=1)
-    print(f"OK {len(frames)} frames, {len(sh_paths)} sheets -> {a.out}")
+    print(f"OK {len(frames)} frames ({dropped} casi idénticos descartados, hueco máx {man['max_gap_s']} s), {len(sh_paths)} sheets -> {a.out}")
     for p in sh_paths: print(p)
 
 if __name__ == "__main__":

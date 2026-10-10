@@ -89,13 +89,19 @@ def grab(url, a):
                 fmt = "bv*[height<=%d]+ba/b[height<=%d]/b" % (a.max_height, a.max_height)
                 cmd = YT + ["-o", os.path.join(d, "video.%(ext)s"), "-f", fmt, "--merge-output-format", "mp4",
                             "--write-thumbnail", "--convert-thumbnails", "jpg", "--write-info-json", "--no-playlist"]
-            ok = run(cmd + ["--ffmpeg-location", FF] + JS + ck + [url]) == 0
+            have = os.path.join(d, "audio.mp3" if a.audio_only else "video.mp4")
+            if a.subs_only:                                 # solo subtítulos + info: no bajar el video
+                ok = os.path.exists(os.path.join(d, "video.info.json")) or run(YT + ["-o", os.path.join(d, "video.%(ext)s"),
+                    "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url]) == 0
+            elif os.path.exists(have): print("Ya descargado, se reutiliza:", have); ok = True
+            else: ok = run(cmd + ["--ffmpeg-location", FF] + JS + ck + [url]) == 0
             if not a.no_subs:  # subtítulos aparte y NO fatales (YouTube da 429 a veces); se borran los .vtt sueltos si hay .srt
                 for langs in ("es.*", "en.*"):
+                    if glob.glob(os.path.join(d, "video.%s.srt" % langs)): continue   # ya están: no pedir de nuevo (evita 429)
                     run(YT + ["-o", os.path.join(d, "video.%(ext)s"), "--skip-download", "--write-subs", "--write-auto-subs",
                               "--sub-langs", langs, "--convert-subs", "srt", "--sleep-subtitles", "2", "--no-playlist",
                               "--ffmpeg-location", FF] + JS + ck + [url])
-            if ok and not a.audio_only and os.path.exists(os.path.join(d, "video.mp4")):
+            if ok and not a.audio_only and os.path.exists(os.path.join(d, "video.mp4")) and not os.path.exists(os.path.join(d, "audio.mp3")):
                 run([FF, "-y", "-loglevel", "error", "-i", os.path.join(d, "video.mp4"), "-vn", "-q:a", "2",
                      os.path.join(d, "audio.mp3")])
         if (not ok or photo_first or a.photos_only):
@@ -106,13 +112,14 @@ def grab(url, a):
     with open(os.path.join(d, "LEEME.md"), "w") as f:
         f.write("# %s\n\n- Fuente: %s\n- Fecha: %s\n- Archivos:\n%s\n" % (
             title, url, datetime.date.today().isoformat(), "\n".join("  - " + x for x in files)))
-    print(("\nOK -> %s" if any(x.lower().endswith(IMG_EXT + AV_EXT) for x in files) else "\nFALLO (no se bajó nada; revisa el error de arriba) -> %s") % d); [print("  " + x) for x in files]
+    got = any(x.lower().endswith(IMG_EXT + AV_EXT + ((".srt",) if a.subs_only else ())) for x in files)
+    print(("\nOK -> %s" if got else "\nFALLO (no se bajó nada; revisa el error de arriba) -> %s") % d); [print("  " + x) for x in files]
     if not files and "instagram" in host:
         print("\nPISTA Instagram: necesita sesión. Si viste 'Operation not permitted' o 'could not find chrome cookies':\n  Ajustes del Sistema > Privacidad y seguridad > Acceso total al disco > activa Terminal, cierra Terminal (Cmd+Q) y reábrela.")
     if a.frames and os.path.exists(os.path.join(d, "video.mp4")):
         ef = os.path.abspath(os.path.join(HERE, "..", "..", "mukiwa-learn", "scripts", "extract_frames.py"))
         if os.path.exists(ef): run([sys.executable, ef, os.path.join(d, "video.mp4"), "--out", os.path.join(d, "frames_work")])
-    return d if any(x.lower().endswith(IMG_EXT + AV_EXT) for x in files) else None
+    return d if got else None
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -121,6 +128,7 @@ if __name__ == "__main__":
     ap.add_argument("--audio-only", action="store_true"); ap.add_argument("--photos-only", action="store_true")
     ap.add_argument("--max-height", type=int, default=1080); ap.add_argument("--no-subs", action="store_true")
     ap.add_argument("--frames", action="store_true")
+    ap.add_argument("--subs-only", action="store_true", help="solo subtítulos + info, sin bajar el video (nivel transcript)")
     a = ap.parse_args()
     urls = a.urls
     if not urls:  # modo interactivo: pegar el link cuando lo pida

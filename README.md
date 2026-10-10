@@ -18,14 +18,27 @@ Seguir la indicación de activación del cliente. Los nombres de las skills pued
 Python 3.9+ y ffmpeg/ffprobe en PATH son la ruta principal. Para extraer fotogramas sin ffmpeg del sistema se admite imageio-ffmpeg. Instalar las dependencias Python en un entorno virtual:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r requirements.txt
+python3 -m venv ~/.venvs/watch-skill
+~/.venvs/watch-skill/bin/python -m pip install -r requirements.txt
 ```
+
+En la Mac de Bryan el repo vive en un disco exFAT: el venv va en el disco interno (`~/.venvs/watch-skill`), porque dentro del disco externo los archivos `._*` de macOS impiden que Python arranque.
 
 Whisper es opcional: `python3 -m pip install faster-whisper`. Su primera ejecución puede descargar un modelo. No se necesita para usar subtítulos existentes. `probe.py` y la transcripción Whisper heredados necesitan ffprobe/ffmpeg del sistema.
 
-## Flujo
+## Ver un video en un paso
+
+```bash
+python3 skills/mukiwa-learn/scripts/watch.py "https://youtu.be/ID" --question "¿Qué técnica usa en el minuto 2?"
+```
+
+Descarga (o reutiliza), saca subtítulos o transcribe en la Mac, extrae capturas repartidas por todo el video, fija capturas a 1280 px del gancho y de los momentos que el presentador señala, mide ritmo de edición y paleta, y escribe `work/watch-…/informe.md` + `evidence.json`. Niveles: `--detail transcript|efficient|balanced|full`. Enfoque: `--start/--end`, `--at 4:32,13:11`.
+
+Motor opcional `--engine gemini`: Google ve el video completo y responde. Requiere `GEMINI_API_KEY` en `~/.config/mukiwa/.env` (gratis en https://aistudio.google.com/apikey); los links de YouTube se envían a Google y los archivos se suben y se borran al terminar. Nunca se usa sin pedirlo.
+
+Comparado con Watch: funciona con el Python 3.9 de la Mac sin Homebrew; limpia subtítulos automáticos en cascada (Watch solo quita duplicados exactos); detecta y captura solas las señales del presentador; capturas fijas a 1280 px para leer texto; reparte capturas por tramos e informa el hueco máximo; mide ritmo de edición, gancho y paleta; guía de análisis de reels; y guarda lo aprendido en una biblioteca.
+
+## Flujo por pasos
 
 1. Descargar un enlace con `python3 skills/mukiwa-grab/scripts/grab.py URL --out _descargas --max-height 720`.
 2. Preparar un archivo local:
@@ -43,10 +56,10 @@ Los fotogramas son muestras. No se promete inspección de cada fotograma ni tran
 
 ## Validación
 
-`python3 -m unittest discover -s tests -v` prueba subtítulos y el flujo con un video sintético local. Requiere ffmpeg y Pillow. Descargas de redes, Whisper e instalación real del plugin en Claude Code requieren validación adicional en el entorno destino.
+`python3 -m unittest discover -s tests -v` prueba subtítulos, capturas, señales, ritmo, paleta, Gemini (con respuestas simuladas, sin red) y el flujo completo de `watch.py` con un video sintético local. Requiere ffmpeg y Pillow. Descargas de redes, Whisper e instalación real del plugin en Claude Code requieren validación adicional en el entorno destino.
 
 ## Origen
 
-Base: paquetes `mukiwa-learn.skill` y `mukiwa-grab.skill` proporcionados por Bryan el 10 de octubre de 2026. La arquitectura de fotogramas + transcripción también toma como referencia conceptual [Watch](https://github.com/bradautomates/claude-video). Esta versión no incorpora ni instala su código.
+Base: paquetes `mukiwa-learn.skill` y `mukiwa-grab.skill` proporcionados por Bryan el 10 de octubre de 2026. La arquitectura de fotogramas + transcripción, el selector de detalle, el descarte de capturas casi idénticas y las capturas en tiempos exactos toman como referencia [Watch](https://github.com/bradautomates/claude-video) (MIT). `skills/mukiwa-learn/scripts/gemini.py` es una adaptación de su `gemini.py`: Copyright (c) 2026 Bradley Bonanno, licencia MIT (permite usar, copiar y modificar conservando este aviso). El resto es código propio.
 
 Conservar las lecciones al actualizar. No subir cookies, claves ni medios privados. `_descargas`, `work` y binarios descargados quedan fuera de Git.
