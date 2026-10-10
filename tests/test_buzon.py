@@ -57,6 +57,61 @@ class ErrorExplanationTests(unittest.TestCase):
             self.assertTrue(causa and haz, code)
 
 
+class SessionPermissionTests(unittest.TestCase):
+    def perms(self, d, sites=('instagram.com',), browser='chrome'):
+        p = Path(d) / 'permisos.json'
+        p.write_text(json.dumps({'cookies_navegador': {'navegador': browser, 'sitios': list(sites)}}), encoding='utf-8')
+        return str(p)
+
+    def test_permission_is_per_site_and_revocable(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = self.perms(d)
+            self.assertEqual(grab.cookies_permitidas('https://www.instagram.com/reel/abc/', p), 'chrome')
+            self.assertEqual(grab.cookies_permitidas('https://instagram.com/p/abc/', p), 'chrome')
+            self.assertIsNone(grab.cookies_permitidas('https://www.youtube.com/watch?v=abc', p))
+            self.assertIsNone(grab.cookies_permitidas('https://notinstagram.com/x', p))
+            self.assertIsNone(grab.cookies_permitidas('https://www.instagram.com/p/abc/', str(Path(d) / 'no-existe.json')))   # revocado
+            (Path(d) / 'roto.json').write_text('{no es json', encoding='utf-8')
+            self.assertIsNone(grab.cookies_permitidas('https://www.instagram.com/p/abc/', str(Path(d) / 'roto.json')))
+
+    def run_case(self, url, fail_code, perms_path, cookies=None):
+        class A: pass
+        a = A(); a.cookies = cookies; calls = []
+
+        def fake_grab(u, args):
+            calls.append(args.cookies)
+            if args.cookies == 'chrome': return '/ok'
+            grab.LAST_FAIL['code'] = fail_code
+            return None
+        res = grab.grab_con_permiso(url, a, grab_fn=fake_grab, perms_path=perms_path)
+        return res, calls, a.cookies
+
+    def test_retries_with_session_only_when_login_and_site_allowed(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = self.perms(d)
+            self.assertEqual(self.run_case('https://www.instagram.com/reel/abc/', 'login', p), ('/ok', [None, 'chrome'], None))   # y no queda activa
+            self.assertEqual(self.run_case('https://www.instagram.com/reel/abc/', '429', p), (None, [None], None))               # otra causa: no
+            self.assertEqual(self.run_case('https://www.instagram.com/reel/abc/', 'privado', p), (None, [None], None))
+            self.assertEqual(self.run_case('https://www.youtube.com/watch?v=a', 'login', p), (None, [None], None))              # otro sitio: no
+            self.assertEqual(self.run_case('https://www.instagram.com/reel/abc/', 'login', str(Path(d) / 'borrado.json')), (None, [None], None))
+            res, calls, _ = self.run_case('https://www.instagram.com/reel/abc/', 'login', p, cookies='firefox')                   # ya pidió otra: se respeta
+            self.assertEqual((res, calls), (None, ['firefox']))
+
+    def test_unreadable_cookies_are_explained(self):
+        info = grab.explain('ERROR: could not find chrome cookies database in "/Users/x/Library/Application Support/Google/Chrome"')
+        self.assertEqual(info['code'], 'cookies')
+        self.assertIn('Permitir siempre', info['haz'])
+
+    def test_inbox_records_that_session_was_used(self):
+        item = {'url': 'u', 'estado': 'pendiente', 'intentos': 0}
+        inbox.apply_result(item, {'code': 0, 'text': 'SESION[chrome]: se usa tu sesión\nINFORME: /w/x/informe.md'})
+        self.assertTrue(item['sesion'])
+        self.assertIn('se usó tu sesión de Chrome', inbox.estado_md({'items': {'k': item}}))
+        plain = {'url': 'u', 'estado': 'pendiente', 'intentos': 0}
+        inbox.apply_result(plain, {'code': 0, 'text': 'INFORME: /w/y/informe.md'})
+        self.assertNotIn('sesion', plain)
+
+
 class RetryTests(unittest.TestCase):
     def test_retries_only_what_deserves_it(self):
         calls, sleeps = [], []
