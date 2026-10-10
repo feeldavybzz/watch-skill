@@ -13,3 +13,5 @@ Disco externo (exFAT): macOS crea archivos ocultos "._nombre" junto a cada archi
 Para ver un video en un paso: python3 skills/mukiwa-learn/scripts/watch.py "LINK-O-ARCHIVO" --question "..." (detalle en skills/mukiwa-learn/SKILL.md). Gemini solo con --engine gemini y si Bryan lo pide.
 
 Después de cada lección: clasificar en nichos y alimentar los profesores de profes/ (skills/mukiwa-learn/references/profesores.md). No borrar ni reescribir profesores enteros: fusionar.
+
+Descargas: si fallan, retransmitir CAUSA/HAZ de mukiwa-grab; plan B = «Para analizar» del buzón. Cookies del navegador solo con permiso explícito de Bryan en esa descarga. Buzón: skills/mukiwa-learn/scripts/inbox.py.

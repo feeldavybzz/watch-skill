@@ -8,7 +8,7 @@ Uso:
                   [--photos-only] [--max-height 1080] [--no-subs] [--frames]
 Genera: video.mp4, audio.mp3, subs *.srt, miniatura, fotos/ (carruseles), info.json, LEEME.md
 """
-import argparse, datetime, glob, json, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
+import argparse, datetime, glob, json, os, re, shutil, subprocess, sys, time, urllib.parse, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_OUT = os.path.abspath(os.path.join(HERE, "..", "..", "_descargas"))
@@ -42,10 +42,29 @@ def find_ffmpeg():
     except Exception:
         return None
 
+def find_js_runtime(which=shutil.which, home=None):
+    """Runtime de JavaScript que YouTube exige a yt-dlp para resolver sus desafíos.
+    Orden: deno propio (bin/), deno, node, bun. Node casi nunca está en el PATH: se busca también en
+    ~/nodejs/node-v*/bin (la versión más alta) y en las rutas de Homebrew. Devuelve (nombre, ruta) o None."""
+    home = home or os.path.expanduser("~")
+    own = os.path.join(BIN_DIR, "deno")
+    if os.path.exists(own): return ("deno", own)
+    for name in ("deno", "node", "bun"):
+        p = which(name)
+        if p: return (name, p)
+        if name == "node":
+            ver = lambda c: [int(x) for x in re.findall(r"\d+", os.path.basename(os.path.dirname(os.path.dirname(c))))]
+            found = sorted(glob.glob(os.path.join(home, "nodejs", "node-v*", "bin", "node")), key=ver, reverse=True)
+            for c in found + ["/opt/homebrew/bin/node", "/usr/local/bin/node"]:
+                if os.path.isfile(c) and os.access(c, os.X_OK): return ("node", c)
+    return None
+
 def ensure_tools():
     global YT, GDL, FF
-    YT = find_cmd("yt-dlp", "yt_dlp"); deno = os.path.join(BIN_DIR, "deno")
-    if os.path.exists(deno): JS[:] = ["--js-runtimes", "deno:" + deno, "--remote-components", "ejs:github"]
+    YT = find_cmd("yt-dlp", "yt_dlp"); rt = find_js_runtime()
+    if rt:
+        JS[:] = ["--js-runtimes", "%s:%s" % rt]
+        if rt[0] == "deno": JS.extend(["--remote-components", "ejs:github"])
     GDL = find_cmd("gallery-dl", "gallery_dl"); FF = find_ffmpeg()
     if not YT or not FF:
         print("Faltan herramientas (yt-dlp / ffmpeg). Corre una vez:\n  bash \"%s\"" % os.path.join(HERE, "setup.sh"))
@@ -55,8 +74,83 @@ def slug(s, n=60):
     s = re.sub(r"[^\w\s-]", "", s, flags=re.U).strip().lower()
     return re.sub(r"[\s_-]+", "-", s)[:n] or "descarga"
 
-def run(cmd):
-    print("$", " ".join(cmd)); return subprocess.run(cmd).returncode
+# Causas de fallo conocidas: (código, patrón sobre las líneas de error, qué pasó, qué hacer, ¿vale reintentar?)
+ARCHIVO = "Opción A: guarda el video en la carpeta «Para analizar» del buzón (o dame el archivo) y se analiza igual."
+ERRORES = [
+    ("429", r"HTTP Error 429|Too Many Requests", "La plataforma limitó las peticiones (demasiadas seguidas).",
+     "Espera 10–15 minutos y reintenta una vez; no lo repitas en bucle. " + ARCHIVO, True),
+    ("login", r"Sign in to confirm|confirm you.re not a bot|login required|requiring login|rate-limit reached or login|"
+              r"Please log in|empty media response|age-restricted|confirm your age|inappropriate for some users",
+     "Este contenido pide sesión iniciada (o la plataforma sospecha que es un bot).",
+     ARCHIVO + " Opción B: --cookies chrome usa tu sesión de Chrome en esta Mac (solo con tu permiso).", False),
+    ("privado", r"Private video|video is private|account is private|This video is only available",
+     "Es privado o solo para ciertas personas.", "Pide el archivo a su dueño o súbelo a «Para analizar».", False),
+    ("no-existe", r"[Vv]ideo (is )?(no longer )?unavailable|has been removed|no longer available|does not exist|Video not found|HTTP Error 404",
+     "El video ya no existe o fue eliminado.", "Revisa que el link esté completo y siga publicado.", False),
+    ("region", r"not available in your country|blocked it in your country|geo.?restrict",
+     "Está bloqueado en tu región.", ARCHIVO, False),
+    ("403", r"HTTP Error 403|Forbidden",
+     "La plataforma rechazó la descarga (403).",
+     "Suele pasar con yt-dlp viejo o una conexión marcada. Corre doctor.py --online; si está al día, espera y reintenta. " + ARCHIVO, False),
+    ("no-soportado", r"Unsupported URL", "Ese enlace no es de un video o foto descargable.", "Copia el link directo del post o video.", False),
+    ("js", r"JavaScript runtime|n challenge|Signature solving failed",
+     "YouTube exige un runtime de JavaScript para resolver sus desafíos y no se encontró ninguno.",
+     "Instala Node.js o deno (se busca en el PATH, en ~/nodejs y en Homebrew). doctor.py muestra qué falta.", False),
+    ("ffmpeg", r"ffmpeg.*(not found|not installed)|ffprobe and ffmpeg not found", "Falta ffmpeg.",
+     "Instala ffmpeg o `pip install imageio-ffmpeg` en el venv.", False),
+    ("red", r"Temporary failure in name resolution|timed out|Connection reset|Network is unreachable|getaddrinfo failed|"
+            r"Connection refused|Name or service not known|nodename nor servname|Remote end closed|IncompleteRead|URLError",
+     "Sin conexión o conexión inestable.", "Revisa tu internet y reintenta.", True),
+    ("5xx", r"HTTP Error 5\d\d", "El servidor de la plataforma falló (error 5xx).", "Reintenta en unos minutos.", True),
+]
+
+def explain(text, js_ok=True):
+    """Traduce el texto de error de yt-dlp/gallery-dl a {code, causa, haz, retry}. Mira solo las líneas de error."""
+    lines = [l for l in (text or "").splitlines() if re.search(r"error", l, re.I)] or (text or "").splitlines()
+    blob = "\n".join(lines)
+    for code, pat, causa, haz, retry in ERRORES:
+        if re.search(pat, blob, re.I): return {"code": code, "causa": causa, "haz": haz, "retry": retry}
+    if re.search(r"Requested format is not available|Only images are available", blob, re.I):
+        if not js_ok: return explain("JavaScript runtime", True)
+        return {"code": "formato", "causa": "No hay un formato que cumpla lo pedido.",
+                "haz": "Prueba otra calidad (--max-height 1080 o 480). " + ARCHIVO, "retry": False}
+    last = (lines[-1] if lines else "sin detalle").strip()[:200]
+    return {"code": "desconocido", "causa": "Fallo no reconocido: " + last,
+            "haz": "Corre doctor.py para revisar las herramientas. " + ARCHIVO, "retry": False}
+
+def with_retries(once, sleep=time.sleep, waits=(8, 25, 75), log=print):
+    """once() -> (código, texto de error). Reintenta con espera solo lo que lo merece (429, red, 5xx)."""
+    n = 0
+    while True:
+        code, text = once()
+        if code == 0: return code, text
+        info = explain(text)
+        if not info["retry"] or n >= len(waits): return code, text
+        log("Reintento %d/%d en %d s (%s)" % (n + 1, len(waits), waits[n], info["causa"]))
+        sleep(waits[n]); n += 1
+
+def run_capture(cmd):
+    """Ejecuta mostrando la salida en vivo y devuelve (código, salida completa)."""
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1, errors="replace")
+    out = []
+    for line in p.stdout:
+        sys.stdout.write(line); sys.stdout.flush(); out.append(line)
+    p.wait(); return p.returncode, "".join(out)
+
+ERR_LOG = []   # textos de los intentos fallidos de esta descarga, para explicar la causa al final
+
+def run(cmd, retry=False):
+    print("$", " ".join(cmd))
+    code, text = with_retries(lambda: run_capture(cmd)) if retry else run_capture(cmd)
+    if code: ERR_LOG.append(text)
+    return code
+
+def report_failure(texts, folder=None):
+    info = explain("\n".join(texts), js_ok=bool(JS))
+    print("CAUSA[%s]: %s\nHAZ: %s" % (info["code"], info["causa"], info["haz"]))
+    if folder:
+        with open(os.path.join(folder, "error.json"), "w", encoding="utf-8") as f: json.dump(info, f, ensure_ascii=False)
+    return info
 
 def direct(url, outdir):
     name = os.path.basename(urllib.parse.urlparse(url).path) or "archivo"
@@ -99,7 +193,7 @@ def fetch_subs(url, d, ck, lang="auto"):
     if glob.glob(os.path.join(d, "video.*.srt")): return             # ya están: no pedir de nuevo
     info_path = os.path.join(d, "video.info.json")
     if not os.path.exists(info_path):
-        run(YT + ["-o", os.path.join(d, "video.%(ext)s"), "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url])
+        run(YT + ["-o", os.path.join(d, "video.%(ext)s"), "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url], retry=True)
     try:
         with open(info_path, encoding="utf-8") as f: track = pick_track(json.load(f), lang)
     except (OSError, ValueError):
@@ -110,19 +204,28 @@ def fetch_subs(url, d, ck, lang="auto"):
               "--write-subs" if track["kind"] == "manual" else "--no-write-subs",
               "--write-auto-subs" if track["kind"] == "automatic" else "--no-write-auto-subs",
               "--sub-langs", "-all,^" + re.escape(track["key"]) + "$", "--convert-subs", "srt",
-              "--ffmpeg-location", FF] + JS + ck)
+              "--ffmpeg-location", FF] + JS + ck, retry=True)
     with open(os.path.join(d, "subtitulos.json"), "w", encoding="utf-8") as f: json.dump(track, f, ensure_ascii=False)
 
 def grab(url, a):
     u = urllib.parse.urlparse(url); host = u.netloc.lower(); path = u.path.lower()
     os.makedirs(a.out, exist_ok=True)
     ck = ["--cookies-from-browser", a.cookies] if a.cookies else []
-    title = "descarga"
+    title = "descarga"; del ERR_LOG[:]
     if not path.endswith(IMG_EXT + AV_EXT):
-        r = subprocess.run(YT + ["--no-warnings", "--ffmpeg-location", FF] + JS + [ "--skip-download", "--playlist-items", "1",
-                                 "--print", "%(title)s"] + ck + [url], capture_output=True, text=True)
-        if r.stdout.strip(): title = r.stdout.strip().splitlines()[0]
-        else: title = (host.split(".")[-2] if "." in host else host) + "-" + path.strip("/").replace("/", "-")
+        probe = YT + ["--no-warnings", "--ffmpeg-location", FF] + JS + ["--skip-download", "--playlist-items", "1",
+                                 "--print", "%(title)s"] + ck + [url]
+        box = {}
+        def once():
+            r = subprocess.run(probe, capture_output=True, text=True, errors="replace")
+            box["out"] = r.stdout; return r.returncode, r.stderr
+        code, err = with_retries(once)
+        if box["out"].strip(): title = box["out"].strip().splitlines()[0]
+        else:
+            title = (host.split(".")[-2] if "." in host else host) + "-" + path.strip("/").replace("/", "-")
+            if code and any(v in host for v in VIDEO_ONLY) and not a.photos_only:   # ni el título se pudo leer: bajar no servirá
+                print("No se pudo leer el video: " + (err.strip().splitlines() or ["sin detalle"])[-1][:200])
+                report_failure([err]); return None
     d = os.path.join(a.out, "%s-%s" % (datetime.date.today().isoformat(), slug(title)))
     os.makedirs(d, exist_ok=True)
     if path.endswith(IMG_EXT + AV_EXT):
@@ -142,7 +245,7 @@ def grab(url, a):
                 ok = os.path.exists(os.path.join(d, "video.info.json")) or run(YT + ["-o", os.path.join(d, "video.%(ext)s"),
                     "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url]) == 0
             elif os.path.exists(have): print("Ya descargado, se reutiliza:", have); ok = True
-            else: ok = run(cmd + ["--ffmpeg-location", FF] + JS + ck + [url]) == 0
+            else: ok = run(cmd + ["--newline", "--progress-delta", "5", "--ffmpeg-location", FF] + JS + ck + [url], retry=True) == 0
             if not a.no_subs: fetch_subs(url, d, ck, a.sub_lang)   # NO fatal: un video sin subtítulos sigue siendo útil
             if ok and not a.audio_only and os.path.exists(os.path.join(d, "video.mp4")) and not os.path.exists(os.path.join(d, "audio.mp3")):
                 run([FF, "-y", "-loglevel", "error", "-i", os.path.join(d, "video.mp4"), "-vn", "-q:a", "2",
@@ -156,7 +259,11 @@ def grab(url, a):
         f.write("# %s\n\n- Fuente: %s\n- Fecha: %s\n- Archivos:\n%s\n" % (
             title, url, datetime.date.today().isoformat(), "\n".join("  - " + x for x in files)))
     got = any(x.lower().endswith(IMG_EXT + AV_EXT + ((".srt",) if a.subs_only else ())) for x in files)
-    print(("\nOK -> %s" if got else "\nFALLO (no se bajó nada; revisa el error de arriba) -> %s") % d); [print("  " + x) for x in files]
+    print(("\nOK -> %s" if got else "\nFALLO (no se bajó nada) -> %s") % d); [print("  " + x) for x in files]
+    if not got:
+        if a.subs_only and os.path.exists(os.path.join(d, "video.info.json")) and not ERR_LOG:   # el video existe, solo que sin subtítulos
+            print("CAUSA[sin-subtitulos]: El video no tiene subtítulos.\nHAZ: Se transcribe el audio en la Mac con faster-whisper.")
+        else: report_failure(ERR_LOG or ["sin detalle"], d)
     if not files and "instagram" in host:
         print("\nPISTA Instagram: necesita sesión. Si viste 'Operation not permitted' o 'could not find chrome cookies':\n  Ajustes del Sistema > Privacidad y seguridad > Acceso total al disco > activa Terminal, cierra Terminal (Cmd+Q) y reábrela.")
     if a.frames and os.path.exists(os.path.join(d, "video.mp4")):

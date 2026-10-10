@@ -75,15 +75,19 @@ def fetch(url, a, need_video):
         print("[watch] el video no tiene subtítulos: se descarga para transcribir el audio en la Mac", file=sys.stderr)
     folder = grab(url, a, subs_only=False)
     if folder: return folder, "descargado"
-    raise SystemExit("No se pudo descargar. Últimas líneas de mukiwa-grab:\n" + grab.last_error)
+    raise SystemExit("No se pudo descargar.\n" + grab.last_error)
 
 
 def grab(url, a, subs_only):
     args = [url, "--out", a.downloads, "--max-height", "720", "--sub-lang", a.lang or "auto"] + (["--subs-only"] if subs_only else [])
     if a.cookies: args += ["--cookies", a.cookies]
     r = run(GRAB, *args)
-    m = re.search(r"^OK -> (.+)$", r.stdout, re.M)
-    grab.last_error = "\n".join((r.stdout + r.stderr).strip().splitlines()[-8:])
+    out = r.stdout + r.stderr
+    m = re.search(r"^OK -> (.+)$", out, re.M)
+    c = re.search(r"^CAUSA\[([^\]]+)\]: (.*)$", out, re.M); h = re.search(r"^HAZ: (.*)$", out, re.M)
+    # mukiwa-grab explica la causa y qué hacer; si no la reconoció, se muestran las últimas líneas
+    grab.last_error = ("CAUSA[%s]: %s\nHAZ: %s" % (c.group(1), c.group(2), h.group(1) if h else "")) if c \
+        else "\n".join(out.strip().splitlines()[-8:])
     return m.group(1).strip() if m else None
 
 
@@ -319,6 +323,7 @@ def main():
         folder = sibling if glob.glob(os.path.join(sibling, "*.srt")) else None
     ev = local(a, f"{a.source} ({how})", video, folder, info)
     print((Path(a.out) / "informe.md").read_text(encoding="utf-8"))
+    print("\nINFORME: " + str(Path(a.out) / "informe.md"))
     return {"ready": 0, "partial": 2, "blocked": 1}[ev["status"]]
 
 
