@@ -11,6 +11,13 @@ trabajo y que mejoren con cada link. Este paso va siempre después de guardar la
    |---|---|
    | `diseno-grafico` | briefing y estrategia visual, logos, identidad y branding visual, tipografía, color, composición y retícula, piezas para redes, carteles, editorial, mockups, presentación al cliente |
    | `motion-graphics` | toda animación: tipografía cinética, animación de logos y títulos, transiciones gráficas, lower thirds, elementos para reels, easing y timing |
+   | `composicion-visual` | composición de la imagen en foto, video, cine, reels y piezas: tercios, rejilla áurea, diagonales, triángulos, V, radial, curva S, pirámide, espiral, guías por formato (16:9, 5:4, 1:1, 4:5, 9:16) y guías o plantillas superpuestas para el plugin |
+| `editor-asistente` | preparar y montar el material: cortar silencios y errores, subtitular, sacar reels y carruseles de un video largo, organizar el material, editar con IA (Premiere, DaVinci, Claude Code) |
+| `cinematografia` | cámara: movimientos (estático, paneo, whip pan, tilt, push in, pull out, zoom, dolly zoom, roll, tracking, trucking, arc, boom, aleatorio), ángulos, los 12 soportes (en mano, trípode, pedestal, grúa, cenital, dolly, estabilizador, Snorricam, vehículo, dron, motion control, submarina), frame rate y cámara lenta o rápida, regla de los 180°, B-roll, lista de planos; después lentes y foco |
+| `efectos-visuales` | efectos especiales de rodaje (SFX), efectos visuales (VFX: composición, croma, rotoscopia, producción virtual) y CGI; supervisores y departamentos; planear efectos desde el guion |
+| `narrativa-y-direccion` | estructura de historias (círculo de Harmon), arco del personaje, blocking de escenas (espacio, formas, líneas), subtexto, storyboard |
+| `iluminacion` | luz de cine y video: tipos de luz (natural, artificial, ambiente, práctica, motivada), medición (lux, kelvin, cuadrado inverso), clave alta y baja, claroscuro, luz dura y suave, equipo (tungsteno, HMI, LED, Kino Flo, geles, difusión, banderas) |
+| `video-con-ia` | dirigir video y anuncios con IA (Seedance, Seedream, Higgsfield con Claude): personajes y locaciones de referencia, prompts cronometrados por planos, anclas, mapas de blocking, cortes ocultos |
 
 3. Para temas fuera de los paraguas, crear un profesor nuevo con un nicho **igual de amplio** (un oficio, no una técnica ni una herramienta). Ejemplos: `color-grading`, `edicion-de-video`, `fotografia`, `sound-design`, `direccion-creativa`. DaVinci, Premiere o After Effects son secciones dentro del profesor, nunca un profesor.
 4. Reusar antes que crear. Si una skill propia de Bryan (no `profe-*`) ya cubre exactamente el tema, como `portfolio-marca-personal`, usar `attach --skill`.
