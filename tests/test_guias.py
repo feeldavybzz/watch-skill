@@ -56,6 +56,13 @@ class GuiasTests(unittest.TestCase):
             ratios.append(((max(p[0] for p in pts) - min(p[0] for p in pts)) * r["ancho"]) / ((max(p[1] for p in pts) - min(p[1] for p in pts)) * r["alto"]))
         self.assertAlmostEqual(ratios[0], ratios[2], delta=0.05)
 
+    def test_guias_de_studiobinder(self):
+        h = guias.resolver("linea_aurea_horizonte", "9:16")["primitivas"][0]["p"]
+        self.assertAlmostEqual(h[0][1], 0.382, places=3)
+        r = guias.resolver("headroom_lookroom", "16:9")
+        self.assertAlmostEqual(r["meta"]["sujeto_u"], 0.382, places=3)
+        self.assertEqual(len(guias.GUIAS), 23)
+
     def test_svg_valido(self):
         s = guias.svg(guias.resolver("centrado", "4:5"))
         self.assertTrue(s.startswith("<svg") and s.rstrip().endswith("</svg>"))

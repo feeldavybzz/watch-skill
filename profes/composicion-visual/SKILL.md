@@ -4,12 +4,12 @@ description: Profesor MUKIWA de composición visual (foto, video, cine, reels y 
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 3
+  lecciones: 4
   actualizado: "2026-10-10"
 ---
 
 # Profe: Composición visual
-> Elige una guía de composición según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 20 recursos de composición (10 de una clase de arte y 10 vistos sobre fotos reales en tres reels) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5.
+> Compone con los **9 elementos** (puntos, líneas, formas, texturas y patrones, espacio, profundidad, equilibrio, ángulo, color y tono), elige una guía según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 20 recursos de composición (10 de una clase de arte y 10 vistos sobre fotos reales en tres reels) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -25,6 +25,19 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 5. **Prueba varios esquemas con la misma escena** y quédate con el que mejor guíe la mirada [1].
 6. En la naturaleza el orden ya existe; si no, **arregla la escena** (mueve elementos, cambia el encuadre) para que sea más atractiva [1].
 7. **Recalcula la guía con el formato final** antes de entregar (ver «Formatos»).
+
+## Los 9 elementos de la composición (teoría de [4], con ejemplos de cine)
+Se combinan en cada plano; planea con un storyboard para usar cada uno con intención [4].
+1. **Puntos**: dirigen la mirada; funcionan sobre todo en planos amplios con un lienzo limpio; combínalos con la **regla de los tercios** (sujeto en una de las cuatro intersecciones) o el **triángulo áureo** (diagonal de esquina a esquina más líneas desde las otras dos esquinas en ángulo recto: dos puntos focales equilibrados) [4].
+2. **Líneas**: verticales = altura y fuerza; horizontales = distancia y calma; diagonales = energía descompensada; curvas = gracia. Las **líneas guía** (pasillo, cuerdas, destellos) llevan la mirada al sujeto [4].
+3. **Formas**: las geométricas limpias dan orden y unidad; las irregulares u orgánicas, naturalidad o caos. Las aberturas crean **marcos dentro del marco** (de claustrofobia a confort según forma, lugar y contexto) [4].
+4. **Texturas y patrones**: la textura (fotografía, diseño de producción y luz) hace destacar al sujeto del fondo o fundirlo; los patrones sugieren poder, control, armonía o locura por repetición, y **romperlos** llama la atención [4].
+5. **Espacio**: positivo (sujeto) y negativo (vacío). Cuanto más grande el objeto, más importancia; plano extremadamente amplio = aislado y vulnerable, primer plano extremo = poder. **Headroom** mínimo; **lookroom** (espacio frente a la mirada) mucho mayor que detrás. Llenar el cuadro = caos; simplificarlo = calma o tristeza [4].
+6. **Profundidad**: primer plano, plano medio y fondo con jerarquía. **Foco corto** aísla al sujeto (cambiar el foco dirige la atención); **foco profundo** permite varias capas de atención [4].
+7. **Equilibrio**: un sujeto a un lado sin peso en el otro desequilibra; **regla de los impares** para grupos; **razón áurea 1 : 1,618 (φ)** como espiral o como línea a 0,382 de la altura para los **ojos o el horizonte**; **simetría** como alternativa (Wes Anderson). El desequilibrio se usa para incomodar [4].
+8. **Ángulo**: paralelo al suelo por defecto; **alto** = pequeño y débil; **bajo** = poderoso; **cenital** = distante y objetivo; **holandés** = inquietud o energía cinética [4].
+9. **Color y tono**: esquemas monocromático, análogo, complementario o triádico; el color puede **imponerse a otros métodos** (un vestido verde sobre fondo rojo marca al sujeto). El ojo va a lo más brillante: sujeto iluminado en la oscuridad mantiene el foco; luz y sombra juntas dan mensajes más complejos [4]. Para paletas, ver `profe-diseno-grafico`.
+- **La proporción de pantalla importa**: los retratos se componen mejor en vertical y los paisajes en horizontal, y un cuadro casi cuadrado se compone distinto de uno rectangular [4]. La fuente no da reglas verticales (ver «Adaptar cada guía al formato» y Dudas abiertas).
 
 ## Áreas
 ### Elegir el esquema
@@ -90,7 +103,7 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 
 ### Adaptar cada guía al formato (horizontal, cuadrado, vertical) — reglas para el plugin
 **Formato de origen**: en [2] las guías se dibujan sobre fotos horizontales **3:2** colocadas en un lienzo 9:16. Ningún video muestra la guía en vertical: las reglas de abajo son **derivadas por geometría y convención (mías)**; validarlas con una fuente de foto o cine vertical.
-Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y **recalcularla con la proporción del proyecto**; nunca reutilizar los píxeles de otro formato. Está resuelto en `scripts/guias.py` → `guias/guias-composicion.json` (21 guías × 9 formatos: 16:9, 3:2, 4:3, 5:4, 1:1, 4:5, 3:4, 2:3, 9:16) y un SVG por guía y formato en `guias/svg/`.
+Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y **recalcularla con la proporción del proyecto**; nunca reutilizar los píxeles de otro formato. Está resuelto en `scripts/guias.py` → `guias/guias-composicion.json` (23 guías × 9 formatos: 16:9, 3:2, 4:3, 5:4, 1:1, 4:5, 3:4, 2:3, 9:16) y, bajo pedido, un SVG por guía y formato (`python scripts/guias.py --svg CARPETA`; no se guardan en el repo para no pasar el límite de 200 archivos por skill).
 | Guía | Horizontal (16:9, 3:2) | Cuadrado y 5:4 | Vertical (4:5, 2:3, 9:16) |
 |---|---|---|---|
 | Tercios / rejilla áurea | líneas en 1/3 y 2/3 (0,382 y 0,618) de cada eje | igual | igual |
@@ -109,10 +122,11 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Todo lo libre (marco, líneas guía, curva S, radial) son valores por defecto movibles, no medidas.
 - **Recomponer una foto horizontal a vertical no es recortar al centro**: vuelve a anclar el sujeto a la guía del formato nuevo (p. ej. sobre una vertical de tercios, a la altura del tercio superior, y fuera de la zona que tapa la interfaz).
 - **Zonas seguras en 9:16 (no oficial; fuentes de terceros discrepan)**: dejar libre ≈ 13–14 % arriba y ≈ 13 % (ajustada) a 35 % (conservadora) abajo, ≈ 6 % a los lados y el riel derecho de iconos (≈ 21 % del ancho, mitad inferior). Probar en el móvil antes de publicar.
+- **Guías nuevas desde [4]**: `linea_aurea_horizonte` (horizontal a 0,382 de la altura, para ojos u horizonte) y `headroom_lookroom` (ojos en esa línea, sujeto a 0,382 del lado opuesto a la mirada y más espacio delante) [4]. El triángulo áureo de [4] es la guía `triangulos`. Regla de impares, profundidad, ángulo y color no son geométricos: se ofrecen como notas del plugin.
 - **Autorreferencia**: cada plantilla puede llevar una miniatura de ejemplo para que la persona vea qué es; usar fotos propias o con licencia (las del reel de [2] son de otra persona y no deben empaquetarse en el plugin).
 
 ### Plugin de guías (plantillas superpuestas) — lo aprendido para diseñarlo
-- Plantillas mínimas (21 resueltas en el JSON): tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1], **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado** (eje con bandas laterales) [2].
+- Plantillas mínimas (23 resueltas en el JSON): tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1], **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado** (eje con bandas laterales) [2].
 - Cada guía debe poder verse **sola sobre negro** y **superpuesta sobre la imagen**, con la etiqueta como capa de texto aparte (sirve para hacer reels como [2]).
 - Cada una debe poder **superponerse, moverse y rotarse**; el radial con varios puntos; la espiral con 4 orientaciones (estándar).
 - Mostrar también el vocabulario **punto focal / primer plano / fondo** como ayuda al componer [1].
@@ -152,7 +166,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 ## Dudas abiertas
 - La «sección áurea» de la fuente [1] se explica «en el centro» y se dibuja como una cruz de bandas estrechas, que no coincide con la rejilla áurea habitual (38,2 / 61,8 %). Confirmar con otra fuente.
 - La espiral áurea de [1] no da la proporción ni la construcción exacta.
-- [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] usa fotos reales pero horizontales (3:2) y sin voz. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.
+- [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] y [3] usan fotos reales horizontales (3:2 y 4:3) y sin voz; [4] da teoría con ejemplos de película, todos horizontales. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.
 - Los trazos de [2] y [3] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales. [3] no tiene voz ni explicación: nada de las definiciones sale de esos creadores.
 - Las reglas para vertical, cuadrado y 5:4 son derivadas (geometría y convención), no vistas en ninguna fuente: validar con foto o cine vertical. Las zonas seguras de reels son de fuentes de terceros que discrepan.
 
@@ -160,3 +174,4 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
 - [2] Reel de 24 s: 8 recursos de composición dibujados sobre fotos (espiral, marco, tercios, yuxtaposición, diagonales, líneas guía, punto de fuga, centrado) — archivo · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
 - [3] Dos reels más de composición en 4:3: espacio negativo, primer plano, simetría, contorno del sujeto, marco circular y líneas convergentes —  · `references/lecciones/reels-4x3-espacio-negativo-primer-plano-simetria-contorno.md`
+- [4] Los 9 elementos de la composición en cine (StudioBinder): puntos, líneas, formas, texturas, espacio, profundidad, equilibrio, ángulo, color y tono — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`

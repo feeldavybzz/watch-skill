@@ -12199,6 +12199,892 @@
     }
    }
   },
+  "linea_aurea_horizonte": {
+   "16:9": {
+    "formato": "16:9",
+    "ancho": 1920,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "3:2": {
+    "formato": "3:2",
+    "ancho": 1620,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "4:3": {
+    "formato": "4:3",
+    "ancho": 1440,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "5:4": {
+    "formato": "5:4",
+    "ancho": 1350,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "1:1": {
+    "formato": "1:1",
+    "ancho": 1080,
+    "alto": 1080,
+    "orientacion": "cuadrado",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "4:5": {
+    "formato": "4:5",
+    "ancho": 1080,
+    "alto": 1350,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "3:4": {
+    "formato": "3:4",
+    "ancho": 1080,
+    "alto": 1440,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "2:3": {
+    "formato": "2:3",
+    "ancho": 1080,
+    "alto": 1620,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   },
+   "9:16": {
+    "formato": "9:16",
+    "ancho": 1080,
+    "alto": 1920,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     }
+    ],
+    "meta": {
+     "linea_v": 0.382,
+     "alternativa_v": 0.618,
+     "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción",
+     "origen": "StudioBinder"
+    }
+   }
+  },
+  "headroom_lookroom": {
+   "16:9": {
+    "formato": "16:9",
+    "ancho": 1920,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "3:2": {
+    "formato": "3:2",
+    "ancho": 1620,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "4:3": {
+    "formato": "4:3",
+    "ancho": 1440,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "5:4": {
+    "formato": "5:4",
+    "ancho": 1350,
+    "alto": 1080,
+    "orientacion": "horizontal",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "1:1": {
+    "formato": "1:1",
+    "ancho": 1080,
+    "alto": 1080,
+    "orientacion": "cuadrado",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "4:5": {
+    "formato": "4:5",
+    "ancho": 1080,
+    "alto": 1350,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "3:4": {
+    "formato": "3:4",
+    "ancho": 1080,
+    "alto": 1440,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "2:3": {
+    "formato": "2:3",
+    "ancho": 1080,
+    "alto": 1620,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   },
+   "9:16": {
+    "formato": "9:16",
+    "ancho": 1080,
+    "alto": 1920,
+    "orientacion": "vertical",
+    "primitivas": [
+     {
+      "t": "line",
+      "p": [
+       [
+        0,
+        0.38196601125010515
+       ],
+       [
+        1,
+        0.38196601125010515
+       ]
+      ]
+     },
+     {
+      "t": "line",
+      "p": [
+       [
+        0.38196601125010515,
+        0
+       ],
+       [
+        0.38196601125010515,
+        1
+       ]
+      ]
+     },
+     {
+      "t": "dot",
+      "p": [
+       0.38196601125010515,
+       0.38196601125010515
+      ]
+     },
+     {
+      "t": "poly",
+      "p": [
+       [
+        0.38196601125010515,
+        0.05
+       ],
+       [
+        0.97,
+        0.05
+       ],
+       [
+        0.97,
+        0.95
+       ],
+       [
+        0.38196601125010515,
+        0.95
+       ]
+      ],
+      "closed": true
+     }
+    ],
+    "meta": {
+     "ojos_v": 0.382,
+     "sujeto_u": 0.382,
+     "region": "lookroom (espacio delante de la mirada)",
+     "espejo": "si el sujeto mira a la izquierda, usar u = 0,618",
+     "nota": "headroom mínimo; más espacio delante que detrás",
+     "origen": "StudioBinder"
+    }
+   }
+  },
   "espacio_negativo": {
    "16:9": {
     "formato": "16:9",

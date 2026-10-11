@@ -216,6 +216,17 @@ def g_lineas_convergentes(w, h):
     return prim, {"vertice": list(ap), "nota": "camino que se aleja al centro; en vertical el vértice sube (más recorrido)"}
 
 
+def g_linea_aurea_horizonte(w, h):
+    """Línea horizontal a 0,382 de la altura: lugar ideal para los ojos del sujeto o el horizonte (StudioBinder)."""
+    return [L((0, G1), (1, G1))], {"linea_v": r3(G1), "alternativa_v": r3(G2), "nota": "tomar la altura del cuadro y trazar 1:1,618; vale igual en cualquier proporción"}
+
+
+def g_headroom_lookroom(w, h):
+    """Ojos en la línea áurea, sujeto a 0,382 del lado opuesto a la mirada; la región delante es el lookroom."""
+    prim = [L((0, G1), (1, G1)), L((G1, 0), (G1, 1)), D((G1, G1)), P([(G1, 0.05), (0.97, 0.05), (0.97, 0.95), (G1, 0.95)], True)]
+    return prim, {"ojos_v": r3(G1), "sujeto_u": r3(G1), "region": "lookroom (espacio delante de la mirada)", "espejo": "si el sujeto mira a la izquierda, usar u = 0,618", "nota": "headroom mínimo; más espacio delante que detrás"}
+
+
 def g_marco(w, h):
     o = orient(w, h)
     if o == "horizontal":   # polígono del reel (aprox.), editable
@@ -270,6 +281,7 @@ GUIAS = {
     "tercios": (g_tercios, "reel+estándar"), "yuxtaposicion": (g_yuxtaposicion, "reel"),
     "diagonales": (g_diagonales, "reel"), "lineas_guia": (g_lineas_guia, "reel"),
     "punto_de_fuga": (g_punto_fuga, "reel"), "centrado": (g_centrado, "reel"),
+    "linea_aurea_horizonte": (g_linea_aurea_horizonte, "StudioBinder"), "headroom_lookroom": (g_headroom_lookroom, "StudioBinder"),
     # --- reels 2 y 3 (4:3)
     "espacio_negativo": (g_espacio_negativo, "reel 2"), "primer_plano": (g_primer_plano, "reel 3"),
     "simetria": (g_simetria, "reels 2 y 3"), "contorno_del_sujeto": (g_contorno_sujeto, "reel 2"),
