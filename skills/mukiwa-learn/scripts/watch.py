@@ -65,9 +65,22 @@ def find_download(url, downloads):
     return None
 
 
+VIDEO_EXT = (".mp4", ".mov", ".m4v", ".webm", ".mkv")
+
+
+def find_video(folder):
+    """El video real de una carpeta de descarga (cualquier extensión de video). Una imagen o miniatura nunca cuenta."""
+    try: names = sorted(os.listdir(folder))
+    except OSError: return None
+    mp4 = [n for n in names if n.lower() == "video.mp4"]
+    otros = [n for n in names if n.lower().startswith("video.") and n.lower().endswith(VIDEO_EXT) and not n.startswith("._")]
+    pick = (mp4 or otros or [None])[0]
+    return os.path.join(folder, pick) if pick else None
+
+
 def fetch(url, a, need_video):
     found = find_download(url, a.downloads)
-    if found and (os.path.exists(os.path.join(found, "video.mp4")) or (not need_video and pick_captions(found)[0])):
+    if found and (find_video(found) or (not need_video and pick_captions(found)[0])):
         return found, "reutilizado"
     if not need_video:   # nivel transcript: primero solo subtítulos; sin ellos, el video para transcribir
         folder = grab(url, a, subs_only=True)
@@ -327,7 +340,7 @@ def main():
     if a.engine == "gemini":
         def media():
             if not is_url(a.source): return a.source
-            folder, _ = fetch(a.source, a, need_video=True); return os.path.join(folder, "video.mp4")
+            folder, _ = fetch(a.source, a, need_video=True); return find_video(folder)
         return gemini_engine(a, media)
 
     need_video = a.detail != "transcript" or bool(a.at) or not a.no_whisper
@@ -336,7 +349,7 @@ def main():
         folder, how = fetch(a.source, a, need_video)
         try: info = read_json(os.path.join(folder, "video.info.json"))
         except (OSError, ValueError): info = None
-        video = os.path.join(folder, "video.mp4") if os.path.exists(os.path.join(folder, "video.mp4")) else None
+        video = find_video(folder)
     else:
         video = os.path.abspath(a.source)
         sibling = os.path.dirname(video)
