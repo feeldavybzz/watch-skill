@@ -4,7 +4,7 @@ description: Profesor MUKIWA de diseño gráfico completo, que aprende de las re
 metadata:
   nicho: diseno-grafico
   herramientas: "Illustrator, Photoshop, Figma, Procreate"
-  lecciones: 10
+  lecciones: 11
   actualizado: "2026-10-11"
 ---
 
@@ -37,7 +37,10 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 - **Validación de palabras clave**: lee cada atributo en voz alta y pide un sí o un no [1].
 - **Para sitios web y interfaces**, el brief es **el mapa de cinco preguntas** (15–20 min, antes de Figma): 1) ¿qué tiene que lograr el sitio entero? (una sola cosa); 2) ¿quién entra y desde dónde (dispositivo, preguntas en la cabeza)?; 3) ¿cuál es la acción de cada página?; 4) en la home, ¿qué ve primero, segundo y tercero?; 5) ¿cuál es el recorrido completo hasta esa acción? Empieza con **una frase** de qué es y qué hace el sitio [4].
 
+- **Estrategia de marca antes de lo visual (4 pasos, en orden)** [11]: 1) **UVP** (qué te hace distinto) y **declaración de posicionamiento** (cómo debe percibirte el mercado), en una o dos frases cada una; 2) **público objetivo** en tarjeta: edad y perfil, necesidades/preferencias, comportamientos (una tarjeta por grupo); 3) **voz y personalidad**: tono, lenguaje con frases de ejemplo y propósito; 4) pasar cada palabra clave a los cinco elementos visuales y justificar con una emoción. Formato de entrega rápido: tarjetas de 3 columnas, tipografía sans, esquinas redondeadas [11].
+
 ### Logos e identidad visual
+- **Identidad = cinco elementos visuales** (logo, tipografía, paleta, imagen/estilo fotográfico, elementos gráficos) más la voz y los mensajes; cada uno deriva de las mismas palabras clave de la estrategia [11].
 - Sigue "Cómo trabajar" hasta tener un boceto curado; solo entonces se vectoriza [1].
 - **Los logos se construyen siempre en vectores** (nunca en mapa de bits); la mayoría empezó como **formas básicas combinadas** [2].
 - Construcción, retícula, versiones y manual de marca: sin fuentes todavía.
@@ -60,7 +63,8 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 - **Tres funciones**: dar identidad, informar y guiar [6]. **Colores de marca** (se puede ampliar la paleta) y **semánticos** (verde = correcto, rojo = error o campo incompleto, amarillo = advertencia; con tono alineado a la marca pero reconocible) [6][8].
 - **Sistema**: color principal + secundario + semánticos, con tonos del 0 al 100 (Material) u **opacidades** de un mismo color (10 %, 50 %, 70 %) [8].
 - **Accesibilidad = contraste**: texto normal **AA 4.5:1** (AAA 7:1); texto grande AA 3:1 (AAA 4.5:1); componentes de interfaz 3:1 (WebAIM) [6].
-- Teoría del color y paletas de marca: sin fuentes todavía.
+- **Color de marca por emoción del público**, no solo por teoría: color de base + acento de acción (ej. azul de confianza con rojo puntual en promos y llamadas a la acción, como American Express) [11]. Las asociaciones (rojo = energía, azul = confianza) son afirmaciones del creador, no datos [11].
+- Teoría del color a fondo y paletas de marca con valores: sin fuentes todavía (la guía de color de [11] es de pago y no se abrió).
 
 ### Composición, jerarquía y retícula
 - **Composición** = cómo organizas los elementos en un espacio; que cada decisión sea intencional [9].
@@ -111,6 +115,9 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 ### Pinterest u otra plataforma de referencias
 - Para armar el moodboard; la plataforma da igual [1].
 
+### Sonido de marca (opcional)
+- Un sonido corto de marca (como los de Intel o Netflix) para podcasts, anuncios y notificaciones añade una capa a la identidad; el creador no da método [11].
+
 ## Errores comunes
 - Abrir el software antes de tener concepto o un mapa de páginas → diseño sin fundamento y rondas extra de feedback [1][4].
 - Copiar el briefing de otro → te sobran preguntas y te faltan las importantes [1].
@@ -145,6 +152,7 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 - Portfolio: qué mostrar y cómo presentarlo está en `portfolio-marca-personal`, en su archivo de lo aprendido [10].
 
 ## Dudas abiertas
+- [11] Es introductorio: no se ve a nadie diseñar, no hay valores ni método de investigación; la promesa «dominar en 8 minutos» es de marketing. Las tarjetas son de una plataforma de terceros; su guía de color y los 60 prompts son de pago.
 - Vectorizado, sistema de marca, manual, color a fondo, retícula de redes y editorial: sin fuentes con valores.
 - [3] Es una conversación de dos voces sobre una web de un tercero; los precios y el contador son de la fecha de grabación; el puntaje 8,5 es opinión.
 - [5][7] No dan nombres de parejas tipográficas probadas ni medidas de interlineado o tracking; el Notion de «Dónde encontrar tipografías» de [7] no se pudo abrir.
@@ -165,3 +173,4 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 - [8] El curso de UX/UI más corto del mundo: user flow, arquitectura, wireframes, sistema de diseño y principios (Eze Cichello) — https://youtu.be/_nLCvJaw1gw · `references/lecciones/ux-ui-curso-mas-corto-eze-cichello.md`
 - [9] El curso de composición más corto del mundo: jerarquía, grillas, tercios y espacio en blanco (Eze Cichello) — https://youtu.be/wEocy9cz3yw · `references/lecciones/curso-composicion-mas-corto-eze-cichello.md`
 - [10] Portfolio de diseño: qué mostrar y cómo presentarlo — https://youtu.be/AKNNaLZhIAI · `references/lecciones/portfolio-de-diseno-profesional.md`
+- [11] Identidad de marca en 8 minutos: estrategia a cinco elementos, con Tesla (Satori Graphics) — https://youtu.be/8U8_WbgO9hg · `references/lecciones/identidad-de-marca-estrategia-a-cinco-elementos-satori-graphics.md`
