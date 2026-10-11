@@ -33,6 +33,9 @@
 - Una **lista de planos** del combate sin guantes de *Sherlock Holmes* (14:53), con columnas **tamaño de plano, ángulo y fps**: shot 5 «Crowd Shots» MCU eye level **24 fps**; shot 6 «Sherlock Single – Slow Mo» CU **240 fps**; shot 7 «Throws Handkerchief – Slow Mo» CU **800 fps**; shot 8 «Hits Fighter – Slow Mo» MCU **800 fps**; shot 9 «Discombobulate – Slow Mo» WS **800 fps**; las filas de cámara lenta están marcadas con una barra roja.
 - Referencia a un video de *Shutter Speed* (rótulo «Check description for shutter speed video», 7:57).
 
+- **Ejemplos de película vistos** (rótulo pequeño abajo a la izquierda): *Succession* (película casera con look de bajo fps), *Austin Powers* (las cabezas de las fembots, con Jay Roach en entrevista a 6:21), *Chungking Express* (Wong Kar-wai: figuras con estelas), *Domino* y *Gladiator* (step printing), un videoclip de Pop Smoke y Travis Scott («Gatti»), *Matrix* (bala en el aire), *Zombieland* (créditos), *Spider-Man* y *Old School* (cámara lenta), *Vivir al límite*, *300* (rampas de velocidad), *Creed* (pelea con la marca «0:08 · 12 of 12 HBO Boxing») y *Sherlock Holmes*; deportes (partido de la NFL) y un festival de música como ejemplos de alto frame rate.
+- Un **plano de lentes 17 / 24 / 50 mm** (0:14) viene del episodio anterior y no se explica aquí.
+
 ## Cruce teoría ↔ práctica
 - La **lista de planos** muestra una escena donde se mezclan 24 fps y velocidades de 240 a 800 fps; es el uso «correcto» de mezclar (para cámara lenta). **Cálculo mío (no dicho)**: reproduciendo a 24 fps, 240 fps = **10× más lento** y 800 fps ≈ **33× más lento**.
 - **Imprecisión en el audio**: dice que *Domino* imprimió cada fotograma «**cuatro veces más**» para igualar 24; con 6 fps eso da 6 × 4 = 24 solo si cada fotograma se imprime **cuatro veces en total**. Se anota para no repetir el error.

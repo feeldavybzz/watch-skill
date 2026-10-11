@@ -5,7 +5,7 @@
 - **Fecha**: 2026-10-11
 - **Tipo de "oídos"**: audio transcrito con faster-whisper (≈1 810 palabras) y cotejado con los subtítulos manuales. Whisper falló en nombres propios del oficio: «Boca» = **bokeh**, «Bboards» = **bead boards**, «Cucularis» = **cucoloris**, «Kino flows» = **Kino Flos**. Se usan los subtítulos.
 - **Aporte del creador**: ALTO. Sin promoción salvo suscribirse y el software del canal; la descripción lista **unos 20 canales de YouTube** (Creative Path Films, Curtis Judd, FilmSkills, Grip Tips, Pull My Focus…) como créditos de los clips de equipo, además de la hoja de referencia.
-- **Confianza**: alta en definiciones y cifras (dichas y mostradas); media en películas de ejemplo.
+- **Confianza**: alta en definiciones y cifras (dichas y mostradas; las 12 hojas vistas y los gráficos de kelvin y exposición ampliados); media en películas de ejemplo.
 
 ## Qué NO es este video
 - No enseña **cómo iluminar un sujeto ni un fondo** (tres puntos, relaciones de luz): es la parte 2, no analizada.

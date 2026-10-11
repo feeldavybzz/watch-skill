@@ -4,7 +4,7 @@
 - **Fuente**: https://youtu.be/iW0bKUfvH2c · «The 180 Degree Rule in Film (and How to Break The Line)» · StudioBinder · 5:44 · inglés.
 - **Fecha**: 2026-10-11
 - **Tipo de "oídos"**: audio transcrito con faster-whisper (≈760 palabras) y cotejado con los subtítulos manuales: coinciden salvo nombres (whisper: «Ryan O'Neill», «Tatum O'Neill»; subtítulos: **Ryan O'Neal** y **Tatum O'Neal**, de *Paper Moon*). Se usan los subtítulos.
-- **Aporte del creador**: ALTO para su duración. Sin promoción salvo suscribirse y su software de lista de planos.
+- **Aporte del creador**: ALTO para su duración. Sin promoción salvo suscribirse y su software de lista de planos. **Corrección del 2026-10-11**: la primera versión de «lo que se ve» se escribió sin haber visto las hojas (las imágenes no cargaron); se rehízo después de abrir las 11 hojas.
 - **Confianza**: alta en el método; media en identificar películas sin rótulo (algunas no tenían título visible).
 
 ## Qué NO es este video
@@ -22,14 +22,16 @@
 - [4:34–4:56] La regla es como cualquier otra: **te protege**, pero romperla con seguridad da resultados únicos. «**Tienes que conocer las reglas antes de romperlas.**» Planea los quiebres de línea con la **lista de planos** y el storyboard.
 
 ## Práctica (lo que se ve)
-- Tres capítulos con rótulo: **1 Follow the rule · 2 Break the rule · 3 Bend the rule**.
-- **Plano de planta** (*floor plan*) en el lado derecho: dos círculos amarillos (sujetos) sobre una línea blanca punteada vertical, un ícono de cámara verde y otro rosa/rojo (se cruza de uno a otro lado); se ve la cámara pasar de un lado a otro de la línea (4:18–4:25).
-- Una línea amarilla punteada que une las miradas sobre los rostros (1:19, 1:26), y las comparaciones lado a lado **«Shot 1 (camera right) / Shot 2 (camera left)»** con las dos tomas de *Heat*, de *La hora 25* y de *Malditos bastardos*; en el de *Heat* con la cámara cruzando se lee «**Shot 1 (in front of line) / Shot 2 (breaking line)**» (4:31).
-- Una escena de **teatro** con actores sobre un escenario y la línea punteada al borde del escenario (1:47) para el caso de más de dos personas.
-- En el cierre aparece la herramienta de lista de planos (arrastrar el guion, columnas y storyboard) y una invitación a otro video sobre **romper la cuarta pared**.
+- **Apertura** (0:00–0:30): un montaje de planos de **conversaciones filmadas (≈ *Matrix*, una escena en penumbra con un portátil y planos de rostros)** que termina en el gran vestíbulo de *El resplandor* con una mesa larga y un personaje a cada lado.
+- **Plano de planta (*floor plan*)** a la derecha: una **línea blanca punteada** vertical con **dos círculos amarillos** (los sujetos) y un ícono de cámara. En *El resplandor* (0:30–0:38) la cámara **verde** queda de un lado de la línea y luego pasa a **rojo** al cruzarla; en *Paper Moon* (2:53) la cámara está **magenta** a un lado y **gris** al otro; en *Heat* (4:18–4:25) pasa de **verde a magenta** (se ve la cámara cruzar la línea).
+- **Los tres capítulos** (0:44): «**1 FOLLOW THE RULE · 2 BREAK THE RULE · 3 BEND THE RULE**» como rótulo y, abajo a la izquierda en todo el video, un indicador **1 · 2 · 3** que marca en qué parte va (los rótulos dicen «FOLLOW RULE», «BREAK RULE» y «BEND RULE»).
+- **Seguir la regla**: planos de *Heat* con **una línea amarilla punteada que une las miradas** (1:19, 1:26) y la comparación **«SHOT 1 (CAMERA RIGHT) / SHOT 2 (CAMERA LEFT)»** (1:20 y 1:26). Para más de dos personas (1:38–1:52): una **escena de teatro** con actores sobre un escenario y una **línea amarilla punteada al borde del escenario** (1:47).
+- **Romperla** (1:55–3:07): una tarjeta «**2. BREAKING THE RULE**»; *La hora 25* con «**SHOT 1 (CAMERA LEFT) / SHOT 2 (CAMERA LEFT)**» (2:25, las dos miradas hacia la izquierda de cámara) y una línea amarilla desde los ojos de Norton; *Paper Moon* (2:29–3:05) con la mesa de la cafetería, la mirada marcada con una línea amarilla (2:43), el **plano de planta** (2:53) y la comparación «**SHOT 1 / SHOT 2**».
+- **Doblarla** (3:07–4:35): una tarjeta «**NEUTRAL SHOT**» (3:22) con un ejemplo de *Tiburón* (3:19–3:26, el capitán en el barco y un plano posterior) y la escena de *Malditos bastardos* (3:30–3:43), con «**SHOT 1 (CAMERA RIGHT) / SHOT 2 (CAMERA LEFT)**»; y la escena de *Heat* en la librería (3:47–4:31), con la mirada amarilla (4:11–4:14), el plano de planta y la comparación «**SHOT 1 (IN FRONT OF LINE) / SHOT 2 (BREAKING LINE)**» (4:31).
+- **Cierre** (4:35–5:35): planos de películas de contraste (≈ *Réquiem por un sueño*, *Se7en*), después una pantalla del software de lista de planos: «**Drag & Drop your script file anywhere, or browse**» (4:57), la **lista de planos** con columnas **Camera, Shot Size, Shot Type, Movement y Equipment** (5:00), un **storyboard** con dibujos (5:05) y ejemplos de *Salvar al soldado Ryan*, *Amélie*, *Deadpool* (que habla a cámara) y *El caballero oscuro* y *La chaqueta metálica* para el próximo video: «**Check out our video on breaking the fourth wall**» (5:35).
 
 ## Cruce teoría ↔ práctica
-- Todo lo dicho tiene su demostración en pantalla (planta + comparaciones). Lo que **solo se ve**: el plano de planta con la cámara cruzando la línea en *Heat* y el caso de la escena con las miradas en el mismo sentido (*La hora 25*).
+- Todo lo dicho tiene su demostración en pantalla (planta + comparaciones). Lo que **solo se ve**: el plano de planta con la cámara cruzando la línea (*El resplandor*, *Paper Moon*, *Heat*) y el ejemplo de *Tiburón* para el plano neutral (la voz solo habla de *Malditos bastardos*).
 - La explicación de la voz «romper = caos» se ilustra con dos usos distintos: **caos** (*La hora 25*) y **cambio gradual de poder** (*Paper Moon*), no es solo «error».
 
 ## Receta paso a paso

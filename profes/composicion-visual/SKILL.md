@@ -4,8 +4,8 @@ description: Profesor MUKIWA de composición visual (foto, video, cine, reels y 
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 4
-  actualizado: "2026-10-10"
+  lecciones: 7
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Composición visual
@@ -76,6 +76,13 @@ Se combinan en cada plano; planea con un storyboard para usar cada uno con inten
 - Divide el cuadro en tres columnas y tres filas; las cuatro líneas y sus cruces son los lugares fuertes [1].
 - **Un horizonte va sobre la línea horizontal superior o la inferior**; con dos personajes, **uno a cada lado de las intersecciones** [4 (e-book)].
 - Ejemplo de aplicación: dos objetos grandes sobre las líneas verticales, una nube arriba y algo pequeño al frente [1].
+
+### Jerarquía, grilla y espacio en blanco en piezas gráficas [7]
+- **Primero jerarquía, luego reglas**: decide el protagonista y el recorrido del ojo (título → subtítulo → imagen → cuerpo → llamado a la acción) con tamaño, grosor, color y contraste; si todo pesa igual, el ojo se pierde [7].
+- **Grilla mínima**: márgenes y **cuatro columnas equidistantes** bastan para una pieza prolija; en una serie de posteos, la grilla es lo que da consistencia [7].
+- **Tercios en piezas gráficas**: 3×3; lo importante en las **intersecciones («puntos de oro»)**; en un cartel, **título en el tercio superior y figura en los dos inferiores** [7]. En los carteles de ejemplo, varios elementos fuertes caen sobre la línea y no en la intersección: úsalo como guía, no como medida [7].
+- **Espacio en blanco**: da respiro, enfatiza lo importante y evita lo apretado; las marcas limpias (Apple) lo usan eligiendo no mostrar más [7].
+- **Rompe la regla con intención**: una composición centrada o una grilla rota pueden crear tensión si sabes que existen [7].
 
 ### Rejilla áurea y espiral
 - **Línea áurea para ojos u horizonte**: a ≈ 0,382 de la altura (medida ≈ 0,378 sobre un plano de cine) [4]. **Espiral sobre un plano 16:9** [4]: se dibuja sobre un **rectángulo áureo de 1,62:1 centrado, con ≈ 7 % de margen a cada lado y ≈ 2,8 % arriba y abajo** (no estirado), y el **ojo** cae en el cruce de las figuras (≈ 0,69; 0,715) [4].
@@ -170,6 +177,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 
 ## Dudas abiertas
 - La **espiral** se dibuja de dos maneras en las fuentes: rectángulo áureo **centrado e inset** [4] y estirada hasta los bordes del cuadro [2]. El plugin usa la primera por defecto (medida) y ofrece la segunda.
+- [7] es un curso de diseño gráfico (carteles y web) sin medidas: no da columnas ni márgenes en cifras y no adapta la grilla a vertical.
 - [4] (guía escrita y e-book) son del mismo creador; el e-book no se descargó (pide correo) y puede traer más reglas.
 - La «sección áurea» de la fuente [1] se explica «en el centro» y se dibuja como una cruz de bandas estrechas, que no coincide con la rejilla áurea habitual (38,2 / 61,8 %). Confirmar con otra fuente.
 - La espiral áurea de [1] no da la proporción ni la construcción exacta.
@@ -182,3 +190,4 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [2] Reel de 24 s: 8 recursos de composición dibujados sobre fotos (espiral, marco, tercios, yuxtaposición, diagonales, líneas guía, punto de fuga, centrado) — archivo · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
 - [3] Dos reels más de composición en 4:3: espacio negativo, primer plano, simetría, contorno del sujeto, marco circular y líneas convergentes —  · `references/lecciones/reels-4x3-espacio-negativo-primer-plano-simetria-contorno.md`
 - [4] Los 9 elementos de la composición en cine (StudioBinder): puntos, líneas, formas, texturas, espacio, profundidad, equilibrio, ángulo, color y tono — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
+- [7] El curso de composición más corto del mundo: jerarquía, grillas, tercios y espacio en blanco (Eze Cichello) — https://youtu.be/wEocy9cz3yw · `references/lecciones/curso-composicion-mas-corto-eze-cichello.md`

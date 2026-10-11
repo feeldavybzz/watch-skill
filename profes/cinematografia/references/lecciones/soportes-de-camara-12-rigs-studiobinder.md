@@ -4,8 +4,8 @@
 - **Fuente**: https://youtu.be/heJ9hWNb10g · «Camera Gear: Every Type of Camera Rig Explained [The Shot List, Ep 5]» · StudioBinder · 24:15 · inglés. Guía escrita: https://www.studiobinder.com/blog/types-of-camera-rigs-in-film/ (abierta, sin registro).
 - **Fecha**: 2026-10-11
 - **Tipo de "oídos"**: audio transcrito con faster-whisper (≈2 470 palabras) y cotejado con los subtítulos manuales: coinciden salvo «a.k.a. the zolly» (whisper lo oyó «the dolly»); se usan los subtítulos.
-- **Aporte del creador**: ALTO. Sin promoción salvo la de su software de lista de planos (gratis) y suscribirse; la descripción enlaza una hoja de referencia y una guía escrita (ambas bit.ly a su sitio). La hoja de referencia es un storyboard compartido en su app (no la abrí).
-- **Confianza**: alta en definiciones y usos; media en qué película es cada plano (se lee del rótulo pequeño en pantalla).
+- **Aporte del creador**: ALTO. Sin promoción salvo la de su software de lista de planos (gratis) y suscribirse; la descripción enlaza una hoja de referencia (un storyboard compartido en su app que no abrí) y una guía escrita (abierta, sin registro).
+- **Confianza**: alta en definiciones y usos; media en qué película es cada plano (se lee del rótulo pequeño en pantalla). **Corrección del 2026-10-11**: la primera versión de «lo que se ve» se escribió sin haber visto las hojas (las imágenes no cargaron); se rehízo después de abrir las 12 hojas.
 
 ## Qué NO es este video
 - No da cifras: ni pesos, alturas, alcances, precios ni velocidades. La guía escrita tampoco (solo dice «incredibly expensive» de las grúas).
@@ -30,10 +30,14 @@
 - [23:20–23:55] Cierra con la lista de planos de StudioBinder (los 12 soportes están ahí) y la hoja de referencia de la descripción; siguiente episodio: movimiento de cámara.
 
 ## Práctica (lo que se ve)
-- Cada soporte lleva un **rótulo con ícono y nombre** en la esquina inferior izquierda más una **tarjeta de película** (título y año) en la derecha; los rótulos de dolly incluyen sub-tipos «Slider» y «Zolly» (12:14 y 12:29) y entre los ejemplos de cenital hay un plano de mesa visto desde arriba (alguien desarmando una cámara, con crédito de YouTube, 10:49).
-- Aparecen **fotos del detrás de cámaras** del propio soporte (rig de hombro, grúa en set con croma verde, dolly con cámara de cine, carcasa en una piscina, una cámara de fotos con trípode sujeta con ventosas a la ventana de un auto —montaje de bajo costo, 15:57— y una cámara de cine con ventosas sobre el capó, 23:08).
-- La lista de planos de StudioBinder («Camera Gear Cheatsheet») muestra una tarjeta por soporte con una silueta dibujada y su captura de película (se leen Shot 1 handheld, 2 tripod, 3 pedestal, 5 overhead, 6 dolly, 7 stabilizer, 8 snorricam, 10 drone y 11 motion control). No se leen valores en ella.
-- Pedestal: un diagrama (trípode con cámara que sube y baja frente a una figura) aparece a 5:09.
+- Cada soporte lleva un **rótulo abajo a la izquierda con ícono y nombre** (HANDHELD, TRIPOD, PEDESTAL, CRANE / JIB, OVERHEAD, DOLLY, STABILIZER, SNORRICAM, VEHICLE MOUNT, DRONE, MOTION CONTROL, UNDERWATER HOUSING) y, abajo a la derecha, el título de la película con el año en letra muy pequeña. Los de dolly suman «SLIDER» (12:14, un pianista con velas) y «ZOLLY» (12:29, *Event Horizon*).
+- **Ejemplos de película que se leen en pantalla**: en mano → *Salvar al soldado Ryan*, *Joker*, *Avengers: Endgame*; trípode → *El gran hotel Budapest*, *El padrino II*, *Hugo*; pedestal → *Get Out* y *Malditos bastardos*; grúa → *La La Land*, *Cadena perpetua* y *Spectre*; cenital → *Lady Bird*, *Los Tenenbaums*, *Blade Runner 2049* y *Casino*; dolly → *Oldboy*; estabilizador → *Parásitos* y *El resplandor*; Snorricam → *¿Qué pasó ayer? Parte III*, *Talladega Nights* y dos escenas de un rostro en primer plano (14:56 y 15:14) cuyo título no se lee, que la voz atribuye a *Réquiem por un sueño*; vehículo → *Misión imposible: Nación secreta*, *Apocalypse Now*; dron → *Misión imposible: Nación secreta*, *Skyfall* y *Bohemian Rhapsody* (con un dron visible en cuadro en 17:26); motion control → *Breaking Bad* (no se lee el título completo), *Zodiac*, *La red social* y una escena de sofá; carcasa submarina → *Dunkerque*, *Rocketman* y *Moonlight*.
+- **Detrás de cámaras** incluidos en el video: una cámara de cine en una grúa con una pantalla verde, una cámara en una carcasa sobre un brazo junto a una piscina (21:11), un operador con rig de hombro o *easy rig* caminando por un callejón (1:50), una cámara con ventosas sobre un auto (23:08, marca PROAIM) y otra pequeña con trípode sujeta a una ventanilla (15:57), un dolly con steadicam y croma verde (12:03) y una **mesa de trabajo vista desde arriba con una cámara desarmada** como ejemplo de cenital (10:49).
+- **Lista de planos de StudioBinder** («Camera Gear Cheatsheet», 1:35 y 21:54): cuadrícula de tarjetas «Shot 1 … Shot 11» con una **silueta violeta** del plano arriba y el fotograma real al lado; se leen: Shot 1 Handheld, Shot 2 Tripod, Shot 3 Pedestal, Shot 4 Crane / Jib, Shot 5 Overhead, Shot 6 Dolly, Shot 7 Stabilizer, Shot 8 Snorricam, Shot 10 Drone, Shot 11 Motion Control (Shot 9, vehicle mount, y el 12 submarino se ven solo en parte). No trae valores.
+- **Pedestal** (5:09): un diagrama de un trípode con la cámara sobre un poste y una figura de pie, con líneas punteadas del encuadre.
+- **Motion control** (19:26–19:51): una pantalla dividida con la misma escena repetida arriba y abajo (los gemelos), directores en el set y un plano de *La red social*.
+- **Práctica final** (22:02–22:58): tomas de *Dunkerque* con rótulos HANDHELD, UNDERWATER HOUSING y VEHICLE MOUNT; luego, pantalla con una página de blog de StudioBinder (con una foto de un lente de 35 mm) y las pantallas de suscripción y de StudioBinder.
+- Las **intros** muestran escenas de *Interstellar* y *Gravity* (esta con el rótulo «DEEP FOCUS» de un episodio anterior).
 
 ## Cruce teoría ↔ práctica
 - Coinciden los 12 nombres de la voz con los 12 rótulos. La voz menciona **slider, cable cam y zolly** como variantes del dolly; solo slider y zolly tienen rótulo propio. La guía escrita **no menciona** la cable cam ni el zolly y llama al último soporte «waterproof housing».
@@ -53,7 +57,7 @@
 ## Límites
 - Sin cifras (pesos, alturas, precios, velocidades) en el video ni en la guía; sin ejemplos verticales.
 - No abrí la hoja de referencia (storyboard compartido en la app de StudioBinder).
-- La respuesta completa del reto de *Dunkerque* se vio solo en hojas.
+- La respuesta completa del reto de *Dunkerque* se vio solo en hojas; el rótulo de *Breaking Bad* se lee a medias.
 
 ## Conecta con
 - [[movimientos-de-camara-15-studiobinder]] (qué cuenta cada movimiento)
