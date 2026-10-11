@@ -79,6 +79,8 @@
   "Líneas convergentes: dos curvas desde el borde inferior al centro; en vertical el vértice sube.",
   "Líneas guía: del borde inferior al punto de interés (cruce de tercios superior derecho por defecto), recta y curva editables.",
   "Todo lo libre (marco, líneas guía, curva S, radial) son valores por defecto movibles, no medidas.",
+  "Los formatos verticales (4:5, 3:4, 2:3, 9:16) comparten las mismas reglas geométricas; lo que distingue al 9:16 es la interfaz de la plataforma encima, que es una capa aparte (zonas seguras, `en_area_segura`) y no cambia la composición.",
+  "Las reglas son por familia de proporción (horizontal, cuadrado, vertical), no por formato; el plugin detecta la familia con la proporción del proyecto y permite forzar otra por guía.",
   "Al cambiar de formato, recalcular la guía con la proporción nueva; no estirar los píxeles de la guía anterior."
  ],
  "guias": {

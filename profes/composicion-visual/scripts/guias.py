@@ -303,6 +303,21 @@ def resolver(nombre, fmt):
     return {"formato": fmt, "ancho": w, "alto": h, "orientacion": orient(w, h), "primitivas": prim, "meta": meta}
 
 
+def en_area_segura(res, zona="ajustada"):
+    """Reubica una guía ya resuelta dentro del área útil de un formato con interfaz encima (reels 9:16).
+    u' = lados + u*(1 - 2*lados);  v' = arriba + v*(1 - arriba - abajo). Las guías se siguen definiendo sobre el cuadro
+    completo (es el video real); esta capa es opcional y es de la plataforma, no de la composición."""
+    z = ZONAS_SEGURAS.get(res["formato"], {}).get(zona)
+    if not z: return res
+    a, b, c = z["arriba"], z["abajo"], z["lados"]
+    def m(q): return [r3(c + q[0] * (1 - 2 * c)), r3(a + q[1] * (1 - a - b))]
+    prim = []
+    for p in res["primitivas"]:
+        q = dict(p); q["p"] = m(p["p"]) if p["t"] == "dot" else [m(x) for x in p["p"]]; prim.append(q)
+    out = dict(res); out["primitivas"] = prim; out["area"] = zona
+    return out
+
+
 def todo():
     return {
         "version": 1,
@@ -329,6 +344,8 @@ REGLAS = [
     "Líneas convergentes: dos curvas desde el borde inferior al centro; en vertical el vértice sube.",
     "Líneas guía: del borde inferior al punto de interés (cruce de tercios superior derecho por defecto), recta y curva editables.",
     "Todo lo libre (marco, líneas guía, curva S, radial) son valores por defecto movibles, no medidas.",
+    "Los formatos verticales (4:5, 3:4, 2:3, 9:16) comparten las mismas reglas geométricas; lo que distingue al 9:16 es la interfaz de la plataforma encima, que es una capa aparte (zonas seguras, `en_area_segura`) y no cambia la composición.",
+    "Las reglas son por familia de proporción (horizontal, cuadrado, vertical), no por formato; el plugin detecta la familia con la proporción del proyecto y permite forzar otra por guía.",
     "Al cambiar de formato, recalcular la guía con la proporción nueva; no estirar los píxeles de la guía anterior.",
 ]
 

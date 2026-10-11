@@ -63,6 +63,20 @@ class GuiasTests(unittest.TestCase):
         self.assertAlmostEqual(r["meta"]["sujeto_u"], 0.382, places=3)
         self.assertEqual(len(guias.GUIAS), 23)
 
+    def test_area_segura_9x16(self):
+        r = guias.resolver("tercios", "9:16")
+        s = guias.en_area_segura(r, "conservadora")
+        v = [p["p"][0][1] for p in s["primitivas"] if p["t"] == "line" and p["p"][0][1] == p["p"][1][1]]
+        self.assertTrue(all(0.14 <= x <= 0.65 for x in v), v)   # dentro de 14 %..65 %
+        self.assertEqual(s["area"], "conservadora")
+        # un formato sin interfaz definida no cambia
+        self.assertEqual(guias.en_area_segura(guias.resolver("tercios", "4:5"))["primitivas"], guias.resolver("tercios", "4:5")["primitivas"])
+
+    def test_los_verticales_comparten_reglas(self):
+        a = guias.resolver("punto_de_fuga", "4:5")["meta"]["punto"]; b = guias.resolver("punto_de_fuga", "9:16")["meta"]["punto"]
+        self.assertEqual(a, b)
+        self.assertEqual(guias.resolver("yuxtaposicion", "4:5")["meta"]["eje"], guias.resolver("yuxtaposicion", "9:16")["meta"]["eje"])
+
     def test_svg_valido(self):
         s = guias.svg(guias.resolver("centrado", "4:5"))
         self.assertTrue(s.startswith("<svg") and s.rstrip().endswith("</svg>"))
