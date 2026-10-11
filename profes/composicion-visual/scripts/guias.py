@@ -21,7 +21,7 @@ PHI = (1 + 5 ** 0.5) / 2
 G1, G2 = 1 / (PHI ** 2), 1 / PHI          # 0.382, 0.618
 
 # nombre: (ancho, alto) de referencia en píxeles
-FORMATOS = {"16:9": (1920, 1080), "3:2": (1620, 1080), "4:3": (1440, 1080), "5:4": (1350, 1080), "1:1": (1080, 1080),
+FORMATOS = {"2.39:1": (1920, 803), "16:9": (1920, 1080), "3:2": (1620, 1080), "4:3": (1440, 1080), "5:4": (1350, 1080), "1:1": (1080, 1080),
             "4:5": (1080, 1350), "3:4": (1080, 1440), "2:3": (1080, 1620), "9:16": (1080, 1920)}
 ORIGEN_REEL = "3:2 (reel 1, sobre lienzo 9:16) y 4:3 a pantalla completa (reels 2 y 3)"
 
@@ -70,10 +70,11 @@ _ESP, _OJO = _espiral_canonica()
 
 
 def espiral(w, h, flipx=False, flipy=False, modo=None):
-    """modo 'estirada' (rellena el cuadro) o 'proporcional' (rectángulo áureo completo pegado a un borde).
-    Por defecto: estirada si la proporción es cercana a φ (o 1/φ); proporcional si no (1:1, 5:4, 4:5)."""
+    """modo 'proporcional' (rectángulo áureo 1:1,618 completo, centrado, con márgenes) o 'estirada' (rellena el cuadro).
+    Por defecto proporcional, salvo que la proporción esté a ±5 % de φ (o 1/φ). Evidencia: StudioBinder dibuja la espiral sobre
+    un rectángulo áureo de 1,62:1 centrado en un cuadro 16:9, con ≈7 % de margen a cada lado (no estirado)."""
     a = w / h
-    cerca = abs(a - PHI) / PHI < 0.15 or abs(1 / a - PHI) / PHI < 0.15
+    cerca = abs(a - PHI) / PHI < 0.05 or abs(1 / a - PHI) / PHI < 0.05
     modo = modo or ("estirada" if cerca else "proporcional")
     vertical = a < 1
     pts = [(x / PHI, y) for x, y in _ESP]; ojo = (_OJO[0] / PHI, _OJO[1])   # u,v en el rectángulo áureo horizontal
@@ -81,9 +82,10 @@ def espiral(w, h, flipx=False, flipy=False, modo=None):
         pts = [(y, x) for x, y in pts]; ojo = (ojo[1], ojo[0])
     if modo == "proporcional":   # escalar uniforme para que quepa, pegado arriba/izquierda
         rw, rh = (PHI, 1.0) if not vertical else (1.0, PHI)
-        k = min(w / rw, h / rh)           # px por unidad
+        k = min(w / rw, h / rh) * 0.944   # px por unidad; 0,944 = lo medido en StudioBinder (rectángulo áureo algo menor que el cuadro)
         sx, sy = k * rw / w, k * rh / h    # fracción del cuadro que ocupa el rectángulo áureo
-        pts = [(x * sx, y * sy) for x, y in pts]; ojo = (ojo[0] * sx, ojo[1] * sy)
+        ox, oy = (1 - sx) / 2, (1 - sy) / 2   # centrado
+        pts = [(ox + x * sx, oy + y * sy) for x, y in pts]; ojo = (ox + ojo[0] * sx, oy + ojo[1] * sy)
     if flipx: pts = [(1 - x, y) for x, y in pts]; ojo = (1 - ojo[0], ojo[1])
     if flipy: pts = [(x, 1 - y) for x, y in pts]; ojo = (ojo[0], 1 - ojo[1])
     return [P([(r3(x), r3(y)) for x, y in pts]), D((r3(ojo[0]), r3(ojo[1])))], {"modo": modo, "ojo": [r3(ojo[0]), r3(ojo[1])]}
@@ -331,8 +333,9 @@ def todo():
 
 
 REGLAS = [
-    "Tercios y rejilla áurea: líneas en 1/3, 2/3 (0,382 y 0,618) de cada eje; valen igual en cualquier proporción.",
-    "Espiral áurea: el lado largo del rectángulo áureo sigue el lado largo del cuadro (en vertical se gira 90°). Modo «estirada» si la proporción está a ±15 % de φ (16:9, 3:2, 2:3, 9:16); modo «proporcional» (rectángulo áureo entero pegado a un borde) en 1:1, 5:4 y 4:5. Siempre 4 orientaciones.",
+    "Tercios y rejilla áurea: líneas en 1/3, 2/3 (0,382 y 0,618) de cada eje; valen igual en cualquier proporción. Un horizonte va sobre la línea horizontal superior o inferior de los tercios; dos personajes, uno a cada lado de las intersecciones.",
+    "Espiral áurea: el lado largo del rectángulo áureo sigue el lado largo del cuadro (en vertical se gira 90°). Por defecto modo «proporcional» (rectángulo 1:1,618 entero y centrado, con márgenes: así lo dibuja StudioBinder sobre 16:9, ≈7 % por lado); modo «estirada» (rellena el cuadro) solo si la proporción está a ±5 % de φ o por elección del usuario. Siempre 4 orientaciones (ojo en cualquier esquina).",
+    "Las guías se calculan sobre el área de imagen, sin barras negras: un plano 2,39:1 dentro de un 16:9 usa la proporción 2,39:1 (en el triángulo áureo los pies de las perpendiculares cambian de ≈0,24 en 16:9 a ≈0,153 en 2,35:1; medido sobre un plano de *Pulp Fiction* y reproducido por `triangulos`).",
     "Diagonales y triángulos: de esquina a esquina; el ángulo cambia con la proporción (29° en 16:9, 61° en 9:16) y las perpendiculares se recalculan en píxeles.",
     "Yuxtaposición: línea vertical en horizontal y cuadrado; línea horizontal en vertical (4:5, 2:3, 9:16). Variante 0,382/0,618.",
     "Punto de fuga: al centro en horizontal; en vertical sube a 0,382 para dar más suelo a las líneas.",

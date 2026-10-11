@@ -31,8 +31,12 @@ class GuiasTests(unittest.TestCase):
 
     def test_espiral_modo_y_orientacion(self):
         m = lambda f: guias.resolver("espiral_aurea", f)["meta"]["modo"]
-        self.assertEqual([m("16:9"), m("3:2"), m("9:16")], ["estirada"] * 3)
-        self.assertEqual([m("1:1"), m("5:4"), m("4:5")], ["proporcional"] * 3)
+        # evidencia (StudioBinder): rectángulo áureo centrado, no estirado, sobre 16:9
+        self.assertEqual([m("16:9"), m("3:2"), m("9:16"), m("1:1"), m("5:4"), m("4:5"), m("2.39:1")], ["proporcional"] * 7)
+        # el rectángulo áureo queda centrado con ≈7 % de margen a cada lado en 16:9
+        pts = guias.resolver("espiral_aurea", "16:9")["primitivas"][0]["p"]
+        self.assertAlmostEqual(min(p[0] for p in pts), min(p[0] for p in pts), places=6)
+        xs = [p[0] for p in pts]; self.assertGreater(min(xs), 0.05); self.assertLess(max(xs), 0.95)
         # el ojo de la espiral cae dentro del cuadro y cerca de la esquina inferior izquierda en horizontal
         ojo = guias.resolver("espiral_aurea", "3:2")["meta"]["ojo"]
         self.assertLess(ojo[0], 0.5); self.assertGreater(ojo[1], 0.5)
@@ -76,6 +80,15 @@ class GuiasTests(unittest.TestCase):
         a = guias.resolver("punto_de_fuga", "4:5")["meta"]["punto"]; b = guias.resolver("punto_de_fuga", "9:16")["meta"]["punto"]
         self.assertEqual(a, b)
         self.assertEqual(guias.resolver("yuxtaposicion", "4:5")["meta"]["eje"], guias.resolver("yuxtaposicion", "9:16")["meta"]["eje"])
+
+    def test_triangulos_reproducen_el_plano_de_pulp_fiction(self):
+        # medido en pantalla sobre un plano ≈2,35:1: pies de las perpendiculares en (0,152; 0,846) y (0,849; 0,16)
+        prim, _ = guias.g_triangulos_metodo(2350, 1000)
+        f1, f2 = prim[2]["p"][1], prim[3]["p"][1]
+        self.assertAlmostEqual(f1[0], 0.152, delta=0.01); self.assertAlmostEqual(f1[1], 0.846, delta=0.01)
+        self.assertAlmostEqual(f2[0], 0.849, delta=0.01)
+        prim2, _ = guias.g_triangulos_metodo(1920, 1080)   # en 16:9 son otros puntos: se recalcula
+        self.assertAlmostEqual(prim2[2]["p"][1][0], 0.24, delta=0.005)
 
     def test_svg_valido(self):
         s = guias.svg(guias.resolver("centrado", "4:5"))
