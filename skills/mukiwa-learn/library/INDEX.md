@@ -4,6 +4,7 @@
 ## cinematografia
 
 - [Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6)](cinematografia/movimientos-de-camara-15-studiobinder.md) — Un curso en video recorre cada movimiento de cámara con su definición, su uso narrativo y ejemplos de película: plano estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y movimiento aleatorio; y termina combinándolos en una escena. Es una fuente con teoría hablada y práctica en pantalla.
+- [Los 9 ángulos o alturas de cámara y lo que comunica cada uno (StudioBinder, Shot List ep. 3)](cinematografia/nueve-angulos-de-camara-studiobinder.md) — Un curso en video recorre nueve ángulos o alturas de cámara (bajo, alto, cenital, holandés, a la altura de los ojos, del hombro, de la cadera, de la rodilla y a ras de suelo), con su definición, su efecto en el público y ejemplos de película. Complementa los movimientos de cámara: el ángulo decide cómo percibimos al sujeto.
 
 ## composicion
 
