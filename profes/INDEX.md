@@ -2,7 +2,7 @@
 
 Mini skills por nicho que crecen con cada video analizado (ver skills/mukiwa-learn/references/profesores.md).
 
-- **composicion-visual** — 3 lecciones · Premiere Pro, DaVinci Resolve, Photoshop, Procreate · actualizado 2026-10-10
+- **composicion-visual** — 4 lecciones · Premiere Pro, DaVinci Resolve, Photoshop, Procreate · actualizado 2026-10-10
 - **diseno-grafico** — 1 lección · Illustrator, Photoshop, Figma, Procreate · actualizado 2026-10-10
 - **editor-asistente** — 2 lecciones · Premiere Pro, DaVinci Resolve, Claude Code, Remotion · actualizado 2026-10-10
-- **motion-graphics** — 1 lección · After Effects · actualizado 2026-10-10
+- **motion-graphics** — 2 lecciones · After Effects · actualizado 2026-10-10

@@ -43,6 +43,19 @@ class GuiasTests(unittest.TestCase):
         w, h = r["ancho"], r["alto"]
         self.assertAlmostEqual(pts[0][0] * w, pts[0][1] * h, delta=0.5)
 
+    def test_guias_de_los_reels_2_y_3_y_formato_4x3(self):
+        for n in ("espacio_negativo", "primer_plano", "simetria", "contorno_del_sujeto", "marco_circular", "lineas_convergentes"):
+            self.assertIn(n, guias.GUIAS)
+        self.assertIn("4:3", guias.FORMATOS); self.assertIn("3:4", guias.FORMATOS)
+        self.assertAlmostEqual(guias.resolver("primer_plano", "16:9")["meta"]["linea_v"], 0.667, places=3)
+        self.assertEqual(guias.resolver("espacio_negativo", "9:16")["meta"]["region_vacia_v"], 0.60)
+        # el contorno del sujeto conserva su forma en píxeles en todos los formatos
+        ratios = []
+        for f in ("16:9", "4:3", "9:16"):
+            r = guias.resolver("contorno_del_sujeto", f); pts = r["primitivas"][0]["p"]
+            ratios.append(((max(p[0] for p in pts) - min(p[0] for p in pts)) * r["ancho"]) / ((max(p[1] for p in pts) - min(p[1] for p in pts)) * r["alto"]))
+        self.assertAlmostEqual(ratios[0], ratios[2], delta=0.05)
+
     def test_svg_valido(self):
         s = guias.svg(guias.resolver("centrado", "4:5"))
         self.assertTrue(s.startswith("<svg") and s.rstrip().endswith("</svg>"))

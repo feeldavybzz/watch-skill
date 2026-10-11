@@ -1,15 +1,15 @@
 ---
 name: profe-composicion-visual
-description: Profesor MUKIWA de composición visual (foto, video, cine, reels y piezas gráficas), que aprende de las referencias en video que Bryan envía. Sabe qué esquema de composición usar y cómo colocar el punto focal, el primer plano y el fondo: regla de los tercios, rejilla áurea, triángulos, V, diagonal, radial, curva S, pirámide, L y espiral áurea, y cómo adaptarlos a 16:9, 5:4, 1:1, 4:5 y 9:16, en Premiere Pro, DaVinci Resolve, Photoshop y Procreate. Usar cuando Bryan pida componer o encuadrar una imagen, foto, plano de video o pieza gráfica, aplicar la regla de los tercios, la proporción áurea, diagonales, triángulos, curvas o espirales, elegir una guía de composición, recomponer un encuadre para otro formato (16:9, 5:4, 1:1, 4:5, 9:16), o crear plantillas y guías de composición para un plugin, o pregunte cómo se hace algo de composición visual.
+description: Profesor MUKIWA de composición visual (foto, video, cine, reels y piezas gráficas), que aprende de las referencias en video que Bryan envía. Sabe qué esquema de composición usar y cómo colocar el punto focal, el primer plano y el fondo: regla de los tercios, rejilla áurea, triángulos, V, diagonal, radial, curva S, pirámide, L, espiral áurea, marco dentro del marco, yuxtaposición, líneas guía, punto de fuga, centrado, simetría, espacio negativo y primer plano, y cómo adaptarlos a 16:9, 4:3, 3:2, 5:4, 1:1, 4:5, 3:4, 2:3 y 9:16, en Premiere Pro, DaVinci Resolve, Photoshop y Procreate. Usar cuando Bryan pida componer o encuadrar una imagen, foto, plano de video o pieza gráfica, aplicar la regla de los tercios, la proporción áurea, diagonales, triángulos, curvas o espirales, elegir una guía de composición, recomponer un encuadre para otro formato (16:9, 5:4, 1:1, 4:5, 9:16), o crear plantillas y guías de composición para un plugin, o pregunte cómo se hace algo de composición visual.
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 2
+  lecciones: 3
   actualizado: "2026-10-10"
 ---
 
 # Profe: Composición visual
-> Elige una guía de composición según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 14 recursos de composición (10 de una clase de arte y 4 más vistos sobre fotos reales en un reel) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5.
+> Elige una guía de composición según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 20 recursos de composición (10 de una clase de arte y 10 vistos sobre fotos reales en tres reels) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -43,7 +43,12 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 | Encerrar al sujeto, dar profundidad | **Marco dentro del marco**: una abertura natural (ventana, arco, estructura) enmarca la escena; la guía es un polígono libre que calca la abertura [2] |
 | Mostrar contraste entre dos zonas | **Yuxtaposición**: una línea divisoria separa dos zonas opuestas (sombra y sol, quieto y movimiento) [2] |
 | Llevar la mirada al fondo | **Líneas guía**: rectas y curvas (vías, caminos, barandas) que conducen al punto de interés [2] |
-| Simetría y autoridad | **Centrado**: el sujeto al centro, enmarcado por dos líneas verticales [2] |
+| Simetría y autoridad | **Centrado**: el sujeto al centro, enmarcado por dos líneas verticales [2]; **simetría**: un eje único al centro (reflejos izquierda/derecha; en agua, eje horizontal) [3] |
+| Aire y calma alrededor del sujeto | **Espacio negativo**: región vacía (≈ 65 % superior del cuadro) con el sujeto en el tercio inferior [3] |
+| Dar capas y profundidad | **Primer plano**: una línea ondulada en el tercio inferior (≈ 0,667) separa flores u hojas cercanas del fondo [3] |
+| Resaltar la forma de un sujeto central | **Contorno del sujeto**: silueta dibujada y centrada (en [3], un monte) con la etiqueta debajo [3] |
+| Encerrar con una abertura redonda | **Marco circular** (puerta lunar con base) [3] |
+| Camino que se aleja | **Líneas convergentes**: dos curvas desde el borde inferior hasta el centro (≈ 77 % de la altura) [3] |
 
 ### Cómo mostrar un recurso en un reel (patrón de [2])
 - **Fórmula por recurso (≈ 2–3 s)**: guía en líneas blancas sobre negro (≈ 0,7 s) → entra la foto con la guía encima (≈ 1 s) → la guía se desvanece y queda la foto limpia [2].
@@ -51,7 +56,8 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 - Elige fotos donde el sujeto cae de verdad sobre la guía: espiral sobre la figura, línea sobre el contraste, vías sobre la curva [2].
 - Estructura de 24 s medida: gancho con título y espiral (1–3 s), 8 recursos de ≈ 2–3 s, cierre con la foto oscurecida y el usuario grande como llamado a seguir [2].
 - **Lienzo 9:16 (720×1280)** con foto 3:2 centrada: banda de **720 × ≈ 483 px**, filas 391–873 (≈ 30,5 % de negro arriba y ≈ 31,7 % abajo) sobre fondo negro [2].
-- Estilo visto (≈): líneas blancas finas (≈ 2–3 px a 720 px), etiquetas en sans negrita blanca, título en serif con la palabra clave en amarillo, marca de agua con el usuario [2].
+- Estilo visto (≈): líneas blancas finas (≈ 2–3 px a 720 px), etiquetas en sans negrita blanca, título en serif con la palabra clave en amarillo, marca de agua con el usuario [2]. En [3]: etiquetas en **serif cursiva o fina en minúsculas**, líneas de ≈ 1–3 px, rejilla de tercios más fina que se **desvanece**, etiqueta de tercios en las celdas (diagonal, fila central o una esquina) [3].
+- **Formatos de origen**: [2] muestra fotos 3:2 sobre un lienzo 9:16; [3] (dos reels) las muestra en **4:3 a pantalla completa** (720×540 y 960×720), sin franjas negras. Son géneros de fotografía horizontal: en vertical hay que recalcular (reglas abajo).
 
 ### Tercios
 - Divide el cuadro en tres columnas y tres filas; las cuatro líneas y sus cruces son los lugares fuertes [1].
@@ -84,7 +90,7 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 
 ### Adaptar cada guía al formato (horizontal, cuadrado, vertical) — reglas para el plugin
 **Formato de origen**: en [2] las guías se dibujan sobre fotos horizontales **3:2** colocadas en un lienzo 9:16. Ningún video muestra la guía en vertical: las reglas de abajo son **derivadas por geometría y convención (mías)**; validarlas con una fuente de foto o cine vertical.
-Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y **recalcularla con la proporción del proyecto**; nunca reutilizar los píxeles de otro formato. Está resuelto en `scripts/guias.py` → `guias/guias-composicion.json` (15 guías × 7 formatos: 16:9, 3:2, 5:4, 1:1, 4:5, 2:3, 9:16) y un SVG por guía y formato en `guias/svg/`.
+Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y **recalcularla con la proporción del proyecto**; nunca reutilizar los píxeles de otro formato. Está resuelto en `scripts/guias.py` → `guias/guias-composicion.json` (21 guías × 9 formatos: 16:9, 3:2, 4:3, 5:4, 1:1, 4:5, 3:4, 2:3, 9:16) y un SVG por guía y formato en `guias/svg/`.
 | Guía | Horizontal (16:9, 3:2) | Cuadrado y 5:4 | Vertical (4:5, 2:3, 9:16) |
 |---|---|---|---|
 | Tercios / rejilla áurea | líneas en 1/3 y 2/3 (0,382 y 0,618) de cada eje | igual | igual |
@@ -93,7 +99,12 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 | Yuxtaposición | línea **vertical** al centro | vertical | línea **horizontal** (arriba/abajo); variante 0,382/0,618 |
 | Punto de fuga | al centro (v = 0,5) | al centro | sube a **v = 0,382**: más suelo para las líneas |
 | Centrado | banda de ≈7 % del ancho alrededor del eje vertical | igual | igual; eje horizontal opcional |
-| Marco dentro del marco | polígono libre calcado sobre la abertura | rectángulo con margen 8 % del lado corto | igual que cuadrado |
+| Marco dentro del marco | polígono libre calcado sobre la abertura; variante circular (radio ≈ 24 % del ancho) | rectángulo con margen 8 % del lado corto | igual que cuadrado; circular con radio ≈ 38 % del ancho |
+| Espacio negativo | región vacía del 65 % superior, sujeto en la franja inferior | igual | región del 60 %; en 9:16 el pie queda bajo la interfaz de reels: subir el sujeto |
+| Primer plano | línea ondulada en v ≈ 0,667 | igual | v ≈ 0,72 |
+| Simetría | eje vertical al centro | igual | igual; eje horizontal opcional para reflejos |
+| Contorno del sujeto | silueta editable, ≈ 55 % del ancho | igual | ≈ 80 % del ancho, con la forma escalada de manera uniforme en píxeles |
+| Líneas convergentes | dos curvas al centro (vértice en v ≈ 0,78) | igual | el vértice sube a v ≈ 0,62 |
 | Líneas guía | del borde inferior al cruce de tercios superior derecho | igual | igual, más largas (más recorrido) |
 - Todo lo libre (marco, líneas guía, curva S, radial) son valores por defecto movibles, no medidas.
 - **Recomponer una foto horizontal a vertical no es recortar al centro**: vuelve a anclar el sujeto a la guía del formato nuevo (p. ej. sobre una vertical de tercios, a la altura del tercio superior, y fuera de la zona que tapa la interfaz).
@@ -101,11 +112,11 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - **Autorreferencia**: cada plantilla puede llevar una miniatura de ejemplo para que la persona vea qué es; usar fotos propias o con licencia (las del reel de [2] son de otra persona y no deben empaquetarse en el plugin).
 
 ### Plugin de guías (plantillas superpuestas) — lo aprendido para diseñarlo
-- Plantillas mínimas: tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1], **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado** (eje con bandas laterales) [2].
+- Plantillas mínimas (21 resueltas en el JSON): tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1], **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado** (eje con bandas laterales) [2].
 - Cada guía debe poder verse **sola sobre negro** y **superpuesta sobre la imagen**, con la etiqueta como capa de texto aparte (sirve para hacer reels como [2]).
 - Cada una debe poder **superponerse, moverse y rotarse**; el radial con varios puntos; la espiral con 4 orientaciones (estándar).
 - Mostrar también el vocabulario **punto focal / primer plano / fondo** como ayuda al componer [1].
-- Validar cada guía en los siete formatos del JSON (revisión visual hecha con `guias.py --preview`).
+- Validar cada guía en los nueve formatos del JSON (revisión visual hecha con `guias.py --preview`).
 
 ## Por herramienta
 ### Premiere Pro
@@ -142,9 +153,10 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - La «sección áurea» de la fuente [1] se explica «en el centro» y se dibuja como una cruz de bandas estrechas, que no coincide con la rejilla áurea habitual (38,2 / 61,8 %). Confirmar con otra fuente.
 - La espiral áurea de [1] no da la proporción ni la construcción exacta.
 - [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] usa fotos reales pero horizontales (3:2) y sin voz. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.
-- Los trazos de [2] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales.
+- Los trazos de [2] y [3] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales. [3] no tiene voz ni explicación: nada de las definiciones sale de esos creadores.
 - Las reglas para vertical, cuadrado y 5:4 son derivadas (geometría y convención), no vistas en ninguna fuente: validar con foto o cine vertical. Las zonas seguras de reels son de fuentes de terceros que discrepan.
 
 ## Fuentes
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
 - [2] Reel de 24 s: 8 recursos de composición dibujados sobre fotos (espiral, marco, tercios, yuxtaposición, diagonales, líneas guía, punto de fuga, centrado) — archivo · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
+- [3] Dos reels más de composición en 4:3: espacio negativo, primer plano, simetría, contorno del sujeto, marco circular y líneas convergentes —  · `references/lecciones/reels-4x3-espacio-negativo-primer-plano-simetria-contorno.md`

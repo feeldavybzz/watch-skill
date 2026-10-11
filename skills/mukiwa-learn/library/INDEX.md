@@ -5,6 +5,7 @@
 
 - [Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral)](composicion/composicion-9-esquemas-clase-de-arte.md) — Una clase de arte dibuja nueve guías de composición en una cuadrícula 3×3 y practica dos más (L y curva S): sirve como vocabulario base de plantillas para colocar el foco, el primer plano y el fondo.
 - [Reel de 24 s: 8 recursos de composición dibujados sobre fotos (espiral, marco, tercios, yuxtaposición, diagonales, líneas guía, punto de fuga, centrado)](composicion/reel-8-recursos-composicion-guias-sobre-fotos.md) — Un reel de @jxframes enseña cada recurso de composición con la misma fórmula: primero se dibuja la guía en líneas blancas sobre negro, luego aparece la foto con la guía encima y la etiqueta integrada en la geometría. No hay voz que explique: solo música.
+- [Dos reels más de composición en 4:3: espacio negativo, primer plano, simetría, contorno del sujeto, marco circular y líneas convergentes](composicion/reels-4x3-espacio-negativo-primer-plano-simetria-contorno.md) — Dos reels de fotografía (@_david.frames y Beixin) repiten la fórmula del reel anterior en formato 4:3 a pantalla completa, y añaden recursos nuevos: espacio negativo, primer plano, simetría, contorno del sujeto, marco circular (puerta lunar) y líneas que convergen en un camino.
 
 ## diseno-grafico
 

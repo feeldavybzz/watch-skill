@@ -21,9 +21,9 @@ PHI = (1 + 5 ** 0.5) / 2
 G1, G2 = 1 / (PHI ** 2), 1 / PHI          # 0.382, 0.618
 
 # nombre: (ancho, alto) de referencia en píxeles
-FORMATOS = {"16:9": (1920, 1080), "3:2": (1620, 1080), "5:4": (1350, 1080), "1:1": (1080, 1080),
-            "4:5": (1080, 1350), "2:3": (1080, 1620), "9:16": (1080, 1920)}
-ORIGEN_REEL = "3:2"   # formato en el que el reel de @jxframes dibuja y muestra las guías
+FORMATOS = {"16:9": (1920, 1080), "3:2": (1620, 1080), "4:3": (1440, 1080), "5:4": (1350, 1080), "1:1": (1080, 1080),
+            "4:5": (1080, 1350), "3:4": (1080, 1440), "2:3": (1080, 1620), "9:16": (1080, 1920)}
+ORIGEN_REEL = "3:2 (reel 1, sobre lienzo 9:16) y 4:3 a pantalla completa (reels 2 y 3)"
 
 ZONAS_SEGURAS = {   # 9:16, fracciones del alto/ancho. No oficial: fuentes de terceros discrepan.
     "9:16": {"ajustada": {"arriba": 0.13, "abajo": 0.13, "lados": 0.06},
@@ -94,7 +94,7 @@ def g_tercios(w, h):
     pts = [(u, v) for u in (1 / 3, 2 / 3) for v in (1 / 3, 2 / 3)]
     prim = [L((1 / 3, 0), (1 / 3, 1)), L((2 / 3, 0), (2 / 3, 1)), L((0, 1 / 3), (1, 1 / 3)), L((0, 2 / 3), (1, 2 / 3))]
     prim += [D(p) for p in pts]
-    return prim, {"etiquetas": [[1 / 6, 1 / 6], [0.5, 0.5], [5 / 6, 5 / 6]], "nota": "etiqueta en celdas de la diagonal, como el reel"}
+    return prim, {"etiquetas_diagonal": [[1 / 6, 1 / 6], [0.5, 0.5], [5 / 6, 5 / 6]], "etiquetas_fila_central": [[1 / 6, 0.5], [0.5, 0.5], [5 / 6, 0.5]], "nota": "la etiqueta va en las celdas: en diagonal (reel 1) o en la fila central (reel 2)"}
 
 
 def g_aurea(w, h):
@@ -166,6 +166,56 @@ def g_yuxtaposicion(w, h):
     return [L((0.5, 0), (0.5, 1))], {"eje": "vertical", "nota": "en horizontal y cuadrado se divide izquierda/derecha (≈0,51 en el reel); alternativa 0,382/0,618"}
 
 
+def g_espacio_negativo(w, h):
+    """Región vacía que se enmarca: en el reel, el 65 % superior del cuadro con el sujeto en el tercio inferior."""
+    v = 0.65 if orient(w, h) != "vertical" else 0.60
+    return [P([(0.0, 0.0), (1.0, 0.0), (1.0, v), (0.0, v)], True)], {"region_vacia_v": v, "sujeto": "en la franja inferior", "nota": "el sujeto ocupa el tercio inferior; en reels 9:16 el pie queda bajo la interfaz: subir el sujeto o reducir la región"}
+
+
+def g_primer_plano(w, h):
+    """Línea ondulada que separa el primer plano (flores, hojas) del fondo."""
+    v = 0.667 if orient(w, h) != "vertical" else 0.72
+    pts = [(r3(i / 96), r3(v + 0.014 * math.sin(i * 0.22) + 0.007 * math.sin(i * 0.57 + 1))) for i in range(97)]
+    return [P(pts)], {"linea_v": v, "nota": "ocupa el tercio inferior (≈0,667); en vertical ≈0,72; la forma es libre"}
+
+
+def g_simetria(w, h):
+    return [L((0.5, 0), (0.5, 1))], {"eje": "vertical", "nota": "eje único al centro (reflejo izquierda/derecha); para reflejos en agua añadir eje horizontal en v = 0,5"}
+
+
+def g_contorno_sujeto(w, h):
+    """Silueta del sujeto centrada (en el reel, una montaña): polígono libre, se calca sobre el sujeto real."""
+    pts = [(0.225, 0.47), (0.31, 0.38), (0.40, 0.29), (0.47, 0.265), (0.50, 0.26), (0.53, 0.265), (0.60, 0.30), (0.69, 0.38), (0.77, 0.46), (0.50, 0.50)]
+    k = 1.0 if orient(w, h) != "vertical" else 1.45   # en vertical el sujeto ocupa más del ancho
+    s = 1080 * (k * w / 1920) / h   # escala uniforme en píxeles respecto a la silueta canónica en 16:9
+    pts = [(r3(0.5 + (x - 0.5) * k), r3(0.40 + (y - 0.40) * s)) for x, y in pts]
+    return [P(pts, True)], {"etiqueta_debajo": [0.5, 0.58], "nota": "silueta de ejemplo, centrada; ancho ≈55 % del cuadro (≈80 % en vertical); se edita punto a punto sobre el sujeto"}
+
+
+def g_marco_circular(w, h):
+    """Marco circular tipo puerta lunar con base: círculo de ≈48 % del ancho (horizontal) o 76 % (vertical)."""
+    k = 0.24 if orient(w, h) != "vertical" else 0.38
+    r_px = k * w
+    cx, cy = 0.5, 0.42
+    pts = [(r3(cx + (r_px * math.cos(2 * math.pi * i / 72)) / w), r3(cy + (r_px * math.sin(2 * math.pi * i / 72)) / h)) for i in range(73)]
+    return [P(pts, True)], {"radio_fraccion_del_ancho": k, "nota": "círculo con el radio calculado en píxeles; si sale del cuadro bajar el centro o reducir el radio"}
+
+
+def g_lineas_convergentes(w, h):
+    """Dos curvas que parten del borde inferior y convergen en el centro (un camino que se aleja)."""
+    ap = (0.5, 0.78 if orient(w, h) != "vertical" else 0.62)
+    prim = []
+    for u0 in (0.23, 0.77):
+        pts = []
+        for i in range(25):
+            s = i / 24
+            u = (1 - s) ** 2 * u0 + 2 * (1 - s) * s * (u0 + (ap[0] - u0) * 0.35) + s ** 2 * ap[0]
+            v = (1 - s) ** 2 * 1.0 + 2 * (1 - s) * s * (1.0 - (1.0 - ap[1]) * 0.15) + s ** 2 * ap[1]
+            pts.append((r3(u), r3(v)))
+        prim.append(P(pts))
+    return prim, {"vertice": list(ap), "nota": "camino que se aleja al centro; en vertical el vértice sube (más recorrido)"}
+
+
 def g_marco(w, h):
     o = orient(w, h)
     if o == "horizontal":   # polígono del reel (aprox.), editable
@@ -220,11 +270,16 @@ GUIAS = {
     "tercios": (g_tercios, "reel+estándar"), "yuxtaposicion": (g_yuxtaposicion, "reel"),
     "diagonales": (g_diagonales, "reel"), "lineas_guia": (g_lineas_guia, "reel"),
     "punto_de_fuga": (g_punto_fuga, "reel"), "centrado": (g_centrado, "reel"),
+    # --- reels 2 y 3 (4:3)
+    "espacio_negativo": (g_espacio_negativo, "reel 2"), "primer_plano": (g_primer_plano, "reel 3"),
+    "simetria": (g_simetria, "reels 2 y 3"), "contorno_del_sujeto": (g_contorno_sujeto, "reel 2"),
+    "marco_circular": (g_marco_circular, "reel 3"), "lineas_convergentes": (g_lineas_convergentes, "reel 3"),
     # --- de la clase de arte y estándar
     "rejilla_aurea": (g_aurea, "estándar"), "triangulos": (g_triangulos, "clase de arte"),
     "piramide": (g_piramide, "clase de arte"), "v": (g_v, "clase de arte"), "radial": (g_radial, "clase de arte"),
     "curva_s": (g_curva_s, "clase de arte"), "l": (g_l, "clase de arte"),
 }
+REEL14 = ["espacio_negativo", "primer_plano", "simetria", "contorno_del_sujeto", "marco_circular", "lineas_convergentes"]
 REEL8 = ["espiral_aurea", "marco_en_el_marco", "tercios", "yuxtaposicion", "diagonales", "lineas_guia", "punto_de_fuga", "centrado"]
 
 
@@ -255,7 +310,11 @@ REGLAS = [
     "Yuxtaposición: línea vertical en horizontal y cuadrado; línea horizontal en vertical (4:5, 2:3, 9:16). Variante 0,382/0,618.",
     "Punto de fuga: al centro en horizontal; en vertical sube a 0,382 para dar más suelo a las líneas.",
     "Centrado: banda de ≈7 % del ancho alrededor del eje vertical; eje horizontal opcional.",
-    "Marco dentro del marco: polígono libre calcado sobre la abertura; por defecto un rectángulo con margen del 8 % del lado corto.",
+    "Marco dentro del marco: polígono libre calcado sobre la abertura; por defecto un rectángulo con margen del 8 % del lado corto; variante circular (puerta lunar) con radio calculado en píxeles.",
+    "Espacio negativo: región vacía del 65 % superior (60 % en vertical) con el sujeto en la franja inferior; en reels 9:16 el pie queda bajo la interfaz.",
+    "Primer plano: línea ondulada en el tercio inferior (≈0,667; ≈0,72 en vertical).",
+    "Simetría: eje vertical al centro; en reflejos añadir eje horizontal. Contorno del sujeto: silueta editable centrada.",
+    "Líneas convergentes: dos curvas desde el borde inferior al centro; en vertical el vértice sube.",
     "Líneas guía: del borde inferior al punto de interés (cruce de tercios superior derecho por defecto), recta y curva editables.",
     "Todo lo libre (marco, líneas guía, curva S, radial) son valores por defecto movibles, no medidas.",
     "Al cambiar de formato, recalcular la guía con la proporción nueva; no estirar los píxeles de la guía anterior.",
@@ -281,7 +340,7 @@ def svg(res, stroke="#fff", fondo="#000", ancho_trazo=2.0):
     return "\n".join(out)
 
 
-def preview(path, nombres, formatos=("16:9", "3:2", "5:4", "1:1", "4:5", "9:16"), celda=210, titulo=True):
+def preview(path, nombres, formatos=("16:9", "3:2", "4:3", "5:4", "1:1", "4:5", "3:4", "9:16"), celda=210, titulo=True):
     from PIL import Image, ImageDraw
     pad = 8; lab = 118 if titulo else 0
     W = lab + len(formatos) * (celda + pad); H = 24 + len(nombres) * (celda + pad)
