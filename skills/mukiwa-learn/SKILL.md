@@ -10,9 +10,9 @@ description: Ver y analizar videos o audio (link o archivo) de edición, motion,
 2. Identificar las herramientas realmente disponibles. En Claude Code local usar terminal y archivos locales; en un entorno remoto no asumir control del Mac ni herramientas device_*. Python del venv: `~/.venvs/watch-skill/bin/python` si existe (en el disco externo el venv no arranca).
 3. Correr, con la pregunta de Bryan tal cual y comillas en cada argumento:
    `python3 scripts/watch.py "LINK-O-ARCHIVO" --question "PREGUNTA"`
-   - `--detail transcript|efficient|balanced|full`: solo texto (no baja el video si hay subtítulos) / rápido (≤50 capturas por escena) / por defecto (≤100) / máximo (≤300, mucho costo de imágenes).
+   - `--detail transcript|efficient|balanced|full`: solo texto (baja el video para transcribir el audio) / rápido (≤50 capturas por escena) / por defecto (≤100) / máximo (≤300, mucho costo de imágenes).
    - `--start` y `--end` para enfocar un tramo; `--at 4:32,13:11` para capturas exactas a 1280 px.
-   - Reutiliza descargas por id del video. Texto: subtítulos en idioma original primero; sin subtítulos, faster-whisper en la Mac (`--no-whisper` lo desactiva).
+   - Reutiliza descargas por id del video. Texto: **el audio se transcribe siempre** con faster-whisper en la Mac (`--whisper-model tiny|base|small|medium`, por defecto small); los subtítulos del video quedan aparte en `transcript_subtitulos.md` para cotejar y solo sirven de respaldo (`--no-whisper` los usa en vez del audio). Si el informe dice «no se escuchó el audio», dilo así.
    - Fija sola capturas del gancho (videos ≤3 min) y de los momentos en que el presentador señala algo ("fíjate", "como ves"). `--no-hook`, `--no-cues` los desactivan.
    - Si la descarga falla, el script imprime `CAUSA[...]` y `HAZ:`: decírselo a Bryan tal cual. Instagram que pide sesión: mukiwa-grab reintenta solo con la sesión de Chrome de Bryan (permiso permanente, solo instagram.com; imprime `SESION[chrome]`). Para cualquier otro sitio, `--cookies` solo con permiso explícito de Bryan en esa descarga; si no, plan B «Para analizar».
 4. Leer `informe.md` de la carpeta de trabajo: abrir TODAS las hojas de contacto y TODAS las capturas fijas, leer la transcripción. Si hace falta más detalle en un momento, volver a correr con `--at` o `--start/--end` (reutiliza la descarga).

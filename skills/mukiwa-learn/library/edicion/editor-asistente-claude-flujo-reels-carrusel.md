@@ -3,7 +3,7 @@
 
 - **Fuente**: https://youtu.be/viztypMn7D0 · «Cómo editar videos con Claude Opus 5.5 | Skill Gratis» · canal Melina Blanco | Agentes IA y Automatizaciones · 20:26
 - **Fecha**: 2026-10-10
-- **Tipo de "oídos"**: subtítulos automáticos de YouTube en español (idioma original), leídos como texto; no se escuchó el audio. Tienen errores («Cloud» = Claude, «Day de Open II» = DevDay de OpenAI).
+- **Tipo de "oídos"**: audio transcrito en la Mac con faster-whisper (small, 4601 palabras) y cotejado con los subtítulos automáticos de YouTube (4689). Coinciden en el contenido; ambos escriben «Cloud» donde ella dice Claude (así suena en su voz) y «Day de» por DevDay. No es una escucha humana: no capta tono ni música.
 - **Confianza**: media en el flujo (se ve en pantalla); baja en los criterios de edición, porque nunca se abre la skill ni se enseñan parámetros.
 
 ## Qué NO es este video
@@ -50,6 +50,6 @@
 - Idea para MUKIWA: la pregunta «copia a un creador» es lo que ya hace esta skill de análisis: un reel de referencia → estilo.
 
 ## Límites
-- Evidencia: transcripción completa (subtítulos automáticos) y 87 capturas de 0:00 a 20:26 (hueco máximo 30,7 s); vi 2 capturas completas y leí el resumen de Claude en pantalla. No vi cada segundo ni escuché el audio.
+- Evidencia: transcripción completa del audio (whisper local) y 87 capturas de 0:00 a 20:26 (hueco máximo 30,7 s); vi 2 capturas completas y leí el resumen de Claude en pantalla. No vi cada segundo.
 - La skill y el prompt no aparecen: no se pueden extraer sus reglas.
 - Tiempos y consumo de tokens son lo que dice ella, en su cuenta.

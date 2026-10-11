@@ -8,7 +8,7 @@
 
 Motor local (por defecto, nada sale de la Mac salvo la descarga):
   1. Descarga con mukiwa-grab (reutiliza lo ya bajado) o usa el archivo local.
-  2. Texto: subtítulos del video (idioma original primero); si no hay, faster-whisper en la Mac.
+  2. Texto: el AUDIO se transcribe siempre en la Mac (faster-whisper); los subtítulos del video son respaldo y se guardan aparte para cotejar.
   3. Capturas según el nivel de detalle, repartidas por todo el rango, sin casi-duplicados.
   4. Capturas fijas a 1280 px en: --at, los primeros 3 s si es un video corto (gancho) y los
      momentos en que el presentador señala algo ("fíjate", "como ves"...).
@@ -134,21 +134,37 @@ def local(a, source_label, video, folder, info):
     # 1. Texto
     transcript = out / "transcript.md"; text_from = None
     caps, why = pick_captions(folder, a.lang) if folder else (None, None)
-    if caps:
-        r = run(HERE / "ingest_transcript.py", caps, "--out", transcript)
-        if r.returncode == 0: text_from = f"subtítulos {os.path.basename(caps)} — {why}"
-        else: problems.append("No se pudo leer los subtítulos: " + r.stderr.strip()[-300:])
-    if not text_from and video and not a.no_whisper:
-        args = [video, "--out", transcript] + (["--lang", a.lang] if a.lang else [])
+    # El audio manda: se transcribe la voz con faster-whisper. Los subtítulos solo son
+    # respaldo si el audio no se pudo transcribir (o con --no-whisper), y quedan aparte para cotejar.
+    if video and not a.no_whisper:
+        args = [video, "--out", transcript, "--model", a.whisper_model] + (["--lang", a.lang] if a.lang else [])
         r = run(HERE / "transcribe.py", *args)
-        if r.returncode == 0: text_from = "faster-whisper en la Mac (voz a texto local)"
-        else: problems.append("Sin subtítulos y sin transcripción local: " + (r.stderr or r.stdout).strip()[-300:]
-                              + " — instalar con: python3 -m pip install faster-whisper")
-    elif not text_from:
-        problems.append("Sin subtítulos" + (" y transcripción local desactivada (--no-whisper)" if a.no_whisper else ""))
+        if r.returncode == 0:
+            text_from = f"audio transcrito en la Mac con faster-whisper ({a.whisper_model})"
+            if caps:
+                r2 = run(HERE / "ingest_transcript.py", caps, "--out", out / "transcript_subtitulos.md")
+                if r2.returncode == 0: ev["subtitulos_para_cotejar"] = f"transcript_subtitulos.md — {why}"
+        else:
+            problems.append("No se pudo transcribir el audio (" + (r.stderr or r.stdout).strip()[-200:]
+                            + "); se usan los subtítulos del video, que NO son el audio. Instalar: python3 -m pip install faster-whisper")
+    if not text_from and caps:
+        r = run(HERE / "ingest_transcript.py", caps, "--out", transcript)
+        if r.returncode == 0: text_from = f"subtítulos {os.path.basename(caps)} — {why} (no se escuchó el audio)"
+        else: problems.append("No se pudo leer los subtítulos: " + r.stderr.strip()[-300:])
+    if not text_from:
+        problems.append("Sin audio transcrito ni subtítulos" + (" (--no-whisper)" if a.no_whisper else ""))
     segs = [re.sub(r"^\[[^\]]*\]\s*", "", l) for l in transcript.read_text(encoding="utf-8").splitlines()
             if l.startswith(("[", "- "))] if text_from and transcript.exists() else []
     words = sum(len(s.split()) for s in segs)
+    if text_from and not words and caps and text_from.startswith("audio"):
+        # el audio no tiene voz (música o silencio): los subtítulos son lo único que hay
+        r = run(HERE / "ingest_transcript.py", caps, "--out", transcript)
+        if r.returncode == 0:
+            problems.append("El audio no tiene voz detectable; el texto sale de los subtítulos del video.")
+            text_from = f"subtítulos {os.path.basename(caps)} — {why} (el audio no tenía voz)"
+            segs = [re.sub(r"^\[[^\]]*\]\s*", "", l) for l in transcript.read_text(encoding="utf-8").splitlines()
+                    if l.startswith(("[", "- "))]
+            words = sum(len(s.split()) for s in segs)
     if text_from and not words:
         problems.append(f"{text_from}: no se detectó voz. Puede ser solo música, o voz muy baja; no afirmar que no hay voz.")
         text_from = None
@@ -287,7 +303,8 @@ def main():
     ap.add_argument("--start"); ap.add_argument("--end"); ap.add_argument("--at", default="")
     ap.add_argument("--no-cues", action="store_true", help="no capturar las señales detectadas en la voz")
     ap.add_argument("--no-hook", action="store_true", help="no fijar capturas de los primeros 3 s en videos cortos")
-    ap.add_argument("--no-dedup", action="store_true"); ap.add_argument("--no-whisper", action="store_true")
+    ap.add_argument("--no-dedup", action="store_true"); ap.add_argument("--no-whisper", action="store_true", help="no transcribir el audio; usar solo subtítulos")
+    ap.add_argument("--whisper-model", default="small", help="modelo de voz a texto (tiny, base, small, medium)")
     ap.add_argument("--lang", help="idioma preferido de subtítulos / pista para whisper (es, en...)")
     ap.add_argument("--cookies", help="chrome|safari|firefox: solo con permiso y si el video lo exige")
     ap.add_argument("--out", help="carpeta de trabajo (por defecto work/<nombre>)")
@@ -310,7 +327,7 @@ def main():
             folder, _ = fetch(a.source, a, need_video=True); return os.path.join(folder, "video.mp4")
         return gemini_engine(a, media)
 
-    need_video = a.detail != "transcript" or bool(a.at)
+    need_video = a.detail != "transcript" or bool(a.at) or not a.no_whisper
     folder, info, how = None, None, "archivo local"
     if is_url(a.source):
         folder, how = fetch(a.source, a, need_video)
