@@ -4,6 +4,7 @@
 - **Fuente**: https://youtu.be/viztypMn7D0 · «Cómo editar videos con Claude Opus 5.5 | Skill Gratis» · canal Melina Blanco | Agentes IA y Automatizaciones · 20:26
 - **Fecha**: 2026-10-10
 - **Tipo de "oídos"**: audio transcrito en la Mac con faster-whisper (small, 4601 palabras) y cotejado con los subtítulos automáticos de YouTube (4689). Coinciden en el contenido; ambos escriben «Cloud» donde ella dice Claude (así suena en su voz) y «Day de» por DevDay. No es una escucha humana: no capta tono ni música.
+- **Aporte del creador: BAJO (medida automática confirmada al ver el video)**: 28 % del video es promoción de su comunidad (desde el minuto 14) y la skill está detrás de una lista de espera; solo la descripción abierta es un link a la comunidad y su Instagram, sin recursos abiertos. Conviene complementar con otro creador que muestre el proceso completo.
 - **Confianza**: media en el flujo (se ve en pantalla); baja en los criterios de edición, porque nunca se abre la skill ni se enseñan parámetros.
 
 ## Qué NO es este video

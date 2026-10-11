@@ -32,7 +32,7 @@ ROOT = HERE.parents[2] if (HERE.parents[2] / "CLAUDE.md").exists() else Path.cwd
 GRAB = next((p for p in (HERE.parents[1] / "mukiwa-grab" / "scripts" / "grab.py", HERE / "grab.py") if p.exists()),
             HERE.parents[1] / "mukiwa-grab" / "scripts" / "grab.py")
 sys.path.insert(0, str(HERE))
-import cues as cuesmod, extract_frames as ef, gemini  # noqa: E402
+import aporte, cues as cuesmod, extract_frames as ef, gemini  # noqa: E402
 
 DETAIL = {   # nivel -> (modo, máximo de capturas, ancho de cada captura)
     "transcript": (None, 0, 0),
@@ -206,6 +206,8 @@ def local(a, source_label, video, folder, info):
         "visual_coverage": "sampled_frames" if manifest else "none",
         "max_gap_s": manifest and manifest["max_gap_s"], "cues": cue_list, "problems": problems,
     })
+    if info and (info.get("description") or info.get("chapters")):
+        ev["aporte"] = aporte.verdict(info, str(transcript) if has_text else None)
     (out / "evidence.json").write_text(json.dumps(ev, ensure_ascii=False, indent=2), encoding="utf-8")
     write_report(out, a, ev, info, manifest, metrics, words)
     return ev
@@ -218,6 +220,7 @@ def write_report(out, a, ev, info, manifest, metrics, words):
     L += [f"- **Fuente:** {ev['source']}", f"- **Motor:** local · **detalle:** {a.detail}",
           f"- **Estado de la evidencia:** {ev['status']} (preparada; el análisis aún no está hecho)"]
     if a.question: L.append(f"- **Pregunta:** {a.question}")
+    if ev.get("aporte"): L += [""] + aporte.markdown(ev["aporte"])
     L += ["", "## Capturas"]
     if manifest:
         fixed = [f for f in manifest["frames"] if f["reason"] == "pinned"]
