@@ -1,6 +1,10 @@
 # Biblioteca VYBZ — índice
 
 
+## cinematografia
+
+- [Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6)](cinematografia/movimientos-de-camara-15-studiobinder.md) — Un curso en video recorre cada movimiento de cámara con su definición, su uso narrativo y ejemplos de película: plano estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y movimiento aleatorio; y termina combinándolos en una escena. Es una fuente con teoría hablada y práctica en pantalla.
+
 ## composicion
 
 - [Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral)](composicion/composicion-9-esquemas-clase-de-arte.md) — Una clase de arte dibuja nueve guías de composición en una cuadrícula 3×3 y practica dos más (L y curva S): sirve como vocabulario base de plantillas para colocar el foco, el primer plano y el fondo.
