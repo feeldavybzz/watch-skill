@@ -247,6 +247,23 @@ class CaptionTrackTests(unittest.TestCase):
 
 
 class PackageTests(unittest.TestCase):
+    def test_new_uncommitted_professor_is_packaged_and_ignored_files_are_not(self):
+        import shutil
+        new = ROOT / 'profes' / 'zz-prueba-sin-commit'
+        try:
+            (new / 'references').mkdir(parents=True)
+            (new / 'SKILL.md').write_text('---\nname: profe-zz-prueba-sin-commit\ndescription: prueba\n---\n# x\n', encoding='utf-8')
+            (new / 'references' / '._oculto.md').write_bytes(b'\x00\x05')      # metadatos de macOS: no deben entrar
+            with tempfile.TemporaryDirectory() as d:
+                r = subprocess.run([sys.executable, str(ROOT / 'tools/build_skills.py'), '--out', d, '--allow-dirty'], capture_output=True, text=True)
+                self.assertEqual(r.returncode, 0, r.stderr + r.stdout)
+                with zipfile.ZipFile(Path(d) / 'profe-zz-prueba-sin-commit.skill') as z:
+                    names = z.namelist()
+                self.assertEqual(names, ['profe-zz-prueba-sin-commit/SKILL.md'])
+        finally:
+            shutil.rmtree(new, ignore_errors=True)
+
+
     def test_skill_packages(self):
         with tempfile.TemporaryDirectory() as d:
             r = subprocess.run([sys.executable, str(ROOT / 'tools/build_skills.py'), '--out', d, '--allow-dirty'],

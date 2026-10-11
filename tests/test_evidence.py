@@ -83,3 +83,62 @@ class EvidenceTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class DescargaOkTests(unittest.TestCase):
+    def setUp(self):
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import grab
+        self.g = grab
+
+    def test_miniatura_y_subtitulos_solos_no_son_exito_si_se_pidio_video(self):
+        files = ["video.jpg", "video.en-US.srt", "video.info.json", "subtitulos.json"]
+        self.assertFalse(self.g.descarga_ok(files, subs_only=False, video_esperado=True))
+
+    def test_con_video_es_exito(self):
+        self.assertTrue(self.g.descarga_ok(["video.mp4", "video.jpg"], False, True))
+
+    def test_carrusel_de_fotos_es_exito(self):
+        self.assertTrue(self.g.descarga_ok(["fotos/a.jpg", "fotos/b.jpg"], False, True))
+
+    def test_solo_subtitulos_es_exito_en_su_modo(self):
+        self.assertTrue(self.g.descarga_ok(["video.en.srt", "video.info.json"], True, False))
+
+    def test_foto_directa_sin_video_esperado(self):
+        self.assertTrue(self.g.descarga_ok(["foto.jpg"], False, False))
+
+
+class VideoRealTests(unittest.TestCase):
+    def _carpeta(self, nombres):
+        import os, tempfile
+        d = tempfile.mkdtemp()
+        for n in nombres: open(os.path.join(d, n), "w").write("x")
+        return d
+
+    def test_la_miniatura_nunca_es_video(self):
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import grab
+        d = self._carpeta(["video.jpg", "video.webp", "video.png", "video.en.srt", "video.info.json"])
+        self.assertIsNone(grab.video_en(d))
+
+    def test_reconoce_cualquier_extension_de_video(self):
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import grab
+        for ext in (".mp4", ".mkv", ".webm", ".mov", ".m4v"):
+            d = self._carpeta(["video" + ext, "video.jpg"])
+            self.assertTrue(grab.video_en(d).endswith("video" + ext), ext)
+
+    def test_prefiere_mp4_e_ignora_appledouble(self):
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import grab
+        d = self._carpeta(["._video.mp4", "video.mkv", "video.mp4", "video.jpg"])
+        self.assertTrue(grab.video_en(d).endswith("video.mp4"))
+        d2 = self._carpeta(["._video.mkv", "video.jpg"])
+        self.assertIsNone(grab.video_en(d2))
+
+    def test_watch_usa_el_mismo_criterio(self):
+        import os, importlib.util
+        spec = importlib.util.spec_from_file_location("watch_t", os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-learn", "scripts", "watch.py"))
+        m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+        d = self._carpeta(["video.jpg", "video.info.json"]); self.assertIsNone(m.find_video(d))
+        d = self._carpeta(["video.webm", "video.jpg"]); self.assertTrue(m.find_video(d).endswith("video.webm"))
