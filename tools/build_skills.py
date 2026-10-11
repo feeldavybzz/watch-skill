@@ -5,7 +5,7 @@
 Uso: python3 tools/build_skills.py [--out dist] [--allow-dirty]
 Genera dist/mukiwa-grab.skill, dist/mukiwa-learn.skill y un dist/profe-<nicho>.skill por profesor.
 
-- Solo entra lo que Git conoce (git ls-files): nada de _descargas/, work/, ._*, venv ni claves.
+- Entra lo que Git conoce y lo nuevo sin commit, respetando .gitignore: nada de _descargas/, work/, ._*, venv ni claves.
 - mukiwa-learn lleva una copia de grab.py en scripts/ para descargar aunque se suba sola.
 - La biblioteca de lecciones viaja dentro de mukiwa-learn.
 - Se comprueba: una sola carpeta raíz, un solo SKILL.md, frontmatter válido y menos de 200 archivos.
@@ -34,8 +34,10 @@ def frontmatter_keys(text):
 
 def build(name, out):
     base = f"skills/{name}" if name in SKILLS else f"profes/{name}"   # profesores: profes/<nicho> -> profe-<nicho>.skill
-    files = [f for f in git("ls-files", "-z", base).split("\0") if f]
-    files = [f for f in files if not Path(f).name.startswith(".")]
+    # Archivos de Git más los nuevos todavía sin commit (p. ej. un profesor que la tarea de la noche acaba de crear),
+    # respetando .gitignore: nada de _descargas/, work/, venv, ._* ni claves.
+    files = [f for f in git("ls-files", "-z", "--cached", "--others", "--exclude-standard", base).split("\0") if f]
+    files = [f for f in files if not Path(f).name.startswith(".") and (ROOT / f).is_file()]
     entries = {f[len(base) + 1:]: ROOT / f for f in files}
     for arc, src in EXTRA.get(name, {}).items(): entries[arc] = ROOT / src
     if list(entries).count("SKILL.md") != 1 or sum(1 for a in entries if a.endswith("SKILL.md")) != 1:

@@ -63,8 +63,9 @@ def ensure_tools():
     global YT, GDL, FF
     YT = find_cmd("yt-dlp", "yt_dlp"); rt = find_js_runtime()
     if rt:
-        JS[:] = ["--js-runtimes", "%s:%s" % rt]
-        if rt[0] == "deno": JS.extend(["--remote-components", "ejs:github"])
+        # El runtime ejecuta el solucionador oficial de desafíos de YouTube (yt-dlp/ejs): yt-dlp lo descarga una vez a
+        # ~/.cache/yt-dlp y lo reutiliza. Sin él, algunos videos fallan con «This video is not available».
+        JS[:] = ["--js-runtimes", "%s:%s" % rt, "--remote-components", "ejs:github"]
     GDL = find_cmd("gallery-dl", "gallery_dl"); FF = find_ffmpeg()
     if not YT or not FF:
         print("Faltan herramientas (yt-dlp / ffmpeg). Corre una vez:\n  bash \"%s\"" % os.path.join(HERE, "setup.sh"))
@@ -89,7 +90,7 @@ ERRORES = [
      ARCHIVO + " Opción B: --cookies chrome usa tu sesión de Chrome en esta Mac (solo con tu permiso).", False),
     ("privado", r"Private video|video is private|account is private|This video is only available",
      "Es privado o solo para ciertas personas.", "Pide el archivo a su dueño o súbelo a «Para analizar».", False),
-    ("no-existe", r"[Vv]ideo (is )?(no longer )?unavailable|has been removed|no longer available|does not exist|Video not found|HTTP Error 404",
+    ("no-existe", r"[Vv]ideo (is )?(no longer )?unavailable|video is not available|has been removed|no longer available|does not exist|Video not found|HTTP Error 404",
      "El video ya no existe o fue eliminado.", "Revisa que el link esté completo y siga publicado.", False),
     ("region", r"not available in your country|blocked it in your country|geo.?restrict",
      "Está bloqueado en tu región.", ARCHIVO, False),
@@ -112,6 +113,12 @@ def explain(text, js_ok=True):
     """Traduce el texto de error de yt-dlp/gallery-dl a {code, causa, haz, retry}. Mira solo las líneas de error."""
     lines = [l for l in (text or "").splitlines() if re.search(r"error", l, re.I)] or (text or "").splitlines()
     blob = "\n".join(lines)
+    if re.search(r"n challenge solving failed|challenge solver script|Remote component challenge", text or "", re.I) \
+            and re.search(r"not available|Only images|Requested format", blob, re.I):
+        return {"code": "js", "retry": False,
+                "causa": "YouTube pidió resolver un desafío y no se pudo (falta el runtime de JavaScript o su solucionador oficial).",
+                "haz": "Corre doctor.py. Con Node o deno instalados, yt-dlp baja el solucionador oficial (--remote-components ejs:github) la primera vez; "
+                       "si no hay red a GitHub o bloqueaste la descarga, instala `yt-dlp-ejs` con pip. " + ARCHIVO}
     for code, pat, causa, haz, retry in ERRORES:
         if re.search(pat, blob, re.I): return {"code": code, "causa": causa, "haz": haz, "retry": retry}
     if re.search(r"Requested format is not available|Only images are available", blob, re.I):
@@ -231,7 +238,7 @@ def grab(url, a):
     ck = ["--cookies-from-browser", a.cookies] if a.cookies else []
     title = "descarga"; del ERR_LOG[:]
     if not path.endswith(IMG_EXT + AV_EXT):
-        probe = YT + ["--no-warnings", "--ffmpeg-location", FF] + JS + ["--skip-download", "--playlist-items", "1",
+        probe = YT + ["--ffmpeg-location", FF] + JS + ["--skip-download", "--playlist-items", "1",
                                  "--print", "%(title)s"] + ck + [url]
         box = {}
         def once():
@@ -246,6 +253,7 @@ def grab(url, a):
                 report_failure([err]); return None
     d = os.path.join(a.out, "%s-%s" % (datetime.date.today().isoformat(), slug(title)))
     os.makedirs(d, exist_ok=True)
+    photo_first = False
     if path.endswith(IMG_EXT + AV_EXT):
         direct(url, d)
     else:
@@ -258,15 +266,19 @@ def grab(url, a):
                 fmt = "bv*[height<=%d]+ba/b[height<=%d]/b" % (a.max_height, a.max_height)
                 cmd = YT + ["-o", os.path.join(d, "video.%(ext)s"), "-f", fmt, "--merge-output-format", "mp4",
                             "--write-thumbnail", "--convert-thumbnails", "jpg", "--write-info-json", "--no-playlist"]
-            have = os.path.join(d, "audio.mp3" if a.audio_only else "video.mp4")
+            have = os.path.join(d, "audio.mp3") if a.audio_only else (video_en(d) or os.path.join(d, "video.mp4"))
             if a.subs_only:                                 # solo subtítulos + info: no bajar el video
                 ok = os.path.exists(os.path.join(d, "video.info.json")) or run(YT + ["-o", os.path.join(d, "video.%(ext)s"),
                     "--skip-download", "--write-info-json", "--no-playlist"] + JS + ck + [url]) == 0
             elif os.path.exists(have): print("Ya descargado, se reutiliza:", have); ok = True
-            else: ok = run(cmd + ["--newline", "--progress-delta", "5", "--ffmpeg-location", FF] + JS + ck + [url], retry=True) == 0
+            else:
+                ok = run(cmd + ["--newline", "--progress-delta", "5", "--ffmpeg-location", FF] + JS + ck + [url], retry=True) == 0
+                if not a.audio_only and not video_en(d):   # fallo transitorio (visto con YouTube): un reintento
+                    print("[grab] el video no quedó en disco; se reintenta una vez en 10 s", file=sys.stderr); time.sleep(10)
+                    ok = run(cmd + ["--newline", "--progress-delta", "5", "--ffmpeg-location", FF] + JS + ck + [url], retry=True) == 0
             if not a.no_subs: fetch_subs(url, d, ck, a.sub_lang)   # NO fatal: un video sin subtítulos sigue siendo útil
-            if ok and not a.audio_only and os.path.exists(os.path.join(d, "video.mp4")) and not os.path.exists(os.path.join(d, "audio.mp3")):
-                run([FF, "-y", "-loglevel", "error", "-i", os.path.join(d, "video.mp4"), "-vn", "-q:a", "2",
+            if ok and not a.audio_only and video_en(d) and not os.path.exists(os.path.join(d, "audio.mp3")):
+                run([FF, "-y", "-loglevel", "error", "-i", video_en(d), "-vn", "-q:a", "2",
                      os.path.join(d, "audio.mp3")])
         if (not ok or photo_first or a.photos_only):
             if any(v in host for v in VIDEO_ONLY) and not a.photos_only: print("yt-dlp falló en un sitio de video; revisa el error de arriba.")
@@ -276,7 +288,8 @@ def grab(url, a):
     with open(os.path.join(d, "LEEME.md"), "w") as f:
         f.write("# %s\n\n- Fuente: %s\n- Fecha: %s\n- Archivos:\n%s\n" % (
             title, url, datetime.date.today().isoformat(), "\n".join("  - " + x for x in files)))
-    got = any(x.lower().endswith(IMG_EXT + AV_EXT + ((".srt",) if a.subs_only else ())) for x in files)
+    video_esperado = not (a.subs_only or a.audio_only or a.photos_only or photo_first or path.endswith(IMG_EXT + AV_EXT))
+    got = descarga_ok(files, a.subs_only, video_esperado)
     print(("\nOK -> %s" if got else "\nFALLO (no se bajó nada) -> %s") % d); [print("  " + x) for x in files]
     if not got:
         if a.subs_only and os.path.exists(os.path.join(d, "video.info.json")) and not ERR_LOG:   # el video existe, solo que sin subtítulos
@@ -284,10 +297,35 @@ def grab(url, a):
         else: report_failure(ERR_LOG or ["sin detalle"], d)
     if not files and "instagram" in host:
         print("\nPISTA Instagram: necesita sesión. Si viste 'Operation not permitted' o 'could not find chrome cookies':\n  Ajustes del Sistema > Privacidad y seguridad > Acceso total al disco > activa Terminal, cierra Terminal (Cmd+Q) y reábrela.")
-    if a.frames and os.path.exists(os.path.join(d, "video.mp4")):
+    if a.frames and video_en(d):
         ef = os.path.abspath(os.path.join(HERE, "..", "..", "mukiwa-learn", "scripts", "extract_frames.py"))
-        if os.path.exists(ef): run([sys.executable, ef, os.path.join(d, "video.mp4"), "--out", os.path.join(d, "frames_work")])
+        if os.path.exists(ef): run([sys.executable, ef, video_en(d), "--out", os.path.join(d, "frames_work")])
     return d if got else None
+
+VIDEO_EXT = (".mp4", ".mov", ".m4v", ".webm", ".mkv")
+
+
+def video_en(d):
+    """Ruta del video real en la carpeta (cualquier extensión de video), o None. Una imagen (miniatura) NUNCA cuenta."""
+    try: names = sorted(os.listdir(d))
+    except OSError: return None
+    mp4 = [n for n in names if n.lower() == "video.mp4"]
+    otros = [n for n in names if n.lower().startswith("video.") and n.lower().endswith(VIDEO_EXT) and not n.startswith("._")]
+    pick = (mp4 or otros or [None])[0]
+    return os.path.join(d, pick) if pick else None
+
+
+def descarga_ok(files, subs_only, video_esperado):
+    """¿Se bajó lo que se pidió? La miniatura o los subtítulos solos NO cuentan como éxito si se pidió el video
+    (antes una descarga que solo trajo la miniatura se daba por buena y el análisis seguía sin imagen)."""
+    fl = [x.lower() for x in files]
+    got = any(x.endswith(IMG_EXT + AV_EXT + ((".srt",) if subs_only else ())) for x in fl)
+    if video_esperado and not subs_only:
+        tiene_video = any(x.endswith(VIDEO_EXT) and "/" not in x for x in fl)
+        tiene_fotos = any(x.startswith("fotos/") and x.endswith(IMG_EXT) for x in fl)
+        return got and (tiene_video or tiene_fotos)
+    return got
+
 
 def grab_con_permiso(url, a, grab_fn=None, perms_path=None):
     """Descarga; si falla por pedir sesión y Bryan autorizó la de su navegador para ESE sitio, reintenta una vez con ella."""

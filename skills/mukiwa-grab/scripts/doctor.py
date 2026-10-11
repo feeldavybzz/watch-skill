@@ -66,6 +66,12 @@ def check(online=False, downloads=None):
     add(OK if rt else FALTA, "Runtime de JavaScript (YouTube)", ("%s · %s" % rt) if rt else "ninguno (YouTube fallará)",
         "" if rt else "Instala Node.js (nodejs.org) o deno; se detecta solo en el PATH, ~/nodejs y Homebrew.")
 
+    solver_cache = glob.glob(os.path.expanduser("~/.cache/yt-dlp/challenge-solver*"))
+    solver = bool(solver_cache) or importlib.util.find_spec("yt_dlp_ejs") is not None
+    add(OK if solver else AVISO, "Solucionador de desafíos de YouTube (EJS)",
+        "listo" if solver else "aún no descargado: yt-dlp lo baja solo la primera vez que YouTube lo pida",
+        "" if solver else "Si tu red bloquea GitHub: pip install yt-dlp-ejs (en el venv).")
+
     ff = grab.find_ffmpeg()
     add(OK if ff else FALTA, "ffmpeg", ff or "no encontrado", "" if ff else "pip install imageio-ffmpeg (en el venv) o instala ffmpeg.")
 
