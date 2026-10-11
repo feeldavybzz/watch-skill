@@ -41,3 +41,4 @@
 ## narrativa-direccion
 
 - [Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder, Visual Storytelling ep. 3)](narrativa-direccion/blocking-espacio-formas-lineas-studiobinder.md) — En menos de cinco minutos, un video explica cómo la colocación de los actores en el cuadro (blocking) hace emocionante una conversación: tres elementos visuales (espacio, formas y líneas), ejemplos de película con las figuras dibujadas encima y la idea de usar el contraste como subtexto.
+- [El círculo de la historia de Dan Harmon: 8 pasos aplicados a *El caballero oscuro* (StudioBinder)](narrativa-direccion/circulo-de-la-historia-dan-harmon-8-pasos.md) — Un video explica los ocho pasos del círculo de la historia de Dan Harmon (tú, necesidad, ir, buscar, encontrar, tomar, volver, cambiar) y los aplica a *El caballero oscuro* de Christopher Nolan, con un diagrama que marca en qué paso va cada escena y la división entre el mundo del orden y el del caos.
