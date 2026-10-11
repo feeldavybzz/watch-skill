@@ -82,12 +82,30 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 - Las guías se definen en coordenadas **relativas al cuadro (0 a 1)** y se recalculan con la proporción del proyecto; así valen para cualquier formato.
 - Al pasar un 16:9 a 9:16 o 4:5, el sujeto debe seguir sobre las líneas del formato nuevo, no solo recortarse al centro.
 
+### Adaptar cada guía al formato (horizontal, cuadrado, vertical) — reglas para el plugin
+**Formato de origen**: en [2] las guías se dibujan sobre fotos horizontales **3:2** colocadas en un lienzo 9:16. Ningún video muestra la guía en vertical: las reglas de abajo son **derivadas por geometría y convención (mías)**; validarlas con una fuente de foto o cine vertical.
+Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y **recalcularla con la proporción del proyecto**; nunca reutilizar los píxeles de otro formato. Está resuelto en `scripts/guias.py` → `guias/guias-composicion.json` (15 guías × 7 formatos: 16:9, 3:2, 5:4, 1:1, 4:5, 2:3, 9:16) y un SVG por guía y formato en `guias/svg/`.
+| Guía | Horizontal (16:9, 3:2) | Cuadrado y 5:4 | Vertical (4:5, 2:3, 9:16) |
+|---|---|---|---|
+| Tercios / rejilla áurea | líneas en 1/3 y 2/3 (0,382 y 0,618) de cada eje | igual | igual |
+| Espiral áurea | rectángulo áureo estirado al cuadro | rectángulo áureo entero, proporcional, pegado a un borde | se gira 90° (lado largo vertical); estirada en 2:3 y 9:16, proporcional en 4:5 |
+| Diagonales / triángulos | de esquina a esquina; ángulo ≈29° (16:9) o ≈34° (3:2) | 45° en 1:1 | ≈61° en 9:16; las perpendiculares se recalculan en píxeles |
+| Yuxtaposición | línea **vertical** al centro | vertical | línea **horizontal** (arriba/abajo); variante 0,382/0,618 |
+| Punto de fuga | al centro (v = 0,5) | al centro | sube a **v = 0,382**: más suelo para las líneas |
+| Centrado | banda de ≈7 % del ancho alrededor del eje vertical | igual | igual; eje horizontal opcional |
+| Marco dentro del marco | polígono libre calcado sobre la abertura | rectángulo con margen 8 % del lado corto | igual que cuadrado |
+| Líneas guía | del borde inferior al cruce de tercios superior derecho | igual | igual, más largas (más recorrido) |
+- Todo lo libre (marco, líneas guía, curva S, radial) son valores por defecto movibles, no medidas.
+- **Recomponer una foto horizontal a vertical no es recortar al centro**: vuelve a anclar el sujeto a la guía del formato nuevo (p. ej. sobre una vertical de tercios, a la altura del tercio superior, y fuera de la zona que tapa la interfaz).
+- **Zonas seguras en 9:16 (no oficial; fuentes de terceros discrepan)**: dejar libre ≈ 13–14 % arriba y ≈ 13 % (ajustada) a 35 % (conservadora) abajo, ≈ 6 % a los lados y el riel derecho de iconos (≈ 21 % del ancho, mitad inferior). Probar en el móvil antes de publicar.
+- **Autorreferencia**: cada plantilla puede llevar una miniatura de ejemplo para que la persona vea qué es; usar fotos propias o con licencia (las del reel de [2] son de otra persona y no deben empaquetarse en el plugin).
+
 ### Plugin de guías (plantillas superpuestas) — lo aprendido para diseñarlo
 - Plantillas mínimas: tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1], **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado** (eje con bandas laterales) [2].
 - Cada guía debe poder verse **sola sobre negro** y **superpuesta sobre la imagen**, con la etiqueta como capa de texto aparte (sirve para hacer reels como [2]).
 - Cada una debe poder **superponerse, moverse y rotarse**; el radial con varios puntos; la espiral con 4 orientaciones (estándar).
 - Mostrar también el vocabulario **punto focal / primer plano / fondo** como ayuda al componer [1].
-- Validar cada guía en los cinco formatos de la tabla.
+- Validar cada guía en los siete formatos del JSON (revisión visual hecha con `guias.py --preview`).
 
 ## Por herramienta
 ### Premiere Pro
@@ -125,6 +143,7 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 - La espiral áurea de [1] no da la proporción ni la construcción exacta.
 - [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] usa fotos reales pero horizontales (3:2) y sin voz. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.
 - Los trazos de [2] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales.
+- Las reglas para vertical, cuadrado y 5:4 son derivadas (geometría y convención), no vistas en ninguna fuente: validar con foto o cine vertical. Las zonas seguras de reels son de fuentes de terceros que discrepan.
 
 ## Fuentes
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`

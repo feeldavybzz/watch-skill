@@ -40,6 +40,9 @@ Cada recurso dura ≈ 2 a 3 s y sigue el patrón **guía en líneas blancas sobr
 4. Cierra con la foto oscurecida y el usuario grande como llamado a seguir.
 5. Elige fotos donde el sujeto realmente cae sobre la guía (espiral sobre la figura, línea sobre el contraste, vía sobre la curva).
 
+## Formato de las guías en el reel y su adaptación
+- Las guías del reel se dibujan sobre fotos **horizontales 3:2**; el reel no las muestra en otro formato. Por pedido de Bryan se **adaptaron a 16:9, 3:2, 5:4, 1:1, 4:5, 2:3 y 9:16** como geometría relativa (0–1): ver `profes/composicion-visual/guias/guias-composicion.json`, los SVG por formato y `scripts/guias.py`. Las reglas (yuxtaposición vertical→horizontal en vertical, punto de fuga sube a 0,382, espiral girada 90°, etc.) son derivadas por mí y están en el profesor.
+
 ## Para MUKIWA
 - **Plugin de guías**: añadir a las plantillas **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado/simetría** (eje + bandas laterales), además de las ya listadas. Cada guía debe poder mostrarse sola sobre negro y superpuesta sobre la imagen, con la etiqueta como capa de texto.
 - Para el feed de MUKIWA: es un formato de reel que enseña composición con las propias fotos de un proyecto; encaja con Visual Edits y con el trabajo de Creative Direction.
