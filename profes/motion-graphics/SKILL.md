@@ -4,7 +4,7 @@ description: Profesor MUKIWA de motion graphics y animación, que aprende de las
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects"
-  lecciones: 1
+  lecciones: 2
   actualizado: "2026-10-10"
 ---
 
@@ -36,7 +36,7 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `profe-diseno
 - Selecciona keyframes → **F9** → Graph Editor. Más ease al final hace que el último elemento "retenga" [1].
 
 ### Animación de logos, transiciones, lower thirds, elementos para reels
-- Sin fuentes todavía.
+- **Guía que se dibuja y luego revela la foto** (reel de composición): línea blanca fina que se traza sobre negro (≈ 0,7 s), entra la imagen con la línea encima (≈ 1 s) y la línea se desvanece; etiqueta de texto integrada en la geometría. Cada bloque dura ≈ 2–3 s [2]. Valores de easing y trazo: no visibles, solo ≈.
 
 ## Por herramienta
 ### After Effects
@@ -62,7 +62,8 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `profe-diseno
 
 ## Dudas abiertas
 - Valores de easing/bezier no visibles en [1]; los ≈12 frames son lo que se dijo.
-- Animación de logos, transiciones, lower thirds y herramientas fuera de After Effects: sin fuentes todavía.
+- Animación de logos, transiciones, lower thirds y herramientas fuera de After Effects: sin fuentes todavía; de [2] solo se ve el resultado, no el método.
 
 ## Fuentes
 - [1] Tipografía cinética en After Effects: 3 técnicas con una sola capa — https://www.youtube.com/watch?v=f3nb-MQyshQ · `references/lecciones/tipografia-cinetica-after-effects-3-tecnicas.md`
+- [2] Reel de 24 s con 8 recursos de composición dibujados sobre fotos — archivo local · ver `profe-composicion-visual` (lección `reel-8-recursos-composicion-guias-sobre-fotos.md`)

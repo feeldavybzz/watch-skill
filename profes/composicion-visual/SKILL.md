@@ -4,12 +4,12 @@ description: Profesor MUKIWA de composición visual (foto, video, cine, reels y 
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 1
+  lecciones: 2
   actualizado: "2026-10-10"
 ---
 
 # Profe: Composición visual
-> Elige una guía de composición según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Hoy conoce el vocabulario de 10 esquemas; falta aprender cómo se aplican en foto, video y cine y en cada programa.
+> Elige una guía de composición según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 14 recursos de composición (10 de una clase de arte y 4 más vistos sobre fotos reales en un reel) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -39,7 +39,19 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 | Energía que sale de un punto | **Radial**: todo parte de un punto (como una explosión); el punto de fuga no tiene que estar al centro y puede haber varios [1] |
 | Recorrido suave de la mirada | **Curva S compuesta**: un camino o un río que serpentea [1] |
 | Anclar en una esquina con horizonte | **L**: elementos a lo largo de una L; horizonte en un lado y algo en primer plano en el otro [1] |
-| Remate natural, orgánico | **Espiral áurea**: cortes repetidos cada vez más pequeños; el caracol o la concha son el ejemplo [1] |
+| Remate natural, orgánico | **Espiral áurea**: cortes repetidos cada vez más pequeños; el caracol o la concha son el ejemplo [1]. Sobre una foto, que la espiral **converja sobre el sujeto** (en [2], una figura de rojo al final de la espiral) |
+| Encerrar al sujeto, dar profundidad | **Marco dentro del marco**: una abertura natural (ventana, arco, estructura) enmarca la escena; la guía es un polígono libre que calca la abertura [2] |
+| Mostrar contraste entre dos zonas | **Yuxtaposición**: una línea divisoria separa dos zonas opuestas (sombra y sol, quieto y movimiento) [2] |
+| Llevar la mirada al fondo | **Líneas guía**: rectas y curvas (vías, caminos, barandas) que conducen al punto de interés [2] |
+| Simetría y autoridad | **Centrado**: el sujeto al centro, enmarcado por dos líneas verticales [2] |
+
+### Cómo mostrar un recurso en un reel (patrón de [2])
+- **Fórmula por recurso (≈ 2–3 s)**: guía en líneas blancas sobre negro (≈ 0,7 s) → entra la foto con la guía encima (≈ 1 s) → la guía se desvanece y queda la foto limpia [2].
+- **La etiqueta va dentro de la geometría**: en las celdas de la rejilla de tercios, a los lados del punto de fuga, junto a la línea [2].
+- Elige fotos donde el sujeto cae de verdad sobre la guía: espiral sobre la figura, línea sobre el contraste, vías sobre la curva [2].
+- Estructura de 24 s medida: gancho con título y espiral (1–3 s), 8 recursos de ≈ 2–3 s, cierre con la foto oscurecida y el usuario grande como llamado a seguir [2].
+- **Lienzo 9:16 (720×1280)** con foto 3:2 centrada: banda de **720 × ≈ 483 px**, filas 391–873 (≈ 30,5 % de negro arriba y ≈ 31,7 % abajo) sobre fondo negro [2].
+- Estilo visto (≈): líneas blancas finas (≈ 2–3 px a 720 px), etiquetas en sans negrita blanca, título en serif con la palabra clave en amarillo, marca de agua con el usuario [2].
 
 ### Tercios
 - Divide el cuadro en tres columnas y tres filas; las cuatro líneas y sus cruces son los lugares fuertes [1].
@@ -71,7 +83,8 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 - Al pasar un 16:9 a 9:16 o 4:5, el sujeto debe seguir sobre las líneas del formato nuevo, no solo recortarse al centro.
 
 ### Plugin de guías (plantillas superpuestas) — lo aprendido para diseñarlo
-- Plantillas mínimas: tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1].
+- Plantillas mínimas: tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral áurea, L [1], **marco dentro del marco** (polígono libre), **yuxtaposición** (línea divisoria movible), **líneas guía** (rectas y curvas) y **centrado** (eje con bandas laterales) [2].
+- Cada guía debe poder verse **sola sobre negro** y **superpuesta sobre la imagen**, con la etiqueta como capa de texto aparte (sirve para hacer reels como [2]).
 - Cada una debe poder **superponerse, moverse y rotarse**; el radial con varios puntos; la espiral con 4 orientaciones (estándar).
 - Mostrar también el vocabulario **punto focal / primer plano / fondo** como ayuda al componer [1].
 - Validar cada guía en los cinco formatos de la tabla.
@@ -110,7 +123,9 @@ Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; s
 ## Dudas abiertas
 - La «sección áurea» de la fuente [1] se explica «en el centro» y se dibuja como una cruz de bandas estrechas, que no coincide con la rejilla áurea habitual (38,2 / 61,8 %). Confirmar con otra fuente.
 - La espiral áurea de [1] no da la proporción ni la construcción exacta.
-- [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine: falta una fuente de foto, video o cine para validar tercios y áurea en vertical y cómo se usan estas guías en Premiere y DaVinci.
+- [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] usa fotos reales pero horizontales (3:2) y sin voz. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.
+- Los trazos de [2] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales.
 
 ## Fuentes
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
+- [2] Reel de 24 s: 8 recursos de composición dibujados sobre fotos (espiral, marco, tercios, yuxtaposición, diagonales, líneas guía, punto de fuga, centrado) — archivo · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
