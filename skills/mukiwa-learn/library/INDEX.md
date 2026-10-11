@@ -52,6 +52,7 @@
 ## motion-edicion
 
 - [Base: motion y edición](motion-edicion/_base.md) — Marco de observación para lecciones de edición, motion graphics y post. Se enriquece con cada lección.
+- [Dibujo animado clásico en Blender: boceto, limpio, tinta, color y fondo 3D curvo](motion-edicion/dibujo-animado-clasico-blender-youpie-toons.md) — Flujo de 7 pasos para un cartoon "edad de oro" (estilo Popeye) hecho en Blender: animación 2D cuadro a cuadro con capas por parte del cuerpo, puesta en un escenario 3D con fondo curvo y ajuste del paso para que los pies no patinen.
 - [Tipografía cinética en After Effects: 3 técnicas con una sola capa](motion-edicion/tipografia-cinetica-after-effects-3-tecnicas.md) — Animar caracteres/palabras con Animator + Range Selector, armar bloques de texto rotados que forman un gran bloque, y dar jerarquía con color — sin una capa por palabra.
 
 ## narrativa-direccion
