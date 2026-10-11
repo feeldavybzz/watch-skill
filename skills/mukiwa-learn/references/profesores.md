@@ -14,6 +14,7 @@ trabajo y que mejoren con cada link. Este paso va siempre después de guardar la
    | `composicion-visual` | composición de la imagen en foto, video, cine, reels y piezas: tercios, rejilla áurea, diagonales, triángulos, V, radial, curva S, pirámide, espiral, guías por formato (16:9, 5:4, 1:1, 4:5, 9:16) y guías o plantillas superpuestas para el plugin |
 | `editor-asistente` | preparar y montar el material: cortar silencios y errores, subtitular, sacar reels y carruseles de un video largo, organizar el material, editar con IA (Premiere, DaVinci, Claude Code) |
 | `cinematografia` | cámara: movimientos (estático, paneo, whip pan, tilt, push in, pull out, zoom, dolly zoom, roll, tracking, trucking, arc, boom, aleatorio), soportes y equipo, lista de planos; después lentes e iluminación |
+| `efectos-visuales` | efectos especiales de rodaje (SFX), efectos visuales (VFX: composición, croma, rotoscopia, producción virtual) y CGI; supervisores y departamentos; planear efectos desde el guion |
 
 3. Para temas fuera de los paraguas, crear un profesor nuevo con un nicho **igual de amplio** (un oficio, no una técnica ni una herramienta). Ejemplos: `color-grading`, `edicion-de-video`, `fotografia`, `sound-design`, `direccion-creativa`. DaVinci, Premiere o After Effects son secciones dentro del profesor, nunca un profesor.
 4. Reusar antes que crear. Si una skill propia de Bryan (no `profe-*`) ya cubre exactamente el tema, como `portfolio-marca-personal`, usar `attach --skill`.
