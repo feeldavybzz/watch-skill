@@ -74,14 +74,16 @@ Se combinan en cada plano; planea con un storyboard para usar cada uno con inten
 
 ### Tercios
 - Divide el cuadro en tres columnas y tres filas; las cuatro líneas y sus cruces son los lugares fuertes [1].
+- **Un horizonte va sobre la línea horizontal superior o la inferior**; con dos personajes, **uno a cada lado de las intersecciones** [4 (e-book)].
 - Ejemplo de aplicación: dos objetos grandes sobre las líneas verticales, una nube arriba y algo pequeño al frente [1].
 
 ### Rejilla áurea y espiral
+- **Línea áurea para ojos u horizonte**: a ≈ 0,382 de la altura (medida ≈ 0,378 sobre un plano de cine) [4]. **Espiral sobre un plano 16:9** [4]: se dibuja sobre un **rectángulo áureo de 1,62:1 centrado, con ≈ 7 % de margen a cada lado y ≈ 2,8 % arriba y abajo** (no estirado), y el **ojo** cae en el cruce de las figuras (≈ 0,69; 0,715) [4].
 - (estándar) Rejilla áurea: líneas al ≈38,2 % y ≈61,8 % del ancho y del alto. La **espiral áurea** se construye cortando el rectángulo repetidamente en partes cada vez más pequeñas [1].
 - Hay más de una construcción posible de la espiral: elegir con Bryan al hacer la plantilla.
 
 ### Triángulos, V, diagonal y pirámide
-- **Triángulos** = las dos diagonales del cuadro más líneas desde las otras esquinas (se ve en el dibujo de la clase) [1].
+- **Triángulos** = las dos diagonales del cuadro más líneas desde las otras esquinas (se ve en el dibujo de la clase) [1]. **Triángulo áureo** [4]: una diagonal de esquina a esquina y líneas desde las otras dos esquinas que la cortan en **ángulo recto**: dos puntos focales equilibrados. **Verificado**: sobre un plano ≈ 2,35:1 los pies de las perpendiculares caen en (0,152; 0,846) y (0,849; 0,16), y la función `triangulos` los reproduce; en 16:9 caen en ≈ 0,24, así que **se recalculan por formato** [4].
 - **V**: dos líneas que parten de abajo y convergen en un punto sobre el horizonte; árboles a los lados que se achican con la distancia [1].
 - **Pirámide**: triángulo con la base abajo y el vértice arriba al centro [1].
 
@@ -131,6 +133,8 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Cada guía debe poder verse **sola sobre negro** y **superpuesta sobre la imagen**, con la etiqueta como capa de texto aparte (sirve para hacer reels como [2]).
 - Cada una debe poder **superponerse, moverse y rotarse**; el radial con varios puntos; la espiral con 4 orientaciones (estándar).
 - Mostrar también el vocabulario **punto focal / primer plano / fondo** como ayuda al componer [1].
+- **Marco dentro del marco también con el fondo** (no hace falta un primer plano): una abertura del fondo puede formar el marco, p. ej. un triángulo [4 (e-book)].
+- Las guías se calculan **sobre la imagen, sin las barras negras**: un plano 2,39:1 dentro de un 16:9 usa 2,39:1 (formato `2.39:1` incluido) [4].
 - Validar cada guía en los nueve formatos del JSON (revisión visual hecha con `guias.py --preview`).
 
 ## Por herramienta
@@ -165,6 +169,8 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Graphic Design: las mismas guías para portadas y carruseles, junto con la retícula (ver `profe-diseno-grafico`).
 
 ## Dudas abiertas
+- La **espiral** se dibuja de dos maneras en las fuentes: rectángulo áureo **centrado e inset** [4] y estirada hasta los bordes del cuadro [2]. El plugin usa la primera por defecto (medida) y ofrece la segunda.
+- [4] (guía escrita y e-book) son del mismo creador; el e-book no se descargó (pide correo) y puede traer más reglas.
 - La «sección áurea» de la fuente [1] se explica «en el centro» y se dibuja como una cruz de bandas estrechas, que no coincide con la rejilla áurea habitual (38,2 / 61,8 %). Confirmar con otra fuente.
 - La espiral áurea de [1] no da la proporción ni la construcción exacta.
 - [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] y [3] usan fotos reales horizontales (3:2 y 4:3) y sin voz; [4] da teoría con ejemplos de película, todos horizontales. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.

@@ -4,11 +4,11 @@
 - **Fuente**: https://youtu.be/hUmZldt0DTg · «Ultimate Guide to Film Composition & Framing — Key Elements Explained [Shot List Ep. 11]» · canal StudioBinder · 17:49 · inglés.
 - **Fecha**: 2026-10-10
 - **Tipo de "oídos"**: audio transcrito en la Mac con faster-whisper (≈2 160 palabras) y cotejado con los **subtítulos manuales** en inglés (≈2 190 palabras). Coinciden en el contenido. Whisper se equivocó en nombres propios (los subtítulos manuales corrigen): «Wong Ha-Wai»→Wong Kar-wai, «Keras Kuro»→Chiaroscuro, «the number 5»→el número *phi*, «Barry Lindon»→Barry Lyndon, «Wally»→WALL-E. Se usan los nombres corregidos.
-- **Aporte del creador**: ALTO. La descripción enlaza un e-book gratuito y guías relacionadas (links acortados de bit.ly, **sin abrir**); promoción mínima (suscribirse, su software de pago al final).
+- **Aporte del creador**: ALTO. La descripción enlaza un e-book gratuito y guías relacionadas (bit.ly); **abrí** la guía escrita del blog y la página del e-book (ver «Segunda pasada»). Promoción mínima (suscribirse, su software de pago al final).
 - **Confianza**: alta en definiciones y reglas (dichas y mostradas con gráficos); media en los ejemplos de película (nombres leídos en pantalla).
 
 ## Qué NO es este video
-- No da medidas en píxeles ni formatos de plugin; la razón áurea la da como 1:1,618 y un ejemplo de línea sobre el fotograma.
+- No da medidas en píxeles ni formatos de plugin; la razón áurea la da como 1:1,618 y con ejemplos dibujados sobre el fotograma (se midieron en la segunda pasada).
 - **No explica cómo recomponer para vertical**: solo menciona la proporción como factor (ver teoría). Todo el material son películas horizontales.
 
 ## Teoría (lo que se dice)
@@ -28,7 +28,7 @@
 ## Práctica (lo que se ve)
 - Cada sección lleva un rótulo con icono (POINTS, LINES, SHAPES, TEXTURES AND PATTERNS, SPACE, DEPTH, BALANCE, ANGLES, COLOR AND TONE) y ejemplos de película con título y año en la esquina; cierra con una tarjeta de cada elemento en una cuadrícula 3×3 [15:21].
 - [2:58] **Rejilla de tercios** dibujada sobre un plano de *Interstellar* con el sujeto en la intersección inferior izquierda.
-- [10:37] **Espiral áurea** (amarilla) sobre una calle con una figura encapada en el ojo de la espiral (abajo a la derecha), con la rejilla de rectángulos.
+- [10:37] **Espiral áurea** (amarilla) y subdivisión en rectángulos (violeta) sobre una calle de *Children of Men*; el ojo cae abajo a la derecha, donde se cruzan unas figuras (la figura encapada del primer plano queda fuera del ojo; corrección de la segunda pasada).
 - [10:48] Rótulo «1 : 1.618 = φ (phi)».
 - [11:21] **Línea áurea horizontal (amarilla) a ≈ 0,37 de la altura**, cruzando los ojos del actor en un plano de *El padrino* (≈0,382).
 - [13:43] **Flechas** (amarilla y celeste) señalan el contraste de color entre el vestido verde y el fondo rojo en *In the Mood for Love*.
@@ -38,9 +38,24 @@
 - Ritmo (≈, medido): 234 cortes, 13,1 por minuto, plano promedio 4,5 s.
 
 ## Cruce teoría ↔ práctica
-- Coincide: lo que se dice de cada elemento se ilustra en pantalla con un plano de película y un rótulo. El **triángulo áureo** se describe con voz pero **no se dibuja** en pantalla (solo la rejilla de tercios, la espiral y la línea áurea).
+- Coincide: lo que se dice de cada elemento se ilustra en pantalla con un plano de película y un rótulo. **Corrección de la primera pasada**: el **triángulo áureo sí se dibuja** (≈ 3:09, sobre *Pulp Fiction*); dije que no se veía porque solo había abierto hojas de contacto.
 - La razón áurea se usa de **tres maneras**: espiral, línea a 0,382 de la altura y como balance en general; los tres se ven.
 - Sobre la proporción: la teoría la menciona de pasada y no hay ejemplo vertical que lo muestre.
+
+## Segunda pasada (detalles que se me habían escapado)
+Hecha con capturas exactas a 1280 px, los links de la descripción y la geometría medida.
+- **Capítulos oficiales** (de la descripción): Intro 0:00 · Definición e historia 0:52 · Aspect Ratio in Composition 1:29 · Points 1:59 · Lines 3:28 · Shapes 4:20 · Textures & Patterns 5:20 · Space 6:57 · Depth 8:19 · Balance 9:48 · Angles 11:56 · Color & Tone 12:56 · Combinando 15:02 · Ejercicio *Skyfall* 15:17 · Conclusiones 17:01. La proporción de pantalla tiene **su propio capítulo** (1:29–1:59).
+- **Tercios** [2:58]: rejilla sobre un plano de *El lobo de Wall Street* con el sujeto en la intersección inferior izquierda (y otra sobre *Interstellar* a 2:58,8). En el e-book (p. 12): «cualquier **horizonte** va en la línea horizontal **superior o inferior**»; con dos personajes (*2001*), uno a cada lado de las intersecciones.
+- **Triángulo áureo** [3:09, *Pulp Fiction*, plano ≈ 2,35:1]: diagonal de la esquina inferior izquierda a la superior derecha y dos perpendiculares desde las otras dos esquinas. **Medido**: pies de las perpendiculares en (0,152; 0,846) y (0,849; 0,16). La función `triangulos` del plugin da (0,153; 0,847) y (0,847; 0,153) para 2,35:1: **coincide**. En 16:9 serían ≈ 0,24: los puntos **dependen del formato**.
+- **Espiral áurea** [10:37, *Children of Men*, plano 16:9]: se dibuja sobre un **rectángulo áureo de 1,62:1 centrado e inset** (≈ 7 % de margen a cada lado y ≈ 2,8 % arriba y abajo, no estirado al cuadro), con la subdivisión de rectángulos en violeta y la espiral en amarillo. El **ojo** cae abajo a la derecha (≈ 0,69; 0,715), en el cruce de las figuras. Antes de eso, un **nautilo** como ejemplo en la naturaleza [≈ 11:00].
+- **Línea áurea** [11:21, *El padrino*]: línea horizontal amarilla a **≈ 0,378** de la altura que cruza los ojos del actor (≈ 0,382).
+- **Marco dentro del marco** (página 32 del e-book, *El graduado*): un triángulo punteado que forma una abertura entre la pierna en primer plano y el fondo; «no siempre hace falta un elemento en primer plano: **el fondo también puede crear el marco**».
+- **Color** [13:43]: flechas amarilla y celeste señalan el contraste entre el vestido verde y el fondo rojo (*In the Mood for Love*).
+- **Formato de los ejemplos**: casi todas las películas están en **pantalla panorámica 2,35–2,39:1** dentro de un 16:9 (barras negras arriba y abajo). Las guías se dibujan **sobre la imagen, sin las barras**.
+- Iconos de «dos rectángulos blancos» arriba a la derecha de varios planos: marcador de anotación del video (sin significado técnico).
+- **Cuadrícula final** [15:21]: 9 planos de ejemplo, uno por elemento (barco en el mar = puntos; pasillo de *2001* = líneas; el hotel de *El graduado* = formas; alfombra de *El resplandor* = patrón; etc.).
+- **Guía escrita del blog** (la que enlaza la descripción, «Rules of Shot Composition in Film»; no es el video, es del mismo creador): tercios con dos personajes uno a cada lado de las intersecciones; **fuera de centro o de perfil** sugiere distancia o un personaje poco confiable; **centrar** rompe los tercios y crea tensión o poder (simetría puede revelar rasgos o abrumar); **nivel de los ojos** = igualdad y empatía; **primer plano de los ojos** = estado interior; **rack focus** cambia el centro de la escena; **bokeh** = aislamiento; **deep space** (cerca y lejos, no necesariamente enfocado) frente a **deep focus**; las reglas son guías y saber cuándo romperlas es parte del oficio. **No dice** nada de headroom/lookroom, razón áurea ni proporciones.
+- **E-book** (página del e-book, no descargado): pide correo para enviarlo. Capítulos: qué es la composición, equilibrio, puntos focales, contraste, líneas y formas, color, texturas y patrones, tono, espacio y profundidad, ángulo; los llama «guías de inspiración», no reglas fijas.
 
 ## Receta paso a paso (componer un plano con los 9 elementos)
 1. **Punto**: decide dónde va la mirada; colócalo en una intersección de tercios o con el triángulo áureo; deja el lienzo limpio.
@@ -60,9 +75,9 @@
 - Para Creative Direction: la lista de 9 elementos sirve como checklist al preparar un plano o un storyboard.
 
 ## Límites
-- Evidencia: audio transcrito y cotejado con subtítulos manuales; 102 capturas de 0:00 a 17:48 (hueco máximo 17,5 s); abrí las 12 hojas de contacto, no cada captura fija a tamaño completo. No vi cada fotograma.
+- Evidencia: audio transcrito y cotejado con subtítulos manuales; 102 capturas de 0:00 a 17:48 (hueco máximo 17,5 s); abrí las 12 hojas de contacto y, en la segunda pasada, 12 capturas exactas a tamaño completo, más fotogramas del e-book. No vi cada fotograma.
 - Los nombres de películas se leen del rótulo en pantalla (a veces ilegible); las referencias no se verificaron una a una.
-- Los links del e-book (bit.ly) no se abrieron.
+- Abrí (solo lectura) la guía escrita y la página del e-book; **no descargué** el e-book (pide correo). Los links redirigen al dominio del propio creador.
 - La música y las escenas son de terceros; nada se reutiliza.
 
 ## Conecta con
