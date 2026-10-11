@@ -1,15 +1,15 @@
 ---
 name: profe-editor-asistente
-description: Profesor MUKIWA de editor asistente en Premiere Pro, DaVinci Resolve, Claude Code y Remotion. Sabe hacerlo paso a paso, con lo aprendido de referencias reales que Bryan fue enviando. Usar cuando Bryan pida preparar, cortar y subtitular un video, ajustar pausas y música, animar subtítulos con Remotion, quitar silencios y errores, sacar reels o carruseles de un video largo, organizar el material, editar con IA, o pregunte cómo se hace algo de editor asistente.
+description: Profesor MUKIWA de editor asistente en Premiere Pro, DaVinci Resolve, Claude Code y Remotion. Sabe hacerlo paso a paso, con lo aprendido de referencias reales que Bryan fue enviando. Usar cuando Bryan pida preparar, cortar y subtitular un video, ajustar pausas y música, animar subtítulos con Remotion, cubrir con B-roll, no cruzar la línea de 180° en un diálogo, rampas de velocidad y cámara lenta, quitar silencios y errores, sacar reels o carruseles de un video largo, organizar el material, editar con IA, o pregunte cómo se hace algo de editor asistente.
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 3
+  lecciones: 6
   actualizado: "2026-10-11"
 ---
 
 # Profe: Editor asistente
-> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas.
+> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), cubre con B-roll, respeta la línea de 180° y usa la velocidad como recurso, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -44,6 +44,9 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `profe-diseno-gra
 - **J cut y L cut (split edit)**: **J** = el audio del siguiente plano empieza antes de verlo; **L** = el audio del plano anterior continúa sobre el siguiente. Úsalos en diálogos (más naturales; captan reacciones del que escucha) y para explicar un plan mientras se muestra la acción [3].
 - **Montaje intelectual** (efecto Kuleshov): yuxtapón planos sin relación aparente para crear una idea o emoción (un ratón y una trampa = «cae en una trampa»); hace el corte más notorio [3].
 - **Corte en acción**: corta **durante el movimiento**; la salida del plano A coincide con la entrada del B; en peleas, **corta en el impacto** [3].
+- **B-roll (el material al que cortas)** [4]: es lo que cubre los huecos del A-roll: **tapa saltos (jump cuts) y errores**, da **cobertura** a un hablante largo y puede **simbolizar** lo que se dice (en *Her*, el polvo en la pared mientras ella explica su conciencia). Corta a él en la frase clave y **elige su ángulo, lente y movimiento por el significado que quieres** (la misma línea cambia de sentido según el plano). Al rodarlo se planifica y se agrupa; esta parte la ejecuta `profe-cinematografia` [4].
+- **No cruces la línea sin querer (regla de los 180°)** [5]: en un diálogo mantén cada personaje mirando al **mismo lado de pantalla** corte tras corte (uno a la derecha, otro a la izquierda); si el material quedó cruzado, repáralo con un **plano neutral** (sobre la línea o detrás de un sujeto) o con un movimiento de cámara que cruce dentro del plano. Cruzarla a propósito sirve para **caos** o para **cambiar poco a poco el poder** entre personajes [5].
+- **Velocidad como recurso de montaje** [6]: la **rampa de velocidad** (pasar entre velocidades dentro de un mismo plano) da peso a un golpe o acento (*300*); la cámara lenta enfatiza la emoción o la acción que muestra; **no mezcles velocidades** dentro de un movimiento que debe verse normal. Material grabado a alta tasa (60, 120 o más) se reproduce a 24 para que sea lento y suave; el audio se estira con él [6].
 - Pendientes (sin fuente): freeze frame, cortes invisibles, fotogramas subliminales, cortes dobles y jump cut [3].
 
 ### Corte
@@ -130,7 +133,7 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [2] Valores de pausas, música y subtítulos salen de guías escritas (autores con herramientas y afiliados propios) y no se han comprobado con una edición terminada de referencia: validar antes de fijarlos como estándar MUKIWA.
 - [2] AssemblyAI frente a Whisper: una guía prefiere AssemblyAI, otra usa Whisper; ambas dan tiempos por palabra. Aquí se usa Whisper local.
 - Siguen sin valor: umbral de silencio en dB, relleno de los cortes (padding), lista de muletillas y tolerancia de desfase.
-- La guía escrita de [3] añade técnicas que el video no desarrolla: continuity editing, disolvencia, fundido, jump cut, match cut, montaje y la **regla de los 180°**; no hay fuente para ejecutarlas en software.
+- La guía escrita de [3] añade técnicas que el video no desarrolla: continuity editing, disolvencia, fundido, jump cut, match cut y montaje; la **regla de los 180°** ya tiene fuente propia [5]. No hay fuente para ejecutarlas en software.
 - Sin fuente para Premiere y DaVinci (ya hay un oficio de corte por transcripción en ambos, pero no se ha aprendido de un video real).
 - [1] es una demostración comercial: la skill y su prompt no se muestran, así que faltan umbrales de silencio, tipografía y tamaños de subtítulos y reglas de animación (solo se ve el estilo general).
 - La calidad real de los cortes y subtítulos no se pudo comprobar: solo se vieron segundos de los reels, adelantados.
@@ -140,3 +143,6 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [1] Editar un video en crudo con Claude: video largo, reels y carrusel — https://youtu.be/viztypMn7D0 · `references/lecciones/editor-asistente-claude-flujo-reels-carrusel.md`
 - [2] Editar video con Claude Code: tres guías escritas (cortes, pausas, música, subtítulos, Remotion) — https://learnwithhasan.com/guide/claude-code-video-editing/ · https://www.mejba.me/es/blog/claude-code-video-editing-workflow · https://www.tella.com/blog/how-to-use-remotion-agent-skills-with-claude-code.md · `references/lecciones/guias-claude-code-cortes-pausas-musica-subtitulos.md`
 - [3] Seis formas de editar una escena: eyeline match, cross cutting, eye trace, split edit, montaje intelectual y corte en acción (StudioBinder, Shot List ep. 10) — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
+- [4] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`
+- [5] La regla de los 180°: seguirla, romperla y doblarla (StudioBinder) — https://youtu.be/iW0bKUfvH2c · `references/lecciones/regla-de-los-180-grados-studiobinder.md`
+- [6] Frame rate: capturar y presentar a distintas velocidades (StudioBinder, Shot List ep. 8) — https://youtu.be/7lUFluLOh-s · `references/lecciones/frame-rate-captura-presentacion-camara-lenta-studiobinder.md`

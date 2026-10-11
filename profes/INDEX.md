@@ -2,10 +2,12 @@
 
 Mini skills por nicho que crecen con cada video analizado (ver skills/mukiwa-learn/references/profesores.md).
 
-- **cinematografia** — 2 lecciones · Trípode, Dolly, Steadicam, Grúa y jib, Cámara en mano · actualizado 2026-10-11
+- **cinematografia** — 6 lecciones · Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control · actualizado 2026-10-11
 - **composicion-visual** — 4 lecciones · Premiere Pro, DaVinci Resolve, Photoshop, Procreate · actualizado 2026-10-10
 - **diseno-grafico** — 1 lección · Illustrator, Photoshop, Figma, Procreate · actualizado 2026-10-10
-- **editor-asistente** — 3 lecciones · Premiere Pro, DaVinci Resolve, Claude Code, Remotion · actualizado 2026-10-11
+- **editor-asistente** — 6 lecciones · Premiere Pro, DaVinci Resolve, Claude Code, Remotion · actualizado 2026-10-11
 - **efectos-visuales** — 1 lección · Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis · actualizado 2026-10-11
+- **iluminacion** — 1 lección · Tungsteno, HMI, LED, Kino Flo, Fotómetro · actualizado 2026-10-11
 - **motion-graphics** — 2 lecciones · After Effects · actualizado 2026-10-10
-- **narrativa-y-direccion** — 2 lecciones · Storyboard, Lista de planos · actualizado 2026-10-11
+- **narrativa-y-direccion** — 4 lecciones · Storyboard, Lista de planos · actualizado 2026-10-11
+- **video-con-ia** — 1 lección · Higgsfield Cinema Studio, Seedance, Seedream, Claude · actualizado 2026-10-11

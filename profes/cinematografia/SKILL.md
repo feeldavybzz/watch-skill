@@ -1,20 +1,20 @@
 ---
 name: profe-cinematografia
-description: Profesor MUKIWA de cinematografía (movimientos de cámara en cine y video: movimientos y ángulos), que aprende de las referencias que Bryan envía. Sabe qué cuenta cada uno de los 15 movimientos (estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y movimiento aleatorio), con qué equipo se hace (trípode, dolly, Steadicam, grúa o jib, cámara en mano) y cómo planearlos en una lista de planos; y los 9 ángulos o alturas de cámara (bajo, alto, cenital, holandés, ojos, hombro, cadera, rodilla y suelo). Usar cuando Bryan pida elegir o ejecutar un movimiento o un ángulo de cámara, plano bajo o alto, cenital, holandés, altura de cámara, paneo, whip pan, tilt, empujar o alejar la cámara, zoom, dolly zoom, tracking, trucking, arco u órbita, grúa o boom, cámara en mano, planear una lista de planos o decidir qué emoción cuenta un plano, o pregunte cómo se hace algo de cinematografía.
+description: Profesor MUKIWA de cinematografía (cámara en cine y video), que aprende de las referencias que Bryan envía. Sabe qué cuenta cada uno de los 15 movimientos de cámara, los 9 ángulos o alturas, los 12 soportes (en mano, trípode, pedestal, grúa o jib, cenital, dolly, estabilizador, Snorricam, vehículo, dron, motion control y carcasa submarina), cómo elegir el frame rate (24, 48, 120 fps, cámara lenta y rápida), la regla de los 180° (seguirla, romperla, doblarla) y cómo planear y rodar B-roll, y a planearlo todo en una lista de planos. Usar cuando Bryan pida elegir o ejecutar un movimiento, un ángulo o un soporte de cámara, steadicam, gimbal, dolly, grúa, dron, cámara en mano, Snorricam, motion control, frame rate, fps, cámara lenta o rápida, under-crank u over-crank, regla de los 180 grados, cruzar la línea, ejes de mirada, B-roll, planear una lista de planos o decidir qué emoción cuenta un plano, o pregunte cómo se hace algo de cinematografía.
 metadata:
   nicho: cinematografia
-  herramientas: "Trípode, Dolly, Steadicam, Grúa y jib, Cámara en mano"
-  lecciones: 2
+  herramientas: "Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control"
+  lecciones: 6
   actualizado: "2026-10-11"
 ---
 
 # Profe: Cinematografía
-> Elige el ángulo y el movimiento de cámara según lo que debe sentir el público: sabe qué comunica cada uno de los 9 ángulos o alturas y qué cuenta cada uno de los 15 movimientos (estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y aleatorio), con qué equipo se hace y cómo planearlos en una lista de planos. Falta aprender tamaño de plano, lentes, foco, iluminación y la ejecución con valores (velocidades, distancias, grados).
+> Elige el ángulo, el movimiento, el soporte y la velocidad de la cámara según lo que debe sentir el público: sabe qué comunica cada uno de los 9 ángulos, qué cuenta cada uno de los 15 movimientos, con qué soporte de los 12 se hace, cuándo capturar a 24, 48, 120 o más fps, cómo mantener o romper la línea de 180° y cómo rodar B-roll con intención, y lo planea en una lista de planos. La iluminación la lleva `profe-iluminacion`. Falta aprender tamaño de plano, lentes, foco y la ejecución con valores (velocidades, distancias, grados).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para montar el resultado, con `profe-editor-asistente`.
+Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para la luz, con `profe-iluminacion`; para montar el resultado, con `profe-editor-asistente`.
 
 ## Cómo trabajar (cualquier plano o escena)
 1. **Decide primero el tamaño de plano y el encuadre; luego la altura (ángulo) y por último el movimiento.** El tamaño de plano aísla *qué* miramos; el ángulo decide *cómo* lo percibimos [2].
@@ -23,7 +23,10 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 4. **Elige el equipo** según el movimiento (tabla de abajo) [1].
 5. **Anótalo en una lista de planos** con número, tamaño > ángulo · soporte (p. ej. «WS > LA · Hip Level · Steadicam»); con muchos movimientos la escena se vuelve abrumadora sin ella [1][2].
 6. **Mezcla controlado y caótico** solo cuando el contraste cuente algo (en *Se7en*, el caos es el pánico de uno y el control la calma del otro) [1].
-7. **Los mejores usos son siempre intencionales**: si el ángulo o el movimiento no sirven a la historia, cámbialos; mezcla tamaños, encuadres y ángulos y no te conformes con lo esperado [1][2].
+7. **Elige el soporte por la sensación que debe producir** (tabla «Elegir el soporte») y busca un sustituto barato si el presupuesto no alcanza [3].
+8. **Decide el frame rate por plano** y anótalo en la lista de planos (24 normal; más alto para lento; más bajo para rápido) [4].
+9. **Traza la línea de 180° entre los sujetos** antes de colocar cámaras y rompe la regla solo con intención [5].
+10. **Los mejores usos son siempre intencionales**: si el ángulo o el movimiento no sirven a la historia, cámbialos; mezcla tamaños, encuadres y ángulos y no te conformes con lo esperado [1][2].
 
 ## Áreas
 ### Elegir el ángulo (altura de cámara)
@@ -89,11 +92,53 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 ### Combinar movimientos
 - Se pueden encadenar o superponer en un mismo plano (por ejemplo **pan a la izquierda + tilt arriba**) y mezclar con trucking y push in en una misma escena [1].
 
+### Elegir el soporte (los 12 rigs) [3]
+| Quiero… | Soporte |
+|---|---|
+| Intensidad (toma «dentada») o intimidad documental | **En mano** (rig de hombro o *easy rig*); el temblor es parte del diseño [3] |
+| No distraer del sujeto: diálogo, planos emocionales, blocking y puesta en escena | **Trípode** (estático; paneo y tilt suaves si hace falta) [3] |
+| Moverme en vertical en pequeño para seguir a un actor, presentar un mundo o crear suspense | **Pedestal** (en *Malditos bastardos*, un pedestal hacia abajo «revela» la bomba bajo la mesa) [3] |
+| Gran movimiento vertical u horizontal: aislamiento, libertad, espectáculo | **Grúa o jib** (los términos se usan indistintamente; cambia la escala) [3] |
+| Plano de arriba para detalles, insertos, POV o «vista de Dios» (omnisciencia) | **Cenital** (rig sobre la escena; si no hay grúa, un rig cenital da algo parecido) [3] |
+| Empujar, alejar o seguir lateralmente sin temblor ni cortes | **Dolly** (rieles rectos o curvos); más ligero: **slider**; para distancias largas o pasar obstáculos: **cable cam**; con zoom en sentido contrario: **dolly zoom o «zolly»** [3] |
+| Tomas largas por sets grandes o espacios estrechos, siguiendo el blocking del actor | **Estabilizador** (Steadicam con contrapesos o gimbal motorizado con batería) [3] |
+| Vértigo, mareo, pánico o tragedia subjetiva | **Snorricam** (cámara en el cuerpo del actor: chest cam o body mount) [3] |
+| Realismo e intensidad que ningún operador captaría (autos, motos, helicópteros) | **Montaje en vehículo** (fijo en el vehículo) [3] |
+| Aéreos accesibles: establecer, perseguir, toma única | **Dron** (sustituye al helicóptero; se puede combinar con grúa en una sola toma) [3] |
+| Repetir exactamente un movimiento (VFX con gemelos, split screen, time-lapse, stop motion) | **Motion control** [3] |
+| Inmersión o intimidad bajo el agua | **Carcasa submarina** (estanca; el agua llena parcialmente el cuadro) [3] |
+- **Sustitutos baratos vistos** [3]: slider en vez de dolly, cenital casero en vez de grúa, gimbal en vez de Steadicam, dron en vez de helicóptero, cámara en ventosa en un auto.
+- **Puedes combinar soportes en una misma toma** (dron + grúa en *Bohemian Rhapsody*) [3].
+
+### Frame rate: capturar y presentar [4]
+- **Tasa de captura** = fotogramas por segundo grabados; **tasa de presentación** = los que ve el público. Para movimiento normal deben ser **iguales** (24 fps = aspecto cinematográfico, heredado de lo mínimo que servía al sonido y ahorraba película) [4].
+- **Más fotogramas = movimiento más suave**: *El hobbit* a **48 fps** (menos desenfoque y menos fatiga en 3D), *Gemini Man* a **120 fps** (primera persona); deporte y conciertos pueden beneficiarse si presentas igual de alto [4].
+- **Cámara lenta (over-cranking)**: captura **mayor que 24** (48, 60, 120…); cuanto mayor, más lenta y más suave; *Matrix* hasta 300 fps, *Zombieland* (créditos) a 1000 fps. Enfatiza lo que muestra (terror, acción, comedia) y capta lo que el ojo no ve [4]. Factor ≈ captura ÷ 24 (cálculo derivado) y el audio se estira.
+- **Movimiento rápido (under-cranking)**: captura **menor que 24**; entrecortado, de película casera o cómico (*Austin Powers*: cabezas de fembots) [4].
+- **Step printing**: baja tasa + obturador lento para estelas y borrosidad, repitiendo fotogramas hasta 24 fps (*Domino* a 6 fps; también Wong Kar-wai y *Gladiator*) [4].
+- **Rampa de velocidad**: cambiar de velocidad dentro del mismo plano para dar peso a un golpe (*300*) [4].
+- **No mezcles tasas** si quieres movimiento de aspecto normal; mezcla solo para lento o para el look entrecortado [4]. Anota el **fps de cada plano** en la lista de planos (ej.: Sherlock Holmes: 24 fps el público, 240 y 800 fps la cámara lenta) [4].
+
+### La línea de 180° [5]
+- **Qué es**: una línea imaginaria entre dos sujetos; mantén **todas las cámaras de un lado** para tener orientación y dirección de pantalla (en *Heat*, uno mira a la derecha de cámara y el otro a la izquierda) [5].
+- Con **más de dos personas**: piensa en teatro; la cámara se queda en las butacas [5].
+- **Rómpela con intención**: seguirla da tranquilidad, romperla da caos (*La hora 25*, Norton y el detective miran los dos a la izquierda) o cambia poco a poco el poder (*Paper Moon*, cortan al otro lado cuando él se estira sobre la mesa) [5].
+- **Dóblala**: con un **plano neutral** que reinicia la línea (en *Malditos bastardos*, un plano sobre la línea detrás de Shosanna invierte la mirada) o con un **movimiento de cámara** que cruza la línea (en *Heat*, la cámara pasa de las espaldas a los frentes: de la sospecha a la apertura) [5].
+- Dibuja la línea en un plano de planta y anótalo en la lista de planos y el storyboard [5].
+
+### B-roll: cómo rodarlo con intención [6]
+- **A-roll** = historia o sujeto principal; **B-roll** = lo que cortas para cubrir los huecos, tapar saltos y simbolizar; normalmente se rueda sin sonido (MOS) [6].
+- **Planéalo** en la lista de planos (qué, cuándo, cómo; actores, utilería, cámara, movimiento) [6].
+- **Trabaja inteligente**: fuera de orden; primero lo que lleva actor; si falta tiempo, en tu entorno inmediato (time-lapse en el descanso de comida) [6].
+- **Aprovecha el tiempo**: poca profundidad de campo (≈ f/1.4), cámara lenta (60 o 120 fps) y dolly o gimbal ya montados [6].
+- **El significado lo cambian las especificaciones del plano**: «Enterré a ella bajo ese árbol» → malvado: ras de suelo, dolly in, rápido; descanso final: a la altura de los ojos, gran angular con destello de sol, dolly suave; ambos con el mismo equipo y en un minuto [6].
+
 ## Por herramienta
 ### Lista de planos (notación vista en pantalla)
 - Cada plano se anota con **tamaño > ángulo · soporte**, por ejemplo «WS > LA · Hip Level · Steadicam» o «MCU · OH · Sticks» (WS = plano general; LA = ángulo bajo; OH = cenital; MCU = plano medio corto) [2]. Los nueve ángulos tienen tarjeta propia en la lista de planos de la serie [2].
 
 ### Equipo y soportes
+- Los 12 soportes completos están en «Elegir el soporte» [3]; la tabla de abajo cubre qué soporte hace cada movimiento [1].
 | Movimiento | Equipo (de la guía escrita) |
 |---|---|
 | Estático | trípode [1] |
@@ -118,12 +163,22 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 - Abusar de la cámara en mano o de los zooms aleatorios → pierde efecto; moderación [1 (guía escrita)].
 - Mover la cámara cuando la quietud cuenta más (diálogo, indefensión) → el plano estático también es una decisión [1].
 
+- Cruzar la línea de 180° sin querer → los personajes parecen mirar al mismo lado y el corte desorienta; trázala antes de rodar [5].
+- Mezclar frame rates en un plano que debe verse normal → movimiento incoherente [4].
+- Esperar el look de 48 o 120 fps al verlo a 24 fps → no se aprecia; hay que presentar a esa tasa [4].
+- Rodar el B-roll sin decidir su significado → pierde su función narrativa [6].
+- Elegir el soporte por moda (Steadicam o dron «porque sí») → que sirva a la sensación del plano [3].
+
 ## Checklist antes de entregar
 - [ ] Cada ángulo y cada movimiento tienen una razón narrativa o una acción que los motiva.
 - [ ] La lista de planos tiene número, movimiento y dirección.
 - [ ] El equipo es el adecuado al movimiento.
 - [ ] El zoom y el dolly zoom se usan solo cuando buscas inquietud o conflicto.
 - [ ] El estilo de movimiento es coherente en la escena (o el contraste es intencional).
+- [ ] El soporte elegido sirve a la sensación del plano y hay un sustituto si no alcanza el presupuesto.
+- [ ] Cada plano especial lleva su fps en la lista de planos.
+- [ ] La línea de 180° está trazada y los quiebres son intencionales.
+- [ ] Cada B-roll tiene un significado anotado.
 
 ## Para MUKIWA
 - Visual Edits: tabla movimiento → emoción para el brief de un video; en edición, los empujes y zooms digitales y el whip pan sincronizado con la música imitan algunos de estos movimientos.
@@ -132,10 +187,17 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 ## Dudas abiertas
 - Ninguna fuente da cifras (velocidad, distancia, focal, grados ni alturas exactas); faltan valores para ejecutar con precisión. El cenital es «≈ 90°»; el resto sin grados.
 - Los vídeos del mismo canal sobre cada ángulo (bajo, alto, holandés, cuarta pared, OTS) y el de tamaño de plano (ep. 1) no se han analizado.
-- El video no enseña a montar el equipo; el episodio anterior de la serie (soportes) y el siguiente (lentes) no se han analizado.
+- Los soportes [3] solo se describen: no hay pesos, alturas, alcances ni precios, ni cómo montarlos u operarlos; el episodio de lentes de la serie no se ha analizado.
+- Frame rate [4]: sin ajustes de cámara ni de editor para ralentizar o reinterpretar metraje, y sin la relación con el obturador (otro video). El audio dice que en *Domino* cada fotograma se imprimió «cuatro veces más»; con 6 fps eso solo cuadra a 24 si son cuatro impresiones en total.
+- La regla de los 180° [5] no menciona la regla de los 30° ni distancias; B-roll [6]: sin duración recomendada por plano.
+- La guía escrita de soportes no menciona cable cam ni zolly y llama «waterproof housing» a la carcasa submarina; se usa el nombre del video [3].
 - «Bird's eye» aparece en la guía escrita sin definición.
 - Faltan los pasos en Premiere y DaVinci y ejemplos verticales.
 
 ## Fuentes
 - [1] Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6) — https://youtu.be/IiyBo-qLDeM · guía escrita https://www.studiobinder.com/blog/different-types-of-camera-movements-in-film/ · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
 - [2] Los 9 ángulos o alturas de cámara y lo que comunica cada uno (StudioBinder, Shot List ep. 3) — https://youtu.be/wLfZL9PZI9k · guía escrita https://www.studiobinder.com/blog/types-of-camera-shot-angles-in-film/ · `references/lecciones/nueve-angulos-de-camara-studiobinder.md`
+- [3] Los 12 soportes de cámara (rigs) y lo que cuenta cada uno (StudioBinder, Shot List ep. 5) — https://youtu.be/heJ9hWNb10g · `references/lecciones/soportes-de-camara-12-rigs-studiobinder.md`
+- [4] Frame rate: capturar y presentar a distintas velocidades (StudioBinder, Shot List ep. 8) — https://youtu.be/7lUFluLOh-s · `references/lecciones/frame-rate-captura-presentacion-camara-lenta-studiobinder.md`
+- [5] La regla de los 180°: seguirla, romperla y doblarla (StudioBinder) — https://youtu.be/iW0bKUfvH2c · `references/lecciones/regla-de-los-180-grados-studiobinder.md`
+- [6] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`

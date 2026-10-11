@@ -3,8 +3,12 @@
 
 ## cinematografia
 
+- [B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen)](cinematografia/b-roll-que-es-y-como-rodarlo-studiobinder.md) — Un video corto define el B-roll (lo que cortas para tapar y completar la historia), muestra cómo un plano de B-roll puede simbolizar una idea y da tres consejos —planéalo, trabaja inteligente y aprovecha el tiempo— con un ejemplo en que **los mismos planos cambian de significado según las especificaciones del plano**.
+- [Frame rate: capturar y presentar a distintas velocidades (StudioBinder, Shot List ep. 8)](cinematografia/frame-rate-captura-presentacion-camara-lenta-studiobinder.md) — Un video explica por qué existe el movimiento en cine (persistencia de la visión), por qué 24 fps es «lo cinematográfico», qué pasa con 48 y 120 fps, cómo se logra el movimiento rápido (subexponer o *under-crank*, *step printing*) y el lento (sobre-cranking, rampas de velocidad), y cómo decidir con la **tasa de captura** y la **tasa de presentación**.
 - [Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6)](cinematografia/movimientos-de-camara-15-studiobinder.md) — Un curso en video recorre cada movimiento de cámara con su definición, su uso narrativo y ejemplos de película: plano estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y movimiento aleatorio; y termina combinándolos en una escena. Es una fuente con teoría hablada y práctica en pantalla.
 - [Los 9 ángulos o alturas de cámara y lo que comunica cada uno (StudioBinder, Shot List ep. 3)](cinematografia/nueve-angulos-de-camara-studiobinder.md) — Un curso en video recorre nueve ángulos o alturas de cámara (bajo, alto, cenital, holandés, a la altura de los ojos, del hombro, de la cadera, de la rodilla y a ras de suelo), con su definición, su efecto en el público y ejemplos de película. Complementa los movimientos de cámara: el ángulo decide cómo percibimos al sujeto.
+- [La regla de los 180°: seguirla, romperla y doblarla (StudioBinder)](cinematografia/regla-de-los-180-grados-studiobinder.md) — Un video de 5:44 explica la línea imaginaria entre dos sujetos y por qué mantener todas las cámaras de un mismo lado da orientación y dirección de pantalla; cómo romperla crea caos o cambia la relación de poder y cómo doblarla con un plano neutral o con un movimiento de cámara.
+- [Los 12 soportes de cámara (rigs) y lo que cuenta cada uno (StudioBinder, Shot List ep. 5)](cinematografia/soportes-de-camara-12-rigs-studiobinder.md) — Un video recorre 12 soportes de cámara, del más básico al más raro (en mano, trípode, pedestal, grúa o jib, cenital, dolly, estabilizador, Snorricam, montaje en vehículo, dron, control de movimiento y carcasa submarina), con qué hace sentir cada uno y ejemplos de película.
 
 ## composicion
 
@@ -33,6 +37,10 @@
 
 - [Watch en Claude Code: cómo hacer que Claude "vea" un video](herramientas-ia/watch-claude-code-video.md) — Skill /watch (bradautomates/claude-video): yt-dlp descarga, ffmpeg saca fotogramas, subtítulos nativos o Whisper (Groq/OpenAI) ponen el texto, y Claude lee ambos con tiempos. Útil para auditar hooks, entender charlas largas y documentar sesiones grabadas.
 
+## iluminacion
+
+- [Iluminación de cine, parte 1: tipos de luz, términos y equipo (StudioBinder, Shot List ep. 12)](iluminacion/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md) — Un video explica los fundamentos de la luz de cine: natural y artificial, ambiente, práctica y motivada; cómo se mide (lúmenes, lux, ley del cuadrado inverso, Kelvin); los términos del set (exposición, contraste, clave alta y baja, luz dura y suave, lado ciego y lado corto, destellos, bokeh) y el equipo (tungsteno, HMI, fluorescente, Kino Flo, LED, geles, difusión, banderas, cookies, C-stands).
+
 ## motion-edicion
 
 - [Base: motion y edición](motion-edicion/_base.md) — Marco de observación para lecciones de edición, motion graphics y post. Se enriquece con cada lección.
@@ -42,3 +50,7 @@
 
 - [Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder, Visual Storytelling ep. 3)](narrativa-direccion/blocking-espacio-formas-lineas-studiobinder.md) — En menos de cinco minutos, un video explica cómo la colocación de los actores en el cuadro (blocking) hace emocionante una conversación: tres elementos visuales (espacio, formas y líneas), ejemplos de película con las figuras dibujadas encima y la idea de usar el contraste como subtexto.
 - [El círculo de la historia de Dan Harmon: 8 pasos aplicados a *El caballero oscuro* (StudioBinder)](narrativa-direccion/circulo-de-la-historia-dan-harmon-8-pasos.md) — Un video explica los ocho pasos del círculo de la historia de Dan Harmon (tú, necesidad, ir, buscar, encontrar, tomar, volver, cambiar) y los aplica a *El caballero oscuro* de Christopher Nolan, con un diagrama que marca en qué paso va cada escena y la división entre el mundo del orden y el del caos.
+
+## video-ia
+
+- [Dirigir un anuncio de 30 s con video de IA: personajes, locaciones, prompt cronometrado y arreglo de fallos (Higgsfield, con Claude Opus 5.5 y Seedance 2.5)](video-ia/dirigir-anuncio-con-video-ia-higgsfield-seedance.md) — Un video muestra el flujo completo de un anuncio de 30 segundos hecho con IA: fijar personajes y locaciones como referencias, escribir con Claude un prompt cronometrado por planos, y arreglar los fallos (asientos, ángulo inverso, mesa con un puesto de más) con anclas, un plano general y un mapa de blocking. Está dentro de la plataforma Higgsfield.
