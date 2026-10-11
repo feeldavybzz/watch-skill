@@ -195,8 +195,8 @@ def g_contorno_sujeto(w, h):
 def g_marco_circular(w, h):
     """Marco circular tipo puerta lunar con base: círculo de ≈48 % del ancho (horizontal) o 76 % (vertical)."""
     k = 0.24 if orient(w, h) != "vertical" else 0.38
-    r_px = k * w
-    cx, cy = 0.5, 0.42
+    r_px = min(k * w, 0.42 * h)   # que el círculo quepa siempre en el cuadro
+    cx, cy = 0.5, 0.45
     pts = [(r3(cx + (r_px * math.cos(2 * math.pi * i / 72)) / w), r3(cy + (r_px * math.sin(2 * math.pi * i / 72)) / h)) for i in range(73)]
     return [P(pts, True)], {"radio_fraccion_del_ancho": k, "nota": "círculo con el radio calculado en píxeles; si sale del cuadro bajar el centro o reducir el radio"}
 
