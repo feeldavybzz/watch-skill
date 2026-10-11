@@ -14,6 +14,7 @@
 ## edicion
 
 - [Editar un video en crudo con Claude Code: flujo de editor asistente (video largo, reels y carrusel)](edicion/editor-asistente-claude-flujo-reels-carrusel.md) — Una creadora le pasa a Claude Code un video grabado en crudo y una skill empaquetada; Claude responde unas preguntas de estilo y devuelve el MP4 editado, reels verticales y un carrusel. Sirve como flujo de trabajo, no como receta de cortes: la skill en sí no se muestra.
+- [Editar video con Claude Code: tres guías escritas (cortes, pausas, música, subtítulos, Remotion)](edicion/guias-claude-code-cortes-pausas-musica-subtitulos.md) — Tres guías públicas coinciden en el mismo patrón: transcripción con tiempo por palabra, corte decidido por el significado (no por silencios), animaciones y subtítulos en Remotion, y revisión humana final. Aportan valores concretos que el video de Melina Blanco no daba.
 
 ## herramientas-ia
 
