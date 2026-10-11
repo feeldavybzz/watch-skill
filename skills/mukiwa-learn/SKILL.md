@@ -5,6 +5,16 @@ description: Ver y analizar videos o audio (link o archivo) de edición, motion,
 
 # MUKIWA Learn
 
+## Ciclo completo (obligatorio con cada link; no se entrega a medias)
+Cada link pasa por los seis pasos, en orden. Si uno no se pudo, se dice cuál y por qué; nunca se da por hecho.
+1. **Ver**: abrir TODAS las hojas de contacto y TODAS las capturas fijas del informe; ampliar con `--at` lo que importe (menús, texto, valores). Decir qué tramos solo se vieron en hojas.
+2. **Escuchar**: el audio se transcribe con whisper (automático); leer la transcripción completa y cotejarla con `transcript_subtitulos.md`. Whisper da palabras, no tono ni música: no afirmar más.
+3. **Analizar**: separar lo que se dijo de lo que se ve, con tiempos; cruzar ambos y anotar contradicciones y lo que solo apareció en una de las dos fuentes.
+4. **Aprender**: escribir la lección (`references/plantilla-leccion.md`) y guardarla con `save_lesson.py`.
+5. **Actualizar el profesor**: `profes.py attach` + fusionar en su SKILL.md como instrucciones para hacer, con valores vistos o dichos (nada inventado); `profes.py install` si es nuevo; `python3 -I tools/build_skills.py` y las pruebas si se tocó el código.
+6. **Resumir a Bryan**: qué es el video (y si es publicidad), qué aprendió cada profesor (cuántas lecciones lleva), qué NO se pudo aprender y qué video haría falta, y qué se vio y escuchó realmente.
+Antes de resumir, comprobar: ¿abrí todas las hojas? ¿leí la transcripción del audio? ¿el profesor quedó actualizado y enlazado?
+
 ## Ver un video (camino principal)
 1. Leer library/INDEX.md y las lecciones pertinentes.
 2. Identificar las herramientas realmente disponibles. En Claude Code local usar terminal y archivos locales; en un entorno remoto no asumir control del Mac ni herramientas device_*. Python del venv: `~/.venvs/watch-skill/bin/python` si existe (en el disco externo el venv no arranca).
@@ -21,7 +31,7 @@ description: Ver y analizar videos o audio (link o archivo) de edición, motion,
 ## Buzón de links (cuando Bryan dice «procesa el buzón», «revisa los links pendientes» o corre la tarea de la noche)
 Bryan (o su atajo del iPhone) deja links en Google Drive → «MUKIWA · Aprender» → `links-pendientes.md`, y videos en «Para analizar/». No uses `--cookies` tú: mukiwa-grab usa solo, y únicamente para los sitios que Bryan autorizó en `~/.config/mukiwa/permisos.json` (hoy: instagram.com, sesión de Chrome), un reintento cuando el link falla por pedir sesión; el informe y `estado.md` lo anotan.
 1. `python3 scripts/inbox.py run`: escanea, descarga y prepara hasta 5 pendientes (usa el venv: el script lo detecta) y lista lo que está **LISTO PARA ANALIZAR** (con la ruta de su `informe.md`) y los **CON PROBLEMAS**.
-2. Por cada listo: abrir su informe, todas las hojas de contacto y capturas fijas, leer la transcripción; escribir la lección con `references/plantilla-leccion.md` (marcar PARCIAL si el estado es parcial); `scripts/save_lesson.py`; alimentar a los profesores (sección siguiente); `python3 scripts/inbox.py done --url LINK --profes diseno-grafico,... --leccion RUTA`.
+2. Por cada listo, seguir el **Ciclo completo**: abrir su informe, todas las hojas de contacto y capturas fijas, leer la transcripción; escribir la lección con `references/plantilla-leccion.md` (marcar PARCIAL si el estado es parcial); `scripts/save_lesson.py`; alimentar a los profesores (sección siguiente); `python3 scripts/inbox.py done --url LINK --profes diseno-grafico,... --leccion RUTA`.
 3. Los problemas no se reintentan a mano: están en `estado.md` con causa y qué hacer (429/red se reintentan solos hasta 3 veces). Contárselos a Bryan en una línea cada uno.
 4. Terminar con un resumen por profesor: qué aprendió y cuántas lecciones lleva. No hacer commit ni push desde la tarea de la noche.
 `inbox.py status` reescribe `estado.md`; `requeue --url LINK` devuelve un link a pendiente.

@@ -19,15 +19,21 @@
 - [6:37–6:48] Recomienda cambiar a **Opus** para editar video (dice que Sonnet no rinde igual).
 - [7:26–8:50] La skill **pregunta antes de editar**: motivo de la edición, quién hace los cortes (la skill, sin cortes, o un video ya cortado), estilo y marca (el de siempre, por defecto, o **copiar a un creador pasando su link**), efectos, y música (la de siempre, ninguna, o elegir una nueva). Detectó que el mismo video ya se había editado el día anterior.
 - [8:51–9:15] Tiempo: unos 3–5 minutos para un crudo de 13:38.
-- [9:24–10:50] Resumen que devolvió Claude: 13:37 → 11:56 (quitó silencios y tomas con error); **recortó el marco morado** de la grabación (lo detectó solo); **corrigió a mano la transcripción** antes de subtitular; 4 tarjetas de apertura, 28 tomas del evento sobre el que habla, logos oficiales (OpenAI, Slack, Teams, Drive, Notion, WhatsApp), frases destacadas y tarjeta final.
+- [9:24–10:50] Resumen que devolvió Claude (leído en pantalla a 10:28 y 12:00): 13:37 → 11:56; quitó las pausas y **11 tomas repetidas** dejando la **última versión completa** de cada frase; **recortó el marco morado**; **corrigió a mano la transcripción** (ej. «Death Day»→DevDay, «Hasbot»→HubSpot, «cloud»→Claude); **4 tarjetas de apertura**, **28 tomas del evento**, **≈45 tarjetas** con listas, números que suben, flujos de pasos y opciones, logos oficiales (OpenAI, Slack, Teams, Drive, Notion, WhatsApp), **3 frases grandes** y tarjeta final.
 - [11:43–13:30] Reels: pide solo 2 por tiempo; Claude detecta que ya hizo 6 el día anterior y pregunta cuáles hacer; pregunta **qué palabra va en el llamado a la acción** final («Comenta DEVDAY»). Aviso: la palabra debe existir también en la automatización de mensajes de Instagram.
+- Audio de salida (leído en pantalla): voz a **−13,5 LUFS**, que dice ser el volumen que usa YouTube; música lo-fi que **baja sola cuando hablas**. Marca de agua con el usuario (en la prueba salió el marcador @TU_USUARIO por usar el estilo por defecto). La skill crea una carpeta de edición con el nombre del video y, si se edita dos veces, sobrescribiría: conviene avisar o numerar.
 - [12:13–12:44] Consumo: la sesión de edición usó ≈ la mitad del cupo de la ventana de 5 horas en el plan de 20 USD (57 % marcado, con otras tareas en paralelo).
 
 ## Práctica (lo que se ve)
+- [0:00–0:24] **El propio inicio del video es el resultado editado** (se ve en la hoja 1): fondo negro, su cámara dentro de un marco inclinado con borde lima neón; luego plano a pantalla completa con **subtítulos de una palabra o pocas por vez** que aparecen escribiéndose («Los títu|»); tarjeta «DEL MISMO VIDEO · Contenido listo para Instagram» con ella a la izquierda; marca de agua de usuario abajo a la derecha. Más adelante: grabación de pantalla con su cara en un **recuadro vertical a la derecha** (imagen en imagen) y subtítulo inferior con la **palabra clave resaltada** («Un **dot** que cuando»).
+- [2:17–3:35] Miro: tablero con Claude arriba y tres ramas: Video largo → YouTube, Reels y Carrusel → Instagram. Es el esquema del flujo.
+- [3:49–5:52] La guía PDF (13 páginas, «Edita videos y reels con IA — Guía + Skill»): promete transcribir palabra por palabra, quitar pausas, muletillas y tomas repetidas, subtítulos con palabras clave resaltadas, **tarjetas animadas (listas, números, procesos)**, zooms, recuadros y pantalla dividida. Índice: lo que necesitas, instalación, cómo grabar para que quede bien, primer video largo, reels y Shorts, copiar el estilo de otro creador. Antes/después en la guía: fondo oscuro, subtítulo blanco con palabra en lima.
+- [4:51] Herramientas que pide: **ffmpeg** (cortar y mezclar), **Node 18+ con Remotion** (dibuja las animaciones), **Python 3.9+** (Whisper para transcribir y detección de la cara para los reels), 16 GB de RAM y 10 GB libres; grabación ideal en 4K o 1080p. Comandos: Mac `brew install ffmpeg node python`.
+- [14:03–14:20] Reels vistos: formato 9:16 con **toma del evento arriba y su cara abajo** y subtítulo grande blanco («Presentaron un agente»); cierre con tarjeta negra «Comenta **DEVDAY**» (palabra en caja lima).
 - [2:47–3:15] Instagram: dos de los reels publicados; los otros cuatro se dejan como «trial reels».
 - [6:44–7:00] En Claude Code (app de escritorio): carpeta «rrss», modelo Opus 5.5, esfuerzo «Medio», el video adjunto y la skill invocada como `/editor-video-ia`.
 - [13:35–14:30] Salida en Descargas: `Reels - DevDay (prueba)` y `Carrusel - DevDay (prueba)`. Según el resumen en pantalla: reels **1080×1920** de 39 s y 40 s; carrusel **4:5, 1080×1350**, 12 diapositivas numeradas 01–12 con portada con su foto. Reel 1: frase sobre su cara, tomas del evento arriba y su cara abajo, dos tarjetas de texto. Reel 2: error de la demo en vivo y tarjetas. Ambos terminan con el llamado «Comenta DEVDAY y te envío el video completo».
-- Dato honesto: Claude escribe que **revisó fotogramas y vistas previas, pero no vio los reels completos ni escuchó el audio**. Ella los revisa rápido (los adelanta).
+- **Control de calidad que hace la skill** (12:00): «revisé fotogramas de todo el video antes de renderizar» y corrigió tres cosas (logo de OpenAI muy chico, una fila de logos tapaba el crédito de las imágenes, un check aparecía tarde). Aun así avisa: «**no puedo escuchar el audio**; revisa que no haya quedado ningún corte a mitad de palabra en las tomas repetidas (minutos 5:06, 5:25, 5:48, 7:41 y 11:21) y que el volumen de la música te guste». También dice que los cortes son automáticos y que mires si el ritmo se siente natural o cortado. Ella los revisa rápido (los adelanta).
 - Ritmo de este video (≈, medido): 33 cortes, 1,6 por minuto; es una grabación de pantalla, no el resultado editado.
 
 ## Cruce teoría ↔ práctica
@@ -46,10 +52,10 @@
 
 ## Para MUKIWA
 - Esto es un **flujo de asistente**: sirve de plantilla para el trabajo de editor asistente (preparar, cortar silencios y errores, subtitular, derivar reels y carruseles) y para un servicio a clientes.
-- Para aprender los criterios de edición (cuánto silencio cortar, tipografía de subtítulos, animación de logos) hay que ver el resultado terminado, no este tutorial. Mandar un video editado de referencia o un tutorial de Premiere/DaVinci.
+- Para aprender los criterios de edición (cuánto silencio cortar, tipografía de subtítulos, animación de logos) hay que ver el resultado terminado; aquí solo se ve el estilo general (fondo oscuro, acento lima, palabra clave resaltada, imagen en imagen). Mandar un video editado de referencia o un tutorial de Premiere/DaVinci.
 - Idea para MUKIWA: la pregunta «copia a un creador» es lo que ya hace esta skill de análisis: un reel de referencia → estilo.
 
 ## Límites
-- Evidencia: transcripción completa del audio (whisper local) y 87 capturas de 0:00 a 20:26 (hueco máximo 30,7 s); vi 2 capturas completas y leí el resumen de Claude en pantalla. No vi cada segundo.
+- Evidencia: transcripción completa del audio (whisper local) y 87 capturas de 0:00 a 20:26 (hueco máximo 30,7 s). Abrí las 10 hojas de contacto y 6 capturas a tamaño completo (guía, instalación, resúmenes de Claude); los tramos de la comunidad y WhatsApp (14:38–19:00) los vi solo en hojas. No vi cada segundo.
 - La skill y el prompt no aparecen: no se pueden extraer sus reglas.
 - Tiempos y consumo de tokens son lo que dice ella, en su cuenta.
