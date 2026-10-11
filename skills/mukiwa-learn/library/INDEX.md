@@ -23,6 +23,7 @@
 
 - [Editar un video en crudo con Claude Code: flujo de editor asistente (video largo, reels y carrusel)](edicion/editor-asistente-claude-flujo-reels-carrusel.md) — Una creadora le pasa a Claude Code un video grabado en crudo y una skill empaquetada; Claude responde unas preguntas de estilo y devuelve el MP4 editado, reels verticales y un carrusel. Sirve como flujo de trabajo, no como receta de cortes: la skill en sí no se muestra.
 - [Editar video con Claude Code: tres guías escritas (cortes, pausas, música, subtítulos, Remotion)](edicion/guias-claude-code-cortes-pausas-musica-subtitulos.md) — Tres guías públicas coinciden en el mismo patrón: transcripción con tiempo por palabra, corte decidido por el significado (no por silencios), animaciones y subtítulos en Remotion, y revisión humana final. Aportan valores concretos que el video de Melina Blanco no daba.
+- [Seis formas de editar una escena: eyeline match, cross cutting, eye trace, split edit, montaje intelectual y corte en acción (StudioBinder, Shot List ep. 10)](edicion/seis-formas-de-editar-una-escena-studiobinder.md) — Un curso en video resume cómo decide un editor qué mostrar, cuándo cortar y a qué cortar, con la regla de los seis de Walter Murch y seis técnicas de corte dentro de una escena, cada una con ejemplos de película y líneas de tiempo dibujadas en pantalla.
 
 ## efectos-visuales
 
@@ -36,3 +37,7 @@
 
 - [Base: motion y edición](motion-edicion/_base.md) — Marco de observación para lecciones de edición, motion graphics y post. Se enriquece con cada lección.
 - [Tipografía cinética en After Effects: 3 técnicas con una sola capa](motion-edicion/tipografia-cinetica-after-effects-3-tecnicas.md) — Animar caracteres/palabras con Animator + Range Selector, armar bloques de texto rotados que forman un gran bloque, y dar jerarquía con color — sin una capa por palabra.
+
+## narrativa-direccion
+
+- [Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder, Visual Storytelling ep. 3)](narrativa-direccion/blocking-espacio-formas-lineas-studiobinder.md) — En menos de cinco minutos, un video explica cómo la colocación de los actores en el cuadro (blocking) hace emocionante una conversación: tres elementos visuales (espacio, formas y líneas), ejemplos de película con las figuras dibujadas encima y la idea de usar el contraste como subtexto.

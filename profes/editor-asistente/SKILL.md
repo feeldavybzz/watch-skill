@@ -4,12 +4,12 @@ description: Profesor MUKIWA de editor asistente en Premiere Pro, DaVinci Resolv
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 2
-  actualizado: "2026-10-10"
+  lecciones: 3
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Editor asistente
-> Prepara el material y entrega la primera versión del montaje: corta por significado, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas.
+> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -32,6 +32,19 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `profe-diseno-gra
 ### Preparación y brief
 - Preguntas fijas al empezar: ¿por qué se edita?, ¿quién corta (el asistente, nadie, o ya viene cortado)?, ¿estilo por defecto, de marca o copiado de un creador?, ¿efectos?, ¿música propia, ninguna o nueva? [1].
 - Si ya existe una edición previa del mismo material, avisa y pregunta qué rehacer en vez de duplicar [1].
+
+### Criterio de corte (cómo decidir cada corte) [3]
+- **Todo el trabajo se reduce a tres decisiones: qué mostrar, cuándo cortar y a qué cortar.** Cada corte debe ser pensado y con propósito [3].
+- **Regla de los seis de Walter Murch** (pesos leídos del gráfico del video; coinciden con los publicados): **Emoción 51 %**, **Historia 23 %**, **Ritmo 10 %**, **Eye trace 7 %**, **Plano bidimensional de la pantalla 5 %**, **Espacio tridimensional 4 %**. Cuando dos criterios chocan, gana el de más peso: la emoción primero [3].
+- **Ritmo según el tono**: escena contemplativa o luctuosa = mantén los planos más tiempo; acción frenética = cortes rápidos [3].
+- **A qué cortar**: a lo que mira el personaje (eyeline match: a menudo un POV; se puede retrasar la revelación o no mostrarla nunca para crear intriga), a un **inserto** (detalle de un objeto), a un **cutaway** (lo que el personaje piensa) [3].
+- **Conversaciones**: **plano-contraplano** (sujeto A y sujeto B desde un ángulo inverso y composición parecida) para mantener la geografía y la claridad de la escena [3].
+- **Cross cutting (montaje paralelo)**: alterna dos o más escenas simultáneas en lugares distintos; da ironía (bautizo de *El padrino*) o mantiene varios frentes avanzando (*Rogue One*) [3].
+- **Eye trace**: en planos rápidos, deja el punto de interés **en la misma zona del cuadro** de un plano al siguiente para que el ojo no tenga que rastrear; con ≈ 1,8 s entre cortes (dato del director de fotografía de *Mad Max: Fury Road*), algunos planos duran menos de 1 s [3].
+- **J cut y L cut (split edit)**: **J** = el audio del siguiente plano empieza antes de verlo; **L** = el audio del plano anterior continúa sobre el siguiente. Úsalos en diálogos (más naturales; captan reacciones del que escucha) y para explicar un plan mientras se muestra la acción [3].
+- **Montaje intelectual** (efecto Kuleshov): yuxtapón planos sin relación aparente para crear una idea o emoción (un ratón y una trampa = «cae en una trampa»); hace el corte más notorio [3].
+- **Corte en acción**: corta **durante el movimiento**; la salida del plano A coincide con la entrada del B; en peleas, **corta en el impacto** [3].
+- Pendientes (sin fuente): freeze frame, cortes invisibles, fotogramas subliminales, cortes dobles y jump cut [3].
 
 ### Corte
 - **El corte es semántico, no acústico**: cortar solo por silencios con ffmpeg dejó cortes sobre consonantes y borró pausas que importaban; decide qué se va por lo que se dice y deja a una persona la decisión de las frases repetidas [2].
@@ -113,9 +126,11 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - Para aprender los criterios de corte, subtítulos y animación hace falta ver ediciones terminadas o tutoriales de Premiere/DaVinci.
 
 ## Dudas abiertas
+- [3] Los porcentajes de la regla de los seis salen de un gráfico a baja resolución del video; coinciden con los valores publicados de Murch pero el narrador no los recita. Faltan duraciones recomendadas por tipo de plano y los pasos de J/L cut y de corte en acción en Premiere o DaVinci.
 - [2] Valores de pausas, música y subtítulos salen de guías escritas (autores con herramientas y afiliados propios) y no se han comprobado con una edición terminada de referencia: validar antes de fijarlos como estándar MUKIWA.
 - [2] AssemblyAI frente a Whisper: una guía prefiere AssemblyAI, otra usa Whisper; ambas dan tiempos por palabra. Aquí se usa Whisper local.
 - Siguen sin valor: umbral de silencio en dB, relleno de los cortes (padding), lista de muletillas y tolerancia de desfase.
+- La guía escrita de [3] añade técnicas que el video no desarrolla: continuity editing, disolvencia, fundido, jump cut, match cut, montaje y la **regla de los 180°**; no hay fuente para ejecutarlas en software.
 - Sin fuente para Premiere y DaVinci (ya hay un oficio de corte por transcripción en ambos, pero no se ha aprendido de un video real).
 - [1] es una demostración comercial: la skill y su prompt no se muestran, así que faltan umbrales de silencio, tipografía y tamaños de subtítulos y reglas de animación (solo se ve el estilo general).
 - La calidad real de los cortes y subtítulos no se pudo comprobar: solo se vieron segundos de los reels, adelantados.
@@ -124,3 +139,4 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 ## Fuentes
 - [1] Editar un video en crudo con Claude: video largo, reels y carrusel — https://youtu.be/viztypMn7D0 · `references/lecciones/editor-asistente-claude-flujo-reels-carrusel.md`
 - [2] Editar video con Claude Code: tres guías escritas (cortes, pausas, música, subtítulos, Remotion) — https://learnwithhasan.com/guide/claude-code-video-editing/ · https://www.mejba.me/es/blog/claude-code-video-editing-workflow · https://www.tella.com/blog/how-to-use-remotion-agent-skills-with-claude-code.md · `references/lecciones/guias-claude-code-cortes-pausas-musica-subtitulos.md`
+- [3] Seis formas de editar una escena: eyeline match, cross cutting, eye trace, split edit, montaje intelectual y corte en acción (StudioBinder, Shot List ep. 10) — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
