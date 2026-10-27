@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de negocio creativo: nicho, oferta en una frase, p
 metadata:
   nicho: negocio-creativo
   herramientas: "LinkedIn, Notion, Loom"
-  lecciones: 5
-  actualizado: "2026-10-27"
+  lecciones: 1
+  actualizado: "2026-10-13"
 ---
 
 # Profe: Negocio creativo

@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de dirección de video con IA (Higgsfield, Seedanc
 metadata:
   nicho: video-con-ia
   herramientas: "Higgsfield Cinema Studio, Seedance, Seedream, Claude"
-  lecciones: 5
-  actualizado: "2026-10-27"
+  lecciones: 1
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Dirección de video con IA

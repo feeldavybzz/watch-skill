@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de composición visual: esquemas, los 9 elementos,
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 9
-  actualizado: "2026-10-27"
+  lecciones: 7
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Composición visual

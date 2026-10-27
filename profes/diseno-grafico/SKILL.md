@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de diseño gráfico completo: briefing, identidad,
 metadata:
   nicho: diseno-grafico
   herramientas: "Illustrator, Photoshop, Figma, Procreate"
-  lecciones: 18
-  actualizado: "2026-10-27"
+  lecciones: 11
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Diseño gráfico

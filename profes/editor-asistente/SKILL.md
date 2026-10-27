@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de editor asistente: corte por significado, pausas
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 9
-  actualizado: "2026-10-27"
+  lecciones: 6
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Editor asistente

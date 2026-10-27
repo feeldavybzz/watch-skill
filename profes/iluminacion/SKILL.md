@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de iluminación de cine y video: tipos de luz, kel
 metadata:
   nicho: iluminacion
   herramientas: "Tungsteno, HMI, LED, Kino Flo, Fotómetro"
-  lecciones: 5
-  actualizado: "2026-10-27"
+  lecciones: 1
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Iluminación de cine y video

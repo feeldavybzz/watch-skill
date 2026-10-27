@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de motion graphics: tipografía cinética en After
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects, Blender"
-  lecciones: 8
-  actualizado: "2026-10-27"
+  lecciones: 3
+  actualizado: "2026-10-10"
 ---
 
 # Profe: Motion graphics

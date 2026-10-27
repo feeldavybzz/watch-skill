@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de cinematografía: ángulos, movimientos, soporte
 metadata:
   nicho: cinematografia
   herramientas: "Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control"
-  lecciones: 10
-  actualizado: "2026-10-27"
+  lecciones: 6
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Cinematografía

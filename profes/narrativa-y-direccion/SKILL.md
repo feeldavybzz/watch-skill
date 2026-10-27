@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de narrativa y dirección de escenas: círculo de 
 metadata:
   nicho: narrativa-y-direccion
   herramientas: "Storyboard, Lista de planos"
-  lecciones: 9
-  actualizado: "2026-10-27"
+  lecciones: 4
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Narrativa y dirección

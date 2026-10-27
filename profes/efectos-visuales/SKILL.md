@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de efectos visuales: distingue y combina SFX, VFX 
 metadata:
   nicho: efectos-visuales
   herramientas: "Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis"
-  lecciones: 4
-  actualizado: "2026-10-27"
+  lecciones: 1
+  actualizado: "2026-10-11"
 ---
 
 # Profe: Efectos visuales
