@@ -52,7 +52,7 @@ Artículo «Camera Angles Explained: The Different Types of Camera Shot Angles i
 ## Para MUKIWA
 - Visual Edits / Creative Direction: tabla ángulo → emoción para briefings de video y reels (el ángulo bajo da poder a un producto o a una persona; el holandés da tensión; el eye level + mirada a cámara da conexión en reels).
 - La lista de planos con tamaño, ángulo y soporte sirve como plantilla de preproducción.
-- Relación con la composición: el ángulo es el elemento «ángulo» de los 9 elementos (ver `profe-composicion-visual`); este profesor lo desarrolla.
+- Relación con la composición: el ángulo es el elemento «ángulo» de los 9 elementos (ver `kiwa-composicion-visual`); este profesor lo desarrolla.
 
 ## Límites
 - Evidencia: audio transcrito y cotejado con subtítulos manuales; 102 capturas de 0:00 a 13:32 (hueco máximo 14,6 s); abrí las 12 hojas de contacto, no cada captura fija a tamaño completo. No vi cada fotograma.

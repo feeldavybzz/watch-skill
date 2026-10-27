@@ -5,12 +5,12 @@ description: "Una sola skill para bajar, ver, escuchar, analizar y aprender de v
 
 # kiwa-watch-learn — una sola skill: bajar, ver, escuchar, analizar, aprender y enseñar al profe
 
-Es UNA skill, no varias. Un video entra por un lado y el conocimiento sale por dos: la **lección** (en `library/`) y las **instrucciones para hacer el trabajo** (en el profe del oficio, `profe-<nicho>`). Reemplaza a `kiwa-watch-learn` + `kiwa-watch-learn` e incorpora el análisis por modos (Mini/Completo, estilo "Ver vídeo 2.0" de AiLendra Labs, versión propia).
+Es UNA skill, no varias. Un video entra por un lado y el conocimiento sale por dos: la **lección** (en `library/`) y las **instrucciones para hacer el trabajo** (en el profe del oficio, `kiwa-<nicho>`). Reemplaza a `kiwa-watch-learn` + `kiwa-watch-learn` e incorpora el análisis por modos (Mini/Completo, estilo "Ver vídeo 2.0" de AiLendra Labs, versión propia).
 
 ```
 link o archivo → 1 BAJAR → 2 VER y OÍR → 3 ANALIZAR → 4 APRENDER (lección) → 5 ENSEÑAR AL PROFE
                                                                                    ↓
-                              Bryan pide HACER algo del oficio → se usa profe-<nicho>
+                              Bryan pide HACER algo del oficio → se usa kiwa-<nicho>
 ```
 
 Bryan trabaja en edición/motion, diseño gráfico y dirección creativa (MUKIWA DEPARTMENT). Habla en español casual; responde igual: directo, sin corporativismo. Paleta de referencia: lime #C5ED2E · blue #0068FB · dark #232323 · glass UI · VYBZ.
@@ -165,7 +165,7 @@ Reglas de honestidad:
 
 La lección es la memoria; el **profe** es lo que después HACE el trabajo. Cada video alimenta a uno o varios profes, sin que Bryan lo pida.
 
-**Profes que existen** (un SKILL.md por oficio): `profe-color-grading`, `profe-iluminacion`, `profe-cinematografia`, `profe-composicion-visual`, `profe-diseno-grafico`, `profe-editor-asistente`, `profe-efectos-visuales`, `profe-motion-graphics`, `profe-narrativa-y-direccion`, `profe-negocio-creativo`, `profe-video-con-ia`. Mira cuáles están instalados (lista de skills) y, si el disco de Bryan está conectado, `…/watch-skill/profes/INDEX.md`. También existe `retro-cartoon` (dibujo y diseño cartoon retro / rubber hose y la mascota de MUKIWA): los videos de ese estilo la alimentan directamente.
+**Profes que existen** (un SKILL.md por oficio): `kiwa-color-grading`, `kiwa-iluminacion`, `kiwa-cinematografia`, `kiwa-composicion-visual`, `kiwa-diseno-grafico`, `kiwa-editor-asistente`, `kiwa-efectos-visuales`, `kiwa-motion-graphics`, `kiwa-narrativa-y-direccion`, `kiwa-negocio-creativo`, `kiwa-video-con-ia`. Mira cuáles están instalados (lista de skills) y, si el disco de Bryan está conectado, `…/watch-skill/profes/INDEX.md`. También existe `retro-cartoon` (dibujo y diseño cartoon retro / rubber hose y la mascota de MUKIWA): los videos de ese estilo la alimentan directamente.
 
 **Cómo se hace:**
 1. **Clasifica por oficio o resultado, no por herramienta.** Un tutorial de nodos en DaVinci va a `color-grading` (en su sección "DaVinci Resolve"), no a un profe "davinci". Un video puede alimentar a varios (color + iluminación). Todo diseño gráfico va a `diseno-grafico`; toda animación a `motion-graphics`; personajes retro a `retro-cartoon`.
@@ -180,7 +180,7 @@ La lección es la memoria; el **profe** es lo que después HACE el trabajo. Cada
 4. **Dónde se escribe:** si el profe está instalado como skill, propón la versión completa con `propose_skills` (kind `improvement`; reemplaza el SKILL.md entero, así que incluye todo lo que ya tenía). Si el disco está conectado, copia también la lección a `profes/<nicho>/references/lecciones/` y actualiza su SKILL.md e `INDEX.md`.
 5. **Cuéntale a Bryan en una línea por profe:** qué aprendió y cuántas lecciones lleva. Y qué NO se pudo aprender y qué video haría falta.
 
-Cuando Bryan pida HACER algo de un oficio (gradear un clip, iluminar una escena, diseñar un logo), usa el profe `profe-<nicho>` si existe, y al terminar anota lo que falló o faltó para el siguiente video.
+Cuando Bryan pida HACER algo de un oficio (gradear un clip, iluminar una escena, diseñar un logo), usa el profe `kiwa-<nicho>` si existe, y al terminar anota lo que falló o faltó para el siguiente video.
 
 ### Consultar lo aprendido
 Si Bryan pregunta "qué sabemos de X": lee `library/INDEX.md` y el profe del oficio, abre solo las lecciones relevantes y sintetiza con referencias.

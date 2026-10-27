@@ -1,5 +1,5 @@
 ---
-name: profe-editor-asistente
+name: kiwa-editor-asistente
 description: "Profesor MUKIWA de editor asistente: corte por significado, pausas, música, subtítulos, Remotion, reels y carruseles, criterio de edición y flujo con Claude Code."
 metadata:
   nicho: editor-asistente
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Editor asistente
+# Kiwa · Editor asistente
 > Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), cubre con B-roll, respeta la línea de 180° y usa la velocidad como recurso, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas. Tiene **6 lecciones propias** y **3 complementarias** ([7] whip pan, [8] match cut en video de IA, [9] overlays en Premiere).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para el estilo gráfico de tarjetas y títulos, combínalo con `profe-diseno-grafico`; para animarlos, con `profe-motion-graphics`; para encuadrar el vertical, con `profe-composicion-visual`.
+Para el estilo gráfico de tarjetas y títulos, combínalo con `kiwa-diseno-grafico`; para animarlos, con `kiwa-motion-graphics`; para encuadrar el vertical, con `kiwa-composicion-visual`.
 
 ## Cómo trabajar (de un crudo a las piezas finales)
 1. **Material en crudo, sin limpiar antes**: los errores y repeticiones se quitan en la edición, no al grabar [1].
@@ -44,7 +44,7 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `profe-diseno-gra
 - **J cut y L cut (split edit)**: **J** = el audio del siguiente plano empieza antes de verlo; **L** = el audio del plano anterior continúa sobre el siguiente. Úsalos en diálogos (más naturales; captan reacciones del que escucha) y para explicar un plan mientras se muestra la acción [3].
 - **Montaje intelectual** (efecto Kuleshov): yuxtapón planos sin relación aparente para crear una idea o emoción (un ratón y una trampa = «cae en una trampa»); hace el corte más notorio [3].
 - **Corte en acción**: corta **durante el movimiento**; la salida del plano A coincide con la entrada del B; en peleas, **corta en el impacto** [3].
-- **B-roll (el material al que cortas)** [4]: es lo que cubre los huecos del A-roll: **tapa saltos (jump cuts) y errores**, da **cobertura** a un hablante largo y puede **simbolizar** lo que se dice (en *Her*, el polvo en la pared mientras ella explica su conciencia). Corta a él en la frase clave y **elige su ángulo, lente y movimiento por el significado que quieres** (la misma línea cambia de sentido según el plano). Al rodarlo se planifica y se agrupa; esta parte la ejecuta `profe-cinematografia` [4].
+- **B-roll (el material al que cortas)** [4]: es lo que cubre los huecos del A-roll: **tapa saltos (jump cuts) y errores**, da **cobertura** a un hablante largo y puede **simbolizar** lo que se dice (en *Her*, el polvo en la pared mientras ella explica su conciencia). Corta a él en la frase clave y **elige su ángulo, lente y movimiento por el significado que quieres** (la misma línea cambia de sentido según el plano). Al rodarlo se planifica y se agrupa; esta parte la ejecuta `kiwa-cinematografia` [4].
 - **No cruces la línea sin querer (regla de los 180°)** [5]: en un diálogo mantén cada personaje mirando al **mismo lado de pantalla** corte tras corte (uno a la derecha, otro a la izquierda); si el material quedó cruzado, repáralo con un **plano neutral** (sobre la línea o detrás de un sujeto) o con un movimiento de cámara que cruce dentro del plano. Cruzarla a propósito sirve para **caos** o para **cambiar poco a poco el poder** entre personajes [5].
 - **Velocidad como recurso de montaje** [6]: la **rampa de velocidad** (pasar entre velocidades dentro de un mismo plano) da peso a un golpe o acento (*300*); la cámara lenta enfatiza la emoción o la acción que muestra; **no mezcles velocidades** dentro de un movimiento que debe verse normal. Material grabado a alta tasa (60, 120 o más) se reproduce a 24 para que sea lento y suave; el audio se estira con él [6].
 - **Whip pan como transición** [7]: un paneo rápido puede **transicionar entre personajes o escenas** y sincronizarse con el ritmo de la música (*Whiplash*); si el material trae un whip pan, corta dentro del giro [7]. Reproducirlo en edición con un empuje o zoom digital es una idea (≈), sin fuente de valores [7].

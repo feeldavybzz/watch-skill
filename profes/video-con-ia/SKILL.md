@@ -1,5 +1,5 @@
 ---
-name: profe-video-con-ia
+name: kiwa-video-con-ia
 description: "Profesor MUKIWA de dirección de video con IA (Higgsfield, Seedance): personajes y locaciones consistentes, prompt cronometrado por planos y arreglo de fallos."
 metadata:
   nicho: video-con-ia
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Dirección de video con IA
+# Kiwa · Dirección de video con IA
 > Dirige un anuncio o escena con modelos de imagen y video como si fuera un rodaje: fija personajes y locaciones como referencias con nombre, escribe un prompt cronometrado por planos (lente, enfoque, quién está dónde, sonido, continuidad) y arregla los fallos con un plano general como fotograma clave, anclas de fondo por ángulo y mapas de blocking. Todo lo aprendido viene de una demo en Higgsfield (créditos, Seedance 2.5): el método dura, los modelos y precios cambian. Falta aprender los prompts completos, el montaje final y otros modelos. Tiene **1 lección propia** [1] y **4 complementarias** ([3] ángulos, [4] movimientos, [5] línea de 180°, [6] iluminación), más **1 guía pública absorbida** [2] que no cuenta como lección (menos confianza: fuente página pública).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; para ángulos, soportes y planos, con `profe-cinematografia`; para el montaje, con `profe-editor-asistente`.
+Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; para ángulos, soportes y planos, con `kiwa-cinematografia`; para el montaje, con `kiwa-editor-asistente`.
 
 ## Cómo trabajar (de la idea al anuncio)
 1. **Crea un proyecto y carpetas por activo** (personajes, locaciones, props, cada escena): con cientos de generaciones lo agradecerás [1].
@@ -81,7 +81,7 @@ Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; p
 
 ### Vocabulario de cámara, luz y línea de 180° para el prompt [3][4][5][6]
 (Los términos salen de las lecciones; usarlos en un prompt de IA es una aplicación mía, ≈, sin probar.)
-- **Ángulo** [3]: bajo, alto, cenital, holandés, a la altura de los ojos, del hombro, de la cadera, de la rodilla y a ras de suelo. El anuncio de [1] ya pide «three-quarter angle, camera low» en un plano; el efecto de cada ángulo (poder, vulnerabilidad, tensión, conexión) está en `profe-cinematografia` [3].
+- **Ángulo** [3]: bajo, alto, cenital, holandés, a la altura de los ojos, del hombro, de la cadera, de la rodilla y a ras de suelo. El anuncio de [1] ya pide «three-quarter angle, camera low» en un plano; el efecto de cada ángulo (poder, vulnerabilidad, tensión, conexión) está en `kiwa-cinematografia` [3].
 - **Movimiento** [4]: estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y aleatorio; la rotación suave del cenital de [1] es un *arc* [4].
 - **Luz** [6]: clave alta o baja, claroscuro, luz dura o suave, lado ciego o corto, y temperatura (≈3 200 K tungsteno, ≈5 600 K día); sirve para escribir el LOOK y para fijar la luz de la locación [6].
 - **Línea de 180°** [5]: en un **ángulo inverso**, define de qué lado de la línea queda la cámara y qué se ve detrás de cada personaje; es la causa más probable del fallo del muro detrás de Alex junto con la instrucción de fondo general de [1] (relación mía, ≈) [5].
@@ -116,7 +116,7 @@ Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; p
 
 ## Para MUKIWA
 - Creative Direction: hoja de personaje + locaciones fijadas + prompt cronometrado es un brief de rodaje para cualquier video de IA; el mapa de blocking cenital sirve también para dirigir personas reales.
-- Visual Edits: lista de planos con tiempos por toma; elegir lo mejor de cada generación (ver `profe-editor-asistente`).
+- Visual Edits: lista de planos con tiempos por toma; elegir lo mejor de cada generación (ver `kiwa-editor-asistente`).
 
 ## Dudas abiertas
 - [1] Es una **demo de producto de Higgsfield**: los modelos (Soul Cinema, Seedream 5.0 Pro, Seedance 2.5), los créditos (≈2 100 créditos el anuncio, ≈200 por toma de ≈17 s) y las ventajas («el mejor modelo ahora») son del momento y del vendedor; el método de referencias, anclas, tiempos y mapas es lo transferible.

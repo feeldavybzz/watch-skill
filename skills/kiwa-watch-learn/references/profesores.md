@@ -20,7 +20,7 @@ trabajo y que mejoren con cada link. Este paso va siempre después de guardar la
 | `video-con-ia` | dirigir video y anuncios con IA (Seedance, Seedream, Higgsfield con Claude): personajes y locaciones de referencia, prompts cronometrados por planos, anclas, mapas de blocking, cortes ocultos |
 
 3. Para temas fuera de los paraguas, crear un profesor nuevo con un nicho **igual de amplio** (un oficio, no una técnica ni una herramienta). Ejemplos: `color-grading`, `edicion-de-video`, `fotografia`, `sound-design`, `direccion-creativa`. DaVinci, Premiere o After Effects son secciones dentro del profesor, nunca un profesor.
-4. Reusar antes que crear. Si una skill propia de Bryan (no `profe-*`) ya cubre exactamente el tema, como `portfolio-marca-personal`, usar `attach --skill`.
+4. Reusar antes que crear. Si una skill propia de Bryan (no `kiwa-<nicho>`) ya cubre exactamente el tema, como `portfolio-marca-personal`, usar `attach --skill`.
 5. Un video puede alimentar varios profesores: por ejemplo, un reel con diseño de carteles y su animación va a `diseno-grafico` y a `motion-graphics`. Hacerlo solo si enseña algo real de cada uno.
 6. No crear profesores de temas sin oficio para MUKIWA (noticias, opiniones). Herramientas internas como esta skill no llevan profesor.
 7. Aprender **teoría y práctica**: lo que se explica en la voz y lo que se ve hacer en pantalla (paneles, valores, pasos). Si algo solo se dijo y no se vio, o al revés, anotarlo.
@@ -47,7 +47,7 @@ python3 scripts/profes.py attach --skill ~/.claude/skills/<skill> --leccion libr
 
 ## 4. Instalar y verificar
 ```bash
-python3 scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/profe-* (una vez por profesor nuevo)
+python3 scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/kiwa-<nicho> (una vez por profesor nuevo)
 python3 scripts/profes.py check
 ```
 Los enlaces apuntan al repo en el disco externo: si el disco no está conectado, los profesores no se cargan.

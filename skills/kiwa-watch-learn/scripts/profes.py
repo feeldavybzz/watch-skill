@@ -11,7 +11,7 @@ el conocimiento en vez de duplicarla.
           --herramientas "DaVinci Resolve,Premiere Pro" --cuando "corregir color, gradear, crear un look, LUTs"
   python3 profes.py attach --nicho color-grading --leccion library/motion-edicion/x.md
   python3 profes.py attach --skill ~/.claude/skills/portfolio-marca-personal --leccion ...
-  python3 profes.py install                      # enlaza profes/* en ~/.claude/skills/profe-*
+  python3 profes.py install                      # enlaza profes/* en ~/.claude/skills/kiwa-<nicho>
   python3 profes.py check                        # valida formato y fuentes
 
 El script arma la estructura, copia lecciones, lleva la cuenta y el índice. Fusionar el
@@ -30,7 +30,7 @@ SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 APRENDIDO = "## Aprendido de referencias (MUKIWA)"
 
 TEMPLATE = """---
-name: profe-{nicho}
+name: kiwa-{nicho}
 description: Profesor MUKIWA de {nombre_l}{en_herr}. Sabe hacerlo paso a paso, con lo aprendido de referencias reales que Bryan fue enviando. Usar cuando Bryan pida {cuando}, o pregunte cómo se hace algo de {nombre_l}.
 metadata:
   nicho: {nicho}
@@ -39,7 +39,7 @@ metadata:
   actualizado: "{hoy}"
 ---
 
-# Profe: {nombre}
+# Kiwa · {nombre}
 > Qué sabe hacer este profesor, en una línea (se reescribe a medida que aprende).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
@@ -110,7 +110,7 @@ def cmd_list(a):
               f"actualizado: {meta(t, 'actualizado')}\n  {description(t)[:220]}")
     print("\n# Otras skills de Bryan (si el nicho ya está cubierto, alimentar esa con attach --skill)\n")
     for s in sorted(USER_SKILLS.glob("*/SKILL.md")) if USER_SKILLS.exists() else []:
-        if s.parent.name.startswith("profe-"): continue
+        if s.parent.name.startswith("kiwa-"): continue
         print(f"- {s.parent} \n  {description(read(s))[:220]}")
 
 
@@ -186,7 +186,7 @@ def cmd_attach(a):
 def cmd_install(a):
     USER_SKILLS.mkdir(parents=True, exist_ok=True); write_index()
     for d in sorted(p for p in PROFES.iterdir() if (p / "SKILL.md").exists()) if PROFES.exists() else []:
-        link = USER_SKILLS / f"profe-{d.name}"
+        link = USER_SKILLS / f"kiwa-{d.name}"
         if link.is_symlink():
             if link.resolve() == d.resolve(): print("ya instalado:", link); continue
             link.unlink()
@@ -200,8 +200,8 @@ def cmd_check(a):
     bad = 0
     for s in sorted(PROFES.glob("*/SKILL.md")) if PROFES.exists() else []:
         t = read(s); errs = []
-        if not re.match(r"^---\nname: profe-[a-z0-9-]+\ndescription: .+\n", t): errs.append("frontmatter")
-        if f"name: profe-{s.parent.name}\n" not in t: errs.append("name distinto a la carpeta")
+        if not re.match(r"^---\nname: kiwa-[a-z0-9-]+\ndescription: .+\n", t): errs.append("frontmatter")
+        if f"name: kiwa-{s.parent.name}\n" not in t: errs.append("name distinto a la carpeta")
         for rel in re.findall(r"`(references/[^`]+)`", t):
             if not (s.parent / rel).exists(): errs.append("falta " + rel)
         if len(t.splitlines()) > 500: errs.append("más de 500 líneas: mover recetas largas a references/")

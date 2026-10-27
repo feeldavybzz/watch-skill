@@ -1,5 +1,5 @@
 ---
-name: profe-narrativa-y-direccion
+name: kiwa-narrativa-y-direccion
 description: "Profesor MUKIWA de narrativa y dirección de escenas: círculo de la historia de Dan Harmon, blocking, línea de 180° y subtexto. Usar al estructurar un guion o bloquear una escena."
 metadata:
   nicho: narrativa-y-direccion
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Narrativa y dirección
+# Kiwa · Narrativa y dirección
 > Estructura una historia con el círculo de ocho pasos y la dirige en el cuadro: coloca a los personajes con espacio, formas y líneas, y carga la escena de subtexto por contraste. Hoy domina un modelo de estructura (el círculo de Harmon) y el blocking de diálogos; falta aprender dirección de actores, escritura de diálogo y otros modelos. Tiene **4 lecciones propias** y **5 complementarias** ([5] ángulos, [6] movimientos, [7] corte, [8] B-roll, [9] luz) que le dan el vocabulario para contar con cámara, montaje y luz.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para el encuadre y el ángulo de cada plano, combínalo con `profe-composicion-visual` y `profe-cinematografia`; para el montaje, con `profe-editor-asistente`.
+Para el encuadre y el ángulo de cada plano, combínalo con `kiwa-composicion-visual` y `kiwa-cinematografia`; para el montaje, con `kiwa-editor-asistente`.
 
 ## Cómo trabajar (de la idea a la escena)
 1. **Estructura primero**: coloca la historia en el círculo de ocho pasos antes de escribir escenas sueltas [1].
@@ -47,12 +47,12 @@ Para el encuadre y el ángulo de cada plano, combínalo con `profe-composicion-v
 - **Espacio**: coloca a cada personaje a una distancia distinta de la cámara para crear **contraste de tamaño** (en *Ciudadano Kane*, el niño que importa pequeño al fondo, la madre grande junto al lente, el padre empequeñecido por la distancia) [2].
 - **Formas**: **círculo** = seguro e inclusivo; **cuadrado** = limitado, encierra; **triángulo** = agudo y agresivo, con un vértice que apunta (en *Guardianes de la Galaxia*, un triángulo hacia Groot) [2]. Identifica la forma que hacen los sujetos y adónde dirige la mirada [2].
 - **Líneas**: **vertical** = de pie y firme; **horizontal** = hundido (Fredo en *El padrino II*, que revela quién tiene las cartas); **diagonal** = intentando cambiar su forma (el arrebato de Fredo). Los cambios de línea durante la escena cuentan la dinámica de poder, sobre todo al cortar [2].
-- **Dirección de pantalla y línea de 180°**: la línea imaginaria entre dos personajes mantiene la orientación; **seguirla da calma, romperla da caos** o **cambia poco a poco el poder y el tono** (*Paper Moon*); si necesitas cambiar de lado, usa un plano neutral o un movimiento de cámara que cruce [3]. Detalle en `profe-cinematografia`.
-- **Colocar personajes para una IA de video**: un **mapa de blocking cenital** (figuras con un color por personaje, platos y objetos) evita que el modelo invente puestos o cambie la disposición; el blocking se escribe en el prompt con **quién está dónde** y **qué hay detrás de cada uno** [4]. Detalle en `profe-video-con-ia`.
+- **Dirección de pantalla y línea de 180°**: la línea imaginaria entre dos personajes mantiene la orientación; **seguirla da calma, romperla da caos** o **cambia poco a poco el poder y el tono** (*Paper Moon*); si necesitas cambiar de lado, usa un plano neutral o un movimiento de cámara que cruce [3]. Detalle en `kiwa-cinematografia`.
+- **Colocar personajes para una IA de video**: un **mapa de blocking cenital** (figuras con un color por personaje, platos y objetos) evita que el modelo invente puestos o cambie la disposición; el blocking se escribe en el prompt con **quién está dónde** y **qué hay detrás de cada uno** [4]. Detalle en `kiwa-video-con-ia`.
 - **Subtexto**: **contrasta el blocking con lo que se dice o se hace** para crear un significado subyacente; dice lo que los personajes realmente quieren decir [2].
 
 ### Contar con la cámara: ángulo y movimiento por emoción [5][6]
-Pregunta primero qué debe sentir el público; el detalle de cada técnica está en `profe-cinematografia`.
+Pregunta primero qué debe sentir el público; el detalle de cada técnica está en `kiwa-cinematografia`.
 - **Ángulo** [5]: **bajo** = más poderoso (héroes y villanos); **alto** = aplasta o muestra vulnerabilidad; emparejar bajo y alto en una escena acentúa el desequilibrio de poder; **holandés** = inquietud y tensión creciente (corta desde planos nivelados); **a la altura de los ojos** con mirada a cámara = conexión directa.
 - **Movimiento** [6]: **estático** = diálogo, actuación o indefensión; **push in** = enfatizar un momento o el proceso mental, tensión hacia una decisión; **pull out** = aislamiento; **whip pan** = energía o transición. Mezclar movimiento controlado y caótico solo cuando el contraste cuente algo (en *Se7en*, el caos es el pánico de uno y el control la calma del otro) [6].
 - Si el ángulo o el movimiento no sirven a la historia, cámbialos [5][6].
@@ -65,7 +65,7 @@ Pregunta primero qué debe sentir el público; el detalle de cada técnica está
 - **B-roll con sentido** [8]: un plano de apoyo puede **simbolizar** lo que se dice (en *Her*, el polvo en la pared mientras ella habla de su conciencia), y los mismos planos cambian de significado según ángulo, lente y movimiento [8].
 
 ### El ánimo con la luz [9]
-- **Clave alta** = brillante y feliz; **clave baja** = oscuro y dramático; **claroscuro** = misterio y peligro; **luz dura** = drama o intensidad; **luz suave** = felicidad o romance; **lado ciego** = sujeto accesible, **lado corto** = sujeto dramático [9]. Detalle en `profe-iluminacion`.
+- **Clave alta** = brillante y feliz; **clave baja** = oscuro y dramático; **claroscuro** = misterio y peligro; **luz dura** = drama o intensidad; **luz suave** = felicidad o romance; **lado ciego** = sujeto accesible, **lado corto** = sujeto dramático [9]. Detalle en `kiwa-iluminacion`.
 
 ## Por herramienta
 ### Storyboard y lista de planos

@@ -1,5 +1,5 @@
 ---
-name: profe-iluminacion
+name: kiwa-iluminacion
 description: "Profesor MUKIWA de iluminación de cine y video: tipos de luz, kelvin, clave alta/baja, luz dura/suave, equipo, y luz en video de IA y CGI."
 metadata:
   nicho: iluminacion
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Iluminación de cine y video
+# Kiwa · Iluminación de cine y video
 > Decide la luz de una escena por el ánimo que debe tener: sabe elegir entre luz natural y artificial, usar prácticas y luz motivada, medir con lúmenes, lux, kelvin y la ley del cuadrado inverso, pasar de clave alta a clave baja y claroscuro, escoger luz dura o suave y qué lado del sujeto iluminar, y manejar el equipo (tungsteno, HMI, fluorescente, Kino Flo, LED, geles, difusión, rebotes, banderas, alas, egg crates, cookies). Aprendió de **1 lección propia** y **4 complementarias** (tono y color en composición, luz en video de IA, luz en CGI, contraste en reels de composición). Falta aprender esquemas para iluminar sujeto y fondo (tres puntos y relaciones de luz con números) y exposición con waveform y false color.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para el encuadre combínalo con `profe-composicion-visual`; para el movimiento y soporte de cámara, con `profe-cinematografia`; para corregir el blanco o dar el look en postproducción, con `profe-color-grading`.
+Para el encuadre combínalo con `kiwa-composicion-visual`; para el movimiento y soporte de cámara, con `kiwa-cinematografia`; para corregir el blanco o dar el look en postproducción, con `kiwa-color-grading`.
 
 ## Cómo trabajar (cualquier escena)
 1. **Decide el ánimo primero** y deja que él elija la luz: más brillante y feliz → clave alta; oscuro y dramático → clave baja; misterio y peligro → claroscuro [1].
@@ -126,9 +126,9 @@ Para el encuadre combínalo con `profe-composicion-visual`; para el movimiento y
 
 ## Para MUKIWA
 - Creative Direction: en el brief traducir «cálido y cercano» → clave alta, suave, lado ciego, ≈3 200 K; «tenso» → clave baja, dura, lado corto.
-- Visual Edits: el gráfico de kelvin sirve para corregir blancos en postproducción (≈5 500 K de día, ≈3 200 K tungsteno); el grade final va con `profe-color-grading`.
-- Graphic Design: la clave baja y el claroscuro aíslan al sujeto como una jerarquía visual (ver `profe-composicion-visual`).
-- Video con IA: la luz de la locación se fija en la imagen de referencia antes de generar (ver `profe-video-con-ia`).
+- Visual Edits: el gráfico de kelvin sirve para corregir blancos en postproducción (≈5 500 K de día, ≈3 200 K tungsteno); el grade final va con `kiwa-color-grading`.
+- Graphic Design: la clave baja y el claroscuro aíslan al sujeto como una jerarquía visual (ver `kiwa-composicion-visual`).
+- Video con IA: la luz de la locación se fija en la imagen de referencia antes de generar (ver `kiwa-video-con-ia`).
 
 ## Dudas abiertas
 - [1] La voz dice ≈5 600 K para la luz de día y el gráfico muestra ≈5 500 K; el rótulo de ejemplo dice 5 600 K.

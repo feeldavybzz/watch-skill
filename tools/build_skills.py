@@ -3,7 +3,7 @@
 (Configuración → Capacidades → Skills → Subir).
 
 Uso: python3 tools/build_skills.py [--out dist] [--allow-dirty]
-Genera dist/kiwa-watch-learn.skill, las skills propias sueltas (retro-cartoon, direccion-de-marca-y-mascota, slide-maker…) y un dist/profe-<nicho>.skill por profesor.
+Genera dist/kiwa-watch-learn.skill, las skills propias fusionadas (kiwa-web-ui, kiwa-web, kiwa-marca-mascota, kiwa-instagram) y un dist/kiwa-<nicho>.skill por profesor.
 
 - Entra lo que Git conoce y lo nuevo sin commit, respetando .gitignore: nada de _descargas/, work/, ._*, venv ni claves.
 - kiwa-watch-learn ya trae grab.py en scripts/: bajar y aprender viajan en un solo paquete.
@@ -16,7 +16,7 @@ import argparse, os, re, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ["kiwa-watch-learn", "retro-cartoon", "retro-cartoon-mascota", "direccion-de-marca-y-mascota", "slide-maker", "instagram-feed-studio"]
+SKILLS = ["kiwa-watch-learn", "kiwa-web-ui", "kiwa-web", "kiwa-marca-mascota", "kiwa-instagram"]
 EXTRA = {}
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 MAX_FILES = 200
@@ -33,7 +33,7 @@ def frontmatter_keys(text):
 
 
 def build(name, out):
-    base = f"skills/{name}" if name in SKILLS else f"profes/{name}"   # profesores: profes/<nicho> -> profe-<nicho>.skill
+    base = f"skills/{name}" if name in SKILLS else f"profes/{name}"   # profesores: profes/<nicho> -> kiwa-<nicho>.skill
     # Archivos de Git más los nuevos todavía sin commit (p. ej. un profesor que la tarea de la noche acaba de crear),
     # respetando .gitignore: nada de _descargas/, work/, venv, ._* ni claves.
     files = [f for f in git("ls-files", "-z", "--cached", "--others", "--exclude-standard", base).split("\0") if f]
@@ -48,7 +48,7 @@ def build(name, out):
     if len(entries) > MAX_FILES:
         raise SystemExit(f"{name}: {len(entries)} archivos (máximo {MAX_FILES})")
     out.mkdir(parents=True, exist_ok=True)
-    pkg = name if name in SKILLS else f"profe-{name}"
+    pkg = name if name in SKILLS else f"kiwa-{name}"
     dst = out / f"{pkg}.skill"
     with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED) as z:
         for arc, src in sorted(entries.items()):

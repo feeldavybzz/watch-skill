@@ -1,6 +1,21 @@
 # watch-skill · MUKIWA
 
-Skills de referencia y aprendizaje audiovisual para Claude Code: `kiwa-watch-learn` obtiene medios y `kiwa-watch-learn` relaciona transcripción con fotogramas y guarda lecciones.
+Skills de referencia y aprendizaje audiovisual para Claude Code: `kiwa-watch-learn` baja medios, relaciona transcripción con fotogramas, guarda lecciones y se las pasa al profe del oficio.
+
+## Skills del repositorio
+
+Todas llevan el prefijo **kiwa** y viven en `skills/` (las de oficio, en `profes/`):
+
+| Skill | Para qué |
+|---|---|
+| `kiwa-watch-learn` | Bajar, ver, escuchar, analizar y aprender de videos; pasa lo aprendido al profe del oficio. Fusiona `mukiwa-grab`, `mukiwa-learn` y `mukiwa-ver-videos`. |
+| `kiwa-web-ui` | Diseño web de básico a premium: arquetipos, animación y efectos, estructura, qué conviene y qué no. |
+| `kiwa-web` | Construir, conectar y publicar sitios completos en Hostinger: portfolio, web para cliente, SaaS y afiliados. Va junto a `kiwa-web-ui`. Fusiona las cuatro `crear-web-*` y la de diseño premium. |
+| `kiwa-marca-mascota` | Dirección de marca, dibujo retro cartoon y mascota MUKIWA. Fusiona `direccion-de-marca-y-mascota`, `retro-cartoon` y `retro-cartoon-mascota`. |
+| `kiwa-instagram` | Carruseles y estudio de feed. Fusiona `slide-maker` e `instagram-feed-studio`. |
+| `kiwa-<nicho>` (`profes/<nicho>/`) | Un profe por oficio (cinematografía, color grading, iluminación…). Antes se llamaban `profe-<nicho>`. |
+
+`kiwa-watch-learn` está además enlazada como skill de proyecto en `.claude/skills/`, así que queda activa en cualquier sesión de Claude Code que abra este repositorio.
 
 ## Instalar en Claude Code
 
@@ -19,7 +34,7 @@ Cada video analizado alimenta **mini skills por oficio** en `profes/<nicho>/` (c
 
 ```bash
 python3 skills/kiwa-watch-learn/scripts/profes.py list      # profesores y skills existentes
-python3 skills/kiwa-watch-learn/scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/profe-*
+python3 skills/kiwa-watch-learn/scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/kiwa-<nicho>
 ```
 
 Reglas de clasificación y fusión: `skills/kiwa-watch-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
@@ -40,7 +55,7 @@ Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal
 python3 tools/build_skills.py
 ```
 
-Genera `dist/kiwa-watch-learn.skill` y `dist/kiwa-watch-learn.skill` (solo archivos de Git: sin descargas, claves ni `._*`). Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` lleva su propia copia del descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
+Genera un `.skill` por skill (`kiwa-watch-learn`, `kiwa-web-ui`, `kiwa-web`, `kiwa-marca-mascota`, `kiwa-instagram` y uno `kiwa-<nicho>` por profe), con solo archivos de Git: sin descargas, claves ni `._*`. Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` ya lleva el descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
 
 ## Dependencias
 
@@ -89,6 +104,6 @@ Los fotogramas son muestras. No se promete inspección de cada fotograma ni tran
 
 ## Origen
 
-Base: paquetes `kiwa-watch-learn.skill` y `kiwa-watch-learn.skill` proporcionados por Bryan el 10 de octubre de 2026. La arquitectura de fotogramas + transcripción, el selector de detalle, el descarte de capturas casi idénticas y las capturas en tiempos exactos toman como referencia [Watch](https://github.com/bradautomates/claude-video) (MIT). `skills/kiwa-watch-learn/scripts/gemini.py` es una adaptación de su `gemini.py`: Copyright (c) 2026 Bradley Bonanno, licencia MIT (permite usar, copiar y modificar conservando este aviso). El resto es código propio.
+Base: paquetes `mukiwa-learn.skill` y `mukiwa-grab.skill` proporcionados por Bryan el 10 de octubre de 2026 (hoy fusionados en `kiwa-watch-learn`). La arquitectura de fotogramas + transcripción, el selector de detalle, el descarte de capturas casi idénticas y las capturas en tiempos exactos toman como referencia [Watch](https://github.com/bradautomates/claude-video) (MIT). `skills/kiwa-watch-learn/scripts/gemini.py` es una adaptación de su `gemini.py`: Copyright (c) 2026 Bradley Bonanno, licencia MIT (permite usar, copiar y modificar conservando este aviso). El resto es código propio.
 
 Conservar las lecciones al actualizar. No subir cookies, claves ni medios privados. `_descargas`, `work` y binarios descargados quedan fuera de Git.

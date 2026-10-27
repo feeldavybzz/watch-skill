@@ -1,5 +1,5 @@
 ---
-name: profe-cinematografia
+name: kiwa-cinematografia
 description: "Profesor MUKIWA de cinematografía: ángulos, movimientos, soportes, frame rate, línea de 180° y B-roll, y cómo planearlos en una lista de planos."
 metadata:
   nicho: cinematografia
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Cinematografía
-> Elige el ángulo, el movimiento, el soporte y la velocidad de la cámara según lo que debe sentir el público: sabe qué comunica cada uno de los 9 ángulos, qué cuenta cada uno de los 15 movimientos, con qué soporte de los 12 se hace, cuándo capturar a 24, 48, 120 o más fps, cómo mantener o romper la línea de 180° y cómo rodar B-roll con intención, y lo planea en una lista de planos. La iluminación la lleva `profe-iluminacion`. Aprendió de **6 lecciones propias** y **4 complementarias** (corte, blocking, tomas «sin costuras» y espacio/profundidad). Falta aprender lentes, el tamaño de plano como curso propio y la ejecución con valores (velocidades, distancias, grados).
+# Kiwa · Cinematografía
+> Elige el ángulo, el movimiento, el soporte y la velocidad de la cámara según lo que debe sentir el público: sabe qué comunica cada uno de los 9 ángulos, qué cuenta cada uno de los 15 movimientos, con qué soporte de los 12 se hace, cuándo capturar a 24, 48, 120 o más fps, cómo mantener o romper la línea de 180° y cómo rodar B-roll con intención, y lo planea en una lista de planos. La iluminación la lleva `kiwa-iluminacion`. Aprendió de **6 lecciones propias** y **4 complementarias** (corte, blocking, tomas «sin costuras» y espacio/profundidad). Falta aprender lentes, el tamaño de plano como curso propio y la ejecución con valores (velocidades, distancias, grados).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para la luz, con `profe-iluminacion`; para montar el resultado, con `profe-editor-asistente`.
+Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para la luz, con `kiwa-iluminacion`; para montar el resultado, con `kiwa-editor-asistente`.
 
 ## Cómo trabajar (cualquier plano o escena)
 1. **Decide primero el tamaño de plano y el encuadre; luego la altura (ángulo) y por último el movimiento.** El tamaño de plano aísla *qué* miramos; el ángulo decide *cómo* lo percibimos [2].
@@ -143,7 +143,7 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 ### Blocking: la distancia a la cámara decide la importancia [8]
 - Colocar a cada persona a **distancia distinta de la cámara** crea contraste de tamaño: quien está más cerca se ve más grande e imponente; quien está lejos queda empequeñecido (en la escena de *Ciudadano Kane*, el padre lejos y la madre cerca) [8].
 - Deja a la vista **lo que está en juego** dentro del cuadro (el niño que juega visto por la ventana) [8].
-- Lo que cuentan las **formas** (círculo = seguro, cuadrado = encierra, triángulo = agresivo) y las **líneas** (vertical/horizontal/diagonal = poder y tensión) se desarrolla en `profe-narrativa-y-direccion` y `profe-composicion-visual` [8].
+- Lo que cuentan las **formas** (círculo = seguro, cuadrado = encierra, triángulo = agresivo) y las **líneas** (vertical/horizontal/diagonal = poder y tensión) se desarrolla en `kiwa-narrativa-y-direccion` y `kiwa-composicion-visual` [8].
 
 ### Tamaño de plano, espacio y foco (apoyo desde composición) [10]
 - **Espacio**: cuanto más grande el sujeto en el cuadro, más importancia; los planos **extremadamente amplios aíslan y hacen vulnerable**, los **primeros planos extremos empoderan**. **Headroom** mínimo y **lookroom** (espacio frente al sujeto) mucho mayor que el de detrás; romperlo también funciona [10].
@@ -152,7 +152,7 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 
 ### Tomas largas «sin costuras» [9]
 - Para que varias tomas parezcan **un solo plano** se usa el *stitching* (unir dos tomas para que parezcan continuas); en *1917* se combinó un avión CGI en el cielo, un avión real lanzado desde una rampa de ≈20 pies y una toma aparte compuesta con los actores [9].
-- Al planear ese tipo de plano, decide qué se rueda en el set (SFX) y qué se añade después (VFX/CGI) y cuida que lo digital **iguale la luz y el aspecto** de lo real [9]. Detalle de técnicas en `profe-efectos-visuales`.
+- Al planear ese tipo de plano, decide qué se rueda en el set (SFX) y qué se añade después (VFX/CGI) y cuida que lo digital **iguale la luz y el aspecto** de lo real [9]. Detalle de técnicas en `kiwa-efectos-visuales`.
 
 ## Por herramienta
 ### Lista de planos (notación vista en pantalla)

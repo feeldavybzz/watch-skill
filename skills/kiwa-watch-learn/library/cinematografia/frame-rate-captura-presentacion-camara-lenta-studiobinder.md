@@ -52,7 +52,7 @@
 
 ## Para MUKIWA
 - Visual Edits: para un reel, planear cuáles planos van a cámara lenta (grabar a 60 o 120 fps), cuáles a 24 y poner la lista con los fps antes de rodar.
-- Rampas de velocidad para dar peso a golpes o acentos de música (ver `profe-editor-asistente`).
+- Rampas de velocidad para dar peso a golpes o acentos de música (ver `kiwa-editor-asistente`).
 
 ## Límites
 - Sin ajustes concretos de cámara ni de Premiere o DaVinci para interpretar o ralentizar metraje; sin la relación con el obturador (otro video).

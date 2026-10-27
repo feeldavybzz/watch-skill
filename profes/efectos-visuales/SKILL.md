@@ -1,5 +1,5 @@
 ---
-name: profe-efectos-visuales
+name: kiwa-efectos-visuales
 description: "Profesor MUKIWA de efectos visuales: distingue y combina SFX, VFX y CGI, y planea cada efecto desde el guion hasta igualar luz y cámara."
 metadata:
   nicho: efectos-visuales
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Efectos visuales
+# Kiwa · Efectos visuales
 > Decide y planea cada efecto con el vocabulario correcto: qué se hace en el set (SFX), qué se añade a lo filmado (VFX) y qué se crea entero en digital (CGI), quién se encarga y cómo combinarlos sin costuras. Hoy domina las definiciones, las técnicas y el flujo de planeación; falta aprender la ejecución en software (composición, croma, rotoscopia) con pasos y valores. Tiene **1 lección propia** [1] y **3 complementarias** de cine real ([2] soportes, [3] iluminación, [4] composición).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para animar o componer gráficos en software, combínalo con `profe-motion-graphics`; para el montaje, con `profe-editor-asistente`.
+Para animar o componer gráficos en software, combínalo con `kiwa-motion-graphics`; para el montaje, con `kiwa-editor-asistente`.
 
 ## Cómo trabajar (cualquier efecto)
 1. **Desglosa el guion** marcando cada efecto visual o especial [1].

@@ -1,5 +1,5 @@
 ---
-name: profe-diseno-grafico
+name: kiwa-diseno-grafico
 description: "Profesor MUKIWA de diseño gráfico completo: briefing, identidad, tipografía, color, composición, diseño web y UX/UI, Illustrator y portfolio."
 metadata:
   nicho: diseno-grafico
@@ -8,14 +8,14 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Diseño gráfico
+# Kiwa · Diseño gráfico
 > Diseña de principio a fin: investiga y fija el concepto antes de tocar software, explora en bocetos y llega a piezas con fundamento; compone con jerarquía, grilla y espacio en blanco, combina tipografías por contraste y sabe armar un sitio web o una interfaz (brief previo, layout, responsive, sistema de diseño y componentes). Falta aprender color a fondo, construcción de logos, manual de marca y piezas para redes, con valores. Son **16 lecciones propias** más **2 complementarias** de composición ([26], [27]); los números [n] son identificadores de fuente y tienen huecos a propósito.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 Todo lo que sea diseño gráfico (briefing, logos, identidad, tipografía, color, composición,
-piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphics`.
+piezas) vive aquí, en su área. Lo animado va al profesor `kiwa-motion-graphics`.
 
 ## Cómo trabajar (cualquier encargo de diseño)
 1. **No abras el software todavía.** El concepto se decide en papel; esta etapa no se salta [1][4].
@@ -89,7 +89,7 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 - **Rompe las reglas con intención**: centrar, recargar o romper la grilla para crear tensión, sabiendo que existen y habiéndolas usado mucho [9].
 - **Elementos que combinan** [26]: puntos, líneas (verticales = fuerza, horizontales = calma, diagonales = energía), formas (marcos dentro del marco), texturas y patrones (romper el patrón también funciona), espacio positivo y negativo, profundidad, equilibrio (regla de impares, razón áurea 1:1,618, simetría) y ángulo; planea con un storyboard para usar cada uno con intención [26].
 - **Plantillas de guía** (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral): colocan foco, primer plano y fondo; prueba varias sobre la misma pieza y quédate con la que mejor guíe la mirada [27].
-- Otros esquemas y su adaptación a 16:9, 5:4, 1:1, 4:5 y 9:16, con medidas: `profe-composicion-visual`.
+- Otros esquemas y su adaptación a 16:9, 5:4, 1:1, 4:5 y 9:16, con medidas: `kiwa-composicion-visual`.
 
 ### Diseño web y UX/UI
 - **Sitio** = el conjunto; **página** = una página puntual [6].
@@ -112,7 +112,7 @@ piezas) vive aquí, en su área. Lo animado va al profesor `profe-motion-graphic
 ### Piezas para redes, carteles y editorial
 - Alineación, viudas, longitud de línea y escala tipográfica se aplican igual en posteos, presentaciones y carteles [7].
 - Retícula de redes y carteles con valores, y editorial: sin fuentes todavía.
-- Para posteos de composición, el espacio negativo, el primer plano, la simetría y el contorno del sujeto se muestran en reels de foto; el detalle está en `profe-composicion-visual`.
+- Para posteos de composición, el espacio negativo, el primer plano, la simetría y el contorno del sujeto se muestran en reels de foto; el detalle está en `kiwa-composicion-visual`.
 
 ### Portfolio y presentación al cliente
 - Muestra el tipo de trabajo por el que quieres que te contraten, **pocos y buenos**, con **proceso, contexto y piezas** y lo que tú diseñaste; si no tienes proyectos, inventa los tuyos. El detalle está en la skill `portfolio-marca-personal` [10].

@@ -1,5 +1,5 @@
 ---
-name: profe-composicion-visual
+name: kiwa-composicion-visual
 description: "Profesor MUKIWA de composición visual: esquemas, los 9 elementos, guías por formato (16:9 a 9:16), jerarquía y blocking, para foto, video, reels y piezas gráficas."
 metadata:
   nicho: composicion-visual
@@ -8,14 +8,14 @@ metadata:
   actualizado: "2026-10-11"
 ---
 
-# Profe: Composición visual
+# Kiwa · Composición visual
 > Compone con los **9 elementos** (puntos, líneas, formas, texturas y patrones, espacio, profundidad, equilibrio, ángulo, color y tono), elige una guía según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 20 recursos de composición (10 de una clase de arte y 10 vistos sobre fotos reales en tres reels) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5. Cuenta **6 lecciones propias** ([1][2][3][4][7][9]) y **3 complementarias** ([10] blocking, [11] corte, [12] video de IA); el «9» anterior era el número más alto de fuente, no la cantidad real.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 Lo marcado como (estándar) es geometría conocida que añadí yo, no sale de un video.
-Cuando es una pieza gráfica estática, combínalo con `profe-diseno-grafico`; si se anima, con `profe-motion-graphics`.
+Cuando es una pieza gráfica estática, combínalo con `kiwa-diseno-grafico`; si se anima, con `kiwa-motion-graphics`.
 
 ## Cómo trabajar (cualquier imagen o plano)
 1. **Define tres capas antes de elegir guía**: el **punto focal** (lo que debe atraer la mirada), el **primer plano** (lo más cercano al espectador) y el **fondo** (lo que queda detrás del sujeto) [1].
@@ -35,8 +35,8 @@ Se combinan en cada plano; planea con un storyboard para usar cada uno con inten
 5. **Espacio**: positivo (sujeto) y negativo (vacío). Cuanto más grande el objeto, más importancia; plano extremadamente amplio = aislado y vulnerable, primer plano extremo = poder. **Headroom** mínimo; **lookroom** (espacio frente a la mirada) mucho mayor que detrás. Llenar el cuadro = caos; simplificarlo = calma o tristeza [4].
 6. **Profundidad**: primer plano, plano medio y fondo con jerarquía. **Foco corto** aísla al sujeto (cambiar el foco dirige la atención); **foco profundo** permite varias capas de atención [4].
 7. **Equilibrio**: un sujeto a un lado sin peso en el otro desequilibra; **regla de los impares** para grupos; **razón áurea 1 : 1,618 (φ)** como espiral o como línea a 0,382 de la altura para los **ojos o el horizonte**; **simetría** como alternativa (Wes Anderson). El desequilibrio se usa para incomodar [4].
-8. **Ángulo**: paralelo al suelo por defecto; **alto** = pequeño y débil; **bajo** = poderoso; **cenital** = distante y objetivo; **holandés** = inquietud o energía cinética [4]. Para los 9 ángulos o alturas (también hombro, cadera, rodilla y suelo) y el detalle de cada uno, ver `profe-cinematografia`.
-9. **Color y tono**: esquemas monocromático, análogo, complementario o triádico; el color puede **imponerse a otros métodos** (un vestido verde sobre fondo rojo marca al sujeto). El ojo va a lo más brillante: sujeto iluminado en la oscuridad mantiene el foco; luz y sombra juntas dan mensajes más complejos [4]. Para paletas, ver `profe-diseno-grafico`.
+8. **Ángulo**: paralelo al suelo por defecto; **alto** = pequeño y débil; **bajo** = poderoso; **cenital** = distante y objetivo; **holandés** = inquietud o energía cinética [4]. Para los 9 ángulos o alturas (también hombro, cadera, rodilla y suelo) y el detalle de cada uno, ver `kiwa-cinematografia`.
+9. **Color y tono**: esquemas monocromático, análogo, complementario o triádico; el color puede **imponerse a otros métodos** (un vestido verde sobre fondo rojo marca al sujeto). El ojo va a lo más brillante: sujeto iluminado en la oscuridad mantiene el foco; luz y sombra juntas dan mensajes más complejos [4]. Para paletas, ver `kiwa-diseno-grafico`.
 - **La proporción de pantalla importa**: los retratos se componen mejor en vertical y los paisajes en horizontal, y un cuadro casi cuadrado se compone distinto de uno rectangular [4]. La fuente no da reglas verticales (ver «Adaptar cada guía al formato» y Dudas abiertas).
 
 ## Áreas
@@ -149,7 +149,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - **Espacio**: la distancia a la cámara crea **contraste de tamaño**: quien está cerca se ve grande e imponente; quien está lejos, empequeñecido. Deja visible lo que está en juego (el niño enmarcado por la ventana) [10].
 - **Formas básicas** (todo se reduce a una): **círculo** = más seguro e inclusivo; **cuadrado** = espacio limitado, encierra; **triángulo** = agudo, se siente agresivo, pero su vértice señala (en *Guardianes de la Galaxia*, el triángulo apunta a Groot). Al mirar el cuadro, identifica la forma, su connotación emocional y adónde dirige la mirada [10].
 - **Líneas**: una persona de pie es una línea vertical; hundida en un asiento, casi horizontal; retorcida, diagonal. El contraste entre las líneas de dos personas crea tensión visual, sobre todo al cortar, y marca quién tiene el poder (*El padrino II*) [10].
-- **Subtexto**: espacio, formas y líneas solas no dan profundidad; contrasta el blocking con lo que se dice o se hace para crear significado. Plánalo en un storyboard [10]. Más en `profe-narrativa-y-direccion`.
+- **Subtexto**: espacio, formas y líneas solas no dan profundidad; contrasta el blocking con lo que se dice o se hace para crear significado. Plánalo en un storyboard [10]. Más en `kiwa-narrativa-y-direccion`.
 
 ### Composición pensada para cortar rápido (eye trace) [11]
 - En secuencias rápidas, **mantén el punto de interés en la misma zona del cuadro de plano a plano**, para que el ojo no rastree todo el cuadro tras cada corte; en un cuadro anamórfico, con solo ≈1,8 s, «lo que era el punto central tenía que estar en el centro» [11].
@@ -157,7 +157,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 
 ### Profundidad en video de IA [12]
 - Generar la locación con **ángulo de tres cuartos** da profundidad a la que el movimiento de cámara «se agarra» y da mejores renders que un plano frontal plano [12].
-- Un **mapa de blocking cenital** (solo líneas, una figura de color por personaje) controla la colocación cuando el modelo inventa elementos; ver `profe-video-con-ia` [12].
+- Un **mapa de blocking cenital** (solo líneas, una figura de color por personaje) controla la colocación cuando el modelo inventa elementos; ver `kiwa-video-con-ia` [12].
 
 ## Por herramienta
 ### Premiere Pro
@@ -194,7 +194,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 ## Para MUKIWA
 - El plugin de guías es el uso directo de este profesor: lista de plantillas, comportamiento (mover/rotar) y validación por formato.
 - Visual Edits: al recomponer para reels (9:16) y feed (4:5), revisa que el sujeto quede sobre las líneas verticales del nuevo formato.
-- Graphic Design: las mismas guías para portadas y carruseles, junto con la retícula (ver `profe-diseno-grafico`).
+- Graphic Design: las mismas guías para portadas y carruseles, junto con la retícula (ver `kiwa-diseno-grafico`).
 
 ## Dudas abiertas
 - La **espiral** se dibuja de dos maneras en las fuentes: rectángulo áureo **centrado e inset** [4] y estirada hasta los bordes del cuadro [2]. El plugin usa la primera por defecto (medida) y ofrece la segunda.

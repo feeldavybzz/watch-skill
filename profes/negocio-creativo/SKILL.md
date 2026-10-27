@@ -1,5 +1,5 @@
 ---
-name: profe-negocio-creativo
+name: kiwa-negocio-creativo
 description: "Profesor MUKIWA de negocio creativo: nicho, oferta en una frase, proceso con rondas, tres niveles de precio, contenido, portfolio y llamada de venta."
 metadata:
   nicho: negocio-creativo
@@ -8,7 +8,7 @@ metadata:
   actualizado: "2026-10-13"
 ---
 
-# Profe: Negocio creativo
+# Kiwa · Negocio creativo
 > Vender servicios creativos en pequeño: nicho, oferta en una frase, proceso en una lámina, tres niveles de precio, contenido que da confianza y llamada de venta sin presión. Una lección propia [1] y cuatro de diseño que sirven al negocio ([2] portfolio, [3] mapa antes de Figma, [4] briefing y moodboard, [5] estrategia de marca); las cifras de ingresos de [1] no están verificadas.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;

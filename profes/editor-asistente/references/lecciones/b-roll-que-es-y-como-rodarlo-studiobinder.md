@@ -45,7 +45,7 @@
 
 ## Para MUKIWA
 - Visual Edits: para un reel con entrevista (A-roll), planear una lista de B-roll por frase clave y rodarlo en 2–3 versiones de ángulo/lente cambia el sentido sin costo extra.
-- Útil para cubrir cortes de silencios (ver `profe-editor-asistente`).
+- Útil para cubrir cortes de silencios (ver `kiwa-editor-asistente`).
 
 ## Límites
 - Sin duración recomendada por plano de B-roll ni cuántos planos por minuto.

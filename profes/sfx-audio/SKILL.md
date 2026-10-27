@@ -1,6 +1,6 @@
 ---
-name: profe-sfx-audio
-description: "Profesor MUKIWA de sonido para video: música, voz, efectos de sonido, ambiente y mezcla, que aprende de las referencias que Bryan envía. Sabe fijar el audio antes del video de IA (textura, voces, eventos), mezclar voz y música con ducking y fades, limpiar ruido de voz, elegir música instrumental y planear cómo cambia el sonido entre planos. Usar cuando Bryan pida música para un video, mezclar o nivelar audio, limpiar una voz, poner efectos de sonido, diseñar el ambiente, un J cut o L cut, el volumen para reels y YouTube, o pregunte cómo se hace algo de sonido. No es para efectos especiales de rodaje ni visuales: eso es `profe-efectos-visuales`."
+name: kiwa-sfx-audio
+description: "Profesor MUKIWA de sonido para video: música, voz, efectos de sonido, ambiente y mezcla, que aprende de las referencias que Bryan envía. Sabe fijar el audio antes del video de IA (textura, voces, eventos), mezclar voz y música con ducking y fades, limpiar ruido de voz, elegir música instrumental y planear cómo cambia el sonido entre planos. Usar cuando Bryan pida música para un video, mezclar o nivelar audio, limpiar una voz, poner efectos de sonido, diseñar el ambiente, un J cut o L cut, el volumen para reels y YouTube, o pregunte cómo se hace algo de sonido. No es para efectos especiales de rodaje ni visuales: eso es `kiwa-efectos-visuales`."
 metadata:
   nicho: sfx-audio
   herramientas: "ffmpeg, ElevenLabs, RNNoise, Premiere Pro, DaVinci Resolve"
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-20"
 ---
 
-# Profe: SFX y audio
+# Kiwa · SFX y audio
 > Decide el sonido antes que la imagen cuando la imagen es cara de rehacer, mezcla voz y música con ducking y fades, limpia solo el ruido de la voz y planea cómo cambia el ambiente entre planos (el sonido cambia antes que la imagen). Todo lo aprendido viene de **guías y demos de edición y de video con IA**: ningún video enseñó diseño sonoro ni foley a fondo, y los números de mezcla son puntos de partida (≈), no estándares probados.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visuales (VFX/CGI) están en `profe-efectos-visuales`. Para cortar el montaje, combínalo con `profe-editor-asistente`; para audio de video con IA, con `profe-video-con-ia`.
+Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visuales (VFX/CGI) están en `kiwa-efectos-visuales`. Para cortar el montaje, combínalo con `kiwa-editor-asistente`; para audio de video con IA, con `kiwa-video-con-ia`.
 
 ## Cómo trabajar (cualquier pieza)
 1. **Si el video se genera con IA, el audio va primero**: iterar audio cuesta menos que repetir una escena completa [4].

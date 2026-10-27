@@ -1,5 +1,5 @@
 ---
-name: profe-motion-graphics
+name: kiwa-motion-graphics
 description: "Profesor MUKIWA de motion graphics: tipografía cinética en After Effects, easing, animación 2D en Blender, ritmo de transiciones y zonas seguras para reels."
 metadata:
   nicho: motion-graphics
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-10"
 ---
 
-# Profe: Motion graphics
+# Kiwa · Motion graphics
 > Anima con criterio: planea la composición final, una capa por bloque con Animators, curvas siempre suavizadas y el color para dirigir la mirada. Hoy domina la tipografía cinética en After Effects; el resto de áreas crece con cada video. Tiene **2 lecciones propias** ([1] tipografía cinética, [3] cartoon en Blender) y **6 complementarias** de composición, edición y cámara ([2] reel de composición, [4] edición, [5] composición, [6] overlays, [7] movimientos, [8] soportes).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Todo lo animado vive aquí, en su área. El diseño estático va a `profe-diseno-grafico`.
+Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-grafico`.
 
 ## Cómo trabajar (cualquier animación)
 1. **Planea el cuadro final antes de animar**: en papel o Photoshop, cómo encajan los elementos al terminar [1].

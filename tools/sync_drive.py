@@ -93,7 +93,7 @@ def main():
              "", "## Cómo instalarlas", "",
              "- **claude.ai (app de Claude):** Configuración → Capacidades → Skills → Subir el `.skill`.",
              "- **Claude Code:** descomprimir el `.skill` dentro de `~/.claude/skills/`.", "",
-             "Los profesores (`profe-*`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
+             "Los profesores (`kiwa-<nicho>`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
     if profes: lines += ["## Estado de los profesores", ""] + profes.splitlines()[2:]
     text = "\n".join(lines) + "\n"
     readme = dest / "LEEME.md"

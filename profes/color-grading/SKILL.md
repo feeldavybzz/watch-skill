@@ -1,5 +1,5 @@
 ---
-name: profe-color-grading
+name: kiwa-color-grading
 description: Profesor MUKIWA de color grading en DaVinci Resolve, con rodaje y grade de S-Log3 de Sony (CST), aislar colores, proteger piel, LUTs y look MUKIWA.
 metadata:
   nicho: color-grading
@@ -8,10 +8,10 @@ metadata:
   actualizado: "2026-10-15"
 ---
 
-# Profe: Color grading (DaVinci Resolve)
+# Kiwa · Color grading (DaVinci Resolve)
 > Arma el grade como un árbol de nodos ordenado y con nombres, envuelto entre un CST de entrada y uno de salida cuando el material es log; aísla un color o un objeto sin ensuciar la piel, y baja o cambia solo ese verde, rojo o azul con Qualifier, Magic Mask y curvas. Tiene **1 lección en video** [4] (rodaje y grade de S-Log3 de Sony); lo demás sigue siendo conocimiento general de Resolve y la captura de Bryan, así que esos números son puntos de partida (≈), no valores probados.
 
-Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez; la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron en pantalla o se dijeron; si no, con ≈. Para la luz de la escena combínalo con `profe-iluminacion`; para el encuadre, con `profe-composicion-visual`.
+Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez; la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron en pantalla o se dijeron; si no, con ≈. Para la luz de la escena combínalo con `kiwa-iluminacion`; para el encuadre, con `kiwa-composicion-visual`.
 
 ## Cómo trabajar (cualquier clip)
 1. **Sabe qué cámara y qué gamma es.** Si el material es log (S-Log3), el primer paso es convertirlo con un CST (ver «Material log»); si ya es Rec.709, no hace falta [4].

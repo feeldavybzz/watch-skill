@@ -49,7 +49,7 @@
 
 ## Para MUKIWA
 - Checklist de entrega para posteos y reels: una alineación, sin viudas, líneas cortas, mismos tamaños para el mismo rol.
-- Las tarjetas retro 3D rojo-amarillo y el fondo de tapete verde son recursos de edición para robar (ver también `profe-motion-graphics`).
+- Las tarjetas retro 3D rojo-amarillo y el fondo de tapete verde son recursos de edición para robar (ver también `kiwa-motion-graphics`).
 
 ## Límites
 - No pude abrir el Notion de «Dónde encontrar tipografías».

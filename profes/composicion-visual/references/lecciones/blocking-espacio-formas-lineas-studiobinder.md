@@ -45,7 +45,7 @@
 
 ## Para MUKIWA
 - Creative Direction / Visual Edits: sirve para dirigir cómo se colocan personas o productos en un plano de un video o reel, y para hacer storyboards con intención.
-- Para composición: las líneas y formas conectan con `profe-composicion-visual`; este profesor las usa para colocar actores.
+- Para composición: las líneas y formas conectan con `kiwa-composicion-visual`; este profesor las usa para colocar actores.
 - Para el plugin de guías: las **formas básicas** (círculo, cuadrado, triángulo sobre el sujeto) podrían ser una capa de ayuda («triángulo» ya existe en `triangulos`).
 
 ## Límites

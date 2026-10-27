@@ -9,7 +9,7 @@
 
 ## Qué NO es este video
 - No da medidas: no dice cuántas columnas, márgenes ni medianiles, salvo «márgenes y cuatro columnas equidistantes ya es suficiente».
-- No cubre las otras reglas (áurea, diagonales, triángulos, espiral…): eso está en `profe-composicion-visual`.
+- No cubre las otras reglas (áurea, diagonales, triángulos, espiral…): eso está en `kiwa-composicion-visual`.
 - No muestra el proceso en un programa: usa imágenes de carteles ya hechos con guías encima.
 
 ## Teoría (lo que se dice)
@@ -34,7 +34,7 @@
 ## Cruce teoría ↔ práctica
 - Todo lo dicho tiene un ejemplo en pantalla. Lo que **solo se ve**: las guías sobre los carteles (en los tercios, varios elementos caen en la **línea** y no en la intersección; no se mide).
 - Lo que **solo se dice**: «cuatro columnas equidistantes»; la comparación con Apple.
-- Coincide con las lecciones de `profe-composicion-visual` sobre tercios (nueve partes, intersecciones) y añade el criterio de **jerarquía antes que reglas**.
+- Coincide con las lecciones de `kiwa-composicion-visual` sobre tercios (nueve partes, intersecciones) y añade el criterio de **jerarquía antes que reglas**.
 
 ## Receta paso a paso
 1. Define el **protagonista** de la pieza y el **orden de lectura** (título → subtítulo → imagen → cuerpo → llamado a la acción).

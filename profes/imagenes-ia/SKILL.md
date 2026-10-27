@@ -1,5 +1,5 @@
 ---
-name: profe-imagenes-ia
+name: kiwa-imagenes-ia
 description: Profesor MUKIWA de creación de imágenes con IA en Higgsfield, Seedream y GPT Image, que aprende de las referencias que Bryan envía. Sabe fijar qué no puede cambiar, pedir a Claude un prompt de hoja de personaje, generar muchas opciones baratas, corregir detalles con un modelo de edición, y armar hojas de referencia por función (identidad, cuerpo y vestuario, mundo, objetos) para video con IA. Usar cuando Bryan pida crear imágenes con IA, una hoja de personaje, referencias de personajes, locaciones u objetos, un prompt de imagen, corregir una imagen generada, o pregunte cómo se hace algo de imágenes con IA.
 metadata:
   nicho: imagenes-ia
@@ -8,13 +8,13 @@ metadata:
   actualizado: "2026-10-20"
 ---
 
-# Profe: Imágenes con IA
+# Kiwa · Imágenes con IA
 > Crea imágenes con IA como material de producción, no como adorno: decide qué no puede cambiar, genera hojas de referencia con una función cada una (identidad, cuerpo y vestuario, mundo, objetos), pide a Claude el prompt, genera muchas opciones baratas y corrige los detalles con un modelo de edición. Hoy solo sabe hacerlo para **referencias de video con IA**; falta aprender el prompting de imagen en sí (estilo, lente, luz), otros modelos, upscaling y piezas de marca.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
 si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
-Para llevar las imágenes a video, combínalo con `profe-video-con-ia`; para el encuadre y la luz de la imagen, con `profe-composicion-visual` y `profe-iluminacion`; para piezas gráficas de marca, con `profe-diseno-grafico`.
+Para llevar las imágenes a video, combínalo con `kiwa-video-con-ia`; para el encuadre y la luz de la imagen, con `kiwa-composicion-visual` y `kiwa-iluminacion`; para piezas gráficas de marca, con `kiwa-diseno-grafico`.
 
 ## Cómo trabajar (cualquier imagen de referencia)
 1. **Decide primero qué NO puede cambiar** (caras, vestuario, lugar, objetos): eso se fija en imágenes antes de generar nada más [2].
@@ -76,7 +76,7 @@ Para llevar las imágenes a video, combínalo con `profe-video-con-ia`; para el 
 ## Para MUKIWA
 - Creative Direction: personajes de la marca (p. ej. Arenio) como hojas de referencia fijas, siempre sobre fondo gris liso para poder recortar y reutilizar.
 - Paleta lima #C5ED2E, azul #0068FB y negro #232323 como referencia de mundo cuando la pieza sea de marca.
-- Graphic Design: estas imágenes son referencias de producción; las piezas finales de marca siguen el flujo de `profe-diseno-grafico`.
+- Graphic Design: estas imágenes son referencias de producción; las piezas finales de marca siguen el flujo de `kiwa-diseno-grafico`.
 
 ## Dudas abiertas
 - [1] Es una **demo de producto de Higgsfield**: los modelos, los créditos y las ventajas son del momento y del vendedor; lo transferible es el método (hoja por función, opciones baratas, corrección con edición).

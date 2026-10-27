@@ -42,7 +42,7 @@
 
 ## Para MUKIWA
 - Aplicable a portadas y reels: un título en extremo de peso (800–900) y el texto en Light o Regular, un solo acento de color (lima #C5ED2E sobre #232323).
-- Sirve de base para el sistema tipográfico de la identidad (ver `profe-diseno-grafico` → Tipografía).
+- Sirve de base para el sistema tipográfico de la identidad (ver `kiwa-diseno-grafico` → Tipografía).
 
 ## Límites
 - Sin tamaños ni pesos medidos, ni nombres de pares recomendados (el video los evita a propósito).

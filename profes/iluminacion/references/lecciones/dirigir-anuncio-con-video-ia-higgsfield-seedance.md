@@ -61,7 +61,7 @@
 
 ## Para MUKIWA
 - Creative Direction y Visual Edits: la receta sirve de **brief de rodaje** para cualquier video de IA (hoja de personaje, locaciones fijadas, mapa de blocking) y de **lista de planos con tiempos**.
-- Se conecta con el blocking de `profe-narrativa-y-direccion` (espacio, formas, líneas) y con el match cut de `profe-editor-asistente`.
+- Se conecta con el blocking de `kiwa-narrativa-y-direccion` (espacio, formas, líneas) y con el match cut de `kiwa-editor-asistente`.
 - Al ser Higgsfield: los créditos y modelos cambian; el **método** (referencias, anclas, tiempos, mapa) es lo que dura.
 
 ## Límites
