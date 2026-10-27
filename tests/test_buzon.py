@@ -16,9 +16,9 @@ def load(name, path):
     return mod
 
 
-grab = load('grab_t', ROOT / 'skills/mukiwa-grab/scripts/grab.py')
-doctor = load('doctor_t', ROOT / 'skills/mukiwa-grab/scripts/doctor.py')
-inbox = load('inbox_t', ROOT / 'skills/mukiwa-learn/scripts/inbox.py')
+grab = load('grab_t', ROOT / 'skills/kiwa-watch-learn/scripts/grab.py')
+doctor = load('doctor_t', ROOT / 'skills/kiwa-watch-learn/scripts/doctor.py')
+inbox = load('inbox_t', ROOT / 'skills/kiwa-watch-learn/scripts/inbox.py')
 
 
 class ErrorExplanationTests(unittest.TestCase):
@@ -304,7 +304,7 @@ class InboxFlowTests(unittest.TestCase):
         inbox.scan(self.dir, state)
         state['items']['youtube:AAA'].update(estado='listo', informe='/w/informe.md')
         inbox.save_state(self.dir, state)
-        r = subprocess.run([sys.executable, str(ROOT / 'skills/mukiwa-learn/scripts/inbox.py'), '--dir', str(self.dir), 'ready', '--json'],
+        r = subprocess.run([sys.executable, str(ROOT / 'skills/kiwa-watch-learn/scripts/inbox.py'), '--dir', str(self.dir), 'ready', '--json'],
                            capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stderr)
         data = json.loads(r.stdout)

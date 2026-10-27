@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Atajo: ./grab "URL"  (desde la carpeta kiwa-watch-learn)  — acepta las mismas opciones que grab.py
+exec python3 "$(dirname "$0")/scripts/grab.py" "$@"

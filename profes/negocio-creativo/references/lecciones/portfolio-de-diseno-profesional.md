@@ -3,7 +3,7 @@
 
 - **Fuente**: https://youtu.be/AKNNaLZhIAI · Eze Cichello · 8:47
 - **Fecha**: 2026-10-06
-- **Tipo de "oídos"**: transcripción automática de YouTube (es): panel de Chrome (completa) + subtítulos .vtt bajados con mukiwa-grab (limpios).
+- **Tipo de "oídos"**: transcripción automática de YouTube (es): panel de Chrome (completa) + subtítulos .vtt bajados con kiwa-watch-learn (limpios).
 - **Confianza**: alta en teoría; alta en práctica (video 1080p descargado, 45 frames con timestamp en 5 hojas, de 0:00 a 8:14).
 
 ## Teoría (lo que se dijo)

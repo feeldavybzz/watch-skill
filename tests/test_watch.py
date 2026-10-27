@@ -10,7 +10,7 @@ from urllib.error import HTTPError
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'skills/mukiwa-learn/scripts'
+SCRIPTS = ROOT / 'skills/kiwa-watch-learn/scripts'
 sys.path.insert(0, str(SCRIPTS))
 import cues  # noqa: E402
 import extract_frames as ef  # noqa: E402
@@ -218,7 +218,7 @@ if __name__ == '__main__':
 
 import importlib.util  # noqa: E402
 import zipfile  # noqa: E402
-_spec = importlib.util.spec_from_file_location('grab', ROOT / 'skills/mukiwa-grab/scripts/grab.py')
+_spec = importlib.util.spec_from_file_location('grab', ROOT / 'skills/kiwa-watch-learn/scripts/grab.py')
 grab = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(grab)
 
@@ -269,18 +269,18 @@ class PackageTests(unittest.TestCase):
             r = subprocess.run([sys.executable, str(ROOT / 'tools/build_skills.py'), '--out', d, '--allow-dirty'],
                                capture_output=True, text=True)
             self.assertEqual(r.returncode, 0, r.stderr)
-            for name in ('mukiwa-grab', 'mukiwa-learn'):
+            for name in ('kiwa-watch-learn',):
                 with zipfile.ZipFile(Path(d) / f'{name}.skill') as z:
                     names = z.namelist()
                 self.assertTrue(all(n.startswith(name + '/') for n in names))
                 self.assertEqual([n for n in names if n.endswith('SKILL.md')], [f'{name}/SKILL.md'])
                 self.assertFalse([n for n in names if '/._' in n or '_descargas' in n or '/work/' in n])
                 self.assertLess(len(names), 200)
-            with zipfile.ZipFile(Path(d) / 'mukiwa-learn.skill') as z:
+            with zipfile.ZipFile(Path(d) / 'kiwa-watch-learn.skill') as z:
                 names = z.namelist()
-            self.assertIn('mukiwa-learn/scripts/grab.py', names)
-            self.assertIn('mukiwa-learn/library/INDEX.md', names)
-            self.assertIn('mukiwa-learn/scripts/watch.py', names)
+            self.assertIn('kiwa-watch-learn/scripts/grab.py', names)
+            self.assertIn('kiwa-watch-learn/library/INDEX.md', names)
+            self.assertIn('kiwa-watch-learn/scripts/watch.py', names)
             self.assertTrue((Path(d) / 'profe-diseno-grafico.skill').exists())
 
 

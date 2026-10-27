@@ -3,11 +3,11 @@
 (Configuración → Capacidades → Skills → Subir).
 
 Uso: python3 tools/build_skills.py [--out dist] [--allow-dirty]
-Genera dist/mukiwa-grab.skill, dist/mukiwa-learn.skill y un dist/profe-<nicho>.skill por profesor.
+Genera dist/kiwa-watch-learn.skill y un dist/profe-<nicho>.skill por profesor.
 
 - Entra lo que Git conoce y lo nuevo sin commit, respetando .gitignore: nada de _descargas/, work/, ._*, venv ni claves.
-- mukiwa-learn lleva una copia de grab.py en scripts/ para descargar aunque se suba sola.
-- La biblioteca de lecciones viaja dentro de mukiwa-learn.
+- kiwa-watch-learn ya trae grab.py en scripts/: bajar y aprender viajan en un solo paquete.
+- La biblioteca de lecciones viaja dentro de kiwa-watch-learn.
 - Se comprueba: una sola carpeta raíz, un solo SKILL.md, frontmatter válido y menos de 200 archivos.
 
 En claude.ai el entorno suele bloquear YouTube/Instagram: ahí conviene subir el archivo de video.
@@ -16,8 +16,8 @@ import argparse, os, re, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ["mukiwa-grab", "mukiwa-learn", "mukiwa-ver-videos"]
-EXTRA = {"mukiwa-learn": {"scripts/grab.py": "skills/mukiwa-grab/scripts/grab.py"}}
+SKILLS = ["kiwa-watch-learn"]
+EXTRA = {}
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 MAX_FILES = 200
 

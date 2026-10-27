@@ -4,7 +4,7 @@
   python3 tools/sync_drive.py [--dest CARPETA] [--no-git]
 
 1. Trae lo último de GitHub (solo si estás en main sin cambios pendientes; nunca fuerza nada).
-2. Empaqueta mukiwa-grab, mukiwa-learn y cada profesor (tools/build_skills.py), incluyendo lo
+2. Empaqueta kiwa-watch-learn y cada profesor (tools/build_skills.py), incluyendo lo
    aprendido esta semana aunque no esté en un commit.
 3. Empaqueta también las skills propias de ~/.claude/skills (carpetas reales, no enlaces).
 4. Copia los .skill a la carpeta de Drive solo si cambiaron; los que ya no existen (p. ej. un
@@ -93,7 +93,7 @@ def main():
              "", "## Cómo instalarlas", "",
              "- **claude.ai (app de Claude):** Configuración → Capacidades → Skills → Subir el `.skill`.",
              "- **Claude Code:** descomprimir el `.skill` dentro de `~/.claude/skills/`.", "",
-             "Los profesores (`profe-*`) crecen con cada video que se analiza con mukiwa-learn.", ""]
+             "Los profesores (`profe-*`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
     if profes: lines += ["## Estado de los profesores", ""] + profes.splitlines()[2:]
     text = "\n".join(lines) + "\n"
     readme = dest / "LEEME.md"

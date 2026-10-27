@@ -1,6 +1,6 @@
 # watch-skill · MUKIWA
 
-Skills de referencia y aprendizaje audiovisual para Claude Code: `mukiwa-grab` obtiene medios y `mukiwa-learn` relaciona transcripción con fotogramas y guarda lecciones.
+Skills de referencia y aprendizaje audiovisual para Claude Code: `kiwa-watch-learn` obtiene medios y `kiwa-watch-learn` relaciona transcripción con fotogramas y guarda lecciones.
 
 ## Instalar en Claude Code
 
@@ -18,17 +18,17 @@ Seguir la indicación de activación del cliente. Los nombres de las skills pued
 Cada video analizado alimenta **mini skills por oficio** en `profes/<nicho>/` (color grading, diseño de logos, tipografía cinética…). Si el profesor no existe se crea; si existe, aprende más; si el tema ya lo cubre una skill propia de Bryan, se le añade el conocimiento en `references/aprendido-mukiwa.md`. Las herramientas (DaVinci, Premiere, After Effects…) son secciones dentro de cada profesor. Se escriben como instrucciones para hacer el trabajo, con fuente [n] por técnica.
 
 ```bash
-python3 skills/mukiwa-learn/scripts/profes.py list      # profesores y skills existentes
-python3 skills/mukiwa-learn/scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/profe-*
+python3 skills/kiwa-watch-learn/scripts/profes.py list      # profesores y skills existentes
+python3 skills/kiwa-watch-learn/scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/profe-*
 ```
 
-Reglas de clasificación y fusión: `skills/mukiwa-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
+Reglas de clasificación y fusión: `skills/kiwa-watch-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
 
 ## Descarga robusta y buzón de links
 
-- `skills/mukiwa-grab/scripts/doctor.py [--online]` revisa yt-dlp (y si hay versión nueva), el runtime de JavaScript que YouTube exige (detecta Node aunque no esté en el PATH), ffmpeg, gallery-dl, whisper y espacio, con el comando exacto de lo que falte.
+- `skills/kiwa-watch-learn/scripts/doctor.py [--online]` revisa yt-dlp (y si hay versión nueva), el runtime de JavaScript que YouTube exige (detecta Node aunque no esté en el PATH), ffmpeg, gallery-dl, whisper y espacio, con el comando exacto de lo que falte.
 - Los fallos se explican (`CAUSA[...]` / `HAZ:`): 429, login, privado, no existe, región, 403, JavaScript, red, 5xx. Reintenta con espera solo lo que lo merece.
-- **Buzón** (`skills/mukiwa-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los profesores. `estado.md` dice qué pasó con cada cosa. Usa la sesión de Chrome solo para sitios que autorizaste en `~/.config/mukiwa/permisos.json` (hoy: instagram.com) y solo si el link falla por pedir sesión; `estado.md` lo anota.
+- **Buzón** (`skills/kiwa-watch-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los profesores. `estado.md` dice qué pasó con cada cosa. Usa la sesión de Chrome solo para sitios que autorizaste en `~/.config/mukiwa/permisos.json` (hoy: instagram.com) y solo si el link falla por pedir sesión; `estado.md` lo anota.
 
 ## Copia semanal en Google Drive
 
@@ -40,7 +40,7 @@ Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal
 python3 tools/build_skills.py
 ```
 
-Genera `dist/mukiwa-grab.skill` y `dist/mukiwa-learn.skill` (solo archivos de Git: sin descargas, claves ni `._*`). Subirlos en claude.ai → Configuración → Capacidades → Skills. `mukiwa-learn` lleva su propia copia del descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
+Genera `dist/kiwa-watch-learn.skill` y `dist/kiwa-watch-learn.skill` (solo archivos de Git: sin descargas, claves ni `._*`). Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` lleva su propia copia del descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
 
 ## Dependencias
 
@@ -58,7 +58,7 @@ Whisper es opcional: `python3 -m pip install faster-whisper`. Su primera ejecuci
 ## Ver un video en un paso
 
 ```bash
-python3 skills/mukiwa-learn/scripts/watch.py "https://youtu.be/ID" --question "¿Qué técnica usa en el minuto 2?"
+python3 skills/kiwa-watch-learn/scripts/watch.py "https://youtu.be/ID" --question "¿Qué técnica usa en el minuto 2?"
 ```
 
 Descarga (o reutiliza), saca subtítulos o transcribe en la Mac, extrae capturas repartidas por todo el video, fija capturas a 1280 px del gancho y de los momentos que el presentador señala, mide ritmo de edición y paleta, y escribe `work/watch-…/informe.md` + `evidence.json`. Niveles: `--detail transcript|efficient|balanced|full`. Enfoque: `--start/--end`, `--at 4:32,13:11`.
@@ -69,11 +69,11 @@ Comparado con Watch: funciona con el Python 3.9 de la Mac sin Homebrew; limpia s
 
 ## Flujo por pasos
 
-1. Descargar un enlace con `python3 skills/mukiwa-grab/scripts/grab.py URL --out _descargas --max-height 720`.
+1. Descargar un enlace con `python3 skills/kiwa-watch-learn/scripts/grab.py URL --out _descargas --max-height 720`.
 2. Preparar un archivo local:
 
 ```bash
-python3 skills/mukiwa-learn/scripts/prepare.py VIDEO --out work/referencia --transcript SUBTITULOS.srt
+python3 skills/kiwa-watch-learn/scripts/prepare.py VIDEO --out work/referencia --transcript SUBTITULOS.srt
 ```
 
 Sin subtítulos se puede omitir `--transcript` (evidencia parcial) o usar `--whisper` cuando esté configurado. `evidence.json` informa el estado; salida 0 significa evidencia visual y textual lista, salida 2 significa parcial o bloqueada. Nunca significa que el agente ya analizó el video.
@@ -89,6 +89,6 @@ Los fotogramas son muestras. No se promete inspección de cada fotograma ni tran
 
 ## Origen
 
-Base: paquetes `mukiwa-learn.skill` y `mukiwa-grab.skill` proporcionados por Bryan el 10 de octubre de 2026. La arquitectura de fotogramas + transcripción, el selector de detalle, el descarte de capturas casi idénticas y las capturas en tiempos exactos toman como referencia [Watch](https://github.com/bradautomates/claude-video) (MIT). `skills/mukiwa-learn/scripts/gemini.py` es una adaptación de su `gemini.py`: Copyright (c) 2026 Bradley Bonanno, licencia MIT (permite usar, copiar y modificar conservando este aviso). El resto es código propio.
+Base: paquetes `kiwa-watch-learn.skill` y `kiwa-watch-learn.skill` proporcionados por Bryan el 10 de octubre de 2026. La arquitectura de fotogramas + transcripción, el selector de detalle, el descarte de capturas casi idénticas y las capturas en tiempos exactos toman como referencia [Watch](https://github.com/bradautomates/claude-video) (MIT). `skills/kiwa-watch-learn/scripts/gemini.py` es una adaptación de su `gemini.py`: Copyright (c) 2026 Bradley Bonanno, licencia MIT (permite usar, copiar y modificar conservando este aviso). El resto es código propio.
 
 Conservar las lecciones al actualizar. No subir cookies, claves ni medios privados. `_descargas`, `work` y binarios descargados quedan fuera de Git.

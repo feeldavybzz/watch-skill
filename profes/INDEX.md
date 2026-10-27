@@ -1,6 +1,6 @@
 # Profesores MUKIWA
 
-Mini skills por nicho que crecen con cada video analizado (ver skills/mukiwa-learn/references/profesores.md).
+Mini skills por nicho que crecen con cada video analizado (ver skills/kiwa-watch-learn/references/profesores.md).
 
 - **cinematografia** — 10 lecciones · Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control · actualizado 2026-10-27
 - **color-grading** — 1 lección · DaVinci Resolve, Premiere Pro · actualizado 2026-10-15

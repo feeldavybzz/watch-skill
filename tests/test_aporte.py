@@ -1,5 +1,5 @@
 import os, sys, tempfile, unittest
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-learn", "scripts"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "kiwa-watch-learn", "scripts"))
 import aporte  # noqa: E402
 
 DESC_PROMO = """👉 Accede a la Lista de espera: https://comunidad.somoscamaleon.com/
