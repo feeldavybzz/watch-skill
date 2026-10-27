@@ -1,15 +1,15 @@
 ---
 name: profe-cinematografia
-description: Profesor MUKIWA de cinematografía (cámara en cine y video), que aprende de las referencias que Bryan envía. Sabe qué cuenta cada uno de los 15 movimientos de cámara, los 9 ángulos o alturas, los 12 soportes (en mano, trípode, pedestal, grúa o jib, cenital, dolly, estabilizador, Snorricam, vehículo, dron, motion control y carcasa submarina), cómo elegir el frame rate (24, 48, 120 fps, cámara lenta y rápida), la regla de los 180° (seguirla, romperla, doblarla) y cómo planear y rodar B-roll, y a planearlo todo en una lista de planos. Usar cuando Bryan pida elegir o ejecutar un movimiento, un ángulo o un soporte de cámara, steadicam, gimbal, dolly, grúa, dron, cámara en mano, Snorricam, motion control, frame rate, fps, cámara lenta o rápida, under-crank u over-crank, regla de los 180 grados, cruzar la línea, ejes de mirada, B-roll, planear una lista de planos o decidir qué emoción cuenta un plano, o pregunte cómo se hace algo de cinematografía.
+description: "Profesor MUKIWA de cinematografía: ángulos, movimientos, soportes, frame rate, línea de 180° y B-roll, y cómo planearlos en una lista de planos."
 metadata:
   nicho: cinematografia
   herramientas: "Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control"
-  lecciones: 6
-  actualizado: "2026-10-11"
+  lecciones: 10
+  actualizado: "2026-10-27"
 ---
 
 # Profe: Cinematografía
-> Elige el ángulo, el movimiento, el soporte y la velocidad de la cámara según lo que debe sentir el público: sabe qué comunica cada uno de los 9 ángulos, qué cuenta cada uno de los 15 movimientos, con qué soporte de los 12 se hace, cuándo capturar a 24, 48, 120 o más fps, cómo mantener o romper la línea de 180° y cómo rodar B-roll con intención, y lo planea en una lista de planos. La iluminación la lleva `profe-iluminacion`. Falta aprender tamaño de plano, lentes, foco y la ejecución con valores (velocidades, distancias, grados).
+> Elige el ángulo, el movimiento, el soporte y la velocidad de la cámara según lo que debe sentir el público: sabe qué comunica cada uno de los 9 ángulos, qué cuenta cada uno de los 15 movimientos, con qué soporte de los 12 se hace, cuándo capturar a 24, 48, 120 o más fps, cómo mantener o romper la línea de 180° y cómo rodar B-roll con intención, y lo planea en una lista de planos. La iluminación la lleva `profe-iluminacion`. Aprendió de **6 lecciones propias** y **4 complementarias** (corte, blocking, tomas «sin costuras» y espacio/profundidad). Falta aprender lentes, el tamaño de plano como curso propio y la ejecución con valores (velocidades, distancias, grados).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -27,6 +27,7 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 8. **Decide el frame rate por plano** y anótalo en la lista de planos (24 normal; más alto para lento; más bajo para rápido) [4].
 9. **Traza la línea de 180° entre los sujetos** antes de colocar cámaras y rompe la regla solo con intención [5].
 10. **Los mejores usos son siempre intencionales**: si el ángulo o el movimiento no sirven a la historia, cámbialos; mezcla tamaños, encuadres y ángulos y no te conformes con lo esperado [1][2].
+11. **Rueda pensando en el corte**: casi todo el trabajo del editor es qué mostrar, cuándo cortar y a qué cortar; entrégale planos que permitan esos cortes (ver «Rodar pensando en el corte») [7].
 
 ## Áreas
 ### Elegir el ángulo (altura de cámara)
@@ -133,6 +134,26 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 - **Aprovecha el tiempo**: poca profundidad de campo (≈ f/1.4), cámara lenta (60 o 120 fps) y dolly o gimbal ya montados [6].
 - **El significado lo cambian las especificaciones del plano**: «Enterré a ella bajo ese árbol» → malvado: ras de suelo, dolly in, rápido; descanso final: a la altura de los ojos, gran angular con destello de sol, dolly suave; ambos con el mismo equipo y en un minuto [6].
 
+### Rodar pensando en el corte [7]
+- **Eyeline match**: si un personaje mira algo fuera de cuadro, rueda también **lo que ve** (a menudo un plano subjetivo o un inserto de detalle); los ojos del personaje motivan el corte. Puedes retrasar la revelación o no mostrarla nunca [7].
+- **Plano-contraplano**: en una conversación rueda cada sujeto desde el **ángulo inverso, con ángulo y composición parecidos**, para mantener la geografía y la claridad de la escena (aquí vive la línea de 180°) [7].
+- **Eye trace**: para acción rápida, mantén el **punto de interés en la misma zona del cuadro** de plano a plano, para que el ojo no tenga que rastrear todo el cuadro tras cada corte; el director de fotografía de *Mad Max: Fury Road* lo resumía en «pon la mira en una nariz», con planos de menos de un segundo [7].
+- **Corte en acción**: rueda el movimiento con **solape**, de modo que el punto de salida de un plano coincida con el de entrada del siguiente; es lo habitual en peleas, y cortar en el impacto da fuerza al golpe [7].
+
+### Blocking: la distancia a la cámara decide la importancia [8]
+- Colocar a cada persona a **distancia distinta de la cámara** crea contraste de tamaño: quien está más cerca se ve más grande e imponente; quien está lejos queda empequeñecido (en la escena de *Ciudadano Kane*, el padre lejos y la madre cerca) [8].
+- Deja a la vista **lo que está en juego** dentro del cuadro (el niño que juega visto por la ventana) [8].
+- Lo que cuentan las **formas** (círculo = seguro, cuadrado = encierra, triángulo = agresivo) y las **líneas** (vertical/horizontal/diagonal = poder y tensión) se desarrolla en `profe-narrativa-y-direccion` y `profe-composicion-visual` [8].
+
+### Tamaño de plano, espacio y foco (apoyo desde composición) [10]
+- **Espacio**: cuanto más grande el sujeto en el cuadro, más importancia; los planos **extremadamente amplios aíslan y hacen vulnerable**, los **primeros planos extremos empoderan**. **Headroom** mínimo y **lookroom** (espacio frente al sujeto) mucho mayor que el de detrás; romperlo también funciona [10].
+- **Profundidad**: primer plano, plano medio y fondo dan capas; **foco corto** aísla al sujeto y cambiar el foco dirige la atención; **foco profundo** permite varias capas de atención [10].
+- El video no da lentes, distancias ni valores de foco: es criterio, no ejecución [10].
+
+### Tomas largas «sin costuras» [9]
+- Para que varias tomas parezcan **un solo plano** se usa el *stitching* (unir dos tomas para que parezcan continuas); en *1917* se combinó un avión CGI en el cielo, un avión real lanzado desde una rampa de ≈20 pies y una toma aparte compuesta con los actores [9].
+- Al planear ese tipo de plano, decide qué se rueda en el set (SFX) y qué se añade después (VFX/CGI) y cuida que lo digital **iguale la luz y el aspecto** de lo real [9]. Detalle de técnicas en `profe-efectos-visuales`.
+
 ## Por herramienta
 ### Lista de planos (notación vista en pantalla)
 - Cada plano se anota con **tamaño > ángulo · soporte**, por ejemplo «WS > LA · Hip Level · Steadicam» o «MCU · OH · Sticks» (WS = plano general; LA = ángulo bajo; OH = cenital; MCU = plano medio corto) [2]. Los nueve ángulos tienen tarjeta propia en la lista de planos de la serie [2].
@@ -162,12 +183,13 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 - Usar el roll fuera de un momento de incomodidad → resérvalo para desorientar [1 (guía escrita)].
 - Abusar de la cámara en mano o de los zooms aleatorios → pierde efecto; moderación [1 (guía escrita)].
 - Mover la cámara cuando la quietud cuenta más (diálogo, indefensión) → el plano estático también es una decisión [1].
-
 - Cruzar la línea de 180° sin querer → los personajes parecen mirar al mismo lado y el corte desorienta; trázala antes de rodar [5].
 - Mezclar frame rates en un plano que debe verse normal → movimiento incoherente [4].
 - Esperar el look de 48 o 120 fps al verlo a 24 fps → no se aprecia; hay que presentar a esa tasa [4].
 - Rodar el B-roll sin decidir su significado → pierde su función narrativa [6].
 - Elegir el soporte por moda (Steadicam o dron «porque sí») → que sirva a la sensación del plano [3].
+- Rodar una conversación sin los planos de reacción o el ángulo inverso → el editor no tiene a qué cortar [7].
+- Dejar a todos a la misma distancia de la cámara cuando importa quién domina → pierdes el contraste de espacio [8].
 
 ## Checklist antes de entregar
 - [ ] Cada ángulo y cada movimiento tienen una razón narrativa o una acción que los motiva.
@@ -179,6 +201,7 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 - [ ] Cada plano especial lleva su fps en la lista de planos.
 - [ ] La línea de 180° está trazada y los quiebres son intencionales.
 - [ ] Cada B-roll tiene un significado anotado.
+- [ ] Para cada escena hay planos que permiten el corte (reacción, ángulo inverso, solape de la acción).
 
 ## Para MUKIWA
 - Visual Edits: tabla movimiento → emoción para el brief de un video; en edición, los empujes y zooms digitales y el whip pan sincronizado con la música imitan algunos de estos movimientos.
@@ -193,6 +216,7 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 - La guía escrita de soportes no menciona cable cam ni zolly y llama «waterproof housing» a la carcasa submarina; se usa el nombre del video [3].
 - «Bird's eye» aparece en la guía escrita sin definición.
 - Faltan los pasos en Premiere y DaVinci y ejemplos verticales.
+- [7][8][9][10] Las cuatro lecciones complementarias no son de cámara: dan criterio (corte, blocking, stitching, espacio), sin cifras ni ajustes de cámara.
 
 ## Fuentes
 - [1] Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6) — https://youtu.be/IiyBo-qLDeM · guía escrita https://www.studiobinder.com/blog/different-types-of-camera-movements-in-film/ · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
@@ -200,4 +224,8 @@ Para el encuadre de cada plano, combínalo con `profe-composicion-visual`; para 
 - [3] Los 12 soportes de cámara (rigs) y lo que cuenta cada uno (StudioBinder, Shot List ep. 5) — https://youtu.be/heJ9hWNb10g · `references/lecciones/soportes-de-camara-12-rigs-studiobinder.md`
 - [4] Frame rate: capturar y presentar a distintas velocidades (StudioBinder, Shot List ep. 8) — https://youtu.be/7lUFluLOh-s · `references/lecciones/frame-rate-captura-presentacion-camara-lenta-studiobinder.md`
 - [5] La regla de los 180°: seguirla, romperla y doblarla (StudioBinder) — https://youtu.be/iW0bKUfvH2c · `references/lecciones/regla-de-los-180-grados-studiobinder.md`
+- [7] Seis formas de editar una escena (StudioBinder, Shot List ep. 10) — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
+- [8] Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder) — https://youtu.be/9AGaECt9j4g · `references/lecciones/blocking-espacio-formas-lineas-studiobinder.md`
+- [9] CGI vs VFX vs SFX y el análisis de *1917* (StudioBinder, con Ian Failes) — https://youtu.be/Pok6EN3cfA4 · `references/lecciones/cgi-vfx-sfx-diferencias-y-1917.md`
+- [10] Los 9 elementos de la composición en cine (StudioBinder, Shot List ep. 11): secciones «espacio» y «profundidad» — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [6] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`

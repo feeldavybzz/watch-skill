@@ -1,15 +1,15 @@
 ---
 name: profe-editor-asistente
-description: Profesor MUKIWA de editor asistente en Premiere Pro, DaVinci Resolve, Claude Code y Remotion. Sabe hacerlo paso a paso, con lo aprendido de referencias reales que Bryan fue enviando. Usar cuando Bryan pida preparar, cortar y subtitular un video, ajustar pausas y música, animar subtítulos con Remotion, cubrir con B-roll, no cruzar la línea de 180° en un diálogo, rampas de velocidad y cámara lenta, quitar silencios y errores, sacar reels o carruseles de un video largo, organizar el material, editar con IA, o pregunte cómo se hace algo de editor asistente.
+description: "Profesor MUKIWA de editor asistente: corte por significado, pausas, música, subtítulos, Remotion, reels y carruseles, criterio de edición y flujo con Claude Code."
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 6
-  actualizado: "2026-10-11"
+  lecciones: 9
+  actualizado: "2026-10-27"
 ---
 
 # Profe: Editor asistente
-> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), cubre con B-roll, respeta la línea de 180° y usa la velocidad como recurso, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas.
+> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), cubre con B-roll, respeta la línea de 180° y usa la velocidad como recurso, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas. Tiene **6 lecciones propias** y **3 complementarias** ([7] whip pan, [8] match cut en video de IA, [9] overlays en Premiere).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -47,6 +47,8 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `profe-diseno-gra
 - **B-roll (el material al que cortas)** [4]: es lo que cubre los huecos del A-roll: **tapa saltos (jump cuts) y errores**, da **cobertura** a un hablante largo y puede **simbolizar** lo que se dice (en *Her*, el polvo en la pared mientras ella explica su conciencia). Corta a él en la frase clave y **elige su ángulo, lente y movimiento por el significado que quieres** (la misma línea cambia de sentido según el plano). Al rodarlo se planifica y se agrupa; esta parte la ejecuta `profe-cinematografia` [4].
 - **No cruces la línea sin querer (regla de los 180°)** [5]: en un diálogo mantén cada personaje mirando al **mismo lado de pantalla** corte tras corte (uno a la derecha, otro a la izquierda); si el material quedó cruzado, repáralo con un **plano neutral** (sobre la línea o detrás de un sujeto) o con un movimiento de cámara que cruce dentro del plano. Cruzarla a propósito sirve para **caos** o para **cambiar poco a poco el poder** entre personajes [5].
 - **Velocidad como recurso de montaje** [6]: la **rampa de velocidad** (pasar entre velocidades dentro de un mismo plano) da peso a un golpe o acento (*300*); la cámara lenta enfatiza la emoción o la acción que muestra; **no mezcles velocidades** dentro de un movimiento que debe verse normal. Material grabado a alta tasa (60, 120 o más) se reproduce a 24 para que sea lento y suave; el audio se estira con él [6].
+- **Whip pan como transición** [7]: un paneo rápido puede **transicionar entre personajes o escenas** y sincronizarse con el ritmo de la música (*Whiplash*); si el material trae un whip pan, corta dentro del giro [7]. Reproducirlo en edición con un empuje o zoom digital es una idea (≈), sin fuente de valores [7].
+- **Match cut entre locaciones** [8]: corta en una acción (el toque en un teléfono), **conserva el encuadre y el movimiento de cámara** y cambia solo la locación; así se hizo el salto a otra ciudad en el anuncio de video de IA [8].
 - Pendientes (sin fuente): freeze frame, cortes invisibles, fotogramas subliminales, cortes dobles y jump cut [3].
 
 ### Corte
@@ -93,7 +95,8 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `profe-diseno-gra
 - Extraer audio para transcribir: mono, 16 kHz, PCM s16le [2]. Mezclar música con `volume=0.13` y fades de 2 s y 3 s [2].
 
 ### Premiere Pro
-- Sin fuentes todavía (corte por silencios, secuencias para vertical, subtítulos de texto a voz).
+- **Overlay de guías o zonas seguras como clip** [9]: un plugin real (Guideify 2) no dibuja sobre el Monitor de Programa; al pulsar **Apply** inserta el overlay como **clip en una pista de video nueva** que cubre toda la secuencia y avisa dónde quedó (p. ej. V7); **Remove** lo quita. Sirve para revisar zonas seguras de reels 9:16 (Action safe 90 %, Title safe 80 %, márgenes en %); comprueba que el clip no se exporte [9].
+- Sin fuentes todavía para corte por silencios, secuencias para vertical y subtítulos de texto a voz.
 
 ### DaVinci Resolve
 - Sin fuentes todavía (corte rápido, subtítulos, reencuadre a vertical).
@@ -137,6 +140,7 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - Sin fuente para Premiere y DaVinci (ya hay un oficio de corte por transcripción en ambos, pero no se ha aprendido de un video real).
 - [1] es una demostración comercial: la skill y su prompt no se muestran, así que faltan umbrales de silencio, tipografía y tamaños de subtítulos y reglas de animación (solo se ve el estilo general).
 - La calidad real de los cortes y subtítulos no se pudo comprobar: solo se vieron segundos de los reels, adelantados.
+- [7][8][9] Las tres lecciones complementarias no son de edición como tema: [7] es teoría de cámara, [8] un flujo de video de IA y [9] una demo de 39 s sin voz; aportan criterios y un método para Premiere, sin valores.
 - Precio de servicio (desde 400–500 USD al mes) y consumo de tokens son afirmaciones de la autora, sin evidencia.
 
 ## Fuentes
@@ -146,3 +150,6 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [4] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`
 - [5] La regla de los 180°: seguirla, romperla y doblarla (StudioBinder) — https://youtu.be/iW0bKUfvH2c · `references/lecciones/regla-de-los-180-grados-studiobinder.md`
 - [6] Frame rate: capturar y presentar a distintas velocidades (StudioBinder, Shot List ep. 8) — https://youtu.be/7lUFluLOh-s · `references/lecciones/frame-rate-captura-presentacion-camara-lenta-studiobinder.md`
+- [7] Los 15 movimientos de cámara (StudioBinder, Shot List ep. 6), sección «whip pan» — https://youtu.be/IiyBo-qLDeM · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
+- [8] Dirigir un anuncio de 30 s con video de IA (Higgsfield, Seedance), sección «dirigir» — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
+- [9] Guideify 2: cómo un plugin de Premiere muestra interfaz social y guías — https://youtu.be/ZcDtrjVuR5k · `references/lecciones/guideify-2-overlay-social-y-guias-en-premiere.md`

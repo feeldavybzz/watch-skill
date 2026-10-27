@@ -16,7 +16,7 @@ import argparse, os, re, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ["mukiwa-grab", "mukiwa-learn"]
+SKILLS = ["mukiwa-grab", "mukiwa-learn", "mukiwa-ver-videos"]
 EXTRA = {"mukiwa-learn": {"scripts/grab.py": "skills/mukiwa-grab/scripts/grab.py"}}
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 MAX_FILES = 200

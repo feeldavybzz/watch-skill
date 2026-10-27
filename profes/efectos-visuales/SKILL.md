@@ -1,15 +1,15 @@
 ---
 name: profe-efectos-visuales
-description: Profesor MUKIWA de efectos visuales y especiales (SFX, VFX y CGI), que aprende de las referencias que Bryan envía. Sabe distinguir y combinar efectos prácticos de rodaje (mecánicos, atmosféricos, pirotecnia, animatrónica, protésicos), efectos visuales añadidos a lo filmado (composición, croma, rotoscopia, borrado de objetos, producción virtual, stitching) y CGI, quién hace cada parte (supervisores y departamentos) y cómo planearlos desde el guion. Usar cuando Bryan pida decidir o planear un efecto, explicar la diferencia entre SFX, VFX y CGI, croma o pantalla verde, rotoscopia, composición, borrado de objetos, producción virtual, pre-visualización, desglosar un guion por efectos o combinar lo práctico con lo digital, o pregunte cómo se hace algo de efectos visuales.
+description: "Profesor MUKIWA de efectos visuales: distingue y combina SFX, VFX y CGI, y planea cada efecto desde el guion hasta igualar luz y cámara."
 metadata:
   nicho: efectos-visuales
   herramientas: "Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis"
-  lecciones: 1
-  actualizado: "2026-10-11"
+  lecciones: 4
+  actualizado: "2026-10-27"
 ---
 
 # Profe: Efectos visuales
-> Decide y planea cada efecto con el vocabulario correcto: qué se hace en el set (SFX), qué se añade a lo filmado (VFX) y qué se crea entero en digital (CGI), quién se encarga y cómo combinarlos sin costuras. Hoy domina las definiciones, las técnicas y el flujo de planeación; falta aprender la ejecución en software (composición, croma, rotoscopia) con pasos y valores.
+> Decide y planea cada efecto con el vocabulario correcto: qué se hace en el set (SFX), qué se añade a lo filmado (VFX) y qué se crea entero en digital (CGI), quién se encarga y cómo combinarlos sin costuras. Hoy domina las definiciones, las técnicas y el flujo de planeación; falta aprender la ejecución en software (composición, croma, rotoscopia) con pasos y valores. Tiene **1 lección propia** [1] y **3 complementarias** de cine real ([2] soportes, [3] iluminación, [4] composición).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -57,6 +57,14 @@ Para animar o componer gráficos en software, combínalo con `profe-motion-graph
 - Para que parezca **un solo plano**: aviones **CGI** en el cielo → transición (stitch) a un **avión real** construido y lanzado desde una rampa a **20 pies** de altura → toma aparte con los actores compuesta sobre ese metraje → otra toma con el avión práctico en locación y un **avión y un granero digitales idénticos** a los que ardían en el set; escenas de estudios distintos (Shepperton y Glasgow) mezcladas sin costuras [1].
 - Reparto: **CGI** (avión y granero), **VFX** (stitching y composición) y **SFX** (pirotecnia y efectos mecánicos del avión) [1].
 
+### Rodar pensando en el VFX: cámara, luz y cuadro [2][3][4]
+(Salen de lecciones de cine real; no son pasos de software.)
+- **Control de movimiento (motion control)**: dispositivo con control total y repetición precisa del movimiento; hoy su uso más común es VFX, con **dos tomas del mismo movimiento y encuadre** que se combinan después (*La red social*: los gemelos Winklevoss) [2]. Si piensas componer dos tomas, planea desde el rodaje que la cámara repita el movimiento [2].
+- **Soporte según el efecto**: en la lección aparece una cámara en grúa frente a una pantalla verde como ejemplo de detrás de cámaras [2]; qué soporte conviene para croma no se dice (el video no lo cubre).
+- **Igualar la luz** (ya en [1]): usa el vocabulario de [3] para describir el plano real y pedirlo al departamento de iluminación de CGI: clave alta o baja, luz dura o suave, lado ciego o corto y temperatura (≈3 200 K tungsteno, ≈5 600 K día) [3]. Que el CGI use esos mismos valores es aplicación mía, ≈.
+- **Integración visual del plano** [4]: el CGI debe respetar la **profundidad** (primer plano, plano medio y fondo; foco corto o profundo), el **tono** (el ojo va a lo más brillante) y el **color** del plano real para no parecer pegado [4] (aplicación mía a VFX, ≈).
+- **Encuadre del elemento digital**: colócalo con los mismos criterios de composición (puntos focales, equilibrio, espacio negativo) que el resto del cuadro [4].
+
 ## Por herramienta
 ### Croma (pantalla verde o azul)
 - Sin fuentes todavía (iluminación del fondo, recorte, spill).
@@ -75,14 +83,16 @@ Para animar o componer gráficos en software, combínalo con `profe-motion-graph
 - Decir «sin CGI» y olvidar los VFX digitales que sí hay → pueden ser muchos [1].
 - Dejar los efectos para postproducción sin planear → desglosa el guion, haz storyboard y comparte con los supervisores antes de rodar [1].
 - Un supervisor de VFX ausente del set → el metraje puede no servir [1].
-- CGI que no iguala la luz del plano real → no se integra [1].
+- CGI que no iguala la luz del plano real → no se integra [1][3].
+- Componer dos tomas sin haber repetido el movimiento de cámara → no encajan; planea motion control si hace falta [2].
 
 ## Checklist antes de entregar
 - [ ] Guion desglosado por efectos y cada efecto clasificado (SFX, VFX o CGI).
 - [ ] Storyboard compartido con los supervisores.
 - [ ] Pre-vis hecha para lo que sea CGI.
 - [ ] Seguridad de los efectos de set aprobada por el supervisor de SFX.
-- [ ] Luz y aspecto de los elementos digitales igualados con los reales.
+- [ ] Luz y aspecto de los elementos digitales igualados con los reales (temperatura, dureza, dirección) [1][3].
+- [ ] Si hay dos tomas que se combinan: movimiento y encuadre repetidos [2].
 
 ## Para MUKIWA
 - Visual Edits / Creative Direction: usar la clasificación SFX/VFX/CGI en briefs y cotizaciones (qué se resuelve en rodaje y qué en post).
@@ -91,7 +101,11 @@ Para animar o componer gráficos en software, combínalo con `profe-motion-graph
 ## Dudas abiertas
 - **Definiciones en conflicto**: el video separa SFX (en el set) de VFX (añadido después) y dice que el VFX *puede incluir* CGI [1]; la guía escrita del mismo creador dice que **VFX es la categoría madre que incluye CGI y SFX** [1 (guía escrita)]. Aquí se usa la del video.
 - Faltan los pasos de ejecución en software, y valores (costos, tiempos).
+- [2][3][4] son de cine real y no hablan de software de VFX; la aplicación al CGI es mía y no está probada.
 - La guía escrita no habla de supervisores, croma, rotoscopia, stitching ni producción virtual.
 
 ## Fuentes
 - [1] CGI vs VFX vs SFX: qué es cada uno y cómo se combinan (StudioBinder, con Ian Failes) — https://youtu.be/Pok6EN3cfA4 · guía escrita https://www.studiobinder.com/blog/vfx-vs-cgi-vs-sfx-definitions/ · `references/lecciones/cgi-vfx-sfx-diferencias-y-1917.md`
+- [2] Los 12 soportes de cámara (StudioBinder, ep. 5) — https://youtu.be/heJ9hWNb10g · `references/lecciones/soportes-de-camara-12-rigs-studiobinder.md`
+- [3] Iluminación de cine, parte 1 (StudioBinder, ep. 12) — https://youtu.be/r2nD_knsNrc · `references/lecciones/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md`
+- [4] Los 9 elementos de la composición en cine (StudioBinder, ep. 11) — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`

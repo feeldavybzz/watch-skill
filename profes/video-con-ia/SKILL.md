@@ -1,15 +1,15 @@
 ---
 name: profe-video-con-ia
-description: Profesor MUKIWA de dirección de video con IA (anuncios y escenas hechas con modelos como Seedance, Seedream y Soul Cinema dentro de Higgsfield, con Claude escribiendo los prompts), que aprende de las referencias que Bryan envía. Sabe fijar personajes y locaciones como referencias, escribir un prompt cronometrado por planos con lente, enfoque, sonido y continuidad, y arreglar fallos con un plano general como fotograma clave, anclas de fondo y mapas de blocking; también transiciones con corte oculto. Usar cuando Bryan pida dirigir o promptear un video o anuncio con IA, hacer personajes consistentes, hojas de personaje, locaciones de referencia, prompt por planos con tiempos, Seedance, Higgsfield, mapa de blocking para IA, o pregunte cómo se hace algo de video con IA.
+description: "Profesor MUKIWA de dirección de video con IA (Higgsfield, Seedance): personajes y locaciones consistentes, prompt cronometrado por planos y arreglo de fallos."
 metadata:
   nicho: video-con-ia
   herramientas: "Higgsfield Cinema Studio, Seedance, Seedream, Claude"
-  lecciones: 1
-  actualizado: "2026-10-11"
+  lecciones: 5
+  actualizado: "2026-10-27"
 ---
 
 # Profe: Dirección de video con IA
-> Dirige un anuncio o escena con modelos de imagen y video como si fuera un rodaje: fija personajes y locaciones como referencias con nombre, escribe un prompt cronometrado por planos (lente, enfoque, quién está dónde, sonido, continuidad) y arregla los fallos con un plano general como fotograma clave, anclas de fondo por ángulo y mapas de blocking. Todo lo aprendido viene de una demo en Higgsfield (créditos, Seedance 2.5): el método dura, los modelos y precios cambian. Falta aprender los prompts completos, el montaje final y otros modelos.
+> Dirige un anuncio o escena con modelos de imagen y video como si fuera un rodaje: fija personajes y locaciones como referencias con nombre, escribe un prompt cronometrado por planos (lente, enfoque, quién está dónde, sonido, continuidad) y arregla los fallos con un plano general como fotograma clave, anclas de fondo por ángulo y mapas de blocking. Todo lo aprendido viene de una demo en Higgsfield (créditos, Seedance 2.5): el método dura, los modelos y precios cambian. Falta aprender los prompts completos, el montaje final y otros modelos. Tiene **1 lección propia** [1] y **4 complementarias** ([3] ángulos, [4] movimientos, [5] línea de 180°, [6] iluminación), más **1 guía pública absorbida** [2] que no cuenta como lección (menos confianza: fuente página pública).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -65,10 +65,26 @@ Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; p
 | Fallo | Arreglo |
 |---|---|
 | Un personaje termina donde no debía (Alex en el sofá) | **Asigna su asiento explícitamente**, añade un **plano general corto antes del primer plano** como **fotograma clave** (fija quién está dónde y da anclas) y liga cada asiento a una referencia del fondo [1] |
-| El ángulo inverso pone el fondo equivocado (un muro detrás de Alex) | **Describe qué se ve desde ese ángulo** (cámara junto al edificio apuntando al valle, edificio al lado de la cámara, colinas al fondo), **quita las instrucciones generales** que fijaban el fondo y **descríbelo por separado para cada plano** [1] |
+| El ángulo inverso pone el fondo equivocado (un muro detrás de Alex) | **Describe qué se ve desde ese ángulo** (cámara junto al edificio apuntando al valle, edificio al lado de la cámara, colinas al fondo), **quita las instrucciones generales** que fijaban el fondo y **déscríbelo por separado para cada plano** [1] |
 | La IA inventa un elemento (cuatro puestos en la mesa para tres) | Pasa un **mapa de blocking cenital**: dibujo de líneas sobre fondo blanco, con cada figura en **contorno de un color por personaje** (naranja = Jenny, azul = Alex, verde = Mika), platos y teléfono; **el mapa controla la colocación, las fotos aportan personajes y sala y los colores son solo etiquetas**; deja espacio alrededor de las cabezas si la cámara rota [1] |
 | El plano final no queda como se pidió | Describe con detalle lo que ocurre **justo cuando el movimiento termina** (el gato come), y deja el logo de frente al inicio [1] |
 - **Anclas** = elementos fijos del fondo que dicen al modelo cómo colocar o mover la cámara; son muy importantes en ángulos inversos [1].
+
+### Escenas consistentes: método de la guía pública de Seedance [2]
+(Resumen propio de una guía pública de AiLendra Labs; no se vio ningún video ni se probó: confianza menor que [1].)
+1. **Decide primero qué NO puede cambiar** (caras, vestuario, lugar, objetos, sonido) y dirige después lo que pasa dentro de ese mundo [2].
+2. **Una hoja de referencia por función**: identidad (rostro en varios ángulos), cuerpo y vestuario, mundo (luz, materiales, paleta) y objetos clave; que no se contradigan y adjunta solo las que intervienen [2].
+3. **Audio primero**: separa textura (calidad de micro, ruido), voces (quién, acento, actitud) y eventos (qué suena y cuándo entra); escucha y aprueba antes de generar el video, que es lo más caro [2].
+4. **Dirección de escena**: asigna el rol de cada referencia según el **orden real de los archivos**; dirige la actuación (quién habla, qué mira, gesto por frase; quien escucha respira y reacciona), la cámara (mano orgánica, paneo que llega ligeramente tarde; sin gimbal flotante ni órbitas) y la textura (cámara doméstica, color de consumo); escribe también lo que **no** buscas (piel pulida, HDR sintético, nitidez artificial) [2].
+5. **Una escena a la vez, una variable por iteración**; resume el plan y confirma antes de gastar créditos [2].
+- Lo que [2] y [1] comparten: referencias con función clara, anclas y dirigir actuación y cámara; lo que solo trae [2]: el audio como primer paso y la lista de lo que no se busca [1][2].
+
+### Vocabulario de cámara, luz y línea de 180° para el prompt [3][4][5][6]
+(Los términos salen de las lecciones; usarlos en un prompt de IA es una aplicación mía, ≈, sin probar.)
+- **Ángulo** [3]: bajo, alto, cenital, holandés, a la altura de los ojos, del hombro, de la cadera, de la rodilla y a ras de suelo. El anuncio de [1] ya pide «three-quarter angle, camera low» en un plano; el efecto de cada ángulo (poder, vulnerabilidad, tensión, conexión) está en `profe-cinematografia` [3].
+- **Movimiento** [4]: estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y aleatorio; la rotación suave del cenital de [1] es un *arc* [4].
+- **Luz** [6]: clave alta o baja, claroscuro, luz dura o suave, lado ciego o corto, y temperatura (≈3 200 K tungsteno, ≈5 600 K día); sirve para escribir el LOOK y para fijar la luz de la locación [6].
+- **Línea de 180°** [5]: en un **ángulo inverso**, define de qué lado de la línea queda la cámara y qué se ve detrás de cada personaje; es la causa más probable del fallo del muro detrás de Alex junto con la instrucción de fondo general de [1] (relación mía, ≈) [5].
 
 ## Por herramienta
 ### Higgsfield Cinema Studio
@@ -85,6 +101,8 @@ Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; p
 - Instrucciones generales de fondo («el mural detrás de Alex en todos los ángulos») → rompen los ángulos inversos [1].
 - Esperar que el modelo respete «tres personas» sin un mapa → añade puestos de más [1].
 - Generar varias caras por referencia → inconsistencia; deja una cara [1].
+- Generar el video sin haber decidido el audio → es lo más caro de rehacer [2].
+- Dejar sin decir lo que NO quieres (piel pulida, HDR sintético) → el modelo tiende a ese aspecto [2] (≈, sin probar).
 
 ## Checklist antes de entregar
 - [ ] Hoja de personaje con una sola cara y atuendo completo para cada personaje.
@@ -93,6 +111,8 @@ Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; p
 - [ ] Prompt con REFERENCES, LOOK, quién está dónde, planos con tiempos y lente, SOUND y KEEP CONSISTENT.
 - [ ] Transiciones con corte oculto y sonido que cambia antes de la imagen.
 - [ ] Mejores momentos de cada toma elegidos y montados; revisión final con audio.
+- [ ] Audio decidido antes del video y lista de lo que no se busca escrita [2].
+- [ ] En ángulos inversos: lado de la cámara y fondo visible descritos por plano [1][5].
 
 ## Para MUKIWA
 - Creative Direction: hoja de personaje + locaciones fijadas + prompt cronometrado es un brief de rodaje para cualquier video de IA; el mapa de blocking cenital sirve también para dirigir personas reales.
@@ -104,6 +124,13 @@ Para el blocking y la narrativa, combínalo con `profe-narrativa-y-direccion`; p
 - [1] El presentador afirma que una producción en vivo de EE. UU. cuesta decenas de miles de dólares: sin fuente.
 - [1] El montaje final y el audio (voz en off, ambiente) solo se ven en el anuncio terminado al inicio y en fragmentos.
 - Sin pasos para otras plataformas (Runway, Veo, etc.).
+- [2] Es una guía pública de otro creador (Seedance), resumida sin ver el ZIP de la skill: faltan prompts y valores; nada se probó en Higgsfield.
+- [3][4][5][6] Las cuatro lecciones complementarias son de cine real: dan vocabulario, no sirven como prueba de que el modelo de IA obedezca cada término.
 
 ## Fuentes
 - [1] Dirigir un anuncio de 30 s con video de IA: personajes, locaciones, prompt cronometrado y arreglo de fallos (Higgsfield, con Claude Opus 5.5 y Seedance 2.5) — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
+- [2] Escenas consistentes con Seedance (guía pública de AiLendra Labs, https://ailendra.com/ailab/lite/seedance-25-escenas/; fuente: página pública, resumen propio, registrada en `library/skills-absorbidas.md`)
+- [3] Los 9 ángulos o alturas de cámara (StudioBinder, Shot List ep. 3) — https://youtu.be/wLfZL9PZI9k · `references/lecciones/nueve-angulos-de-camara-studiobinder.md`
+- [4] Los 15 movimientos de cámara (StudioBinder, Shot List ep. 6) — https://youtu.be/IiyBo-qLDeM · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
+- [5] La regla de los 180° (StudioBinder) — https://youtu.be/iW0bKUfvH2c · `references/lecciones/regla-de-los-180-grados-studiobinder.md`
+- [6] Iluminación de cine, parte 1 (StudioBinder, Shot List ep. 12) — https://youtu.be/r2nD_knsNrc · `references/lecciones/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md`

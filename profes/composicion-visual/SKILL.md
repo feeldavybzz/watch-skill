@@ -1,15 +1,15 @@
 ---
 name: profe-composicion-visual
-description: Profesor MUKIWA de composición visual (foto, video, cine, reels y piezas gráficas), que aprende de las referencias en video que Bryan envía. Sabe qué esquema de composición usar y cómo colocar el punto focal, el primer plano y el fondo: regla de los tercios, rejilla áurea, triángulos, V, diagonal, radial, curva S, pirámide, L, espiral áurea, marco dentro del marco, yuxtaposición, líneas guía, punto de fuga, centrado, simetría, espacio negativo y primer plano, y cómo adaptarlos a 16:9, 4:3, 3:2, 5:4, 1:1, 4:5, 3:4, 2:3 y 9:16, en Premiere Pro, DaVinci Resolve, Photoshop y Procreate. Usar cuando Bryan pida componer o encuadrar una imagen, foto, plano de video o pieza gráfica, aplicar la regla de los tercios, la proporción áurea, diagonales, triángulos, curvas o espirales, elegir una guía de composición, recomponer un encuadre para otro formato (16:9, 5:4, 1:1, 4:5, 9:16), o crear plantillas y guías de composición para un plugin, o pregunte cómo se hace algo de composición visual.
+description: "Profesor MUKIWA de composición visual: esquemas, los 9 elementos, guías por formato (16:9 a 9:16), jerarquía y blocking, para foto, video, reels y piezas gráficas."
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 7
-  actualizado: "2026-10-11"
+  lecciones: 9
+  actualizado: "2026-10-27"
 ---
 
 # Profe: Composición visual
-> Compone con los **9 elementos** (puntos, líneas, formas, texturas y patrones, espacio, profundidad, equilibrio, ángulo, color y tono), elige una guía según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 20 recursos de composición (10 de una clase de arte y 10 vistos sobre fotos reales en tres reels) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5.
+> Compone con los **9 elementos** (puntos, líneas, formas, texturas y patrones, espacio, profundidad, equilibrio, ángulo, color y tono), elige una guía según lo que quiere lograr la imagen, coloca el foco, el primer plano y el fondo sobre ella y la adapta a cada formato de pantalla. Conoce 20 recursos de composición (10 de una clase de arte y 10 vistos sobre fotos reales en tres reels) y cómo presentarlos en un reel vertical; falta aprender cómo se aplican en cada programa y cómo recomponer para 9:16 y 4:5. Cuenta **6 lecciones propias** ([1][2][3][4][7][9]) y **3 complementarias** ([10] blocking, [11] corte, [12] video de IA); el «9» anterior era el número más alto de fuente, no la cantidad real.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -144,9 +144,27 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Las guías se calculan **sobre la imagen, sin las barras negras**: un plano 2,39:1 dentro de un 16:9 usa 2,39:1 (formato `2.39:1` incluido) [4].
 - Validar cada guía en los nueve formatos del JSON (revisión visual hecha con `guias.py --preview`).
 
+### Componer personas y objetos: blocking [10]
+- El **blocking** (dónde colocas a los actores en el cuadro) se resuelve con tres elementos visuales: **espacio, formas y líneas** [10].
+- **Espacio**: la distancia a la cámara crea **contraste de tamaño**: quien está cerca se ve grande e imponente; quien está lejos, empequeñecido. Deja visible lo que está en juego (el niño enmarcado por la ventana) [10].
+- **Formas básicas** (todo se reduce a una): **círculo** = más seguro e inclusivo; **cuadrado** = espacio limitado, encierra; **triángulo** = agudo, se siente agresivo, pero su vértice señala (en *Guardianes de la Galaxia*, el triángulo apunta a Groot). Al mirar el cuadro, identifica la forma, su connotación emocional y adónde dirige la mirada [10].
+- **Líneas**: una persona de pie es una línea vertical; hundida en un asiento, casi horizontal; retorcida, diagonal. El contraste entre las líneas de dos personas crea tensión visual, sobre todo al cortar, y marca quién tiene el poder (*El padrino II*) [10].
+- **Subtexto**: espacio, formas y líneas solas no dan profundidad; contrasta el blocking con lo que se dice o se hace para crear significado. Plánalo en un storyboard [10]. Más en `profe-narrativa-y-direccion`.
+
+### Composición pensada para cortar rápido (eye trace) [11]
+- En secuencias rápidas, **mantén el punto de interés en la misma zona del cuadro de plano a plano**, para que el ojo no rastree todo el cuadro tras cada corte; en un cuadro anamórfico, con solo ≈1,8 s, «lo que era el punto central tenía que estar en el centro» [11].
+- También se logra con el blocking y el movimiento de cámara. Útil para reels y planos de 1–2 s, con el sujeto en la misma zona (≈ derivado de [11]).
+
+### Profundidad en video de IA [12]
+- Generar la locación con **ángulo de tres cuartos** da profundidad a la que el movimiento de cámara «se agarra» y da mejores renders que un plano frontal plano [12].
+- Un **mapa de blocking cenital** (solo líneas, una figura de color por personaje) controla la colocación cuando el modelo inventa elementos; ver `profe-video-con-ia` [12].
+
 ## Por herramienta
 ### Premiere Pro
-- Sin fuentes todavía (cómo mostrar guías en el monitor de programa, uso de gráficos esenciales y el plugin).
+- **Cómo muestra las guías un plugin real (Guideify 2, demo sin voz)** [9]: no dibuja sobre el Monitor de Programa; al pulsar **Apply** inserta el overlay como **clip en una pista de video nueva** que cubre toda la secuencia y avisa dónde quedó («Overlay applied on V7 · 00:00–00:10»). Un segundo Apply sin marcar «Replace existing guide on apply» apila otro en la pista siguiente (V8); **Remove** los quita [9].
+- **El panel solo lleva una vista previa pequeña** del overlay sobre fondo de transparencia, sin el cuadro del video, más la cabecera con el formato de la secuencia (`2160x3840 · 30.01 fps · 9:16`) [9].
+- **Controles de guía vistos** [9]: cuadrícula de filas y columnas, márgenes en % (arriba, abajo, izquierda, derecha), gutter en %, y casillas de Margin box, Rule of thirds, Center cross, Action safe (90 %), Title safe (80 %) y Diagonals; apariencia con opacidad (80), grosor (1) y color en hex más 8 muestras; presets propios con guardar y borrar [9].
+- No se vio de qué tipo es el clip insertado ni qué pasa al exportar: comprobarlo antes de copiar el método [9]. Sigue sin fuente el uso de gráficos esenciales.
 
 ### DaVinci Resolve
 - Sin fuentes todavía (guías en el visor, superposiciones, recomponer en el tamaño de timeline).
@@ -162,6 +180,8 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Aplicar todas las líneas de un esquema a la vez → usa solo las que ayudan al foco [1].
 - Pensar que el punto radial va siempre al centro → puede estar en cualquier sitio y repetirse [1].
 - Reusar los mismos píxeles de una guía en otro formato → recalcular con la proporción (estándar).
+- Colocar a dos personas a la misma distancia y con la misma línea cuando el plano debe mostrar quién domina → pierdes el contraste de espacio y de líneas [10].
+- Cambiar el punto de interés de zona en cada corte rápido → el ojo se pierde [11].
 
 ## Checklist antes de entregar
 - [ ] Punto focal, primer plano y fondo identificados.
@@ -169,6 +189,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [ ] Elementos clave sobre las líneas o a lo largo de la forma.
 - [ ] Guía recalculada para el formato final (16:9, 5:4, 1:1, 4:5 o 9:16).
 - [ ] Probado también sin las líneas: ¿la mirada va donde quieres?
+- [ ] Si hay personas: distancia a cámara, forma y línea de cada una cuentan lo que debe contar el plano.
 
 ## Para MUKIWA
 - El plugin de guías es el uso directo de este profesor: lista de plantillas, comportamiento (mover/rotar) y validación por formato.
@@ -184,6 +205,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [1] es una clase de arte, sin formatos de pantalla ni encuadres de cine; [2] y [3] usan fotos reales horizontales (3:2 y 4:3) y sin voz; [4] da teoría con ejemplos de película, todos horizontales. Sigue faltando una fuente que muestre cómo recomponer para 9:16 y 4:5 y cómo usar estas guías en Premiere y DaVinci.
 - Los trazos de [2] y [3] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales. [3] no tiene voz ni explicación: nada de las definiciones sale de esos creadores.
 - Las reglas para vertical, cuadrado y 5:4 son derivadas (geometría y convención), no vistas en ninguna fuente: validar con foto o cine vertical. Las zonas seguras de reels son de fuentes de terceros que discrepan.
+- [10][11][12] Las tres lecciones complementarias no son de composición como tema: el blocking [10] es de dirección de actores y [11] y [12] son de edición y video de IA; dan criterio, no guías con medidas.
 
 ## Fuentes
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
@@ -191,3 +213,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [3] Dos reels más de composición en 4:3: espacio negativo, primer plano, simetría, contorno del sujeto, marco circular y líneas convergentes —  · `references/lecciones/reels-4x3-espacio-negativo-primer-plano-simetria-contorno.md`
 - [4] Los 9 elementos de la composición en cine (StudioBinder): puntos, líneas, formas, texturas, espacio, profundidad, equilibrio, ángulo, color y tono — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [7] El curso de composición más corto del mundo: jerarquía, grillas, tercios y espacio en blanco (Eze Cichello) — https://youtu.be/wEocy9cz3yw · `references/lecciones/curso-composicion-mas-corto-eze-cichello.md`
+- [9] Guideify 2: cómo un plugin de Premiere muestra interfaz social y guías — https://youtu.be/ZcDtrjVuR5k · `references/lecciones/guideify-2-overlay-social-y-guias-en-premiere.md`
+- [10] Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder) — https://youtu.be/9AGaECt9j4g · `references/lecciones/blocking-espacio-formas-lineas-studiobinder.md`
+- [11] Seis formas de editar una escena (StudioBinder, Shot List ep. 10), sección «eye trace» — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
+- [12] Dirigir un anuncio de 30 s con video de IA (Higgsfield, Seedance), secciones «locaciones» y «tercer fallo» — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`

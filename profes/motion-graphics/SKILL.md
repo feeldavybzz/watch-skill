@@ -1,15 +1,15 @@
 ---
 name: profe-motion-graphics
-description: Profesor MUKIWA de motion graphics y animación, que aprende de las referencias en video que Bryan envía. Cubre tipografía cinética, animación de logos y títulos, transiciones gráficas, lower thirds, elementos para reels, easing y timing, en After Effects (y Premiere o DaVinci Fusion cuando haya fuentes). Usar cuando Bryan pida animar texto, un logo o gráficos, hacer kinetic typography, títulos animados, intros, transiciones, lyric videos, textos o gráficos para reels, ajustar keyframes o curvas, o pregunte cómo se hace algo de motion graphics.
+description: "Profesor MUKIWA de motion graphics: tipografía cinética en After Effects, easing, animación 2D en Blender, ritmo de transiciones y zonas seguras para reels."
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects, Blender"
-  lecciones: 3
-  actualizado: "2026-10-10"
+  lecciones: 8
+  actualizado: "2026-10-27"
 ---
 
 # Profe: Motion graphics
-> Anima con criterio: planea la composición final, una capa por bloque con Animators, curvas siempre suavizadas y el color para dirigir la mirada. Hoy domina la tipografía cinética en After Effects; el resto de áreas crece con cada video.
+> Anima con criterio: planea la composición final, una capa por bloque con Animators, curvas siempre suavizadas y el color para dirigir la mirada. Hoy domina la tipografía cinética en After Effects; el resto de áreas crece con cada video. Tiene **2 lecciones propias** ([1] tipografía cinética, [3] cartoon en Blender) y **6 complementarias** de composición, edición y cámara ([2] reel de composición, [4] edición, [5] composición, [6] overlays, [7] movimientos, [8] soportes).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -46,6 +46,28 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `profe-diseno
 - **Pies que no patinan**: ajusta la velocidad del avance del personaje hasta que el paso coincida con el suelo [3] (valor no visto).
 - **Cierre para reels**: un objeto pasa a ras de cámara y tapa al personaje antes del corte [3].
 
+### Transiciones y ritmo (criterio de edición aplicado a gráficos) [4]
+(Las lecciones de edición no enseñan After Effects; lo que sigue es criterio de corte que aplico a las animaciones, ≈, sin probar.)
+- **Decide el ritmo por el tono**: una pieza contemplativa pide bloques que se queden más tiempo; una de acción, cambios rápidos [4]. Cada cambio de bloque debe tener propósito [4].
+- **Corte en acción**: haz que la transición ocurra en mitad de un movimiento (el bloque que sale arrastra al que entra) para que se sienta fluida; el punto de salida de uno coincide con el de entrada del otro [4].
+- **Match cut**: un elemento (forma, línea, color) pasa de una escena a la siguiente; la guía escrita de [4] solo lo define, no enseña a animarlo [4].
+- **Eye trace**: en cambios muy rápidos (≈1–2 s) deja el punto de interés en la misma zona del cuadro de un bloque al siguiente [4].
+- **Audio por delante o por detrás (J/L cut)**: en lyric videos o textos con voz, adelanta o prolonga el sonido sobre el cambio para que el ritmo sea natural [4] (aplicación mía).
+
+### Composición del cuadro para gráficos y texto [5]
+- **Líneas y formas guían la mirada**: verticales = fuerza, horizontales = calma, diagonales = energía; ordena los bloques de texto con esa intención [5].
+- **Espacio negativo y equilibrio**: un bloque grande sin contrapeso desequilibra; el vacío da importancia al texto [5]. El 9:16 de reels no lo trata el video: solo habla horizontal [5].
+- **Color y tono**: el color puede imponerse a otros métodos de composición; el ojo va a lo más brillante, así que la palabra de foco lleva el tono más claro (el lima #C5ED2E sobre #232323 cumple eso, aplicación mía) [5].
+- **Tercios, triángulo áureo y razón áurea 1:1,618** sirven de guía para colocar el título; el nivel de la línea áurea cae a ≈ 0,382 de la altura [5].
+
+### Overlays y guías sobre el cuadro [6]
+- En Premiere un overlay (interfaz social o guías: cuadrícula, tercios, cruz, márgenes, zona segura de acción 90 % y de título 80 %) se coloca como **clip en una pista de video superior** de la duración de la secuencia; no se dibuja sobre el monitor [6].
+- Usa esas zonas seguras al diseñar texto para reels; no olvides quitar el overlay antes de exportar (el video no lo explica) [6].
+
+### Cámara virtual (3D / Blender / AE) [7]
+- Vocabulario de movimientos para animar una cámara: push in, pull out, arc, tracking, boom, whip pan, dolly zoom, etc. [7] (el uso en 3D es aplicación mía, ≈).
+- **Control de movimiento**: repetir exactamente el mismo movimiento de cámara en dos tomas sirve para componer elementos después; con cámara virtual es el equivalente a duplicar la curva [8] (≈).
+
 ## Por herramienta
 ### After Effects
 - Atajos: **R** rotación, **P** posición, **S** escala, **U** ver keyframes, **F9** easy ease [1].
@@ -60,13 +82,16 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `profe-diseno
 - Keyframes lineales → movimiento robótico [1].
 - Todo el cuerpo en una sola capa de dibujo → cualquier ajuste obliga a redibujar [3].
 - Velocidad de avance que no coincide con el paso → los pies patinan [3].
+- Cortes de bloque sin motivo ni ritmo → la pieza se siente arbitraria [4].
+- Poner texto fuera de las zonas seguras de reels → lo tapa la interfaz [6].
 
 ## Checklist antes de entregar
 - [ ] Cuadro final planeado y respetado.
 - [ ] Capas mínimas, con Animators.
 - [ ] Easing revisado en el Graph Editor.
 - [ ] Un solo color de foco, sincronizado con lo que se dice.
-- [ ] Legible en móvil (9:16) si va a reels.
+- [ ] Legible en móvil (9:16) si va a reels, dentro de zonas seguras [6].
+- [ ] Cada cambio de bloque tiene propósito y ritmo acorde al tono [4].
 
 ## Para MUKIWA
 - Color de foco lima #C5ED2E sobre blanco y #232323; azul #0068FB como segunda ola [1].
@@ -77,9 +102,15 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `profe-diseno
 ## Dudas abiertas
 - Valores de easing/bezier no visibles en [1]; los ≈12 frames son lo que se dijo.
 - De [3] no hay fps, pinceles ni cómo se arma el fondo curvo; falta un tutorial completo de animación 2D en Blender.
+- [4][5][6][7][8] Son lecciones de cine y edición real, no de motion: dan criterio, no pasos de After Effects ni valores.
 - Animación de logos, transiciones, lower thirds y herramientas fuera de After Effects: sin fuentes todavía; de [2] solo se ve el resultado, no el método.
 
 ## Fuentes
 - [1] Tipografía cinética en After Effects: 3 técnicas con una sola capa — https://www.youtube.com/watch?v=f3nb-MQyshQ · `references/lecciones/tipografia-cinetica-after-effects-3-tecnicas.md`
-- [2] Reel de 24 s con 8 recursos de composición dibujados sobre fotos — archivo local · ver `profe-composicion-visual` (lección `reel-8-recursos-composicion-guias-sobre-fotos.md`)
+- [2] Reel de 24 s con 8 recursos de composición dibujados sobre fotos — archivo local · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
 - [3] Cartoon clásico en Blender (Youpie Toons, short de 61 s) — https://youtube.com/shorts/DCzXpBqt558 · `references/lecciones/dibujo-animado-clasico-blender-youpie-toons.md`
+- [4] Seis formas de editar una escena (StudioBinder, Shot List ep. 10) — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
+- [5] Los 9 elementos de la composición en cine (StudioBinder, ep. 11) — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
+- [6] Guideify 2: overlay social y guías en Premiere — https://youtu.be/ZcDtrjVuR5k · `references/lecciones/guideify-2-overlay-social-y-guias-en-premiere.md`
+- [7] Los 15 movimientos de cámara (StudioBinder, ep. 6) — https://youtu.be/IiyBo-qLDeM · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
+- [8] Los 12 soportes de cámara, sección de control de movimiento (StudioBinder, ep. 5) — https://youtu.be/heJ9hWNb10g · `references/lecciones/soportes-de-camara-12-rigs-studiobinder.md`
