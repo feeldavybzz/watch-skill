@@ -1,10 +1,10 @@
 ---
 name: kiwa-motion-graphics
-description: "Profesor MUKIWA de motion graphics: tipografía cinética en After Effects, easing, animación 2D en Blender, ritmo de transiciones y zonas seguras para reels."
+description: "Profesor MUKIWA de motion graphics: tipografía cinética en After Effects, easing, animación 2D en Blender, ritmo de transiciones, zonas seguras para reels y motion en código (HTML, Remotion, HyperFrames) con render determinista, springs, motion blur, beats y videos de lanzamiento. Úsalo al animar, hacer reels, intros, lanzamientos o explainers."
 metadata:
   nicho: motion-graphics
-  herramientas: "After Effects, Blender"
-  lecciones: 6
+  herramientas: "After Effects, Blender, Remotion, HyperFrames, código HTML"
+  lecciones: 9
   actualizado: "2026-10-28"
 ---
 
@@ -77,6 +77,16 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 
 ### Micro-interacciones de UI [11]
 - Un botón elástico («let's collaborate») tirado por una mano dibujada con hilos se usa como gancho humorístico. Solo referencia visual: sin método.
+### Motion en código (HTML, Remotion, HyperFrames): render determinista [12][13][14]
+- **Cuándo**: videos de lanzamiento, explainers, reels y fondos animados que quieres editar y volver a renderizar cambiando una línea. El proyecto vive como código; cada escena es un bloque.
+- **Antes de pedir nada** [12]: elige 1 o 2 videos de referencia y pide que los iguale (nombrar un estilo funciona mejor que describirlo; sin referencia sale texto centrado, fondo degradado y todo con fade). Vuelca el contexto (logo, colores, fuentes, capturas reales del producto, ideas), pide **3 storyboards**, elige uno y pide **un fotograma fijo por escena antes de animar**. Da notas como director, con palabras de cámara y fotogramas: «baja todos los zooms a 0,7×», «corte seco aquí», «empuja sobre el botón».
+- **Define el tiempo primero** [12]: duración y fps (20 s a 30 fps = 600 fotogramas), qué pasa en cada fotograma o beat, y pide los cambios **por rango de fotogramas** para no romper el resto.
+- **Construcción** [13]: una función `seek(t)` que calcula todos los estilos a partir del tiempo (sin transiciones CSS, timers, estado entre fotogramas ni `Math.random`; aleatoriedad con semilla); **springs en forma cerrada** (un spring por cada cambio de objetivo, sumados); cámara única en un contenedor con pistas `[tiempo, zoom, x, y]` y zoom en escala logarítmica; último fotograma igual al primero si hay loop (incluido el cursor).
+- **Render** [13]: Playwright a 60 fps con 4 u 8 subfotogramas por fotograma, mezclados con `ffmpeg tmix` (8 si ves copias fantasma en movimientos rápidos). Antes del render final: un fotograma por beat, búsqueda de «pops» de un solo fotograma y legibilidad.
+- **Ritmo y sonido** [13]: analiza la canción (tempo, drop) y pon algo en cada beat; cortes duros 2 fotogramas antes del beat; un SFX por evento colocado por su pico medido; música con ducking bajo la voz; masterizar a −14 LUFS.
+- **Dirección de un lanzamiento** [14]: un plano continuo donde cada escena sale de la anterior (los objetos cambian de forma en vez de fundirse); cursor con clics reales; UI real del producto (nada inventado); un solo acento y una o dos tipografías; una forma como hilo conductor (en MUKIWA, el punto de la I).
+- **Lista de prohibidos** [14]: fundidos cruzados, entradas borrosas, destellos blancos, volteos 3D, partículas, glows en el texto de UI, neón, cámara temblorosa, easing rebotón, degradados en la UI, glassmorphism en todo, clichés de IA (cerebros, robots, destellos), texto en las esquinas, retenciones de más de 1 s.
+- **Plugins y skills de terceros que aparecen** [12] (solo referencia, no instalar sin permiso de Bryan): Remotion (`remotion-dev/skills`), HyperFrames (`heygen-com/hyperframes`), GSAP (`greensock/gsap-skills`), Lottie (`LottieFiles/motion-design-skill`), componentes de 21st.dev.
 
 ## Por herramienta
 ### After Effects
@@ -94,7 +104,7 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - Velocidad de avance que no coincide con el paso → los pies patinan [3].
 - Cortes de bloque sin motivo ni ritmo → la pieza se siente arbitraria [4].
 - Poner texto fuera de las zonas seguras de reels → lo tapa la interfaz [6].
-
+- **En código** [13]: `backdrop-filter: url()` falla en Chromium (clona la escena detrás del cristal); una inundación de color debe pasar los 4 bordes y durar ≈0,35 s; `will-change` en lo que escala la cámara deja el texto borroso; `opacity` o `filter` en un elemento `preserve-3d` lo aplana; un fade de 0,05 s parece aparición instantánea; si la cámara se reinicia a 1,0 al cambiar de escena, el zoom salta.
 ## Checklist antes de entregar
 - [ ] Cuadro final planeado y respetado.
 - [ ] Capas mínimas, con Animators.
@@ -102,13 +112,13 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [ ] Un solo color de foco, sincronizado con lo que se dice.
 - [ ] Legible en móvil (9:16) si va a reels, dentro de zonas seguras [6].
 - [ ] Cada cambio de bloque tiene propósito y ritmo acorde al tono [4].
-
+- **Motion en código**: ¿el último fotograma es igual al primero (loop)? ¿Revisé un fotograma por beat y los pops de un fotograma? ¿Cada SFX cae en su pico? ¿Masterizado a −14 LUFS? ¿Cero prohibidos de la lista [14]?
 ## Para MUKIWA
 - Color de foco lima #C5ED2E sobre blanco y #232323; azul #0068FB como segunda ola [1].
 - Frases de marca ("FEEL DA VYBZ" / "VIBES NEVER LIE.") como bloques: uno a 90° y otro horizontal, formando un solo bloque [1].
 - Mascota o personaje retro animado: método de [3], a 9:16 nativo.
 - Reels 9:16: ola de Fill Color lima barriendo las palabras clave.
-
+- **Motion en código**: usa lime #C5ED2E y blue #0068FB sobre negro/#232323, sin degradados neón ni glassmorphism en el cuerpo; glass solo en controles; el punto de la I (pupila) como hilo entre escenas [14].
 ## Dudas abiertas
 - Valores de easing/bezier no visibles en [1]; los ≈12 frames son lo que se dijo.
 - De [3] no hay fps, pinceles ni cómo se arma el fondo curvo; falta un tutorial completo de animación 2D en Blender.
@@ -117,6 +127,8 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [9] No se vio el explainer completo (solo stills) ni el nombre exacto del conector (se lee «invideo» en un tile).
 - [10] No se explica por qué la máscara va en Add ni el Scale 114; los keyframes que animan el efecto no se ven. El link del plugin va por comentario.
 - [11] Sin voz y 7 s: no se sabe con qué se hizo la física del botón (código, Rive, After Effects).
+- [12][13][14] Todo viene de prompts de terceros: no se midieron los springs (constantes), duraciones ni easings en los videos, y no se ejecutó ninguna receta aquí; 11 de 265 videos vistos con fotogramas, el resto por texto.
+- [13] Falta una lección con código real (un `seek(t)` probado en un video de MUKIWA) para validar el método.
 
 ## Fuentes
 - [1] Tipografía cinética en After Effects: 3 técnicas con una sola capa — https://www.youtube.com/watch?v=f3nb-MQyshQ · `references/lecciones/tipografia-cinetica-after-effects-3-tecnicas.md`
@@ -130,3 +142,6 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [9] Explainer de motion graphics con Claude Motion y un conector de editor de video (@aangel) — reel de Instagram, archivo local · `references/lecciones/claude-motion-explainer-papel-collage-aangel.md`
 - [10] Radial blur en Premiere con el plugin gratuito Any Radial Blur y máscara (@colo.sparta) — reel de Instagram, archivo local · `references/lecciones/radial-blur-premiere-con-mascara-colo-sparta.md`
 - [11] Botón «let's collaborate» tirado con una mano dibujada (@xitij) — reel de Instagram, archivo local · `references/lecciones/boton-collaborate-con-cuerdas-xitij.md`
+- [12] Prompt Motion: catálogo de 265 motions hechos con Claude (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/prompt-motion-catalogo-265-motions-hechos-con-claude.md`
+- [13] Motion en código: render determinista con seek(t), springs y motion blur (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/motion-en-codigo-render-determinista-seek-springs-y-motion-blur.md`
+- [14] Lanzamiento de producto en código: dirección, beats y prohibidos (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/lanzamiento-producto-en-codigo-direccion-beats-prohibidos.md`

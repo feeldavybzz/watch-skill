@@ -13,6 +13,7 @@ Todas llevan el prefijo **kiwa** y viven en `skills/` (las de oficio, en `profes
 | `kiwa-web` | Construir, conectar y publicar sitios completos en Hostinger: portfolio, web para cliente, SaaS y afiliados. Va junto a `kiwa-web-ui`. Fusiona las cuatro `crear-web-*` y la de diseño premium. |
 | `kiwa-marca-mascota` | Dirección de marca, dibujo retro cartoon y mascota MUKIWA. Fusiona `direccion-de-marca-y-mascota`, `retro-cartoon` y `retro-cartoon-mascota`. |
 | `kiwa-instagram` | Carruseles y estudio de feed. Fusiona `slide-maker` e `instagram-feed-studio`. |
+| `kiwa-ui-plugins` | Cómo animar la interfaz de los plugins de MUKIWA y mostrarla en video (springs, arrastre directo, render con `seek(t)`). Nace de promptsmotion.com; falta fusionar `mukiwa-ui-plugins` (solo en el Mac). |
 | `kiwa-<nicho>` (`profes/<nicho>/`) | Un profe por oficio (cinematografía, color grading, iluminación…). Antes se llamaban `profe-<nicho>`. |
 
 `kiwa-watch-learn` está además enlazada como skill de proyecto en `.claude/skills/`, así que queda activa en cualquier sesión de Claude Code que abra este repositorio.
@@ -55,7 +56,7 @@ Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal
 python3 tools/build_skills.py
 ```
 
-Genera un `.skill` por skill (`kiwa-watch-learn`, `kiwa-web-ui`, `kiwa-web`, `kiwa-marca-mascota`, `kiwa-instagram` y uno `kiwa-<nicho>` por profe), con solo archivos de Git: sin descargas, claves ni `._*`. Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` ya lleva el descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
+Genera un `.skill` por skill (`kiwa-watch-learn`, `kiwa-web-ui`, `kiwa-web`, `kiwa-marca-mascota`, `kiwa-instagram`, `kiwa-ui-plugins` y uno `kiwa-<nicho>` por profe), con solo archivos de Git: sin descargas, claves ni `._*`. Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` ya lleva el descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
 
 ## Dependencias
 

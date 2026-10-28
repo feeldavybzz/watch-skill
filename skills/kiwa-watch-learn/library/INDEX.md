@@ -68,6 +68,12 @@
 
 - [Iluminación de cine, parte 1: tipos de luz, términos y equipo (StudioBinder, Shot List ep. 12)](iluminacion/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md) — Un video explica los fundamentos de la luz de cine: natural y artificial, ambiente, práctica y motivada; cómo se mide (lúmenes, lux, ley del cuadrado inverso, Kelvin); los términos del set (exposición, contraste, clave alta y baja, luz dura y suave, lado ciego y lado corto, destellos, bokeh) y el equipo (tungsteno, HMI, fluorescente, Kino Flo, LED, geles, difusión, banderas, cookies, C-stands).
 
+## motion-codigo
+
+- [Lanzamiento de producto en código: dirección, estructura por beats y lista de prohibidos](motion-codigo/lanzamiento-producto-en-codigo-direccion-beats-prohibidos.md) — Cómo se pide un video de producto de nivel Apple/Stripe: un solo plano continuo, objetos que se transforman, UI real y reglas negativas explícitas.
+- [Motion en código: render determinista con seek(t), springs y motion blur](motion-codigo/motion-en-codigo-render-determinista-seek-springs-y-motion-blur.md) — El método que se repite en los prompts largos: toda la animación es una función pura del tiempo y se renderiza por subfotogramas.
+- [Prompt Motion: catálogo de 265 motions hechos con Claude en código](motion-codigo/prompt-motion-catalogo-265-motions-hechos-con-claude.md) — Qué hay en la biblioteca promptsmotion.com, qué entradas traen método de verdad y cuáles solo muestran el resultado.
+
 ## motion-edicion
 
 - [Base: motion y edición](motion-edicion/_base.md) — Marco de observación para lecciones de edición, motion graphics y post. Se enriquece con cada lección.

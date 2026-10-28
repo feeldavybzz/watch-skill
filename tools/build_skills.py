@@ -3,7 +3,7 @@
 (Configuración → Capacidades → Skills → Subir).
 
 Uso: python3 tools/build_skills.py [--out dist] [--allow-dirty]
-Genera dist/kiwa-watch-learn.skill, las skills propias fusionadas (kiwa-web-ui, kiwa-web, kiwa-marca-mascota, kiwa-instagram) y un dist/kiwa-<nicho>.skill por profesor.
+Genera dist/kiwa-watch-learn.skill, las skills propias fusionadas (kiwa-web-ui, kiwa-web, kiwa-marca-mascota, kiwa-instagram, kiwa-ui-plugins) y un dist/kiwa-<nicho>.skill por profesor.
 
 - Entra lo que Git conoce y lo nuevo sin commit, respetando .gitignore: nada de _descargas/, work/, ._*, venv ni claves.
 - kiwa-watch-learn ya trae grab.py en scripts/: bajar y aprender viajan en un solo paquete.
@@ -16,7 +16,7 @@ import argparse, os, re, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ["kiwa-watch-learn", "kiwa-web-ui", "kiwa-web", "kiwa-marca-mascota", "kiwa-instagram"]
+SKILLS = ["kiwa-watch-learn", "kiwa-web-ui", "kiwa-web", "kiwa-marca-mascota", "kiwa-instagram", "kiwa-ui-plugins"]
 EXTRA = {}
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 MAX_FILES = 200

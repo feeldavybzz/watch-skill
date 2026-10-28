@@ -30,7 +30,7 @@ Es **una de dos skills hermanas**:
 6. `reference/06-diversity-guardrails.md` — los proyectos de ejemplo son referencia de calidad, no plantillas.
 7. `reference/11-que-conviene-y-que-no.md` — beneficios y costos de cada decisión.
 
-Según lo que se necesite: `01-stack-and-conventions.md` (estructura, orden de scripts, IIFE) · `03-effects-catalog.md` (más de 40 efectos listos para copiar) · `05-image-and-asset-pipeline.md` (Openverse, WebP, fotos propias, imágenes con IA) · `08-pre-deploy-checklist.md` (antes de dar por terminado) · `12-estilo-mukiwa.md` (si es para MUKIWA o Bryan lo pide).
+Según lo que se necesite: `01-stack-and-conventions.md` (estructura, orden de scripts, IIFE) · `03-effects-catalog.md` (más de 40 efectos listos para copiar) · `05-image-and-asset-pipeline.md` (Openverse, WebP, fotos propias, imágenes con IA) · `08-pre-deploy-checklist.md` (antes de dar por terminado) · `12-estilo-mukiwa.md` (si es para MUKIWA o Bryan lo pide) · `13-motion-en-web.md` (animación dirigida: secciones por scroll, formas que se transforman, springs, cámara única, lista de prohibidos, cristal solo en controles).
 
 ## Flujo (pocas preguntas, decide en silencio)
 1. **Volcado.** La persona cuenta su proyecto. Anota tipo, nombre, tono, si tiene fotos, funciones especiales. No preguntes todavía.
@@ -85,6 +85,7 @@ reference/
   10-deployment-and-cache.md
   11-que-conviene-y-que-no.md  ← beneficios y costos, qué evitar
   12-estilo-mukiwa.md          ← estilo de marca por defecto
+  13-motion-en-web.md          ← motion dirigido en la web (Prompt Motion)
 templates/htaccess.template
 scripts/ download_libs · openverse_fetch · webp_convert · verify_project
 ```
