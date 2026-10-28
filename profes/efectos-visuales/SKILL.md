@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de efectos visuales: distingue y combina SFX, VFX 
 metadata:
   nicho: efectos-visuales
   herramientas: "Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis"
-  lecciones: 1
-  actualizado: "2026-10-11"
+  lecciones: 2
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Efectos visuales
@@ -65,6 +65,9 @@ Para animar o componer gráficos en software, combínalo con `kiwa-motion-graphi
 - **Integración visual del plano** [4]: el CGI debe respetar la **profundidad** (primer plano, plano medio y fondo; foco corto o profundo), el **tono** (el ojo va a lo más brillante) y el **color** del plano real para no parecer pegado [4] (aplicación mía a VFX, ≈).
 - **Encuadre del elemento digital**: colócalo con los mismos criterios de composición (puntos focales, equilibrio, espacio negativo) que el resto del cuadro [4].
 
+### «Endless zoom» (portal dentro del portal) en DaVinci Resolve [5]
+- Rodaje: trípode fijo, foco manual y un papel verde en el marco que será el portal de la siguiente toma. Fusion: quitar el verde con Delta Keyer + máscara; cortar los clips a la misma duración y apilarlos en un Fusion Clip; cada clip → Image Plane 3D → mismo Merge 3D → Renderer 3D → MediaOut, con Camera 3D al mismo Merge; empujar las capas atrás en Z; animar la cámara 3D con spline suave y activar Render Cache. Se cuentan 8 clips en el árbol.
+
 ## Por herramienta
 ### Croma (pantalla verde o azul)
 - Sin fuentes todavía (iluminación del fondo, recorte, spill).
@@ -103,9 +106,11 @@ Para animar o componer gráficos en software, combínalo con `kiwa-motion-graphi
 - Faltan los pasos de ejecución en software, y valores (costos, tiempos).
 - [2][3][4] son de cine real y no hablan de software de VFX; la aplicación al CGI es mía y no está probada.
 - La guía escrita no habla de supervisores, croma, rotoscopia, stitching ni producción virtual.
+- [5] No hay voz y faltan los números: distancias en Z, keyframes de cámara y cuántas tomas por segundo; el texto de los nodos se lee a baja resolución.
 
 ## Fuentes
 - [1] CGI vs VFX vs SFX: qué es cada uno y cómo se combinan (StudioBinder, con Ian Failes) — https://youtu.be/Pok6EN3cfA4 · guía escrita https://www.studiobinder.com/blog/vfx-vs-cgi-vs-sfx-definitions/ · `references/lecciones/cgi-vfx-sfx-diferencias-y-1917.md`
 - [2] Los 12 soportes de cámara (StudioBinder, ep. 5) — https://youtu.be/heJ9hWNb10g · `references/lecciones/soportes-de-camara-12-rigs-studiobinder.md`
 - [3] Iluminación de cine, parte 1 (StudioBinder, ep. 12) — https://youtu.be/r2nD_knsNrc · `references/lecciones/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md`
 - [4] Los 9 elementos de la composición en cine (StudioBinder, ep. 11) — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
+- [5] «Endless zoom» en DaVinci Resolve: portal de papel verde + Fusion 3D (@melikazaghari) — reel de Instagram, archivo local · `references/lecciones/endless-zoom-fusion-davinci-melikazaghari.md`

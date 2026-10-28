@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de negocio creativo: nicho, oferta en una frase, p
 metadata:
   nicho: negocio-creativo
   herramientas: "LinkedIn, Notion, Loom"
-  lecciones: 1
-  actualizado: "2026-10-13"
+  lecciones: 4
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Negocio creativo
@@ -65,6 +65,15 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - Orden: propuesta única de valor y posicionamiento → público objetivo → voz y personalidad → traducción a logo, tipografía, color, imagen y elementos gráficos [5].
 - Las tarjetas de estrategia (3 columnas: edad, necesidades, comportamientos) son un formato rápido para presentar al cliente [5]. Es nivel introductorio y el creador vende su curso [5].
 
+### Condiciones del presupuesto y del contrato [6]
+- Pedir **pago adelantado** (≈ 50 %) y un **plazo máximo de pago** (≈ 60 días); contrato firmado antes de empezar; **dos rondas de corrección** incluidas y las demás presupuestadas; brutos y adaptaciones (vertical, cuadrada) como extras con precio. Consejo de dos creativos; revisar con un abogado según el país.
+
+### Documentos de preproducción que se entregan al cliente [7]
+- Plan de rodaje, guión gráfico (storyboard), formulario de cesión de imagen (con firma del tutor si el talento es menor), plan de llamado (call sheet), lista de planos (plano, escena, descripción, encuadre, ángulo, perspectiva, acción) y presupuesto de producción (preproducción, producción, postproducción, contingencia, otros gastos, total por rubro). Se ven 6 de 8.
+
+### Decidir precios y ofertas con asesores IA en debate [8]
+- Un repositorio gratuito en Claude Code pone a 7 asesores simulados (estrategia, producto, oferta y ventas, marketing, personas/tiempo, operaciones, dinero) a debatir tu decisión con puntajes y un veredicto final descargable en PDF. Ejemplo visto: «cobro por proyecto o abono mensual» con tres opciones. No se abrió el repositorio.
+
 ## Por herramienta
 ### LinkedIn
 - Publicaciones largas o cortas con plantilla; la fuente no muestra controles [1].
@@ -102,6 +111,9 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - Las cifras de ingresos de [1] («meses de seis cifras», 29.000 $ por una publicación, 1,1 M $/año) son afirmaciones del autor o ejemplos hipotéticos; no usarlas como dato.
 - [1] vende un programa propio; faltan fuentes independientes sobre precios y nichos. [2]–[5] son de diseño, no de negocio: aportan prácticas de proyecto, no cifras ni precios.
 - Método de moodboard: [1] usa tres tableros exagerados con direcciones distintas; [4] usa uno validado con palabras clave. No se contradicen del todo, pero no se probó cuál rinde mejor.
+- [6] Fragmento de 24 s: faltan cifras de precio y se corta a media frase; «V14» no se entendió.
+- [7] Faltan 2 de los 8 documentos (no se ven en los frames).
+- [8] Solo se ve el uso del repositorio; no se leyó el código ni se probó. Que cada asesor «recrea el cerebro» de una persona real no es verificable.
 
 ## Fuentes
 - [1] Estudio de marca independiente: cinco cosas (mentalidad, nicho, contenido, oferta, venta) y el proceso SPARK de cinco etapas con su entrega — https://youtu.be/L0CtLi-c_DU · `references/lecciones/estudio-de-marca-cinco-cosas-y-proceso-spark-pete-brennan.md`
@@ -109,3 +121,6 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - [3] Antes de abrir Figma: el mapa de papel con cinco preguntas (Eze Cichello) — https://youtu.be/HF14MTFChA0 · `references/lecciones/antes-de-figma-mapa-cinco-preguntas-eze-cichello.md`
 - [4] Proceso de identidad visual, parte 1: investigación y concepto — https://youtu.be/A4wBq1D6lt4 · `references/lecciones/identidad-visual-pt1-investigacion-concepto.md`
 - [5] Identidad de marca: de la estrategia a los cinco elementos (Satori Graphics) — https://youtu.be/8U8_WbgO9hg · `references/lecciones/identidad-de-marca-estrategia-a-cinco-elementos-satori-graphics.md`
+- [6] Qué poner en el presupuesto de un filmmaker: anticipo, plazo de pago, correcciones (@jaleoproducciones) — reel de Instagram, archivo local · `references/lecciones/clausulas-presupuesto-filmmaker-jaleoproducciones.md`
+- [7] Los documentos de preproducción de un rodaje, vistos 6 de 8 (@artesaudiovisuales.unab) — reel de Instagram, archivo local · `references/lecciones/8-documentos-preproduccion-rodaje-artesaudiovisuales-unab.md`
+- [8] Sala de consejo con 7 asesores IA hecha en Claude (@tony.ia_) — reel de Instagram, archivo local · `references/lecciones/sala-de-consejo-ia-7-asesores-claude-tonyia.md`

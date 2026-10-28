@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de sonido para video: música, voz, efectos de son
 metadata:
   nicho: sfx-audio
   herramientas: "ffmpeg, ElevenLabs, RNNoise, Premiere Pro, DaVinci Resolve"
-  lecciones: 5
-  actualizado: "2026-10-20"
+  lecciones: 6
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · SFX y audio
@@ -43,6 +43,9 @@ Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visual
 - Instrumental, **80–110 BPM**, tonalidad que no choque con la voz, al menos **90 s más larga** que el video [2].
 - Mezcla de partida: voz a 0 dB y música a `volume=0.13` (≈ −18 dB), **fade-in de 2 s** y **fade-out de 3 s** [2]. Música lo-fi que baja sola cuando se habla (ducking) [1].
 - Una biblioteca de efectos y música normalizada a ≈ **−20 LUFS** con techo de **−1,5 dBFS** [2].
+
+### SFX con IA guiados por tu voz (Adobe Firefly) [6]
+- Prompt corto del sonido («sfx transiciones whoosh»), duración (8–10 s) y un **audio guía**: se graba la voz imitando el ritmo y el volumen que quieres y el generador respeta duración y pulsos. Salen variaciones; se elige y se alinea a los impactos de la animación (en After Effects, proyecto en capas con nulos). El resultado sonoro no se pudo evaluar.
 
 ## Por herramienta
 ### ffmpeg
@@ -82,6 +85,7 @@ Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visual
 - [4] es una guía pública resumida sin oír el MP3 de ejemplo; el prompt completo de audio no se reproduce aquí.
 - [3] y [5] solo tocan el sonido de pasada: no dan niveles ni herramientas.
 - Falta aprender: diseño sonoro y foley a fondo, efectos de sonido (bibliotecas, capas, sincronía a la imagen), mezcla y masterización (EQ, compresión, de-esser), ducking y nivelación en Premiere y DaVinci (Fairlight), música con IA (Suno, ElevenLabs Music), voz en off y clonación de voz, audio para reels y para YouTube con valores comprobados.
+- [6] Solo se vio la interfaz (en portugués): no se oyó el efecto resultante ni se ve cómo se sincronizó; no hay niveles ni formato de exportación.
 
 ## Fuentes
 - [1] Editar un video en crudo con Claude: video largo, reels y carrusel — https://youtu.be/viztypMn7D0 · `references/lecciones/editor-asistente-claude-flujo-reels-carrusel.md`
@@ -89,3 +93,4 @@ Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visual
 - [3] Dirigir un anuncio de 30 s con video de IA (Higgsfield, Seedance), sección de transiciones y sonido — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
 - [4] Escenas consistentes con Seedance 2.5: referencias, audio primero y dirección de escena (AiLendra Labs) — https://ailendra.com/ailab/lite/seedance-25-escenas/ · `references/lecciones/escenas-consistentes-seedance-ailendra.md`
 - [5] Seis formas de editar una escena (StudioBinder, Shot List ep. 10), sección J cut y L cut — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
+- [6] Efectos de sonido con Adobe Firefly guiados por tu voz (@tcastro.motion) — reel de Instagram, archivo local · `references/lecciones/sfx-adobe-firefly-guia-de-voz-tcastro-motion.md`

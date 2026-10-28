@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de diseño gráfico completo: briefing, identidad,
 metadata:
   nicho: diseno-grafico
   herramientas: "Illustrator, Photoshop, Figma, Procreate"
-  lecciones: 11
-  actualizado: "2026-10-11"
+  lecciones: 12
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Diseño gráfico
@@ -119,6 +119,9 @@ piezas) vive aquí, en su área. Lo animado va al profesor `kiwa-motion-graphics
 - **Diapositivas y láminas**: una idea por lámina, texto grande que se lea en miniatura, pocos fondos y un solo acento (visto en [25]: negro, crema y blanco con amarillo).
 - Presenta el moodboard con el porqué de cada imagen [1]. A un cliente de web, presenta primero las **dos pantallas más importantes** (hero y página de producto) tras definir paleta, tipografías y universo visual [4].
 
+### Web de producto con estante y página de detalle (patrón visto) [28]
+- Overview en grid con todos los productos → al elegir uno, transición lateral a una página con el producto enorme, nombre grande arriba a la izquierda, panel de compra (talla, botón pastel) arriba a la derecha y un acento de color por producto; misma identidad en celular. Solo se ve, sin método.
+
 ## Por herramienta
 ### Illustrator
 - **Vectorial**: escala sin pérdida; **una foto no puede ser vectorial** [2]. **Varias mesas de trabajo en un archivo** (todas las piezas de una identidad, de distintos tamaños) [2].
@@ -197,6 +200,7 @@ piezas) vive aquí, en su área. Lo animado va al profesor `kiwa-motion-graphics
 - Las guías de pago del creador de [2]–[9] (Whop) no se abrieron.
 - [20] Es opinión y predicción de un autor, sin medidas ni método de construcción; nada probado en paneles densos.
 - [22] Lista narrada sobre trabajos ajenos, sin valores; lo mostrado para «táctil» es más saturado que el «sutil» que se dice.
+- [28] Reel sin voz: no se sabe si el producto es render 3D o imagen IA ni con qué se construyó la web.
 
 ## Fuentes
 - [1] Proceso de identidad visual, parte 1: investigación y concepto — https://youtu.be/A4wBq1D6lt4 · `references/lecciones/identidad-visual-pt1-investigacion-concepto.md`
@@ -217,3 +221,4 @@ piezas) vive aquí, en su área. Lo animado va al profesor `kiwa-motion-graphics
 - [25] Estudio de marca independiente: cinco cosas (mentalidad, nicho, contenido, oferta, venta) y el proceso SPARK de cinco etapas con su entrega — https://youtu.be/L0CtLi-c_DU · `references/lecciones/estudio-de-marca-cinco-cosas-y-proceso-spark-pete-brennan.md`
 - [26] Los 9 elementos de la composición en cine (StudioBinder, Shot List ep. 11) — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [27] Composición: 9 esquemas de la hoja de arte — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
+- [28] Tienda web de zapatillas con estante 3D y página de producto (@ascenta.studio) — reel de Instagram, archivo local · `references/lecciones/tienda-web-zapatillas-3d-ascenta-studio.md`

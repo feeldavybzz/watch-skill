@@ -19,7 +19,17 @@ try:
 except Exception as e:
     sys.exit(f"NO_MODEL: no se pudo cargar/descargar el modelo '{a.model}' ({type(e).__name__}). "
              "Pedir transcript externo (Sider/YouTube/SpeakApp) o correr en la compu del usuario.")
-segs,info=m.transcribe(wav,language=a.lang,vad_filter=True)
+# Audio como arreglo numpy: con `av` nuevo (>=17) faster-whisper falla al abrir el archivo (metadata_errors).
+try:
+    import numpy as np, wave
+    with wave.open(wav) as w:
+        audio=np.frombuffer(w.readframes(w.getnframes()),dtype=np.int16).astype(np.float32)/32768
+except Exception:
+    audio=wav
+segs,info=m.transcribe(audio,language=a.lang,vad_filter=True)
+# En música Whisper inventa letra: idioma poco seguro => tratar como música, voz no verificada.
+if getattr(info,"language_probability",1)<0.8:
+    print("AVISO: idioma poco seguro (%.2f) -> probablemente música/ruido; no usar como teoría."%info.language_probability)
 def ts(s): return f"{int(s//3600):02d}:{int(s%3600//60):02d}:{s%60:05.2f}"
 with open(a.out,"w",encoding="utf-8") as f:
     f.write(f"<!-- fuente: whisper-{a.model} | tipo: captions | tiempos: si | idioma: {info.language} -->\n")

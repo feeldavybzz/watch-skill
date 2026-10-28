@@ -4,12 +4,12 @@ description: "Profesor MUKIWA de dirección de video con IA (Higgsfield, Seedanc
 metadata:
   nicho: video-con-ia
   herramientas: "Higgsfield Cinema Studio, Seedance, Seedream, Claude"
-  lecciones: 1
-  actualizado: "2026-10-11"
+  lecciones: 5
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Dirección de video con IA
-> Dirige un anuncio o escena con modelos de imagen y video como si fuera un rodaje: fija personajes y locaciones como referencias con nombre, escribe un prompt cronometrado por planos (lente, enfoque, quién está dónde, sonido, continuidad) y arregla los fallos con un plano general como fotograma clave, anclas de fondo por ángulo y mapas de blocking. Todo lo aprendido viene de una demo en Higgsfield (créditos, Seedance 2.5): el método dura, los modelos y precios cambian. Falta aprender los prompts completos, el montaje final y otros modelos. Tiene **1 lección propia** [1] y **4 complementarias** ([3] ángulos, [4] movimientos, [5] línea de 180°, [6] iluminación), más **1 guía pública absorbida** [2] que no cuenta como lección (menos confianza: fuente página pública).
+> Dirige un anuncio o escena con modelos de imagen y video como si fuera un rodaje: fija personajes y locaciones como referencias con nombre, escribe un prompt cronometrado por planos (lente, enfoque, quién está dónde, sonido, continuidad) y arregla los fallos con un plano general como fotograma clave, anclas de fondo por ángulo y mapas de blocking. Todo lo aprendido viene de una demo en Higgsfield (créditos, Seedance 2.5): el método dura, los modelos y precios cambian. Falta aprender los prompts completos, el montaje final y otros modelos. Tiene **5 lecciones propias** ([1], [7]–[10]) y **4 complementarias** ([3] ángulos, [4] movimientos, [5] línea de 180°, [6] iluminación), más **1 guía pública absorbida** [2] que no cuenta como lección (menos confianza: fuente página pública).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -86,6 +86,14 @@ Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; pa
 - **Luz** [6]: clave alta o baja, claroscuro, luz dura o suave, lado ciego o corto, y temperatura (≈3 200 K tungsteno, ≈5 600 K día); sirve para escribir el LOOK y para fijar la luz de la locación [6].
 - **Línea de 180°** [5]: en un **ángulo inverso**, define de qué lado de la línea queda la cámara y qué se ve detrás de cada personaje; es la causa más probable del fallo del muro detrás de Alex junto con la instrucción de fondo general de [1] (relación mía, ≈) [5].
 
+### Efectos de transformación y motion transfer (reels de creadores) [7][8][9][10]
+- **Imagen primero, video después** [7]: se edita un fotograma de tu clip con un modelo de imagen (dos referencias: tu fotograma y un fotograma del efecto) y esa imagen entra al modelo de video como primer fotograma. Así el efecto se decide en la imagen (barata de iterar) y el video solo lo anima.
+- **Prompt de imagen para copiar un efecto** [7]: «edita solo la imagen 1; la 2 muestra el efecto, no copies su persona/ropa/cuarto/colores» + el efecto en una frase + dónde empieza + forma + superficie y color + «todo lo demás idéntico (encuadre, pose, ropa, luz, grade, grano), fotorrealista, sin texto».
+- **Prompt de video del efecto** [7]: movimiento de cámara lento y estable (sin sacudida, sin cortes, sin rotación) + «solo se mueve X» + lo que nunca debe pasar (p. ej. que la cara se reforme) + mismo grade, contraste y grano + sin texto.
+- **Hook con material real** [8]: grabar el gesto real (encendedor), capturar el comentario como imagen y darle al modelo el video (@video1) y la imagen (@img1); el prompt pide el efecto (quemarse con llamas, brasas, ceniza) **solo sobre la tarjeta** y fija lo que se mantiene (identidad, expresión, manos, ropa, movimiento original, fondo, encuadre, audio, formato vertical). Se usó un modelo de «movimiento y control avanzados» (Kling 4.0).
+- **Motion transfer (Genjutsu en Higgsfield)** [9][10]: el clip original manda el movimiento y la referencia manda el look. Flujo: clip simple → sacar un fotograma → editarlo con un modelo de imagen (p. ej. cambiar el fondo) → Genjutsu «Motion transfer» con el clip y el fotograma → describir la escena → generar. Hay una segunda pestaña «Objects swap». En pantalla: video de hasta 30 s y hasta 30 imágenes de referencia.
+- Modelos vistos en la lista de Artlist [8] (cambian rápido): Seedance 2.5 (30 s, hasta 50 referencias), Kling 4.0 (30 s, 1080p), Gemini Omni 1.1 Flash (4K, 10 s).
+
 ## Por herramienta
 ### Higgsfield Cinema Studio
 - Proyecto con carpetas y subcarpetas; **elementos** (personajes, locaciones, props) que se adjuntan automáticamente al pegar el prompt; botón Generate con el costo en créditos [1].
@@ -126,6 +134,9 @@ Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; pa
 - Sin pasos para otras plataformas (Runway, Veo, etc.).
 - [2] Es una guía pública de otro creador (Seedance), resumida sin ver el ZIP de la skill: faltan prompts y valores; nada se probó en Higgsfield.
 - [3][4][5][6] Las cuatro lecciones complementarias son de cine real: dan vocabulario, no sirven como prueba de que el modelo de IA obedezca cada término.
+- [7] Los prompts de [7] y [8] solo se leen en parte (se entregan por comentario); la estructura de bloques es lo transferible.
+- [9][10] Genjutsu: no se vio el costo en créditos ni la calidad en planos largos; el nombre del modelo de imagen de [10] viene mal oído por Whisper (≈ Seedream 5 Pro).
+- [7][8] Son reels de creadores que venden/regalan prompts por comentario: lo mostrado son resultados escogidos.
 
 ## Fuentes
 - [1] Dirigir un anuncio de 30 s con video de IA: personajes, locaciones, prompt cronometrado y arreglo de fallos (Higgsfield, con Claude Opus 5.5 y Seedance 2.5) — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
@@ -134,3 +145,7 @@ Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; pa
 - [4] Los 15 movimientos de cámara (StudioBinder, Shot List ep. 6) — https://youtu.be/IiyBo-qLDeM · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
 - [5] La regla de los 180° (StudioBinder) — https://youtu.be/iW0bKUfvH2c · `references/lecciones/regla-de-los-180-grados-studiobinder.md`
 - [6] Iluminación de cine, parte 1 (StudioBinder, Shot List ep. 12) — https://youtu.be/r2nD_knsNrc · `references/lecciones/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md`
+- [7] Efecto «doom scroll» con Nano Banana Pro + Kling 3.0 en Artlist (@artzenmedia) — reel de Instagram, archivo local · `references/lecciones/doom-scroll-efecto-nano-banana-kling-artzenmedia.md`
+- [8] Hook «quemar un comentario» con video IA, Artlist + Kling 4.0 (@futurist__) — reel de Instagram, archivo local · `references/lecciones/hook-quemar-comentario-kling-artlist-futurist.md`
+- [9] Genjutsu de Higgsfield: cambiar ropa, objetos y lugar manteniendo el movimiento (@elmundoderabbit) — reel de Instagram, archivo local · `references/lecciones/genjutsu-higgsfield-cambiar-ropa-y-entorno-elmundoderabbit.md`
+- [10] Genjutsu: rodar en casa y convertir el fondo en un vagón de lujo (@tseily) — reel de Instagram, archivo local · `references/lecciones/genjutsu-motion-transfer-seedream-tseily.md`

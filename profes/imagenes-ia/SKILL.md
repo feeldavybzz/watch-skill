@@ -4,8 +4,8 @@ description: Profesor MUKIWA de creación de imágenes con IA en Higgsfield, See
 metadata:
   nicho: imagenes-ia
   herramientas: "Higgsfield (Soul Cinema, Seedream), GPT Image, Claude"
-  lecciones: 2
-  actualizado: "2026-10-20"
+  lecciones: 4
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Imágenes con IA
@@ -46,6 +46,12 @@ Para llevar las imágenes a video, combínalo con `kiwa-video-con-ia`; para el e
 ### Mapas de blocking [1]
 - Cuando la IA pone el número de puestos o personajes equivocado, un diagrama de blocking cenital hecho con Seedream (solo líneas) sirve de mapa para colocar a cada uno [1].
 
+### Editar un fotograma con una referencia de efecto o de look [3][4]
+- Dos referencias con roles distintos: «imagen 1 = se edita; imagen 2 = solo muestra el efecto/estilo» y se dice qué NO copiar de la 2 (persona, ropa, cuarto, colores) [3].
+- Estructura del prompt de edición [3]: efecto en una frase → dónde empieza → forma → superficie/color → «todo lo demás idéntico: encuadre, pose, ropa, luz, grade, grano; fotorrealista; sin texto ni borde».
+- Fotograma de referencia para video [4]: grabar un clip simple, sacar un fotograma y cambiar solo el fondo (p. ej. vagón de lujo) con el modelo de imagen; ese fotograma luego guía el «look» en un modelo de motion transfer.
+- Modelo usado en [3]: Nano Banana Pro (Artlist; ajustes 16:9, 2K, 1 imagen); en [4] se oye un modelo tipo Seedream 5 Pro (≈ no confirmado).
+
 ## Por herramienta
 ### Higgsfield (Soul Cinema, Seedream 5.0 Pro)
 - **Soul Cinema**: modelo de imagen para personajes y locaciones (ocho imágenes por un crédito) [1]. **Seedream 5.0 Pro**: edición de imagen que conserva luz y textura [1]. Proyecto con carpetas y subcarpetas para ordenar referencias [1].
@@ -85,7 +91,11 @@ Para llevar las imágenes a video, combínalo con `kiwa-video-con-ia`; para el e
 - AiLendra lista «Character Sheets Prompts» (dos variantes: ficha completa y frontal sin rostro) y tres plantillas editables de GPT Image 2.5 (creativo editorial, postal arquitectónica, ilustración editorial); solo se leyeron los títulos, **no los prompts**.
 - Ninguna fuente enseña a escribir el prompt de una imagen en sí (estructura, estilo, lente, luz): el método de [1] delega eso en Claude sin mostrar el prompt.
 - Falta aprender: prompting de imagen a fondo (estilo, lente, luz, composición), otros modelos (GPT Image, Nano Banana, Midjourney, Flux), inpainting y edición, variaciones, upscaling, consistencia de estilo de marca y piezas de marca para MUKIWA.
+- [3] Solo se ven trozos del prompt de imagen; el completo se da por comentario («scroll») y no se obtuvo. El menú muestra Nano Banana 2 / 2 Lite / Pro.
+- [4] El nombre del modelo de imagen está mal oído (≈ Seedream 5 Pro); falta confirmarlo con la pantalla o con el autor.
 
 ## Fuentes
 - [1] Dirigir un anuncio de 30 s con video de IA: personajes, locaciones, prompt cronometrado y arreglo de fallos (Higgsfield, con Claude Opus 5.5 y Seedance 2.5) — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
 - [2] Escenas consistentes con Seedance 2.5: referencias, audio primero y dirección de escena (AiLendra Labs) — https://ailendra.com/ailab/lite/seedance-25-escenas/ · `references/lecciones/escenas-consistentes-seedance-ailendra.md`
+- [3] Efecto «doom scroll»: imagen con Nano Banana Pro + video con Kling 3.0 (@artzenmedia) — reel de Instagram, archivo local · `references/lecciones/doom-scroll-efecto-nano-banana-kling-artzenmedia.md`
+- [4] Genjutsu: rodar en casa y convertir el fondo en un vagón de lujo (@tseily) — reel de Instagram, archivo local · `references/lecciones/genjutsu-motion-transfer-seedream-tseily.md`

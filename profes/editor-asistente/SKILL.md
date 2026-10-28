@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de editor asistente: corte por significado, pausas
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 6
-  actualizado: "2026-10-11"
+  lecciones: 8
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Editor asistente
@@ -78,6 +78,13 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `kiwa-diseno-graf
 - Si se edita dos veces el mismo video, no sobrescribas la carpeta de salida: avisa o numera [1].
 - Los reels pueden guardarse como «trial reels» antes de publicar [1].
 
+### Transición «frame flash» en DaVinci Resolve [10]
+- Es una transición de Fusion de 4 fotogramas por defecto (más fotogramas con las pestañas «before 3…»): se pone entre dos clips y se elige el **tratamiento de cada fotograma** (invertir, desenfoque direccional, desenfoque + invertir). En direccional: dirección y longitud del desenfoque. Luces altas, sombras, contraste y saturación se ajustan en el mismo Inspector, sin pasar por Color. Se remata con diseño de sonido.
+- Inspector visto: «Transition – RAM Frame Flash Four», duración ≈ 0,6 s (15 fotogramas), secuencia Before 4 / 3 / 2 / 1 / After 1.
+
+### Vocabulario de recursos de un teaser de gira [11]
+- Mezcla de planos limpios con «planos efecto»: zoom radial con bloom, latigazo, estática tipo VHS, fogonazos de color, un fotograma negro como golpe, espejo simétrico y cierre de espaldas. Ritmo ≈ 1 corte por segundo (≈). Solo visual: no se verificó el corte al beat.
+
 ## Por herramienta
 ### Claude Code
 - Piezas que usa [1]: ffmpeg (cortar y mezclar), Whisper en Python (transcribir y apoyar la detección de la cara) y **Remotion** con Node 18+ (dibuja las animaciones); pide 16 GB de RAM y grabación en 4K o 1080p [1].
@@ -142,6 +149,8 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - La calidad real de los cortes y subtítulos no se pudo comprobar: solo se vieron segundos de los reels, adelantados.
 - [7][8][9] Las tres lecciones complementarias no son de edición como tema: [7] es teoría de cámara, [8] un flujo de video de IA y [9] una demo de 39 s sin voz; aportan criterios y un método para Premiere, sin valores.
 - Precio de servicio (desde 400–500 USD al mes) y consumo de tokens son afirmaciones de la autora, sin evidencia.
+- [10] No se leen los valores numéricos por fotograma y el preset no se obtuvo (se entrega por comentario).
+- [11] Sin voz: no se sabe con qué efectos se hizo cada recurso ni si los cortes caen en el beat.
 
 ## Fuentes
 - [1] Editar un video en crudo con Claude: video largo, reels y carrusel — https://youtu.be/viztypMn7D0 · `references/lecciones/editor-asistente-claude-flujo-reels-carrusel.md`
@@ -153,3 +162,5 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [7] Los 15 movimientos de cámara (StudioBinder, Shot List ep. 6), sección «whip pan» — https://youtu.be/IiyBo-qLDeM · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
 - [8] Dirigir un anuncio de 30 s con video de IA (Higgsfield, Seedance), sección «dirigir» — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
 - [9] Guideify 2: cómo un plugin de Premiere muestra interfaz social y guías — https://youtu.be/ZcDtrjVuR5k · `references/lecciones/guideify-2-overlay-social-y-guias-en-premiere.md`
+- [10] Transición «frame flash» en DaVinci Resolve (@ramrylie) — reel de Instagram, archivo local · `references/lecciones/flash-transition-davinci-ramrylie.md`
+- [11] Edit de concierto: flashes, latigazos, zoom radial, glitch y espejo (@acreyyyyy) — reel de Instagram, archivo local · `references/lecciones/edit-concierto-flashes-zoom-glitch-acreyyyyy.md`

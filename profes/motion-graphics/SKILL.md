@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de motion graphics: tipografía cinética en After
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects, Blender"
-  lecciones: 3
-  actualizado: "2026-10-10"
+  lecciones: 6
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Motion graphics
@@ -68,6 +68,16 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - Vocabulario de movimientos para animar una cámara: push in, pull out, arc, tracking, boom, whip pan, dolly zoom, etc. [7] (el uso en 3D es aplicación mía, ≈).
 - **Control de movimiento**: repetir exactamente el mismo movimiento de cámara en dos tomas sirve para componer elementos después; con cámara virtual es el equivalente a duplicar la curva [8] (≈).
 
+### Explainers en collage de papel con Claude Motion [9]
+- Conectar el conector de video en Claude (Settings → Connectors), pedir 30 s con el tema y un estilo con nombre («paper collage estilo Vox»), abrir el proyecto en el editor y retocar a mano o pedir cambios a Claude sobre la misma línea de tiempo. El primer resultado es un borrador: se itera.
+
+### Radial blur animado con la persona nítida (Premiere) [10]
+- Plugin gratuito Any Radial Blur (al instalar pide un monto: poner 0). Aplicarlo al clip; valores vistos: Type Spin, Amount ≈ 70–73, Quality 20–50, Distance to center 2,00 / 1,00 / 0,80, Effect center 960/540; animar con keyframes.
+- Para que quede natural: duplicar el clip arriba, quitarle el efecto y hacerle una máscara de objeto a la persona; Expansion ≈ 8 y feather; se ve blend mode Add y Scale 114 en esa capa (sin explicación).
+
+### Micro-interacciones de UI [11]
+- Un botón elástico («let's collaborate») tirado por una mano dibujada con hilos se usa como gancho humorístico. Solo referencia visual: sin método.
+
 ## Por herramienta
 ### After Effects
 - Atajos: **R** rotación, **P** posición, **S** escala, **U** ver keyframes, **F9** easy ease [1].
@@ -104,6 +114,9 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - De [3] no hay fps, pinceles ni cómo se arma el fondo curvo; falta un tutorial completo de animación 2D en Blender.
 - [4][5][6][7][8] Son lecciones de cine y edición real, no de motion: dan criterio, no pasos de After Effects ni valores.
 - Animación de logos, transiciones, lower thirds y herramientas fuera de After Effects: sin fuentes todavía; de [2] solo se ve el resultado, no el método.
+- [9] No se vio el explainer completo (solo stills) ni el nombre exacto del conector (se lee «invideo» en un tile).
+- [10] No se explica por qué la máscara va en Add ni el Scale 114; los keyframes que animan el efecto no se ven. El link del plugin va por comentario.
+- [11] Sin voz y 7 s: no se sabe con qué se hizo la física del botón (código, Rive, After Effects).
 
 ## Fuentes
 - [1] Tipografía cinética en After Effects: 3 técnicas con una sola capa — https://www.youtube.com/watch?v=f3nb-MQyshQ · `references/lecciones/tipografia-cinetica-after-effects-3-tecnicas.md`
@@ -114,3 +127,6 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [6] Guideify 2: overlay social y guías en Premiere — https://youtu.be/ZcDtrjVuR5k · `references/lecciones/guideify-2-overlay-social-y-guias-en-premiere.md`
 - [7] Los 15 movimientos de cámara (StudioBinder, ep. 6) — https://youtu.be/IiyBo-qLDeM · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
 - [8] Los 12 soportes de cámara, sección de control de movimiento (StudioBinder, ep. 5) — https://youtu.be/heJ9hWNb10g · `references/lecciones/soportes-de-camara-12-rigs-studiobinder.md`
+- [9] Explainer de motion graphics con Claude Motion y un conector de editor de video (@aangel) — reel de Instagram, archivo local · `references/lecciones/claude-motion-explainer-papel-collage-aangel.md`
+- [10] Radial blur en Premiere con el plugin gratuito Any Radial Blur y máscara (@colo.sparta) — reel de Instagram, archivo local · `references/lecciones/radial-blur-premiere-con-mascara-colo-sparta.md`
+- [11] Botón «let's collaborate» tirado con una mano dibujada (@xitij) — reel de Instagram, archivo local · `references/lecciones/boton-collaborate-con-cuerdas-xitij.md`

@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de cinematografía: ángulos, movimientos, soporte
 metadata:
   nicho: cinematografia
   herramientas: "Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control"
-  lecciones: 6
-  actualizado: "2026-10-11"
+  lecciones: 7
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Cinematografía
@@ -120,6 +120,9 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - **Rampa de velocidad**: cambiar de velocidad dentro del mismo plano para dar peso a un golpe (*300*) [4].
 - **No mezcles tasas** si quieres movimiento de aspecto normal; mezcla solo para lento o para el look entrecortado [4]. Anota el **fps de cada plano** en la lista de planos (ej.: Sherlock Holmes: 24 fps el público, 240 y 800 fps la cámara lenta) [4].
 
+### Frame rate según el destino (versión de un creador) [11]
+- Para look de cine un creador rueda 4K a **25 fps** (mantiene el desenfoque de movimiento natural; si el movimiento es muy rápido se vuelve entrecortado), **30 fps** para redes (algo más nítido) y **50 fps o más** solo para cámara lenta, sin reproducirlo a velocidad normal.
+
 ### La línea de 180° [5]
 - **Qué es**: una línea imaginaria entre dos sujetos; mantén **todas las cámaras de un lado** para tener orientación y dirección de pantalla (en *Heat*, uno mira a la derecha de cámara y el otro a la izquierda) [5].
 - Con **más de dos personas**: piensa en teatro; la cámara se queda en las butacas [5].
@@ -217,6 +220,7 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - «Bird's eye» aparece en la guía escrita sin definición.
 - Faltan los pasos en Premiere y DaVinci y ejemplos verticales.
 - [7][8][9][10] Las cuatro lecciones complementarias no son de cámara: dan criterio (corte, blocking, stitching, espacio), sin cifras ni ajustes de cámara.
+- [11] El autor presenta 25 fps como «norma del cine»; el estándar de cine es 24 (25 es el de TV europea): confirmar. No habla del obturador (regla de 180° del obturador).
 
 ## Fuentes
 - [1] Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6) — https://youtu.be/IiyBo-qLDeM · guía escrita https://www.studiobinder.com/blog/different-types-of-camera-movements-in-film/ · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
@@ -229,3 +233,4 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - [9] CGI vs VFX vs SFX y el análisis de *1917* (StudioBinder, con Ian Failes) — https://youtu.be/Pok6EN3cfA4 · `references/lecciones/cgi-vfx-sfx-diferencias-y-1917.md`
 - [10] Los 9 elementos de la composición en cine (StudioBinder, Shot List ep. 11): secciones «espacio» y «profundidad» — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [6] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`
+- [11] Frame rate: 25 para look cine, 30 para redes y 50+ para cámara lenta (@chrlypn) — reel de Instagram, archivo local · `references/lecciones/fps-cine-redes-slow-motion-chrlypn.md`

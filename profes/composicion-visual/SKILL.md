@@ -4,8 +4,8 @@ description: "Profesor MUKIWA de composición visual: esquemas, los 9 elementos,
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 7
-  actualizado: "2026-10-11"
+  lecciones: 10
+  actualizado: "2026-10-28"
 ---
 
 # Kiwa · Composición visual
@@ -159,6 +159,11 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Generar la locación con **ángulo de tres cuartos** da profundidad a la que el movimiento de cámara «se agarra» y da mejores renders que un plano frontal plano [12].
 - Un **mapa de blocking cenital** (solo líneas, una figura de color por personaje) controla la colocación cuando el modelo inventa elementos; ver `kiwa-video-con-ia` [12].
 
+### Tabla de 15 formatos y cómo elegir el tamaño [12][13][14]
+- Tamaños vistos en pantalla [12] (1080p · 4K): 9:16 1080×1920 · 2160×3840; 4:5 864×1080 · 1728×2160; 1:1 1080×1080 · 2160×2160; 16:9 1920×1080 · 3840×2160; 2:1 1920×960 · 3840×1920; 4:3 1440×1080 · 2880×2160; 1,85:1 1920×1038 · 3840×2076; 2,39:1 1920×802 · 3840×1606; 5:3 1800×1080 · 3600×2160; 2,35:1 1920×816 · 3840×1634; IMAX 1,43:1 1544×1080 · 3088×2160; 2,76:1 1920×696 · 3840×1392; 2,20:1 1920×874 · 3840×1748; 2,55:1 1920×754 · 3840×1508; 1,19:1 1286×1080 · 2572×2160.
+- Para publicar sin barras negras en Instagram [13][14]: crear la secuencia en 1440×1080 (4:3), 1080×1350 (4:5), 1080×1080 (1:1) o 1920×1080 (16:9), exportar al mismo tamaño y subir como **publicación**, no como reel (afirmación del autor; no se verificó cómo queda en el grid).
+- En After Effects el preset «Social Media Portrait HD» (1080×1920) se cambia a «4:3» para obtener 1440×1080 [14].
+
 ## Por herramienta
 ### Premiere Pro
 - **Cómo muestra las guías un plugin real (Guideify 2, demo sin voz)** [9]: no dibuja sobre el Monitor de Programa; al pulsar **Apply** inserta el overlay como **clip en una pista de video nueva** que cubre toda la secuencia y avisa dónde quedó («Overlay applied on V7 · 00:00–00:10»). Un segundo Apply sin marcar «Replace existing guide on apply» apila otro en la pista siguiente (V8); **Remove** los quita [9].
@@ -206,6 +211,8 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Los trazos de [2] y [3] son ilustrativos: no dan medidas exactas de la espiral ni de las diagonales. [3] no tiene voz ni explicación: nada de las definiciones sale de esos creadores.
 - Las reglas para vertical, cuadrado y 5:4 son derivadas (geometría y convención), no vistas en ninguna fuente: validar con foto o cine vertical. Las zonas seguras de reels son de fuentes de terceros que discrepan.
 - [10][11][12] Las tres lecciones complementarias no son de composición como tema: el blocking [10] es de dirección de actores y [11] y [12] son de edición y video de IA; dan criterio, no guías con medidas.
+- [12] Es una tabla sin criterio de cuándo usar cada formato.
+- [13][14] Que Instagram muestre el 4:3 sin barras en publicación es afirmación de los autores; falta ver el resultado en el feed y el grid.
 
 ## Fuentes
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
@@ -217,3 +224,6 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [10] Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder) — https://youtu.be/9AGaECt9j4g · `references/lecciones/blocking-espacio-formas-lineas-studiobinder.md`
 - [11] Seis formas de editar una escena (StudioBinder, Shot List ep. 10), sección «eye trace» — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
 - [12] Dirigir un anuncio de 30 s con video de IA (Higgsfield, Seedance), secciones «locaciones» y «tercer fallo» — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
+- [12] 15 formatos de pantalla con su tamaño en 1080p y 4K (@cinematicportfoliomastery) — reel de Instagram, archivo local · `references/lecciones/15-formatos-de-pantalla-y-tamano-en-pixeles-cinematicportfoliomastery.md`
+- [13] Subir a Instagram en 4:3 sin barras negras (@billycreative__) — reel de Instagram, archivo local · `references/lecciones/post-4x3-sin-barras-negras-instagram-billycreative.md`
+- [14] Editar en 4:3: componer en 1440×1080 y exportar igual (@maxwalz4k) — reel de Instagram, archivo local · `references/lecciones/editar-en-4x3-after-effects-maxwalz4k.md`
