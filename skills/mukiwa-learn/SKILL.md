@@ -74,3 +74,7 @@ Cada link alimenta mini skills por oficio que crecen con cada video. Sin que Bry
 Cuando Bryan pida HACER algo de un nicho (gradear, diseñar un logo...), usar el profesor `profe-<nicho>` si existe.
 
 Marca MUKIWA: azul #0068FB, lima #C5ED2E, blanco #FFFFFF y oscuro #232323; usar solo cuando el proyecto lo requiera.
+
+## Coordinación de mejoras y continuidad
+
+Cuando la tarea incluya fusionar skills, resolver correcciones repetidas, conservar decisiones entre entornos o instalar memoria/compresión, consultar `mukiwa-control` por su nombre si está disponible. Mantener aquí la evidencia audiovisual y el aprendizaje de profesores; llevar al centro solo las observaciones transversales. No duplicar bibliotecas ni suponer sincronización automática. Si el centro no está instalado, continuar este flujo y comunicar esa limitación solo cuando afecte la tarea.

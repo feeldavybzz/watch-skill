@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "source_repository": "https://github.com/feeldavybzz/watch-skill",
+  "snapshot_date": "2026-10-29",
+  "skills": [
+    {"name": "mukiwa-control", "role": "coordinacion, observaciones, continuidad e integraciones", "path": "skills/mukiwa-control"},
+    {"name": "mukiwa-learn", "role": "evidencia audiovisual, biblioteca y profesores", "path": "skills/mukiwa-learn"},
+    {"name": "mukiwa-grab", "role": "adquisicion de medios", "path": "skills/mukiwa-grab"}
+  ],
+  "external_services": [
+    {"name": "Task Observer", "mode": "adaptacion conceptual integrada", "original_installed": false},
+    {"name": "Claude-Mem", "mode": "guia de integracion", "runtime_status": "no verificado"},
+    {"name": "Headroom", "mode": "guia de integracion", "runtime_status": "no verificado"},
+    {"name": "Claude Code Setup", "mode": "diagnostico adaptado y guia", "runtime_status": "no verificado"},
+    {"name": "OmniRoute", "mode": "guia de integracion", "runtime_status": "no verificado"}
+  ]
+}
