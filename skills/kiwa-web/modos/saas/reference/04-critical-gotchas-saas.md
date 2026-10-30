@@ -1,6 +1,6 @@
 # SaaS-specific gotchas (Tier S)
 
-Se añaden a `kiwa-web-ui/reference/04-critical-gotchas.md` (la base común).
+Se añaden a `diseno/reference/04-critical-gotchas.md` (la base común).
 
 ## TIER S — SaaS-specific, each cost a real production session
 

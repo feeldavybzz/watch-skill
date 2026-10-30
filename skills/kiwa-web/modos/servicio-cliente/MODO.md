@@ -1,5 +1,5 @@
 > Modo **servicio-cliente** de `kiwa-web`. Texto original de la skill `crear-web-como-servicio`, conservado entero. Las rutas de la sección de índice
-> están en `MAPA-DE-ARCHIVOS.md`. Lo visual (arquetipos, efectos, gotchas) vive en la skill `kiwa-web-ui`.
+> están en `MAPA-DE-ARCHIVOS.md`. Lo visual (arquetipos, efectos, gotchas) vive en `diseno/DISENO.md`.
 
 # Web-as-a-Service Studio · v1 — connect · build · images · AI · publish
 

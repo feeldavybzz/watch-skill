@@ -18,5 +18,5 @@ Une `slide-maker` e `instagram-feed-studio`. El texto de cada una está **entero
 - Es un proceso con **etapas validadas por la persona**: no saltes una etapa marcada para validar.
 - El estudio de feed es privado y con contraseña; la contraseña la da la persona y se guarda solo como hash en un secret del servidor, nunca en el repositorio ni en el chat.
 - Cambios de DNS, dominios o secrets requieren permiso explícito; pídelo con los pasos exactos.
-- Si la marca es MUKIWA, el sistema visual parte de `kiwa-web-ui/reference/12-estilo-mukiwa.md` (negro + azul eléctrico + lima, vidrio solo en elementos interactivos).
+- Si la marca es MUKIWA, el sistema visual parte de `kiwa-web/diseno/reference/12-estilo-mukiwa.md` (negro + azul eléctrico + lima, vidrio solo en elementos interactivos).
 - Si el estudio se publica como sitio, usa `kiwa-web` para el alojamiento.

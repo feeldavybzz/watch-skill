@@ -1,5 +1,5 @@
 > Modo **portfolio** de `kiwa-web`. Texto original de la skill `crear-web-portfolio`, conservado entero. Las rutas de la sección de índice
-> están en `MAPA-DE-ARCHIVOS.md`. Lo visual (arquetipos, efectos, gotchas) vive en la skill `kiwa-web-ui`.
+> están en `MAPA-DE-ARCHIVOS.md`. Lo visual (arquetipos, efectos, gotchas) vive en `diseno/DISENO.md`.
 
 # Portfolio Studio · v2 — connect · build · publish
 

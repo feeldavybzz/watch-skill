@@ -286,7 +286,7 @@ class InboxFlowTests(unittest.TestCase):
         self.assertEqual(state['items']['youtube:AAA']['estado'], 'aprendido')
         self.assertIsNone(inbox.mark_done(state, 'https://youtu.be/NOEXISTE'))
         md = inbox.estado_md(state)
-        self.assertIn('Profesores: diseno-grafico', md)
+        self.assertIn('Kiwas: diseno-grafico', md)
         self.assertIn('Pide sesión. Qué hacer: Guárdalo.', md)
         self.assertEqual(inbox.requeue(state, 'https://youtu.be/BBB'), 'youtube:BBB')
         self.assertEqual((state['items']['youtube:BBB']['estado'], 'causa' in state['items']['youtube:BBB']), ('pendiente', False))

@@ -15,7 +15,7 @@ Fuente de todo lo de abajo: lecciones `motion-codigo/*` (Prompt Motion, 265 moti
 - Revisar una animación de UI que «se siente genérica» o rebotona.
 - Pasar un prototipo de HTML a video renderizado.
 
-Para animación general (texto cinético, logos, transiciones) usa `kiwa-motion-graphics`; para el diseño visual de una web, `kiwa-web-ui`.
+Para animación general (texto cinético, logos, transiciones) usa `kiwa-motion-graphics`; para el diseño visual de una web, `kiwa-web` (carpeta `diseno/`).
 
 ## Principios (de los prompts largos de Prompt Motion)
 1. **Una forma, nunca un corte**: cada estado es el mismo elemento que cambia de tamaño, radio y color mientras su contenido se cambia con un desenfoque corto. Recorrido visto: botón → cargador → check → isla dinámica → reproductor (play/pausa que se transforma) → barra de progreso → deslizador de volumen que se estira al arrastrarlo más allá del máximo → toggle → indicador de pestaña líquido → gráfica que se dibuja con tooltip al pasar el cursor → ⌘K → filtrar al escribir → enter → aviso → vuelve al botón.

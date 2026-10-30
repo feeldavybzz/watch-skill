@@ -249,7 +249,7 @@ class CaptionTrackTests(unittest.TestCase):
 class PackageTests(unittest.TestCase):
     def test_new_uncommitted_professor_is_packaged_and_ignored_files_are_not(self):
         import shutil
-        new = ROOT / 'profes' / 'zz-prueba-sin-commit'
+        new = ROOT / 'kiwas' / 'zz-prueba-sin-commit'
         try:
             (new / 'references').mkdir(parents=True)
             (new / 'SKILL.md').write_text('---\nname: kiwa-zz-prueba-sin-commit\ndescription: prueba\n---\n# x\n', encoding='utf-8')
@@ -286,19 +286,19 @@ class PackageTests(unittest.TestCase):
 
 class ProfesTests(unittest.TestCase):
     def run_profes(self, env, *args):
-        return subprocess.run([sys.executable, str(SCRIPTS / 'profes.py'), *args], capture_output=True, text=True, env=env)
+        return subprocess.run([sys.executable, str(SCRIPTS / 'kiwas.py'), *args], capture_output=True, text=True, env=env)
 
     def test_create_feed_install_and_existing_skill(self):
         import os
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
-            env = dict(os.environ, MUKIWA_PROFES=str(d / 'profes'), HOME=str(d / 'home'))
+            env = dict(os.environ, MUKIWA_KIWAS=str(d / 'kiwas'), HOME=str(d / 'home'))
             lesson = d / 'grading-basico.md'
             lesson.write_text('# Grading básico en DaVinci\n> x\n\n- **Fuente**: https://youtu.be/abc · canal\n', encoding='utf-8')
             r = self.run_profes(env, 'ensure', '--nicho', 'color-grading', '--nombre', 'Color grading',
                                 '--herramientas', 'DaVinci Resolve,Premiere Pro', '--cuando', 'gradear o crear un look')
             self.assertEqual(r.returncode, 0, r.stderr)
-            skill = d / 'profes/color-grading/SKILL.md'
+            skill = d / 'kiwas/color-grading/SKILL.md'
             text = skill.read_text(encoding='utf-8')
             self.assertIn('name: kiwa-color-grading', text)
             self.assertIn('### DaVinci Resolve', text)
@@ -309,8 +309,8 @@ class ProfesTests(unittest.TestCase):
             text = skill.read_text(encoding='utf-8')
             self.assertEqual(text.count('- [1] Grading básico en DaVinci'), 1)
             self.assertIn('  lecciones: 1', text)
-            self.assertTrue((d / 'profes/color-grading/references/lecciones/grading-basico.md').exists())
-            self.assertIn('1 lección', (d / 'profes/INDEX.md').read_text(encoding='utf-8'))
+            self.assertTrue((d / 'kiwas/color-grading/references/lecciones/grading-basico.md').exists())
+            self.assertIn('1 lección', (d / 'kiwas/INDEX.md').read_text(encoding='utf-8'))
             self.assertEqual(self.run_profes(env, 'install').returncode, 0)
             link = d / 'home/.claude/skills/kiwa-color-grading'
             self.assertTrue(link.is_symlink())
@@ -330,6 +330,6 @@ class ProfesTests(unittest.TestCase):
     def test_rejects_bad_niche(self):
         import os
         with tempfile.TemporaryDirectory() as d:
-            env = dict(os.environ, MUKIWA_PROFES=str(Path(d) / 'p'), HOME=d)
+            env = dict(os.environ, MUKIWA_KIWAS=str(Path(d) / 'p'), HOME=d)
             r = self.run_profes(env, 'ensure', '--nicho', 'Color Grading', '--nombre', 'x')
             self.assertNotEqual(r.returncode, 0)

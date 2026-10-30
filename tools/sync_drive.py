@@ -4,11 +4,11 @@
   python3 tools/sync_drive.py [--dest CARPETA] [--no-git]
 
 1. Trae lo último de GitHub (solo si estás en main sin cambios pendientes; nunca fuerza nada).
-2. Empaqueta kiwa-watch-learn y cada profesor (tools/build_skills.py), incluyendo lo
+2. Empaqueta kiwa-watch-learn y cada Kiwa (tools/build_skills.py), incluyendo lo
    aprendido esta semana aunque no esté en un commit.
 3. Empaqueta también las skills propias de ~/.claude/skills (carpetas reales, no enlaces).
 4. Copia los .skill a la carpeta de Drive solo si cambiaron; los que ya no existen (p. ej. un
-   profesor renombrado) se mueven a _retiradas/ en vez de borrarse.
+   Kiwa renombrado) se mueven a _retiradas/ en vez de borrarse.
 5. Escribe LEEME.md con la fecha, la lista y cómo instalarlas.
 Lo ejecuta cada lunes a las 9:08 la tarea programada de la app de Claude
 "mukiwa-skills-drive-semanal" (necesita la app abierta; si estaba cerrada, corre al abrirla).
@@ -130,15 +130,15 @@ def main():
         for k, f in glob_src.items(): ajenas_f.setdefault(k, f)        # lo de ~/.claude/skills manda; si falta, el .skill ya hecho
         groups = {CREADAS: propias, AJENAS: [ajenas_f[k] for k in sorted(ajenas_f)]}
         allf = propias + groups[AJENAS]
-        profes = (ROOT / "profes" / "INDEX.md").read_text(encoding="utf-8") if (ROOT / "profes" / "INDEX.md").exists() else ""
+        kiwas_idx = (ROOT / "kiwas" / "INDEX.md").read_text(encoding="utf-8") if (ROOT / "kiwas" / "INDEX.md").exists() else ""
         lines = ["# Skills de Claude · MUKIWA", "", f"Actualizado: {datetime.date.today().isoformat()} (cada lunes, automático).", ""]
         for folder, files in groups.items():
             lines += [f"## {folder}", ""] + [f"- `{f.name}`" for f in files] + [""]
         lines += ["## Cómo instalarlas", "",
                   "- **claude.ai (app de Claude):** Configuración → Capacidades → Skills → Subir el `.skill`.",
                   "- **Claude Code:** descomprimir el `.skill` dentro de `~/.claude/skills/`.", "",
-                  "Los profesores (`kiwa-<nicho>`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
-        if profes: lines += ["## Estado de los profesores", ""] + profes.splitlines()[2:]
+                  "Los Kiwas (`kiwa-<nicho>`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
+        if kiwas_idx: lines += ["## Estado de los Kiwas", ""] + kiwas_idx.splitlines()[2:]
         text = "\n".join(lines) + "\n"
         for nombre, dest in dests:
             changed, retired = sync_dest(dest, groups, text)

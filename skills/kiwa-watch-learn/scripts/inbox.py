@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Buzón de links de MUKIWA. Mandas un link desde el iPhone (o lo pegas en un archivo) y la Mac lo
-descarga, lo prepara y deja la evidencia lista para que Claude lo analice y alimente a los profesores.
+descarga, lo prepara y deja la evidencia lista para que Claude lo analice y alimente a los Kiwas.
 
 Carpeta del buzón (por defecto en Google Drive: «Mi unidad/MUKIWA · Aprender»; cambia con MUKIWA_INBOX o --dir):
   links-pendientes.md   un link por línea, solo se AÑADE (no se borra nada: el estado va aparte)
@@ -11,7 +11,7 @@ Carpeta del buzón (por defecto en Google Drive: «Mi unidad/MUKIWA · Aprender�
   inbox.py init                     crea la carpeta y los archivos
   inbox.py run [--limit 5]          escanea, descarga y prepara lo pendiente; lista lo que Claude debe analizar
   inbox.py ready [--json]           lo que ya está preparado y espera análisis
-  inbox.py done --url U [--profes diseno-grafico,motion-graphics] [--leccion ruta]   marca como aprendido
+  inbox.py done --url U [--kiwas diseno-grafico,motion-graphics] [--leccion ruta]   marca como aprendido
   inbox.py requeue --url U          vuelve a ponerlo en pendiente
   inbox.py status                   reescribe estado.md y muestra el resumen
 
@@ -109,7 +109,7 @@ def init(inbox):
     if not readme.exists():
         readme.write_text("# Buzón de aprendizaje · MUKIWA\n\n"
                           "- **links-pendientes.md**: añade un link por línea (YouTube, Instagram, TikTok, Loom…). Cada noche la Mac los descarga, "
-                          "los analiza y alimenta a los profesores.\n"
+                          "los analiza y alimenta a los Kiwas.\n"
                           "- **Para analizar/**: si un link no se deja bajar, guarda aquí el video desde el celular (Archivos → esta carpeta).\n"
                           "- **estado.md**: qué pasó con cada cosa y qué hacer si algo falló.\n\n"
                           "No borres líneas de links-pendientes.md ni archivos de aquí: la Mac lleva la cuenta sola.\n", encoding="utf-8")
@@ -185,11 +185,11 @@ def find_key(state, ident):
     return None
 
 
-def mark_done(state, ident, profes=None, leccion=None):
+def mark_done(state, ident, kiwas=None, leccion=None):
     key = find_key(state, ident)
     if not key: return None
     it = state["items"][key]; it.update(estado="aprendido", actualizado=now())
-    if profes: it["profes"] = list(profes)
+    if kiwas: it["kiwas"] = list(kiwas)
     if leccion: it["leccion"] = leccion
     return key
 
@@ -211,7 +211,7 @@ def estado_md(state):
          "| Estado | Link o archivo | Detalle |", "|---|---|---|"]
     for v in rows:
         if v["estado"] == "fallo": det = "%s. Qué hacer: %s" % (v.get("causa", "").rstrip("."), v.get("haz", ""))
-        elif v["estado"] == "aprendido": det = "Profesores: %s" % (", ".join(v.get("profes", [])) or "—")
+        elif v["estado"] == "aprendido": det = "Kiwas: %s" % (", ".join(v.get("kiwas") or v.get("profes", [])) or "—")
         elif v["estado"] in ("listo", "parcial"): det = "Preparado; falta que Claude lo analice" + (" (se usó tu sesión de Chrome)" if v.get("sesion") else "")
         else: det = "En espera"
         L.append("| %s | %s | %s |" % (v["estado"], esc(v["url"]), esc(det)))
@@ -252,7 +252,7 @@ def main():
     sub.add_parser("init"); sub.add_parser("status")
     r = sub.add_parser("run"); r.add_argument("--limit", type=int, default=5)
     y = sub.add_parser("ready"); y.add_argument("--json", action="store_true")
-    d = sub.add_parser("done"); d.add_argument("--url", required=True); d.add_argument("--profes", default=""); d.add_argument("--leccion")
+    d = sub.add_parser("done"); d.add_argument("--url", required=True); d.add_argument("--kiwas", "--profes", dest="kiwas", default=""); d.add_argument("--leccion")
     q = sub.add_parser("requeue"); q.add_argument("--url", required=True)
     a = ap.parse_args()
     inbox = Path(a.dir).expanduser() if a.dir else default_dir()
@@ -273,7 +273,7 @@ def main():
         ready = ready_items(state)
         print(json.dumps([dict(v, clave=k) for k, v in ready], ensure_ascii=False, indent=1) if a.json else summary(state)); return 0
     if a.cmd == "done":
-        k = mark_done(state, a.url, [p for p in a.profes.split(",") if p], a.leccion)
+        k = mark_done(state, a.url, [p for p in a.kiwas.split(",") if p], a.leccion)
         if not k: sys.exit("No encuentro ese link en el buzón: " + a.url)
     elif a.cmd == "requeue":
         if not requeue(state, a.url): sys.exit("No encuentro ese link en el buzón: " + a.url)

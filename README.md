@@ -1,20 +1,19 @@
 # watch-skill · MUKIWA
 
-Skills de referencia y aprendizaje audiovisual para Claude Code: `kiwa-watch-learn` baja medios, relaciona transcripción con fotogramas, guarda lecciones y se las pasa al profe del oficio.
+Skills de referencia y aprendizaje audiovisual para Claude Code: `kiwa-watch-learn` baja medios, relaciona transcripción con fotogramas, guarda lecciones y se las pasa al Kiwa del oficio.
 
 ## Skills del repositorio
 
-Todas llevan el prefijo **kiwa** y viven en `skills/` (las de oficio, en `profes/`):
+Todas llevan el prefijo **kiwa** y viven en `skills/` (las de oficio, en `kiwas/`):
 
 | Skill | Para qué |
 |---|---|
-| `kiwa-watch-learn` | Bajar, ver, escuchar, analizar y aprender de videos; pasa lo aprendido al profe del oficio. Fusiona `mukiwa-grab`, `mukiwa-learn` y `mukiwa-ver-videos`. |
-| `kiwa-web-ui` | Diseño web de básico a premium: arquetipos, animación y efectos, estructura, qué conviene y qué no. |
-| `kiwa-web` | Construir, conectar y publicar sitios completos en Hostinger: portfolio, web para cliente, SaaS y afiliados. Va junto a `kiwa-web-ui`. Fusiona las cuatro `crear-web-*` y la de diseño premium. |
+| `kiwa-watch-learn` | Bajar, ver, escuchar, analizar y aprender de videos; pasa lo aprendido al Kiwa del oficio. Fusiona `mukiwa-grab`, `mukiwa-learn` y `mukiwa-ver-videos`. |
+| `kiwa-web` | Construir, conectar y publicar sitios completos en Hostinger: portfolio, web para cliente, SaaS y afiliados. Incluye lo visual (antes `kiwa-web-ui`): arquetipos, animación y efectos, estructura, qué conviene y qué no. Fusiona las cuatro `crear-web-*` y la de diseño premium. |
 | `kiwa-marca-mascota` | Dirección de marca, dibujo retro cartoon y mascota MUKIWA. Fusiona `direccion-de-marca-y-mascota`, `retro-cartoon` y `retro-cartoon-mascota`. |
 | `kiwa-instagram` | Carruseles y estudio de feed. Fusiona `slide-maker` e `instagram-feed-studio`. |
 | `kiwa-ui-plugins` | Cómo animar la interfaz de los plugins de MUKIWA y mostrarla en video (springs, arrastre directo, render con `seek(t)`). Nace de promptsmotion.com; falta fusionar `mukiwa-ui-plugins` (solo en el Mac). |
-| `kiwa-<nicho>` (`profes/<nicho>/`) | Un profe por oficio (cinematografía, color grading, iluminación…). Antes se llamaban `profe-<nicho>`. |
+| `kiwa-<nicho>` (`kiwas/<nicho>/`) | Un Kiwa por oficio (cinematografía, color grading, iluminación…). Antes se llamaban `profe-<nicho>`. |
 
 `kiwa-watch-learn` está además enlazada como skill de proyecto en `.claude/skills/`, así que queda activa en cualquier sesión de Claude Code que abra este repositorio.
 
@@ -29,26 +28,26 @@ Dentro de una sesión de Claude Code:
 
 Seguir la indicación de activación del cliente. Los nombres de las skills pueden aparecer con el prefijo del plugin. También se puede abrir este repositorio en Claude Code y pedir que lea `CLAUDE.md` y las skills directamente, antes de instalar globalmente.
 
-## Profesores por nicho
+## Kiwas por nicho
 
-Cada video analizado alimenta **mini skills por oficio** en `profes/<nicho>/` (color grading, diseño de logos, tipografía cinética…). Si el profesor no existe se crea; si existe, aprende más; si el tema ya lo cubre una skill propia de Bryan, se le añade el conocimiento en `references/aprendido-mukiwa.md`. Las herramientas (DaVinci, Premiere, After Effects…) son secciones dentro de cada profesor. Se escriben como instrucciones para hacer el trabajo, con fuente [n] por técnica.
+Cada video analizado alimenta **mini skills por oficio** en `kiwas/<nicho>/` (color grading, diseño de logos, tipografía cinética…). Si el Kiwa no existe se crea; si existe, aprende más; si el tema ya lo cubre una skill propia de Bryan, se le añade el conocimiento en `references/aprendido-mukiwa.md`. Las herramientas (DaVinci, Premiere, After Effects…) son secciones dentro de cada Kiwa. Se escriben como instrucciones para hacer el trabajo, con fuente [n] por técnica.
 
 ```bash
-python3 skills/kiwa-watch-learn/scripts/profes.py list      # profesores y skills existentes
-python3 skills/kiwa-watch-learn/scripts/profes.py install   # enlaza profes/* en ~/.claude/skills/kiwa-<nicho>
+python3 skills/kiwa-watch-learn/scripts/kiwas.py list      # Kiwas y skills existentes
+python3 skills/kiwa-watch-learn/scripts/kiwas.py install   # enlaza kiwas/* en ~/.claude/skills/kiwa-<nicho>
 ```
 
-Reglas de clasificación y fusión: `skills/kiwa-watch-learn/references/profesores.md`. Índice: `profes/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los profesores no se cargan.
+Reglas de clasificación y fusión: `skills/kiwa-watch-learn/references/kiwas.md`. Índice: `kiwas/INDEX.md`. Los enlaces apuntan al disco externo: sin el disco conectado, los Kiwas no se cargan.
 
 ## Descarga robusta y buzón de links
 
 - `skills/kiwa-watch-learn/scripts/doctor.py [--online]` revisa yt-dlp (y si hay versión nueva), el runtime de JavaScript que YouTube exige (detecta Node aunque no esté en el PATH), ffmpeg, gallery-dl, whisper y espacio, con el comando exacto de lo que falte.
 - Los fallos se explican (`CAUSA[...]` / `HAZ:`): 429, login, privado, no existe, región, 403, JavaScript, red, 5xx. Reintenta con espera solo lo que lo merece.
-- **Buzón** (`skills/kiwa-watch-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los profesores. `estado.md` dice qué pasó con cada cosa. Usa la sesión de Chrome solo para sitios que autorizaste en `~/.config/mukiwa/permisos.json` (hoy: instagram.com) y solo si el link falla por pedir sesión; `estado.md` lo anota.
+- **Buzón** (`skills/kiwa-watch-learn/scripts/inbox.py`): Google Drive → `MUKIWA · Aprender` con `links-pendientes.md` (un link por línea; el atajo del iPhone lo llena, ver `docs/atajo-iphone.md`) y `Para analizar/` (videos guardados desde el celular, plan B cuando un link no se deja bajar). Cada noche la tarea programada `mukiwa-aprender-buzon` descarga, prepara y analiza lo pendiente, guarda las lecciones y alimenta a los Kiwas. `estado.md` dice qué pasó con cada cosa. Usa la sesión de Chrome solo para sitios que autorizaste en `~/.config/mukiwa/permisos.json` (hoy: instagram.com) y solo si el link falla por pedir sesión; `estado.md` lo anota.
 
 ## Copia semanal en Google Drive
 
-Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal` ejecuta `tools/sync_drive.py`, que empaqueta todas las skills (MUKIWA, profesores y las propias de `~/.claude/skills`) y las copia a `Mi unidad/MUKIWA · Skills de Claude` mediante Google Drive para escritorio. Solo copia lo que cambió; lo retirado va a `_retiradas/`. A mano: `python3 tools/sync_drive.py`.
+Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal` ejecuta `tools/sync_drive.py`, que empaqueta todas las skills (MUKIWA, Kiwas y las propias de `~/.claude/skills`) y las copia a `Mi unidad/MUKIWA · Skills de Claude` mediante Google Drive para escritorio. Solo copia lo que cambió; lo retirado va a `_retiradas/`. A mano: `python3 tools/sync_drive.py`.
 
 ## Usar en claude.ai (app de Claude)
 
@@ -56,7 +55,7 @@ Cada lunes, la tarea programada de la app de Claude `mukiwa-skills-drive-semanal
 python3 tools/build_skills.py
 ```
 
-Genera un `.skill` por skill (`kiwa-watch-learn`, `kiwa-web-ui`, `kiwa-web`, `kiwa-marca-mascota`, `kiwa-instagram`, `kiwa-ui-plugins` y uno `kiwa-<nicho>` por profe), con solo archivos de Git: sin descargas, claves ni `._*`. Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` ya lleva el descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
+Genera un `.skill` por skill (`kiwa-watch-learn`, `kiwa-web`, `kiwa-marca-mascota`, `kiwa-instagram`, `kiwa-ui-plugins` y uno `kiwa-<nicho>` por Kiwa), con solo archivos de Git: sin descargas, claves ni `._*`. Subirlos en claude.ai → Configuración → Capacidades → Skills. `kiwa-watch-learn` ya lleva el descargador y la biblioteca de lecciones. En claude.ai el entorno suele bloquear YouTube e Instagram: subir el archivo de video en vez del link.
 
 ## Dependencias
 

@@ -23,7 +23,7 @@ Une tres skills que se repetían: `direccion-de-marca-y-mascota`, `retro-cartoon
 - Proceso de la mascota **por capas** (3 capas) y en el orden de cara que marca la Parte B, antes de pasar a moods y outfits.
 - **Originalidad y derechos**: la caricatura de personas reales tiene confianza baja; síguele el aviso del texto. No copies personajes existentes.
 - Entrega con el **checklist de la Parte B** y verifica contra la sección 9 de la dirección de marca antes de decir que está terminado.
-- Para llevar la identidad a una web, pasa a `kiwa-web-ui` (estilo MUKIWA en `reference/12-estilo-mukiwa.md`) y `kiwa-web`.
+- Para llevar la identidad a una web, pasa a `kiwa-web` (estilo MUKIWA en `diseno/reference/12-estilo-mukiwa.md`).
 
 ## Contexto de marca MUKIWA
 La marca valora a las personas por quiénes son hoy, no por origen, color de piel ni clase social. La referencia cultural es inspiración, no tema. El punto de la "i" del logo puede funcionar como pupila y conecta con el personaje Arenio. No reemplaces el logo (MU en tratamiento Knerd, KIWA en Satoshi Black, ajustados a mano) por una tipografía genérica salvo petición expresa.

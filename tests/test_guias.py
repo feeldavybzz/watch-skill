@@ -1,5 +1,5 @@
 import math, os, sys, unittest
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "profes", "composicion-visual", "scripts"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "kiwas", "composicion-visual", "scripts"))
 import guias  # noqa: E402
 
 

@@ -1,13 +1,13 @@
 ---
 name: kiwa-web
-description: "Construye, conecta y publica sitios web completos en Hostinger, en cuatro modos: portfolio personal, web para vender a negocios (con asistente de IA, calculadoras y captura de leads), SaaS de IA con cuentas, créditos y pagos (de prueba a reales) y web de afiliados de Amazon con base de datos de productos. Incluye conectar Hostinger, poblar productos, publicar, dominio y salida a producción. Úsala cuando Bryan diga hazme una web, un portfolio, un SaaS o una web de afiliados, publícala, ponle dominio o conéctame Hostinger. Lo visual (arquetipos, animación, efectos, qué conviene y qué no) lo pone kiwa-web-ui: usa siempre las dos juntas."
+description: "Construye, conecta y publica sitios web completos en Hostinger, en cuatro modos: portfolio personal, web para vender a negocios (con asistente de IA, calculadoras y captura de leads), SaaS de IA con cuentas, créditos y pagos (de prueba a reales) y web de afiliados de Amazon con base de datos de productos. Incluye conectar Hostinger, poblar productos, publicar, dominio y salida a producción. Úsala cuando Bryan diga hazme una web, un portfolio, un SaaS o una web de afiliados, publícala, ponle dominio o conéctame Hostinger. También sirve solo para diseño: arquetipos visuales, animación y efectos (GSAP, scroll, parallax, 3D, cursor), qué estilo o efecto conviene y cuál no, rendimiento, caché y errores que rompen el sitio sin avisar. Úsala también cuando Bryan pida diseñar, rediseñar o mejorar lo visual de una web, o pregunte qué estilo o efecto usar."
 ---
 
 # kiwa-web — construir, conectar y publicar sitios completos
 
-Una sola skill con **cuatro modos** y tres capacidades comunes. Sustituye a las cuatro skills `crear-web-*` y a la de diseño premium: nada se perdió, se reorganizó.
+Una sola skill con **cuatro modos** y tres capacidades comunes. Sustituye a las cuatro skills `crear-web-*`, a la de diseño premium y a `diseno`: nada se perdió, se reorganizó.
 
-> **Siempre junto a `kiwa-web-ui`.** Esa skill decide cómo se ve (arquetipos, efectos, gotchas, caché, checklist). Esta decide **qué se construye y cómo se publica**. Si solo se instala una de las dos, falta la mitad.
+> **Una sola skill, dos mitades.** La carpeta `diseno/` (antes la skill `diseno`, ya fusionada; entra por `diseno/DISENO.md`) decide cómo se ve (arquetipos, efectos, gotchas, caché, checklist). Esta decide **qué se construye y cómo se publica**. Si solo se instala una de las dos, falta la mitad.
 
 ## Regla de oro: haz solo lo que se pidió y detente
 - "conéctame Hostinger" → solo conecta y verifica.
@@ -23,21 +23,21 @@ Al final ofrece **una sola frase** con el siguiente paso natural ("¿la publico 
 | Una web para un negocio o cliente, algo que se vende; asistente de IA, calculadora, lector de documentos, leads | **servicio-cliente** | `modos/servicio-cliente/MODO.md` |
 | Una app de IA con cuentas, créditos y suscripción ("quiero cobrar por…") | **saas** | `modos/saas/MODO.md` |
 | Una web de comparativas y afiliados de Amazon con productos | **afiliados** | `modos/afiliados/MODO.md` |
-| Solo diseño: "dame ideas", "¿qué estilo?", "mejórala visualmente" | — | `kiwa-web-ui` |
+| Solo diseño: "dame ideas", "¿qué estilo?", "mejórala visualmente" | — | `diseno/DISENO.md` |
 | Solo conectar o publicar | común | `comun/reference/12-hostinger-connect.md` / `13-hostinger-deploy.md` |
 
 Si el pedido mezcla dos modos (p. ej. portfolio con tienda), arranca por el que define la estructura y trata lo demás como extensión; no mezcles sus invariantes sin leerlos.
 
 ## 2. Capacidades comunes
 - 🔌 **Conectar Hostinger**: `comun/reference/12-hostinger-connect.md`. Necesita **Node.js 24+**; el chequeo está en `comun/scripts/diagnostico.sh` (o `.ps1` en Windows).
-- 🎨 **Construir**: el modo elegido + `kiwa-web-ui` para lo visual. Necesita **Python 3** (ayudantes, conversión a WebP, vista previa local); sin Python degrada con gracia (`kiwa-web-ui/reference/09-environment-detection.md`).
-- 🚀 **Publicar**: `comun/reference/13-hostinger-deploy.md`, más `kiwa-web-ui/reference/10-deployment-and-cache.md` (`.htaccess` y `?v=AAAAMMDD`; sin ellos Hostinger sirve archivos viejos).
-- ✅ **Verificar** antes de decir que está listo: `kiwa-web-ui/scripts/verify_project.py` y `kiwa-web-ui/reference/08-pre-deploy-checklist.md`.
+- 🎨 **Construir**: el modo elegido + `diseno/DISENO.md` para lo visual. Necesita **Python 3** (ayudantes, conversión a WebP, vista previa local); sin Python degrada con gracia (`diseno/reference/09-environment-detection.md`).
+- 🚀 **Publicar**: `comun/reference/13-hostinger-deploy.md`, más `diseno/reference/10-deployment-and-cache.md` (`.htaccess` y `?v=AAAAMMDD`; sin ellos Hostinger sirve archivos viejos).
+- ✅ **Verificar** antes de decir que está listo: `diseno/scripts/verify_project.py` y `diseno/reference/08-pre-deploy-checklist.md`.
 
 ## 3. Reglas siempre activas
 **Comunicación.** La persona **no es técnica**. Cero jerga: no digas "proxy", "endpoint", "API", "scraper", "deploy"; di "el asistente", "la clave de la IA", "publicar la web", "saco los datos de tus enlaces". Ejecuta tú todos los comandos; lo único manual son clics en el navegador (entrar a Hostinger, pegar una clave, pegar enlaces). Anuncia antes de actuar, celebra los hitos (✅), nunca muestres un error en bruto, **verifica antes de afirmar**.
 
-**Calidad web** (detalle en `kiwa-web-ui/reference/04-critical-gotchas.md`): scripts clásicos `defer` + IIFE; `.htaccess` y `?v=`; scroll nativo por defecto; contenido escrito en el HTML; cada `init` dentro de `safe()`; el contenido primero y la animación después; la robustez gana al espectáculo.
+**Calidad web** (detalle en `diseno/reference/04-critical-gotchas.md`): scripts clásicos `defer` + IIFE; `.htaccess` y `?v=`; scroll nativo por defecto; contenido escrito en el HTML; cada `init` dentro de `safe()`; el contenido primero y la animación después; la robustez gana al espectáculo.
 
 **Honestidad.** No inventes proyectos, clientes, premios, cifras ni reseñas de una persona o negocio reales. Si no lo dieron, no va en la página; lo provisional se marca como provisional. Las claves (Gemini, OpenAI, etc.) no se pegan en el chat ni se guardan en el repositorio: van en el archivo de configuración del servidor, como indica cada modo.
 
@@ -59,6 +59,7 @@ Los textos de cada modo conservan los nombres originales de sus referencias (`04
 
 ```
 SKILL.md                      ← este enrutador
+diseno/                       ← lo visual (antes kiwa-web-ui): DISENO.md, reference/, scripts/, templates/
 MAPA-DE-ARCHIVOS.md           ← nombre de archivo → ruta
 recommended-settings.json
 comun/                        ← conectar y publicar en Hostinger, diagnóstico
