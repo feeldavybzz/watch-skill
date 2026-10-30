@@ -108,3 +108,6 @@ Los fotogramas son muestras. No se promete inspección de cada fotograma ni tran
 Base: paquetes `mukiwa-learn.skill` y `mukiwa-grab.skill` proporcionados por Bryan el 10 de octubre de 2026 (hoy fusionados en `kiwa-watch-learn`). La arquitectura de fotogramas + transcripción, el selector de detalle, el descarte de capturas casi idénticas y las capturas en tiempos exactos toman como referencia [Watch](https://github.com/bradautomates/claude-video) (MIT). `skills/kiwa-watch-learn/scripts/gemini.py` es una adaptación de su `gemini.py`: Copyright (c) 2026 Bradley Bonanno, licencia MIT (permite usar, copiar y modificar conservando este aviso). El resto es código propio.
 
 Conservar las lecciones al actualizar. No subir cookies, claves ni medios privados. `_descargas`, `work` y binarios descargados quedan fuera de Git.
+
+## Copias en la nube (Drive e iCloud)
+`python3 tools/sync_drive.py` (cada lunes lo corre la tarea programada del Mac) deja los `.skill` en la carpeta «MUKIWA · Skills de Claude» de Google Drive y de iCloud Drive, separados en **Creadas por mí** y **Descargadas de otros**. Las descargadas se declaran en `tools/skills-de-otros.txt`; lo que lo retira de la lista pasa a `_retiradas/`, nunca se borra.

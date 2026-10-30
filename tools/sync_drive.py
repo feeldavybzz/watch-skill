@@ -59,47 +59,84 @@ def zip_skill_dir(src, dst):
             z.writestr(info, p.read_bytes())
 
 
+CREADAS, AJENAS = "Creadas por mí", "Descargadas de otros"
+
+
+def default_icloud():
+    base = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs"
+    return base / FOLDER if base.exists() else None
+
+
+def ajenas():
+    f = ROOT / "tools" / "skills-de-otros.txt"
+    if not f.exists(): return set()
+    return {l.strip() for l in f.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")}
+
+
+def sync_dest(dest, groups, text):
+    """Copia a dest/<grupo>/ solo lo que cambió; lo que ya no existe va a _retiradas/ (no se borra)."""
+    dest.mkdir(parents=True, exist_ok=True)
+    changed, retired = [], []
+    for folder, files in groups.items():
+        sub = dest / folder; sub.mkdir(exist_ok=True)
+        for src in files:
+            dst = sub / src.name
+            if not dst.exists() or dst.read_bytes() != src.read_bytes():
+                shutil.copyfile(src, dst); changed.append(f"{folder}/{src.name}")
+        names = {f.name for f in files}
+        for old in sorted(sub.glob("*.skill")):
+            if old.name not in names:
+                (dest / "_retiradas").mkdir(exist_ok=True)
+                shutil.move(str(old), str(dest / "_retiradas" / old.name)); retired.append(old.name)
+    for old in sorted(dest.glob("*.skill")):      # archivos sueltos de la versión anterior (sin subcarpetas)
+        (dest / "_retiradas").mkdir(exist_ok=True)
+        shutil.move(str(old), str(dest / "_retiradas" / old.name)); retired.append(old.name)
+    readme = dest / "LEEME.md"
+    if not readme.exists() or readme.read_text(encoding="utf-8") != text: readme.write_text(text, encoding="utf-8")
+    return changed, retired
+
+
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--dest"); ap.add_argument("--no-git", action="store_true")
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--dest", help="carpeta de Google Drive (por defecto la detecta)")
+    ap.add_argument("--icloud", nargs="?", const="auto", help="carpeta de iCloud Drive (sin valor: la detecta)")
+    ap.add_argument("--no-git", action="store_true")
     a = ap.parse_args()
-    dest = Path(a.dest) if a.dest else default_dest()
-    if not dest or not dest.parent.exists():
-        log("ERROR: no encuentro la carpeta de Google Drive. ¿Está abierta la app Google Drive para escritorio?"); return 2
-    dest.mkdir(exist_ok=True)
+    dests = []
+    gd = Path(a.dest) if a.dest else default_dest()
+    if gd and gd.parent.exists(): dests.append(("Google Drive", gd))
+    else: log("AVISO: no encuentro la carpeta de Google Drive (¿está abierta la app Google Drive para escritorio?).")
+    ic = default_icloud() if a.icloud == "auto" or (a.icloud is None and not a.dest) else (Path(a.icloud) if a.icloud else None)
+    if ic and ic.parent.exists(): dests.append(("iCloud Drive", ic))
+    elif a.icloud: log("AVISO: no encuentro iCloud Drive.")
+    if not dests:
+        log("ERROR: no hay ninguna carpeta de destino."); return 2
     if not a.no_git: update_repo()
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         r = subprocess.run([sys.executable, "-I", str(ROOT / "tools/build_skills.py"), "--out", str(tmp), "--allow-dirty"],
                            capture_output=True, text=True)
         if r.returncode: log("ERROR al empaquetar: " + (r.stderr or r.stdout).strip()[-400:]); return 1
-        own = []
+        otras = ajenas(); own = []
         for d in sorted(USER_SKILLS.iterdir()) if USER_SKILLS.exists() else []:
             if d.is_dir() and not d.is_symlink() and (d / "SKILL.md").exists():
                 zip_skill_dir(d, tmp / f"{d.name}.skill"); own.append(d.name)
-        new = sorted(p.name for p in tmp.glob("*.skill"))
-        changed = []
-        for name in new:
-            src, dst = tmp / name, dest / name
-            if not dst.exists() or dst.read_bytes() != src.read_bytes():
-                shutil.copyfile(src, dst); changed.append(name)
-        retired = []
-        for old in sorted(dest.glob("*.skill")):
-            if old.name not in new:
-                (dest / "_retiradas").mkdir(exist_ok=True)
-                shutil.move(str(old), str(dest / "_retiradas" / old.name)); retired.append(old.name)
-    profes = (ROOT / "profes" / "INDEX.md").read_text(encoding="utf-8") if (ROOT / "profes" / "INDEX.md").exists() else ""
-    lines = [f"# Skills de Claude · MUKIWA", "", f"Actualizado: {datetime.date.today().isoformat()} (cada lunes, automático).", "",
-             "## Archivos", ""] + [f"- `{n}`" + (" — skill propia" if n[:-6] in own else "") for n in new] + [
-             "", "## Cómo instalarlas", "",
-             "- **claude.ai (app de Claude):** Configuración → Capacidades → Skills → Subir el `.skill`.",
-             "- **Claude Code:** descomprimir el `.skill` dentro de `~/.claude/skills/`.", "",
-             "Los profesores (`kiwa-<nicho>`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
-    if profes: lines += ["## Estado de los profesores", ""] + profes.splitlines()[2:]
-    text = "\n".join(lines) + "\n"
-    readme = dest / "LEEME.md"
-    if not readme.exists() or readme.read_text(encoding="utf-8") != text: readme.write_text(text, encoding="utf-8")
-    log(f"OK {len(new)} skills en {dest} · cambiadas: {', '.join(changed) or 'ninguna'}"
-        + (f" · retiradas: {', '.join(retired)}" if retired else ""))
+        allf = sorted(tmp.glob("*.skill"))
+        groups = {CREADAS: [f for f in allf if f.stem not in otras], AJENAS: [f for f in allf if f.stem in otras]}
+        profes = (ROOT / "profes" / "INDEX.md").read_text(encoding="utf-8") if (ROOT / "profes" / "INDEX.md").exists() else ""
+        lines = ["# Skills de Claude · MUKIWA", "", f"Actualizado: {datetime.date.today().isoformat()} (cada lunes, automático).", ""]
+        for folder, files in groups.items():
+            lines += [f"## {folder}", ""] + [f"- `{f.name}`" for f in files] + [""]
+        lines += ["## Cómo instalarlas", "",
+                  "- **claude.ai (app de Claude):** Configuración → Capacidades → Skills → Subir el `.skill`.",
+                  "- **Claude Code:** descomprimir el `.skill` dentro de `~/.claude/skills/`.", "",
+                  "Los profesores (`kiwa-<nicho>`) crecen con cada video que se analiza con kiwa-watch-learn.", ""]
+        if profes: lines += ["## Estado de los profesores", ""] + profes.splitlines()[2:]
+        text = "\n".join(lines) + "\n"
+        for nombre, dest in dests:
+            changed, retired = sync_dest(dest, groups, text)
+            log(f"OK {nombre}: {len(allf)} skills en {dest} · cambiadas: {', '.join(changed) or 'ninguna'}"
+                + (f" · retiradas: {', '.join(retired)}" if retired else ""))
     return 0
 
 
