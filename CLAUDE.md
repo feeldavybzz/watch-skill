@@ -12,7 +12,7 @@ Disco externo (exFAT): macOS crea archivos ocultos "._nombre" junto a cada archi
 
 Para ver un video en un paso: python3 skills/kiwa-watch-learn/scripts/watch.py "LINK-O-ARCHIVO" --question "..." (detalle en skills/kiwa-watch-learn/SKILL.md). Gemini solo con --engine gemini y si Bryan lo pide.
 
-Oídos (texto del audio) fuera del Mac: python3 skills/kiwa-watch-learn/scripts/oir.py "LINK-O-ARCHIVO" --out work/oidos [--whisper] [--budget 100]. Escalera y fallos en skills/kiwa-watch-learn/references/oidos.md. Sin transcript = «voz no verificada», nunca «sin voz».
+Oídos (texto del audio) fuera del Mac: python3 skills/kiwa-watch-learn/scripts/oir.py "LINK-O-ARCHIVO" --out work/oidos [--whisper] [--budget 100]. Escalera y fallos en skills/kiwa-watch-learn/references/oidos.md. Sin transcript = «voz no verificada», nunca «sin voz». Permiso permanente de Bryan (2026-10-30): bajar subtítulos, transcripciones y el audio necesario para transcribir (yt-dlp, Whisper, instalar yt-dlp/faster-whisper) sin preguntar; borrar mis propios archivos de trabajo. NO incluye cookies de sitios fuera de permisos.json, contraseñas ni inicios de sesión.
 
 Después de cada lección: clasificar en nichos y alimentar los Kiwas de kiwas/ (skills/kiwa-watch-learn/references/kiwas.md). No borrar ni reescribir Kiwas enteros: fusionar.
 

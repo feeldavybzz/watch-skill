@@ -8,6 +8,8 @@ python3 scripts/oir.py FUENTE --out work/oidos [--lang es] [--whisper] [--budget
 
 `FUENTE` = link, video/audio local o un transcript (.srt .vtt .json3 .txt .md). Deja `transcript.md` + `oidos.json` (qué peldaño, cuántas palabras, qué falló y por qué, confianza). Códigos de salida: `0` listo · `3` parcial (repetir el MISMO comando) · `2` sin oídos.
 
+**Permiso de Bryan (2026-10-30):** descargar subtítulos, transcripciones y el audio necesario para transcribir no requiere preguntar. Sigue fuera: cookies de sitios que no estén en `permisos.json`, contraseñas e inicios de sesión.
+
 ## La escalera
 
 | # | Peldaño | Quién lo hace | Cuándo |
