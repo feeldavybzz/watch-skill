@@ -4,8 +4,8 @@ description: "Kiwa de motion graphics: tipografía cinética en After Effects, e
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects, Blender, Remotion, HyperFrames, código HTML"
-  lecciones: 9
-  actualizado: "2026-10-28"
+  lecciones: 15
+  actualizado: "2026-10-30"
 ---
 
 # Kiwa · Motion graphics
@@ -88,15 +88,27 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - **Lista de prohibidos** [14]: fundidos cruzados, entradas borrosas, destellos blancos, volteos 3D, partículas, glows en el texto de UI, neón, cámara temblorosa, easing rebotón, degradados en la UI, glassmorphism en todo, clichés de IA (cerebros, robots, destellos), texto en las esquinas, retenciones de más de 1 s.
 - **Plugins y skills de terceros que aparecen** [12] (solo referencia, no instalar sin permiso de Bryan): Remotion (`remotion-dev/skills`), HyperFrames (`heygen-com/hyperframes`), GSAP (`greensock/gsap-skills`), Lottie (`LottieFiles/motion-design-skill`), componentes de 21st.dev.
 
+### Cámara 3D de After Effects: crear, mover y enfocar [15]
+- **Crear**: Layer → New → Camera, el botón de capa nueva o **Ctrl+Alt+Shift+C**. Tipo **Two-Node** (orbita alrededor de un punto de interés) o **One-Node** (orienta sobre sí misma). Preset 50 mm de partida (Film Size 36 mm, ángulo 39.6°); lista de presets: 15, 20, 24, 28, 35, 50, 80, 135 y 200 mm. **Marca Enable Depth of Field** antes de aceptar; todo se puede editar después en Camera Options [15].
+- **Qué hace la focal** (dicho por el autor): corta (15 mm) = ángulo muy amplio; larga (200 mm) = ángulo estrecho, sujeto más grande y más desenfoque [15].
+- **Mover**: herramientas **Orbit**, **Pan** y **Dolly**. Dolly ≠ zoom: dolly desplaza la cámara hacia el sujeto; zoom cambia la lente con la cámara quieta. Para movimientos repetibles, keyframea **Position / Point of Interest / Orientation / Rotation (X, Y, Z)** en Transform; en el ejemplo, cronómetro en Position, dolly hacia el centro del logo, dolly de salida más adelante, **Easy Ease**, y **Z Rotation** para sumar giro [15].
+- **Valores base vistos** (comp de 1920 px, 50 mm): Point of Interest 960, 540, 0; Position 960, 540, **−2666.7**; Orientation 0, 0, 0; Zoom 2666.7 px (39.6° H) [15]. La relación es ≈ focal × ancho de comp ÷ 36 mm (cálculo mío que coincide con lo visto).
+- **Profundidad de campo**: Focus Distance (qué distancia queda nítida), Aperture (más abertura, más desenfoque; visto 25.3 px con Focus Distance 2666.7 px), Blur Level 100 % = natural. **Iris Shape = Fast Rectangle** (renderiza más rápido; otras formas: Triangle a Decagon); Highlight Gain 0, Threshold 255, Saturation 0 por defecto [15].
+- **Foco automático**: Layer → Camera → **Link Focus Distance to Layer** (elegida por el autor): el foco se queda en la capa (por ejemplo el logo) mientras la cámara hace dolly. También: Link to Point of Interest y Set Focus Distance to Layer (esta última no se probó) [15].
+- Vistas: Active Camera para ver lo que ve la cámara; vistas Top/Front/Right/Left para ver dónde está; en AE 2023 el menú de vistas, en versiones anteriores un icono de cámara [15].
+
 ## Por herramienta
 ### After Effects
 - Atajos: **R** rotación, **P** posición, **S** escala, **U** ver keyframes, **F9** easy ease [1].
 - Emparentar a un null con **Pick Whip** [1].
+- Cámara 3D: Ctrl+Alt+Shift+C; las capas deben ser 3D para reaccionar a la cámara (≈, no se vio el interruptor) [15].
 
 ### Blender
 - Dibujo 2D cuadro a cuadro con capas, piel de cebolla y barra de pinceles, línea de tiempo con un keyframe por cuadro, y vista 3D con cámara vertical 9:16 [3]. Nombres de menús y valores: no vistos; el creador no los dice.
 
 ## Errores comunes
+- Crear la cámara 3D sin marcar **Enable Depth of Field** y luego no ver desenfoque: viene desmarcado por defecto, actívalo en el diálogo o en Camera Options [15].
+- Confundir zoom con dolly: el zoom no cambia la perspectiva; el dolly sí [15].
 - Una capa por palabra → proyecto pesado y difícil de reeditar [1].
 - Animar sin saber el cuadro final → los elementos no encajan al terminar [1].
 - Keyframes lineales → movimiento robótico [1].
@@ -114,6 +126,7 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [ ] Cada cambio de bloque tiene propósito y ritmo acorde al tono [4].
 - **Motion en código**: ¿el último fotograma es igual al primero (loop)? ¿Revisé un fotograma por beat y los pops de un fotograma? ¿Cada SFX cae en su pico? ¿Masterizado a −14 LUFS? ¿Cero prohibidos de la lista [14]?
 ## Para MUKIWA
+- Logo MUKIWA / el «I» con ojo: dolly lento sobre capas 3D con foco enlazado al logo (Link Focus Distance to Layer) y Aperture moderada [15] (≈, idea mía).
 - Color de foco lima #C5ED2E sobre blanco y #232323; azul #0068FB como segunda ola [1].
 - Frases de marca ("FEEL DA VYBZ" / "VIBES NEVER LIE.") como bloques: uno a 90° y otro horizontal, formando un solo bloque [1].
 - Mascota o personaje retro animado: método de [3], a 9:16 nativo.
@@ -130,6 +143,8 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [12][13][14] Todo viene de prompts de terceros: no se midieron los springs (constantes), duraciones ni easings en los videos, y no se ejecutó ninguna receta aquí; 11 de 265 videos vistos con fotogramas, el resto por texto.
 - [13] Falta una lección con código real (un `seek(t)` probado en un video de MUKIWA) para validar el método.
 
+- [15] Tutorial de principiante con un solo ejemplo animado (logo sobre anillos); subtítulos automáticos sin Whisper. No muestra atajos de las herramientas de cámara, animar Focus Distance/Aperture con keyframes, Create Orbit Null ni Stereo 3D Rig, ni el render final; el efecto de Highlight no se cambia.
+
 ## Fuentes
 - [1] Tipografía cinética en After Effects: 3 técnicas con una sola capa — https://www.youtube.com/watch?v=f3nb-MQyshQ · `references/lecciones/tipografia-cinetica-after-effects-3-tecnicas.md`
 - [2] Reel de 24 s con 8 recursos de composición dibujados sobre fotos — archivo local · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
@@ -145,3 +160,4 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [12] Prompt Motion: catálogo de 265 motions hechos con Claude (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/prompt-motion-catalogo-265-motions-hechos-con-claude.md`
 - [13] Motion en código: render determinista con seek(t), springs y motion blur (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/motion-en-codigo-render-determinista-seek-springs-y-motion-blur.md`
 - [14] Lanzamiento de producto en código: dirección, beats y prohibidos (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/lanzamiento-producto-en-codigo-direccion-beats-prohibidos.md`
+- [15] Cámara 3D de After Effects: crear, controlar, profundidad de campo y mover con keyframes — https://youtu.be/qO3_WBYCe-E · `references/lecciones/camara-3d-after-effects-controles-peter-kasilo.md`

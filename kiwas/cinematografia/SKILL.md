@@ -4,8 +4,8 @@ description: "Kiwa de cinematografía: ángulos, movimientos, soportes, frame ra
 metadata:
   nicho: cinematografia
   herramientas: "Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control"
-  lecciones: 7
-  actualizado: "2026-10-28"
+  lecciones: 12
+  actualizado: "2026-10-30"
 ---
 
 # Kiwa · Cinematografía
@@ -152,6 +152,7 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - **Espacio**: cuanto más grande el sujeto en el cuadro, más importancia; los planos **extremadamente amplios aíslan y hacen vulnerable**, los **primeros planos extremos empoderan**. **Headroom** mínimo y **lookroom** (espacio frente al sujeto) mucho mayor que el de detrás; romperlo también funciona [10].
 - **Profundidad**: primer plano, plano medio y fondo dan capas; **foco corto** aísla al sujeto y cambiar el foco dirige la atención; **foco profundo** permite varias capas de atención [10].
 - El video no da lentes, distancias ni valores de foco: es criterio, no ejecución [10].
+- **Equivalentes en una cámara virtual (After Effects)** [12]: la focal define el ángulo (15 mm muy amplio ↔ 200 mm estrecho, con sujeto más grande y más desenfoque); **dolly ≠ zoom** (el dolly mueve la cámara, el zoom cambia la lente); la profundidad de campo se controla con Focus Distance y Aperture; una abertura mayor desenfoca más y, en una cámara real, un f-stop bajo da fondo más borroso. Valores vistos con 50 mm: ángulo 39.6°, f/5.6. Detalle de uso en el Kiwa de motion graphics.
 
 ### Tomas largas «sin costuras» [9]
 - Para que varias tomas parezcan **un solo plano** se usa el *stitching* (unir dos tomas para que parezcan continuas); en *1917* se combinó un avión CGI en el cielo, un avión real lanzado desde una rampa de ≈20 pies y una toma aparte compuesta con los actores [9].
@@ -222,6 +223,8 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - [7][8][9][10] Las cuatro lecciones complementarias no son de cámara: dan criterio (corte, blocking, stitching, espacio), sin cifras ni ajustes de cámara.
 - [11] El autor presenta 25 fps como «norma del cine»; el estándar de cine es 24 (25 es el de TV europea): confirmar. No habla del obturador (regla de 180° del obturador).
 
+- [12] Cámara virtual de AE explicada por un creador: las equivalencias con cámaras reales son nociones de principiante (p. ej. «50 mm ≈ ojo humano» es afirmación suya); sin tabla de focales ni de f-stops.
+
 ## Fuentes
 - [1] Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6) — https://youtu.be/IiyBo-qLDeM · guía escrita https://www.studiobinder.com/blog/different-types-of-camera-movements-in-film/ · `references/lecciones/movimientos-de-camara-15-studiobinder.md`
 - [2] Los 9 ángulos o alturas de cámara y lo que comunica cada uno (StudioBinder, Shot List ep. 3) — https://youtu.be/wLfZL9PZI9k · guía escrita https://www.studiobinder.com/blog/types-of-camera-shot-angles-in-film/ · `references/lecciones/nueve-angulos-de-camara-studiobinder.md`
@@ -234,3 +237,4 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - [10] Los 9 elementos de la composición en cine (StudioBinder, Shot List ep. 11): secciones «espacio» y «profundidad» — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [6] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`
 - [11] Frame rate: 25 para look cine, 30 para redes y 50+ para cámara lenta (@chrlypn) — reel de Instagram, archivo local · `references/lecciones/fps-cine-redes-slow-motion-chrlypn.md`
+- [12] Cámara 3D de After Effects: crear, controlar, profundidad de campo y mover con keyframes — https://youtu.be/qO3_WBYCe-E · `references/lecciones/camara-3d-after-effects-controles-peter-kasilo.md`
