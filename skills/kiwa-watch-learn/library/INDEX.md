@@ -13,6 +13,7 @@
 
 ## color-grading
 
+- [Color en DaVinci: un sistema ordenado de nodos, scopes, máscaras y matching (AlwaysJoan)](color-grading/color-en-davinci-sistema-de-nodos-scopes-mascaras-y-matching-alwaysjoan.md) — Método completo para colorizar cualquier plano en Resolve: ajustes de proyecto, CST, 4 nodos con orden fijo (exposición, balance, contraste, saturación HSV), LUT suave, Power Windows en nodo paralelo y matching de planos con PowerGrades.
 - [S-Log3: cómo rodarlo y gradearlo bien (Gaku Lange)](color-grading/s-log3-rodaje-y-grade-en-resolve-gaku-lange.md) — 
 
 ## composicion

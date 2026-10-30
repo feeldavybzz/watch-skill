@@ -4,8 +4,8 @@ description: "Kiwa de iluminación de cine y video: tipos de luz, kelvin, clave 
 metadata:
   nicho: iluminacion
   herramientas: "Tungsteno, HMI, LED, Kino Flo, Fotómetro"
-  lecciones: 1
-  actualizado: "2026-10-11"
+  lecciones: 6
+  actualizado: "2026-10-30"
 ---
 
 # Kiwa · Iluminación de cine y video
@@ -59,6 +59,7 @@ Para el encuadre combínalo con `kiwa-composicion-visual`; para el movimiento y 
 - La **textura** (de fotografía, de diseño de producción y hasta la luz) hace destacar al sujeto del fondo o fundirlo con él [2]; qué tipo de luz marca o borra la textura no lo dice el video (≈ la luz rasante la marca y la plana la borra, sin comprobar).
 - Ejemplo analizado en pantalla: un pasillo oscuro de *Skyfall* con siluetas y luz contra oscuridad, donde luz, formas y ángulo trabajan juntos [2].
 - Una línea de luz/sombra puede ser la composición: una tienda dividida entre una zona en sombra y otra con sol y gente enseña la **yuxtaposición**, donde la línea marca el contraste [5].
+- **Dirigir la luz en postproducción** (lo que se hace en Resolve cuando la luz del rodaje fue pareja): identifica la **key light** (en el ejemplo, el sol desde la izquierda), sube un poco ese lado y baja el opuesto con **rampas lineales** en nodos paralelos, «no muy heavy»; una viñeta (círculo invertido) lleva la atención al sujeto. Da direccionalidad: «un plano que es día y noche». Detalle y orden de nodos en `kiwa-color-grading` [6].
 - El **color también puede mandar sobre la luz**: un vestido verde contra un fondo rojo hace al sujeto indudable aunque la luz sea pareja [2]; elige un esquema (monocromático, análogo, complementario, triádico) al elegir geles y fondos [2].
 
 ### Luz en video de IA (locaciones y prompts)
@@ -143,3 +144,4 @@ Para el encuadre combínalo con `kiwa-composicion-visual`; para el movimiento y 
 - [3] Dirigir un anuncio de 30 s con video de IA (Higgsfield, Seedance): sección «locaciones» — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
 - [4] CGI vs VFX vs SFX (StudioBinder, con Ian Failes) — https://youtu.be/Pok6EN3cfA4 · `references/lecciones/cgi-vfx-sfx-diferencias-y-1917.md`
 - [5] Reel de 24 s: 8 recursos de composición sobre fotos (@jxframes), recurso «yuxtaposición» — archivo local · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
+- [6] Color en DaVinci: un sistema ordenado de nodos, scopes, máscaras y matching (AlwaysJoan), solo la regla de «máscaras con la key light» — https://youtu.be/3yQrX93_K04 · `references/lecciones/color-en-davinci-sistema-de-nodos-scopes-mascaras-y-matching-alwaysjoan.md`
