@@ -59,7 +59,8 @@ def zip_skill_dir(src, dst):
             z.writestr(info, p.read_bytes())
 
 
-CREADAS, AJENAS = "Creadas por mí", "Descargadas de otros"
+CREADAS, AJENAS = "Skills by Mukiwa", "Global Skills"
+GLOBAL_SRC = ROOT.parent / "Global Skills"   # .skill descargados de otros o que Claude trae por defecto (junto a watch-skill)
 
 
 def default_icloud():
@@ -121,8 +122,14 @@ def main():
         for d in sorted(USER_SKILLS.iterdir()) if USER_SKILLS.exists() else []:
             if d.is_dir() and not d.is_symlink() and (d / "SKILL.md").exists():
                 zip_skill_dir(d, tmp / f"{d.name}.skill"); own.append(d.name)
+        glob_src = {f.stem: f for f in sorted(GLOBAL_SRC.glob("*.skill")) if not f.name.startswith(".")} if GLOBAL_SRC.exists() else {}
+        otras |= set(glob_src)
         allf = sorted(tmp.glob("*.skill"))
-        groups = {CREADAS: [f for f in allf if f.stem not in otras], AJENAS: [f for f in allf if f.stem in otras]}
+        propias = [f for f in allf if f.stem not in otras]
+        ajenas_f = {f.stem: f for f in allf if f.stem in otras}
+        for k, f in glob_src.items(): ajenas_f.setdefault(k, f)        # lo de ~/.claude/skills manda; si falta, el .skill ya hecho
+        groups = {CREADAS: propias, AJENAS: [ajenas_f[k] for k in sorted(ajenas_f)]}
+        allf = propias + groups[AJENAS]
         profes = (ROOT / "profes" / "INDEX.md").read_text(encoding="utf-8") if (ROOT / "profes" / "INDEX.md").exists() else ""
         lines = ["# Skills de Claude · MUKIWA", "", f"Actualizado: {datetime.date.today().isoformat()} (cada lunes, automático).", ""]
         for folder, files in groups.items():

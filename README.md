@@ -110,4 +110,4 @@ Base: paquetes `mukiwa-learn.skill` y `mukiwa-grab.skill` proporcionados por Bry
 Conservar las lecciones al actualizar. No subir cookies, claves ni medios privados. `_descargas`, `work` y binarios descargados quedan fuera de Git.
 
 ## Copias en la nube (Drive e iCloud)
-`python3 tools/sync_drive.py` (cada lunes lo corre la tarea programada del Mac) deja los `.skill` en la carpeta «MUKIWA · Skills de Claude» de Google Drive y de iCloud Drive, separados en **Creadas por mí** y **Descargadas de otros**. Las descargadas se declaran en `tools/skills-de-otros.txt`; lo que lo retira de la lista pasa a `_retiradas/`, nunca se borra.
+`python3 tools/sync_drive.py` (cada lunes lo corre la tarea programada del Mac) deja los `.skill` en la carpeta «MUKIWA · Skills de Claude» de Google Drive y de iCloud Drive, separados en **Skills by Mukiwa** (hechas por Bryan) y **Global Skills** (descargadas de otros o que Claude trae por defecto). Las de otros se declaran en `tools/skills-de-otros.txt` y los `.skill` ya hechos viven en `Global Skills/` junto a este repo; lo que lo retira de la lista pasa a `_retiradas/`, nunca se borra.
