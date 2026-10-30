@@ -4,12 +4,12 @@ description: "Kiwa de negocio creativo: nicho, oferta en una frase, proceso con 
 metadata:
   nicho: negocio-creativo
   herramientas: "LinkedIn, Notion, Loom"
-  lecciones: 4
-  actualizado: "2026-10-28"
+  lecciones: 9
+  actualizado: "2026-10-30"
 ---
 
 # Kiwa · Negocio creativo
-> Vender servicios creativos en pequeño: nicho, oferta en una frase, proceso en una lámina, tres niveles de precio, contenido que da confianza y llamada de venta sin presión. Una lección propia [1] y cuatro de diseño que sirven al negocio ([2] portfolio, [3] mapa antes de Figma, [4] briefing y moodboard, [5] estrategia de marca); las cifras de ingresos de [1] no están verificadas.
+> Vender servicios creativos en pequeño: nicho, oferta en una frase, proceso en una lámina, tres niveles de precio, contenido que da confianza y llamada de venta sin presión. Una lección propia [1], cuatro de diseño que sirven al negocio ([2] portfolio, [3] mapa antes de Figma, [4] briefing y moodboard, [5] estrategia de marca) y [9] marca personal; las cifras de ingresos de [1] no están verificadas.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -61,6 +61,15 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - **Valida con el cliente 3–5 palabras clave** y luego un **moodboard** que el cliente aprueba **antes de bocetar** [4]; anota por qué va cada imagen para justificar ante el cliente [4].
 - Encaja con las etapas de Estrategia y Percepción de [1]; las dos fuentes difieren en el método (ver Dudas abiertas).
 
+### Marca personal: concepto → forma → percepción (en ese orden) [9]
+- **Concepto** (identidad de marca): contesta por escrito siete preguntas: historia, por qué existe, verdad central (idea que defiendes en público), creencias contrarias, valores, personalidad (¿autoridad o amigo un paso adelante?) y **debilidades** (errores reales; son lo que hace conectar) [9].
+- **Ingeniería inversa**: resultado como objetivo SMART → por qué tendrías que ser conocido por eso → qué haces para ser conocido por eso (acciones) → qué haces **hoy**. Si no puedes alinear lo que publicas con el resultado, es contenido al azar [9].
+- **Outliers**: talentos, idiomas, hobbies, creencias y gustos; elige una creencia contraria y define al enemigo común. El **vehículo** (oferta) se deja para después [9].
+- **Forma**: tres capas: referentes de contenido (5, con qué te gusta / qué copiarías / cómo lo aplicas; incluye uno **fuera de tu nicho** y los referentes de tus referentes), voz y tono con 3–4 asociaciones de marca, y moodboard visual. Después, un documento de esencia visual para quien edite [9].
+- **Percepción**: se influye, no se controla. Directa: calidad de audio y video, ropa, voz y tono, muletillas (una cámara o micrófono malos hacen pensar que el producto de pago también lo es). Indirecta: lo que se infiere al ver el perfil en el tiempo (p. ej. dar una conferencia). Primeros 5 s = nota mental inicial; el contenido posterior la mueve por décimas [9].
+- **Cuándo conviene**: sueños grandes, mensaje que quieres que trascienda, ganas de escalar, mercado saturado. No es obligatorio: «no eres un producto» [9]. No se trata de fingir, sino de amplificar con intención lo que ya eres [9].
+- Cifras de casos del autor (1.000 horas, 300 euros, millón de seguidores) sin verificar [9].
+
 ### Estrategia de marca para presentar al cliente [5]
 - Orden: propuesta única de valor y posicionamiento → público objetivo → voz y personalidad → traducción a logo, tipografía, color, imagen y elementos gráficos [5].
 - Las tarjetas de estrategia (3 columnas: edad, necesidades, comportamientos) son un formato rápido para presentar al cliente [5]. Es nivel introductorio y el creador vende su curso [5].
@@ -93,6 +102,8 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - Estar a medias en todas las plataformas [1].
 - Portfolio con trabajo alterado por el cliente o sin contexto/brief → no vende [2].
 - Abrir el programa sin brief ni moodboard aprobado → más rondas de feedback [3][4].
+- Copiar la identidad visual de otro sin tener concepto: es pura estética y no posiciona [9].
+- Repetir la misma foto o pose en el mismo lugar en carruseles seguidos: denota descuido [9].
 
 ## Checklist antes de entregar
 - [ ] Oferta en una frase: yo + ellos + cómo.
@@ -101,10 +112,12 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - [ ] Kit de entrega completo y recorrido grabado.
 - [ ] Portfolio con 3–5 proyectos del tipo de trabajo deseado, con brief y proceso [2].
 - [ ] Brief y moodboard aprobados antes de diseñar [3][4].
+- [ ] Concepto escrito (7 preguntas) antes de la forma; auditoría de percepción de 5 segundos [9].
 
 ## Para MUKIWA
 - Los plugins de MUKIWA son el nivel «hazlo tú» (compra directa); los servicios a medida, el «hecho para ti».
 - Creative Direction / Graphic Design: usar la lista de Estrategia y de Entrega como control en identidades.
+- Marca MUKIWA [9]: la declaración de marca es la «verdad central»; falta fijar por escrito las creencias contrarias y el enemigo común, y hacer una auditoría de 5 segundos de la web y el Instagram. Referentes fuera del nicho (moda, música, arquitectura).
 - Portfolio feeldavybz: menos proyectos y mejores, cada uno con brief + proceso + aplicaciones [2]. Plantilla de briefing con pregunta extra «qué le da miedo parecer / qué no debe sentirse» (idea de la lección [4], aplicada a MUKIWA).
 
 ## Dudas abiertas
@@ -115,6 +128,8 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - [7] Faltan 2 de los 8 documentos (no se ven en los frames).
 - [8] Solo se ve el uso del repositorio; no se leyó el código ni se probó. Que cada asesor «recrea el cerebro» de una persona real no es verificable.
 
+- [9] Es un método de marca personal de un creador de contenido (vende llamadas 1 a 1); su prompt de Claude, el documento de esencia visual y el video de los 4 círculos no se vieron. Subtítulos automáticos sin cotejo con Whisper; en «ropa» el audio dice Armani y el tablero Old Money (gana la pantalla).
+
 ## Fuentes
 - [1] Estudio de marca independiente: cinco cosas (mentalidad, nicho, contenido, oferta, venta) y el proceso SPARK de cinco etapas con su entrega — https://youtu.be/L0CtLi-c_DU · `references/lecciones/estudio-de-marca-cinco-cosas-y-proceso-spark-pete-brennan.md`
 - [2] Portfolio de diseño: qué mostrar y cómo presentarlo — https://youtu.be/AKNNaLZhIAI · `references/lecciones/portfolio-de-diseno-profesional.md`
@@ -124,3 +139,4 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - [6] Qué poner en el presupuesto de un filmmaker: anticipo, plazo de pago, correcciones (@jaleoproducciones) — reel de Instagram, archivo local · `references/lecciones/clausulas-presupuesto-filmmaker-jaleoproducciones.md`
 - [7] Los documentos de preproducción de un rodaje, vistos 6 de 8 (@artesaudiovisuales.unab) — reel de Instagram, archivo local · `references/lecciones/8-documentos-preproduccion-rodaje-artesaudiovisuales-unab.md`
 - [8] Sala de consejo con 7 asesores IA hecha en Claude (@tony.ia_) — reel de Instagram, archivo local · `references/lecciones/sala-de-consejo-ia-7-asesores-claude-tonyia.md`
+- [9] Marca personal premium: concepto, forma y percepción (en ese orden) — https://youtu.be/-R4VeoyHR1E · `references/lecciones/marca-personal-premium-concepto-forma-percepcion-arles.md`

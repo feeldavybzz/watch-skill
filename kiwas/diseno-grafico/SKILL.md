@@ -4,8 +4,8 @@ description: "Kiwa de diseño gráfico completo: briefing, identidad, tipografí
 metadata:
   nicho: diseno-grafico
   herramientas: "Illustrator, Photoshop, Figma, Procreate"
-  lecciones: 12
-  actualizado: "2026-10-28"
+  lecciones: 20
+  actualizado: "2026-10-30"
 ---
 
 # Kiwa · Diseño gráfico
@@ -38,6 +38,9 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - **Para sitios web y interfaces**, el brief es **el mapa de cinco preguntas** (15–20 min, antes de Figma): 1) ¿qué tiene que lograr el sitio entero? (una sola cosa); 2) ¿quién entra y desde dónde (dispositivo, preguntas en la cabeza)?; 3) ¿cuál es la acción de cada página?; 4) en la home, ¿qué ve primero, segundo y tercero?; 5) ¿cuál es el recorrido completo hasta esa acción? Empieza con **una frase** de qué es y qué hace el sitio [4].
 
 - **Estrategia de marca antes de lo visual (4 pasos, en orden)** [11]: 1) **UVP** (qué te hace distinto) y **declaración de posicionamiento** (cómo debe percibirte el mercado), en una o dos frases cada una; 2) **público objetivo** en tarjeta: edad y perfil, necesidades/preferencias, comportamientos (una tarjeta por grupo); 3) **voz y personalidad**: tono, lenguaje con frases de ejemplo y propósito; 4) pasar cada palabra clave a los cinco elementos visuales y justificar con una emoción. Formato de entrega rápido: tarjetas de 3 columnas, tipografía sans, esquinas redondeadas [11].
+
+- **Concepto antes que forma** [29]: separa la **identidad de marca** (concepto: historia, por qué existe, verdad central, creencias contrarias, valores, personalidad, debilidades) de la **identidad visual** (su expresión: edición, estilo, ángulos y calidad de cámara, color). Copiar solo lo visual no sirve; sin concepto es pura estética.
+- **Esencia visual en tres capas** [29]: (1) 5 referentes de contenido, con qué te gusta / qué copiarías / cómo lo aplicas, y los **referentes de tus referentes**, incluyendo al menos uno fuera del nicho; (2) voz y tono (autoridad o amigo) con 3–4 asociaciones de marca (ropa, lentes, estética, lugares); (3) moodboard de referentes visuales. De ahí sale un documento de esencia visual (tipografías, estilo) para quien edite. Cuando te pierdas, vuelve a él.
 
 ### Logos e identidad visual
 - **Identidad = cinco elementos visuales** (logo, tipografía, paleta, imagen/estilo fotográfico, elementos gráficos) más la voz y los mensajes; cada uno deriva de las mismas palabras clave de la estrategia [11].
@@ -152,6 +155,8 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - Un sonido corto de marca (como los de Intel o Netflix) para podcasts, anuncios y notificaciones añade una capa a la identidad; el creador no da método [11].
 
 ## Errores comunes
+- Copiar la identidad visual de una marca sin tener concepto propio: queda pura estética [29].
+- Repetir la misma foto o pose en el mismo lugar en varias piezas seguidas: se lee como descuido [29].
 - Abrir el software antes de tener concepto o un mapa de páginas → diseño sin fundamento y rondas extra de feedback [1][4].
 - Copiar el briefing de otro → te sobran preguntas y te faltan las importantes [1].
 - Imágenes del moodboard sin justificar [1]. Quedarte con los primeros bocetos [1].
@@ -180,6 +185,7 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - [ ] Entrega: PDF (no .ai) para el cliente; SVG para web e iconos; kit con cada versión del logo en fondo transparente [25].
 
 ## Para MUKIWA
+- Marca MUKIWA [29]: la declaración de marca es el concepto; la paleta negro + azul + lima y el glass son la forma. Cada decisión visual debe poder justificarse con el concepto; buscar referentes fuera del nicho.
 - Creative Direction: para cada cliente nuevo, brief + palabras clave validadas + moodboard aprobado **antes** de cotizar el diseño final; para web, el mapa de cinco preguntas [1][4].
 - Portadas de series de contenido: título gigante en lima #C5ED2E sobre #232323, superpuesto al sujeto [1]; verifica el contraste del lima sobre oscuro con el verificador de WebAIM antes de usarlo en texto pequeño [6].
 - Landing de plugins (ROLL AND DRAG, CLIPPER, CAPS): historia y resultado primero, precios por etapas de lanzamiento, tabla de planes y botón flotante (caso Ato) [3]; grilla de 12 columnas y diseño desde 320 [6]; botones consistentes (principal, secundario, subrayado) [8].
@@ -202,6 +208,8 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - [22] Lista narrada sobre trabajos ajenos, sin valores; lo mostrado para «táctil» es más saturado que el «sutil» que se dice.
 - [28] Reel sin voz: no se sabe si el producto es render 3D o imagen IA ni con qué se construyó la web.
 
+- [29] Método de marca personal de un creador de contenido; el documento de esencia visual que menciona no se muestra; subtítulos automáticos sin cotejo con Whisper.
+
 ## Fuentes
 - [1] Proceso de identidad visual, parte 1: investigación y concepto — https://youtu.be/A4wBq1D6lt4 · `references/lecciones/identidad-visual-pt1-investigacion-concepto.md`
 - [2] Ahorra horas en Illustrator: interfaz, herramientas clave, Pathfinder no destructivo y para qué sí o no usarlo (Eze Cichello) — https://youtu.be/WWKGy5nBft8 · `references/lecciones/ahorra-horas-illustrator-eze-cichello.md`
@@ -222,3 +230,4 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - [26] Los 9 elementos de la composición en cine (StudioBinder, Shot List ep. 11) — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [27] Composición: 9 esquemas de la hoja de arte — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
 - [28] Tienda web de zapatillas con estante 3D y página de producto (@ascenta.studio) — reel de Instagram, archivo local · `references/lecciones/tienda-web-zapatillas-3d-ascenta-studio.md`
+- [29] Marca personal premium: concepto, forma y percepción (en ese orden) — https://youtu.be/-R4VeoyHR1E · `references/lecciones/marca-personal-premium-concepto-forma-percepcion-arles.md`
