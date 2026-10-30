@@ -84,7 +84,7 @@ Motor: `yt-dlp` (video/audio/subs) + `gallery-dl` (fotos y carruseles) + `ffmpeg
 - Comando: `yt-dlp -q --no-warnings -f "bv*[height<=720]+ba/b[height<=720]" --merge-output-format mp4 -o "%(id)s.%(ext)s" URL`.
 - Cada llamada de `device_bash` dura máx. 180 s: baja 1–2 videos por llamada, en primer plano (un `nohup` en segundo plano muere al terminar la llamada).
 - Para ver los frames con Read, copia las hojas de contacto (`sheets/*.jpg`) a una carpeta conectada y usa `device_stage_files`; lo que está en `$HOME` de la VM no se puede traer.
-- **Los subtítulos con yt-dlp desde la VM dan HTTP 429** (a veces solo entra un idioma o solo la letra de una canción): NO uses eso para decidir si el video habla. Ve a Chrome + Sider (fase 2).
+- **Subtítulos con yt-dlp desde la VM**: el 2026-10-20 dieron HTTP 429 y el 2026-10-30 entraron en 5 s. Un 429 NO decide si el video habla: usa `scripts/oir.py`, que reporta la causa exacta y pasa a Whisper o Sider.
 
 Primera vez en el Mac: `bash scripts/setup.sh` (instala yt-dlp, gallery-dl, ffmpeg).
 
@@ -101,15 +101,16 @@ Reglas de descarga:
 1. **Consultar biblioteca primero**: lee `library/INDEX.md`. Si el tema ya existe, conecta lo nuevo con lo anterior en vez de duplicar.
 2. **Conseguir el video/audio**: primero buscar en `_descargas/`; si es link, fase 1; si es archivo subido, trabajar en copia (`work/`).
 3. **Probar el archivo**: `python scripts/probe.py VIDEO`.
-4. **Escalera de oídos** (primer peldaño disponible; no insistas en uno bloqueado, pero tampoco te saltes los peldaños 1 y 2):
-   1. Transcript/resumen que Bryan ya tiene (Sider, subs de YouTube, SpeakApp, .srt/.vtt/.txt/pegado) → `python scripts/ingest_transcript.py ARCHIVO --out work/transcript.md`
-   2. **Link de YouTube → Chrome + Sider, SIEMPRE antes que yt-dlp subs** (verificado 2026-10-20: Bryan tiene la extensión Sider en su Chrome; saca el transcript completo con tiempos en un video de 5 min). Pasos en "Chrome: Sider" abajo. Si Chrome no está conectado, pídele a Bryan abrir Chrome con la extensión y espera su respuesta; no lo saltes en silencio.
-   3. Transcripción nativa de YouTube (botón "Mostrar transcripción") o `yt-dlp --write-auto-subs` (suele dar 429 desde el entorno de Claude; solo si Chrome falla).
-   4. Whisper: `python scripts/transcribe.py VIDEO --out work/transcript.md`. Si imprime `NO_MODEL`/`NO_WHISPER`, **no reintentes por otras rutas**: pide transcript/audio a Bryan (o corre el script en su compu vía device_bash si hay carpeta conectada). La VM del dispositivo no trae Whisper. **En el contenedor sí funciona (probado 2026-10-28):** `pip install --user --break-system-packages --proxy "$HTTPS_PROXY" faster-whisper` (sin `--proxy` falla el DNS; el modelo `small` baja bien). `transcribe.py` ya pasa el audio como numpy. En música avisa «idioma poco seguro» (<0.8): tratar como **música, voz no verificada**, nunca como teoría.
-   5. **Solo-visual SOLO después de haber intentado 2 y de haberle pedido a Bryan el transcript.** Márcalo "no verificado: puede hablar" (Regla #2), nunca "solo música" sin evidencia.
+4. **Escalera de oídos** — un solo comando: `python3 scripts/oir.py FUENTE --out work/oidos [--lang es] [--whisper] [--budget 100]` (FUENTE = link, archivo o transcript). Prueba en orden y deja `transcript.md` + `oidos.json` con lo que se verificó y por qué falló lo que falló. Detalle, tiempos y tabla de fallos en `references/oidos.md` (leerlo si algo no sale).
+   1. Transcript/resumen que Bryan ya tiene (Sider, subs, SpeakApp, .srt/.vtt/.txt) → `oir.py` lo normaliza.
+   2. **Link de YouTube → Chrome + Sider** si Chrome está conectado (pasos en «Chrome: Sider»). Si no lo está, pídele a Bryan abrirlo UNA vez; si no responde, sigue con 3, no te quedes esperando.
+   3. **Subtítulos con yt-dlp** (los del autor y luego los automáticos): `oir.py` lo hace solo. Verificado 2026-10-30 desde la VM: 5 s para un video de 45 min. Si da 429 es un fallo de acceso, no un video mudo.
+   4. **Whisper** (`--whisper`, o automático si faltan subtítulos). En la **VM del dispositivo sí corre** (`pip install --user --break-system-packages faster-whisper`; ≈2x tiempo real con `small`): usar `--budget 100` y repetir el MISMO comando hasta «completo» (reanuda donde quedó). Si imprime `NO_MODEL`/`NO_WHISPER`, no rodees por otras rutas: pide el transcript a Bryan. En música avisa «idioma poco seguro»: estado «dudoso», voz no verificada. En el Mac de Bryan, `watch.py` hace todo esto en un paso.
+   5. **Solo-visual SOLO si `oidos.json` dice `sin-oidos`** y ya se lo pediste a Bryan. Márcalo «no verificado: puede hablar» (Regla #2).
+   Con subtítulos Y Whisper, `oidos.json → cotejo` lista los números que difieren: confírmalos en pantalla.
 5. **Ojos**: `python scripts/extract_frames.py VIDEO --out work/ --mode both --max 45`; abre con Read TODAS las hojas `work/sheets/sheet_XX.jpg` (9 frames con tiempo c/u) y amplía lo que importe. Di qué tramos solo se vieron en hojas.
 
-### Chrome: Sider (verificado 2026-10-20) — la vía principal para oídos en YouTube
+### Chrome: Sider (verificado 2026-10-20) — vía alternativa para oídos en YouTube (cuando Chrome está conectado)
 Sider es una extensión en el Chrome de Bryan; añade un panel a la derecha del video.
 1. `tabs_context_mcp` (crea el grupo si hace falta), `navigate` a `https://www.youtube.com/watch?v=ID`, espera ~3 s y toma un screenshot. Si el panel de Sider aparece a la derecha, sigue.
 2. Botón **"Resumir video"** (≈ x 1290, y 144 en una captura 1568×709). Tras ~5 s el panel muestra un resumen en español (segunda mano).

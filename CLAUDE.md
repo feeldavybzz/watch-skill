@@ -12,6 +12,8 @@ Disco externo (exFAT): macOS crea archivos ocultos "._nombre" junto a cada archi
 
 Para ver un video en un paso: python3 skills/kiwa-watch-learn/scripts/watch.py "LINK-O-ARCHIVO" --question "..." (detalle en skills/kiwa-watch-learn/SKILL.md). Gemini solo con --engine gemini y si Bryan lo pide.
 
+Oídos (texto del audio) fuera del Mac: python3 skills/kiwa-watch-learn/scripts/oir.py "LINK-O-ARCHIVO" --out work/oidos [--whisper] [--budget 100]. Escalera y fallos en skills/kiwa-watch-learn/references/oidos.md. Sin transcript = «voz no verificada», nunca «sin voz».
+
 Después de cada lección: clasificar en nichos y alimentar los Kiwas de kiwas/ (skills/kiwa-watch-learn/references/kiwas.md). No borrar ni reescribir Kiwas enteros: fusionar.
 
 Descargas: si fallan, retransmitir CAUSA/HAZ de grab.py; plan B = «Para analizar» del buzón. Cookies del navegador: solo para los sitios de ~/.config/mukiwa/permisos.json (hoy instagram.com, Chrome) y solo ante un fallo por sesión; para otros sitios, permiso explícito de Bryan en esa descarga. Nunca imprimir ni guardar valores de cookies. Buzón: skills/kiwa-watch-learn/scripts/inbox.py.
