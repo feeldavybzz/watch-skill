@@ -327,6 +327,32 @@ class ProfesTests(unittest.TestCase):
             self.assertIn('color-grading', r.stdout)
             self.assertIn('mi-skill', r.stdout)
 
+    def test_attach_numbers_only_the_sources_section(self):
+        import os
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            env = dict(os.environ, MUKIWA_KIWAS=str(d / 'kiwas'), HOME=str(d / 'home'))
+            self.assertEqual(self.run_profes(env, 'ensure', '--nicho', 'color-grading', '--nombre', 'Color grading',
+                                             '--herramientas', 'DaVinci Resolve', '--cuando', 'gradear').returncode, 0)
+            skill = d / 'kiwas/color-grading/SKILL.md'
+            # «Dudas abiertas» usa «- [n]» igual que Fuentes: no debe inflar la numeración
+            skill.write_text(skill.read_text(encoding='utf-8').replace(
+                '## Fuentes', '## Dudas abiertas\n- [1] duda a\n- [1] duda b\n\n## Fuentes', 1), encoding='utf-8')
+            lesson = d / 'varias.md'
+            lesson.write_text('# Varias fuentes\n> x\n\n- **Fuentes**: https://x.test/a · https://x.test/b\n', encoding='utf-8')
+            self.assertEqual(self.run_profes(env, 'attach', '--nicho', 'color-grading', '--leccion', str(lesson)).returncode, 0)
+            text = skill.read_text(encoding='utf-8')
+            self.assertIn('- [1] Varias fuentes — https://x.test/a', text)
+            self.assertIn('  lecciones: 1', text)
+            # numeración con huecos: la siguiente es el mayor + 1, sin repetir números
+            skill.write_text(text + '- [7] otra fuente — x · `references/lecciones/otra.md`\n', encoding='utf-8')
+            lesson2 = d / 'segunda.md'
+            lesson2.write_text('# Segunda\n> x\n\n- **Fuente**: https://x.test/c\n', encoding='utf-8')
+            self.assertEqual(self.run_profes(env, 'attach', '--nicho', 'color-grading', '--leccion', str(lesson2)).returncode, 0)
+            text = skill.read_text(encoding='utf-8')
+            self.assertIn('- [8] Segunda', text)
+            self.assertIn('  lecciones: 3', text)
+
     def test_rejects_bad_niche(self):
         import os
         with tempfile.TemporaryDirectory() as d:

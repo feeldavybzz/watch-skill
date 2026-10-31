@@ -4,8 +4,8 @@ description: "Kiwa de composición visual: esquemas, los 9 elementos, guías por
 metadata:
   nicho: composicion-visual
   herramientas: "Premiere Pro, DaVinci Resolve, Photoshop, Procreate"
-  lecciones: 10
-  actualizado: "2026-10-28"
+  lecciones: 14
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Composición visual
@@ -164,6 +164,13 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Para publicar sin barras negras en Instagram [13][14]: crear la secuencia en 1440×1080 (4:3), 1080×1350 (4:5), 1080×1080 (1:1) o 1920×1080 (16:9), exportar al mismo tamaño y subir como **publicación**, no como reel (afirmación del autor; no se verificó cómo queda en el grid).
 - En After Effects el preset «Social Media Portrait HD» (1080×1920) se cambia a «4:3» para obtener 1440×1080 [14].
 
+### Los 40 encuadres y el directorio de referencias [15][16]
+- Usa la lista de 40 encuadres como glosario de **variables que se combinan** (escala, ángulo, movimiento, óptica, composición): `cinematografia` lleva el detalle. Tres de la lista que son de composición: *frame within the frame*, *negative space* y *symmetry*.
+- [16] Para referencias y paletas guarda la fuente y la licencia del asset concreto; estudiar una composición no equivale a poder reutilizarla en un anuncio.
+
+### Verificar una tabla de formatos antes de reutilizarla [12]
+- Calcula **ancho ÷ alto** de cada par antes de copiarlo: una misma proporción admite varias resoluciones (4:5 → 864×1080 y 1728×2160; 2:1 → 1920×960 y 3840×1920). Elige el encuadre según destino y composición, y calcula después. Los nombres históricos de la tabla son simplificaciones del autor y 1080p/4K no fijan por sí solos estas dimensiones.
+
 ## Por herramienta
 ### Premiere Pro
 - **Cómo muestra las guías un plugin real (Guideify 2, demo sin voz)** [9]: no dibuja sobre el Monitor de Programa; al pulsar **Apply** inserta el overlay como **clip en una pista de video nueva** que cubre toda la secuencia y avisa dónde quedó («Overlay applied on V7 · 00:00–00:10»). Un segundo Apply sin marcar «Replace existing guide on apply» apila otro en la pista siguiente (V8); **Remove** los quita [9].
@@ -202,6 +209,7 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - Graphic Design: las mismas guías para portadas y carruseles, junto con la retícula (ver `kiwa-diseno-grafico`).
 
 ## Dudas abiertas
+- [12] La tabla de 15 formatos coincide con la ficha `DfBJ6q6IIQA` de la tanda del 31 oct; no se añadió otra lección para no duplicar.
 - La **espiral** se dibuja de dos maneras en las fuentes: rectángulo áureo **centrado e inset** [4] y estirada hasta los bordes del cuadro [2]. El plugin usa la primera por defecto (medida) y ofrece la segunda.
 - [7] es un curso de diseño gráfico (carteles y web) sin medidas: no da columnas ni márgenes en cifras y no adapta la grilla a vertical.
 - [4] (guía escrita y e-book) son del mismo creador; el e-book no se descargó (pide correo) y puede traer más reglas.
@@ -232,3 +240,5 @@ Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas de
 - [12] 15 formatos de pantalla con su tamaño en 1080p y 4K (@cinematicportfoliomastery) — reel de Instagram, archivo local · `references/lecciones/15-formatos-de-pantalla-y-tamano-en-pixeles-cinematicportfoliomastery.md`
 - [13] Subir a Instagram en 4:3 sin barras negras (@billycreative__) — reel de Instagram, archivo local · `references/lecciones/post-4x3-sin-barras-negras-instagram-billycreative.md`
 - [14] Editar en 4:3: componer en 1440×1080 y exportar igual (@maxwalz4k) — reel de Instagram, archivo local · `references/lecciones/editar-en-4x3-after-effects-maxwalz4k.md`
+- [15] Cuarenta encuadres y técnicas visuales como glosario de decisiones — https://www.instagram.com/p/DeNyzN9o3rg/ · `references/lecciones/cuarenta-encuadres-como-glosario-de-decisiones.md`
+- [16] Directorio de 24 herramientas y referencias de filmmaking — https://www.instagram.com/p/DeDTYsrI_cl/ · `references/lecciones/directorio-de-24-herramientas-de-filmmaking.md`

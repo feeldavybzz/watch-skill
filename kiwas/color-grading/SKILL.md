@@ -4,8 +4,8 @@ description: Kiwa de color grading en DaVinci Resolve: ajustes de proyecto y CST
 metadata:
   nicho: color-grading
   herramientas: "DaVinci Resolve, Premiere Pro"
-  lecciones: 2
-  actualizado: "2026-10-30"
+  lecciones: 6
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Color grading (DaVinci Resolve)
@@ -136,6 +136,11 @@ La palmera y las otras plantas son del mismo verde, así que el Qualifier solo n
 - Base negra con **azul eléctrico #0068FB** en sombras y un toque de **lima #C5ED2E** en luces o en un solo color de acento; el morado solo como acento atmosférico. Esto sale de la paleta de marca de Bryan, no de un tutorial [3].
 - Guardar el look en su propio nodo (`LOOK · MUKIWA`) y copiarlo entre planos con *Grab Still* + *Apply Grade* [4], o como PowerGrade.
 
+### Ajustes de grabación Sony y PowerGrade frente a LUT [6]
+- Un ajuste de cámara (XAVC HS 4K, 50p, 4:2:2 10-bit, S-Log3, PP8) es **un punto de partida a investigar para tu modelo**, no una configuración universal. S-Log3 exige exposición y gestión de color adecuadas; no atribuyas menor tamaño al solo hecho de usar 10 bits.
+- **PowerGrade ≠ LUT**: el PowerGrade puede transportar estructura de nodos. Antes de juzgar cualquier look de terceros, comprueba espacio de entrada, exposición y balance de blancos.
+- Un antes/después **Log → imagen terminada** mezcla normalización y estilo: no demuestra una emulación exacta de película. Normaliza primero, estiliza después.
+
 ## Por herramienta
 ### DaVinci Resolve (página Color)
 - Nodos: Alt+S = nuevo nodo serie; Alt+P = paralelo; Alt+L = capa (*Layer*); Ctrl/Cmd+D = activar/desactivar nodo; Shift+H = ver solo lo que hace un nodo; *cleanup node graph* (clic derecho) ordena el árbol [2][5].
@@ -202,6 +207,7 @@ La palmera y las otras plantas son del mismo verde, así que el Qualifier solo n
 - Graphic Design: la paleta #232323 / #0068FB / #C5ED2E sirve igual como referencia de color para el grade.
 
 ## Dudas abiertas
+- [6] El PowerGrade «Kodak Gold» anunciado no se obtuvo; compatibilidad con la cámara de Bryan y coste sin verificar.
 - [4] es un creador que vende su PowerGrade, LUTs y curso: los valores del grade (curvas, gain de HSV, saturaciones) **no se vieron en pantalla**; solo valen los números que dijo (+1.7/+2, 0.28, 0.1, 0.29, 0.25).
 - Gamma de salida «Rec.709-A»: la opción **existe en la lista de Resolve** (visto en pantalla [5]) y dos creadores la nombran, uno para Mac [5]; sigue sin verse cuál elige [4] en su CST de salida.
 - Ninguna fuente dice el ISO base ni el nivel de zebra; el «+1.7 a +2» depende de cómo lea el medidor cada cámara.
@@ -220,3 +226,4 @@ La palmera y las otras plantas son del mismo verde, así que el Qualifier solo n
 - [3] Paleta y dirección de marca MUKIWA DEPARTMENT (preferencias de Bryan).
 - [4] Cómo rodar y gradear S-Log3 bien: cámara Sony, exposición con zebras, CST y grade en Resolve (Gaku Lange) — https://www.youtube.com/watch?v=0GBqqfMjPuQ · `references/lecciones/s-log3-rodaje-y-grade-en-resolve-gaku-lange.md`
 - [5] Color en DaVinci: un sistema ordenado de nodos, scopes, máscaras y matching (AlwaysJoan) — https://youtu.be/3yQrX93_K04 · `references/lecciones/color-en-davinci-sistema-de-nodos-scopes-mascaras-y-matching-alwaysjoan.md`
+- [6] Ajustes de grabación Sony (S-Log3) y la diferencia entre PowerGrade y LUT — https://www.instagram.com/p/DeMWZ_aDlMx/ · `references/lecciones/sony-s-log3-ajustes-de-grabacion-y-powergrade-vs-lut.md`

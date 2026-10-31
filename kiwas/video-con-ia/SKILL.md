@@ -4,8 +4,8 @@ description: "Kiwa de dirección de video con IA (Higgsfield, Seedance): persona
 metadata:
   nicho: video-con-ia
   herramientas: "Higgsfield Cinema Studio, Seedance, Seedream, Claude"
-  lecciones: 5
-  actualizado: "2026-10-28"
+  lecciones: 12
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Dirección de video con IA
@@ -94,6 +94,10 @@ Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; pa
 - **Motion transfer (Genjutsu en Higgsfield)** [9][10]: el clip original manda el movimiento y la referencia manda el look. Flujo: clip simple → sacar un fotograma → editarlo con un modelo de imagen (p. ej. cambiar el fondo) → Genjutsu «Motion transfer» con el clip y el fotograma → describir la escena → generar. Hay una segunda pestaña «Objects swap». En pantalla: video de hasta 30 s y hasta 30 imágenes de referencia.
 - Modelos vistos en la lista de Artlist [8] (cambian rápido): Seedance 2.5 (30 s, hasta 50 referencias), Kling 4.0 (30 s, 1080p), Gemini Omni 1.1 Flash (4K, 10 s).
 
+### Evaluar herramientas de edición con IA y efectos con video generado [11][12]
+- Antes de adoptar un flujo de «Claude edita tu video» o un efecto con video generado, pruébalo con material propio y revisa la lista de `editor-asistente` [14]. Aprueba intención y composición por plano **antes** de generar animación y registra cambios por tarjeta.
+- Fondo generado + recorte, o gesto + transformación: son dos tareas (transformar y separar al sujeto). Revisa bordes, escala e iluminación con la cámara en movimiento. La generación tiene coste y el modelo exacto no es verificable desde un reel [12].
+
 ## Por herramienta
 ### Higgsfield Cinema Studio
 - Proyecto con carpetas y subcarpetas; **elementos** (personajes, locaciones, props) que se adjuntan automáticamente al pegar el prompt; botón Generate con el costo en créditos [1].
@@ -127,6 +131,7 @@ Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; pa
 - Visual Edits: lista de planos con tiempos por toma; elegir lo mejor de cada generación (ver `kiwa-editor-asistente`).
 
 ## Dudas abiertas
+- [11][12] Ningún producto se instaló; precios, disponibilidad y modelo exacto sin verificar.
 - [1] Es una **demo de producto de Higgsfield**: los modelos (Soul Cinema, Seedream 5.0 Pro, Seedance 2.5), los créditos (≈2 100 créditos el anuncio, ≈200 por toma de ≈17 s) y las ventajas («el mejor modelo ahora») son del momento y del vendedor; el método de referencias, anclas, tiempos y mapas es lo transferible.
 - [1] Los prompts completos y los dos *skills* de Claude que menciona no se pudieron obtener (el enlace de la descripción no los trae). Higgsfield Academy tiene cursos con un *prompt-builder skill* parecido (no abierto).
 - [1] El presentador afirma que una producción en vivo de EE. UU. cuesta decenas de miles de dólares: sin fuente.
@@ -153,3 +158,5 @@ Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas de
 - [8] Hook «quemar un comentario» con video IA, Artlist + Kling 4.0 (@futurist__) — reel de Instagram, archivo local · `references/lecciones/hook-quemar-comentario-kling-artlist-futurist.md`
 - [9] Genjutsu de Higgsfield: cambiar ropa, objetos y lugar manteniendo el movimiento (@elmundoderabbit) — reel de Instagram, archivo local · `references/lecciones/genjutsu-higgsfield-cambiar-ropa-y-entorno-elmundoderabbit.md`
 - [10] Genjutsu: rodar en casa y convertir el fondo en un vagón de lujo (@tseily) — reel de Instagram, archivo local · `references/lecciones/genjutsu-motion-transfer-seedream-tseily.md`
+- [11] Evaluar edición y subtítulos automáticos con Claude antes de adoptar una herramienta — https://www.instagram.com/p/DfAomLvu2ey/ · `references/lecciones/evaluar-edicion-automatica-y-subtitulos-con-claude.md`
+- [12] Efectos con video de IA: fondo generado + recorte, gesto + comentario en llamas, juego → calle — https://www.instagram.com/p/DeMmA5AP9QQ/ · `references/lecciones/efectos-con-video-ia-construccion-comentario-en-llamas-y-juego-a-calle.md`

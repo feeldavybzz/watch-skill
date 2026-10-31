@@ -1,11 +1,11 @@
 ---
 name: kiwa-narrativa-y-direccion
-description: "Kiwa de narrativa y dirección de escenas: círculo de la historia de Dan Harmon, blocking, línea de 180° y subtexto. Usar al estructurar un guion o bloquear una escena."
+description: "Kiwa de narrativa y dirección de escenas: círculo de la historia de Dan Harmon, blocking, línea de 180° y subtexto. Usar al estructurar un guion o bloquear una escena. También: guion de retención (hook, open loop, re-hooks) y estructura de entrevistas"
 metadata:
   nicho: narrativa-y-direccion
   herramientas: "Storyboard, Lista de planos"
-  lecciones: 4
-  actualizado: "2026-10-11"
+  lecciones: 11
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Narrativa y dirección
@@ -67,6 +67,13 @@ Pregunta primero qué debe sentir el público; el detalle de cada técnica está
 ### El ánimo con la luz [9]
 - **Clave alta** = brillante y feliz; **clave baja** = oscuro y dramático; **claroscuro** = misterio y peligro; **luz dura** = drama o intensidad; **luz suave** = felicidad o romance; **lado ciego** = sujeto accesible, **lado corto** = sujeto dramático [9]. Detalle en `kiwa-iluminacion`.
 
+### Guion de retención: hook, super hook, open loop y re-hooks [11]
+- Hook (problema o cliente ideal) → Super Hook (contexto y razón para escuchar) → Open Loop (pregunta que se responde al final) → bodies de una idea cada uno → Re-hook que renueva la curiosidad → CTA. Un tutorial puede abrir con «corrijo cada subtítulo a mano», prometer una salida medible y cerrar el bucle con el resultado.
+- Úsalo como herramienta de guion, no como garantía: la caída de retención no siempre se explica por el tema.
+
+### Entrevista musical: orden y cobertura [10]
+- Presente del artista → emoción y proceso → conexión con el público local → significado; cubre cortes con B-roll del concierto. Montaje: ver `editor-asistente`.
+
 ## Por herramienta
 ### Storyboard y lista de planos
 - Una vista de lista de planos con columnas **Storyboard, Scene, Shot, Description, Shot Size, Shot Type, Movement, Equipment** y tarjetas del tipo «MS · Overhead · Static · Rig Over Bar» [2].
@@ -100,6 +107,7 @@ Pregunta primero qué debe sentir el público; el detalle de cada técnica está
 - Visual Edits: el blocking sirve para dirigir cómo se colocan personas o productos en un plano de un video o reel.
 
 ## Dudas abiertas
+- [10][11] Nombres y datos históricos de la entrevista no verificados por la transcripción; la estructura de retención se basa en una afirmación sin dataset verificado.
 - Un solo ejemplo del círculo (*El caballero oscuro*); el reparto de escenas entre pasos tiene zonas grises.
 - La narración llama a Harmon «writer-director» y la descripción «writer/producer» [1].
 - Las formas y líneas del blocking no tienen medidas, y el video no habla de dirigir a los actores ni de escribir diálogo [2].
@@ -117,3 +125,5 @@ Pregunta primero qué debe sentir el público; el detalle de cada técnica está
 - [7] Seis formas de editar una escena (StudioBinder, Shot List ep. 10) — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
 - [8] B-roll: qué es y tres consejos para rodarlo (StudioBinder) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`
 - [9] Iluminación de cine, parte 1 (StudioBinder, Shot List ep. 12) — https://youtu.be/r2nD_knsNrc · `references/lecciones/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md`
+- [10] Montaje de concierto y estructura de una entrevista musical — https://www.instagram.com/p/De9b8vEOgil/ · `references/lecciones/montaje-de-concierto-y-entrevista-musical.md`
+- [11] Guion de retención (hook, contexto y re-hooks), 31 formatos de contenido y embudo de corto a largo — https://www.instagram.com/p/De4NlF9BL6W/ · `references/lecciones/guion-de-retencion-hook-re-hooks-y-formatos-de-contenido.md`

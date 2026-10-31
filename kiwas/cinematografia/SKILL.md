@@ -1,11 +1,11 @@
 ---
 name: kiwa-cinematografia
-description: "Kiwa de cinematografía: ángulos, movimientos, soportes, frame rate, línea de 180° y B-roll, y cómo planearlos en una lista de planos."
+description: "Kiwa de cinematografía: ángulos, movimientos, soportes, frame rate, línea de 180° y B-roll, y cómo planearlos en una lista de planos. También: preproducción (pitch, shotlist, recce), número f y paradas, y un glosario de 40 encuadres"
 metadata:
   nicho: cinematografia
   herramientas: "Trípode, Dolly, Slider, Steadicam, Gimbal, Grúa y jib, Cámara en mano, Dron, Motion control"
-  lecciones: 12
-  actualizado: "2026-10-30"
+  lecciones: 19
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Cinematografía
@@ -158,6 +158,26 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - Para que varias tomas parezcan **un solo plano** se usa el *stitching* (unir dos tomas para que parezcan continuas); en *1917* se combinó un avión CGI en el cielo, un avión real lanzado desde una rampa de ≈20 pies y una toma aparte compuesta con los actores [9].
 - Al planear ese tipo de plano, decide qué se rueda en el set (SFX) y qué se añade después (VFX/CGI) y cuida que lo digital **iguale la luz y el aspecto** de lo real [9]. Detalle de técnicas en `kiwa-efectos-visuales`.
 
+### Preproducción: pitch, shotlist y recce [14]
+- Elige **cinco planos indispensables** y define cámara, lentes y luz antes de rodar. Haz el **recce**: comprueba geografía, recorrido del sol, potencia eléctrica y ópticas en la locación real. Detalle de roles y presupuesto en `negocio-creativo`.
+
+### Cuarenta encuadres: variables que se combinan [15]
+- La lista de 40 mezcla **escala/insertos** (extreme wide → insert), **ángulo** (eye level, high/low, Dutch, overhead, OTS, POV), **movimiento** (locked off, pan, tilt, handheld, tracking, push-in, pull-out, crane, Steadicam, whip pan, arc), **óptica y enfoque** (wide, long, macro, shallow/deep focus, rack focus, dolly zoom) y **composición** (single, two-shot, group, frame within the frame, negative space, symmetry).
+- Decide primero qué información o emoción debe llegar; anota después escala, ángulo, movimiento y enfoque. Usa **tres planos complementarios**, no todos. *Dolly zoom* = desplazamiento + cambio de focal, no un zoom cualquiera.
+
+### Número f y paradas [16]
+- Número f = focal ÷ diámetro de apertura. Con 50 mm: f/1,8 ≈ 27,8 mm; f/16 ≈ 3,1 mm; la luz cae (16/1,8)² ≈ 79 veces ≈ **6,3 paradas**. Mayor número f = menos luz y suele ampliar la profundidad de campo, **sin garantizar más nitidez** (enfoque, distancia y difracción). El diámetro relevante es el de la pupila de entrada.
+
+### Antes de copiar ajustes de cámara [19]
+- Codec, muestreo, fps y perfil (p. ej. XAVC HS 4K, 50p, 4:2:2 10-bit, S-Log3) son decisiones distintas; no es «la configuración de máxima calidad». Confirma compatibilidad con tu modelo. Detalle de color en `color-grading`.
+
+### Rodar la transición de golpe y barrido [13]
+- Dos tomas con barrido de la misma dirección y velocidad en locaciones distintas; detalle de montaje en `editor-asistente`.
+
+### Directorio de herramientas y luz con un objeto [17][18]
+- [17] Directorio de 24 fuentes (referencias de cine, paletas, SunCalc/Windy para sol y clima, guion, sonido y stock): guarda qué problema resuelve cada una y la **licencia del asset concreto** antes de reutilizarlo comercialmente.
+- [18] Ejercicio de luz sobre un objeto: ver `iluminacion`.
+
 ## Por herramienta
 ### Lista de planos (notación vista en pantalla)
 - Cada plano se anota con **tamaño > ángulo · soporte**, por ejemplo «WS > LA · Hip Level · Steadicam» o «MCU · OH · Sticks» (WS = plano general; LA = ángulo bajo; OH = cenital; MCU = plano medio corto) [2]. Los nueve ángulos tienen tarjeta propia en la lista de planos de la serie [2].
@@ -212,6 +232,10 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - Creative Direction: usar la lista de movimientos como vocabulario común con el cliente al hablar de «cómo se siente» un plano.
 
 ## Dudas abiertas
+- [14] Recurso extra no solicitado; roles y etapas solo verificados en pantalla.
+- [15] Lista legible, pero no se inspeccionó cada ejemplo en movimiento; las explicaciones emocionales no son del autor.
+- [17] «Free commercial» no implica que todas las funciones o imágenes sean gratuitas o reutilizables.
+- [19] Compatibilidad de la configuración Sony con el equipo de Bryan sin verificar.
 - Ninguna fuente da cifras (velocidad, distancia, focal, grados ni alturas exactas); faltan valores para ejecutar con precisión. El cenital es «≈ 90°»; el resto sin grados.
 - Los vídeos del mismo canal sobre cada ángulo (bajo, alto, holandés, cuarta pared, OTS) y el de tamaño de plano (ep. 1) no se han analizado.
 - Los soportes [3] solo se describen: no hay pesos, alturas, alcances ni precios, ni cómo montarlos u operarlos; el episodio de lentes de la serie no se ha analizado.
@@ -238,3 +262,10 @@ Para el encuadre de cada plano, combínalo con `kiwa-composicion-visual`; para l
 - [6] B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen) — https://youtu.be/MJnT1TwQFdU · `references/lecciones/b-roll-que-es-y-como-rodarlo-studiobinder.md`
 - [11] Frame rate: 25 para look cine, 30 para redes y 50+ para cámara lenta (@chrlypn) — reel de Instagram, archivo local · `references/lecciones/fps-cine-redes-slow-motion-chrlypn.md`
 - [12] Cámara 3D de After Effects: crear, controlar, profundidad de campo y mover con keyframes — https://youtu.be/qO3_WBYCe-E · `references/lecciones/camara-3d-after-effects-controles-peter-kasilo.md`
+- [13] Transición de golpe y barrido (fight transition) entre dos lugares — https://www.instagram.com/p/DaXuXv_t3uu/ · `references/lecciones/transicion-golpe-y-barrido-fight-transition.md`
+- [14] Preproducción por responsabilidades: director, DOP y productor (pitch, shotlist, recce) — https://www.instagram.com/p/DfDpX2bo1P1/ · `references/lecciones/preproduccion-director-dop-productor-pitch-shotlist-recce.md`
+- [15] Cuarenta encuadres y técnicas visuales como glosario de decisiones — https://www.instagram.com/p/DeNyzN9o3rg/ · `references/lecciones/cuarenta-encuadres-como-glosario-de-decisiones.md`
+- [16] El número f: relación entre focal y diámetro de apertura, y cuánta luz se pierde — https://www.instagram.com/p/De_XwAxRUvg/ · `references/lecciones/numero-f-apertura-y-paradas.md`
+- [17] Directorio de 24 herramientas y referencias de filmmaking — https://www.instagram.com/p/DeDTYsrI_cl/ · `references/lecciones/directorio-de-24-herramientas-de-filmmaking.md`
+- [18] Entender la luz: reflejos, rebote y modificadores con un balón y lámparas pequeñas — https://www.instagram.com/p/DepBhHfgZuM/ · `references/lecciones/entender-la-luz-reflejos-con-un-balon-y-modificadores.md`
+- [19] Ajustes de grabación Sony (S-Log3) y la diferencia entre PowerGrade y LUT — https://www.instagram.com/p/DeMWZ_aDlMx/ · `references/lecciones/sony-s-log3-ajustes-de-grabacion-y-powergrade-vs-lut.md`

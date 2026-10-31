@@ -4,8 +4,8 @@ description: "Kiwa de iluminación de cine y video: tipos de luz, kelvin, clave 
 metadata:
   nicho: iluminacion
   herramientas: "Tungsteno, HMI, LED, Kino Flo, Fotómetro"
-  lecciones: 6
-  actualizado: "2026-10-30"
+  lecciones: 7
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Iluminación de cine y video
@@ -90,6 +90,10 @@ Para el encuadre combínalo con `kiwa-composicion-visual`; para el movimiento y 
 | **Cookies (cucoloris)** | tableros con dibujos recortados que dan un efecto moteado [1] |
 | **Pies de luz y C-stands** | montaje y posición; los C-stands sirven también para difusión, banderas y reflectores [1] |
 
+### Entender la luz con un objeto y paneles [7]
+- Para producto, observa el **reflejo en la superficie**, no solo si la toma está luminosa. Fija cámara y exposición, mueve **una sola luz** alrededor del objeto, añade un panel blanco y compara sombra, textura y forma del reflejo.
+- Decide primero qué forma de luz y qué control del fondo necesita la toma; **después** elige el modificador (octabox, stripbox…). No compres por el nombre.
+
 ## Por herramienta
 ### Tungsteno / HMI / LED / Kino Flo
 - Ver tabla «Equipo»; sin ajustes de menú ni potencias porque el video no da vatios ni controles [1].
@@ -132,6 +136,7 @@ Para el encuadre combínalo con `kiwa-composicion-visual`; para el movimiento y 
 - Video con IA: la luz de la locación se fija en la imagen de referencia antes de generar (ver `kiwa-video-con-ia`).
 
 ## Dudas abiertas
+- [7] El video no trae temperaturas, potencias, distancias ni ratios; no hay comparación medida de octabox frente a stripbox.
 - [1] La voz dice ≈5 600 K para la luz de día y el gráfico muestra ≈5 500 K; el rótulo de ejemplo dice 5 600 K.
 - [1] No da razones de contraste numéricas (2:1, 8:1), ni vatios, ni distancias; el esquema de luz para sujeto y fondo es la parte 2 (no analizada).
 - [1] El PDF de la hoja de referencia no se abrió; el artículo escrito no añade datos.
@@ -145,3 +150,4 @@ Para el encuadre combínalo con `kiwa-composicion-visual`; para el movimiento y 
 - [4] CGI vs VFX vs SFX (StudioBinder, con Ian Failes) — https://youtu.be/Pok6EN3cfA4 · `references/lecciones/cgi-vfx-sfx-diferencias-y-1917.md`
 - [5] Reel de 24 s: 8 recursos de composición sobre fotos (@jxframes), recurso «yuxtaposición» — archivo local · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
 - [6] Color en DaVinci: un sistema ordenado de nodos, scopes, máscaras y matching (AlwaysJoan), solo la regla de «máscaras con la key light» — https://youtu.be/3yQrX93_K04 · `references/lecciones/color-en-davinci-sistema-de-nodos-scopes-mascaras-y-matching-alwaysjoan.md`
+- [7] Entender la luz: reflejos, rebote y modificadores con un balón y lámparas pequeñas — https://www.instagram.com/p/DepBhHfgZuM/ · `references/lecciones/entender-la-luz-reflejos-con-un-balon-y-modificadores.md`

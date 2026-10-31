@@ -133,7 +133,7 @@ def cmd_ensure(a):
 def lesson_info(path):
     t = read(path)
     title = (re.search(r"^# (.+)$", t, re.M) or [None, Path(path).stem])[1]
-    src = re.search(r"\*\*Fuente\*\*:\s*(\S+)", t)
+    src = re.search(r"\*\*Fuentes?\*\*:\s*(\S+)", t)
     return title, (src.group(1) if src else "")
 
 
@@ -147,10 +147,13 @@ def attach_to_kiwa(nicho, leccion):
     rel = f"references/lecciones/{dst.name}"
     if rel in t:
         print("La lección ya estaba en Fuentes; se actualizó la copia."); return skill
-    n = len(re.findall(r"^- \[\d+\]", t, re.M)) + 1
+    # solo cuentan las fuentes de la sección «## Fuentes»: «Dudas abiertas» también usa «- [n]»
+    fuentes = t.split("\n## Fuentes", 1)[1] if "\n## Fuentes" in t else t
+    # el siguiente número es el mayor existente + 1 (no el conteo): hay Kiwas con huecos o números repetidos
+    n = max([0] + [int(x) for x in re.findall(r"^- \[(\d+)\]", fuentes, re.M)]) + 1
     title, src = lesson_info(leccion)
     t = t.rstrip("\n") + f"\n- [{n}] {title} — {src} · `{rel}`\n"
-    t = set_meta(set_meta(t, "lecciones", n), "actualizado", today())
+    t = set_meta(set_meta(t, "lecciones", len(re.findall(r"^- \[\d+\]", t.split("\n## Fuentes", 1)[-1], re.M))), "actualizado", today())
     write(skill, t); write_index()
     print(f"OK [{n}] añadida a {skill}\nAhora fusiona lo aprendido en las secciones (references/kiwas.md).")
     return skill
