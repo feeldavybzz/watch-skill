@@ -13,7 +13,7 @@ Fuente: `docs/fuentes/guardados-instagram-2026-10-31.md` (traspaso de Bryan; 67 
 | Fichas ya integradas antes (sin cambios) | 1 (`DfF7IyRmUZ1`, Alaire) |
 | Referencias archivadas sin lección | 9 |
 | Kiwas con cuerpo fusionado | 12 |
-| **Kiwa nuevo (aprobado por Bryan)** | 1: `equipo-de-camara` (cámara y rigs; para recordar tips cuando Bryan tenga una duda) |
+| **Kiwa nuevo (aprobado por Bryan)** | 1: `camhacks` (cámara y rigs; para recordar tips cuando Bryan tenga una duda) |
 | Kiwa `retro-cartoon` | **sin tocar** (lo pedía el documento: una sola skill, sin mezclar estilos 3D, anime o CRT) |
 
 ## Kiwas modificados (qué cambió y con qué fuentes)
@@ -37,7 +37,7 @@ Las descripciones se ampliaron solo en editor-asistente, negocio-creativo, cinem
 ## Lecciones nuevas
 | Lección | Kiwas | Fichas | Estado |
 |---|---|---|---|
-| `rigs-y-equipo-de-camara-tres-referencias` | equipo-de-camara (nuevo) | 3 | documentado; sin especificaciones certificadas ni compras |
+| `rigs-y-equipo-de-camara-tres-referencias` | camhacks (nuevo) | 3 | documentado; sin especificaciones certificadas ni compras |
 | `archivar-medios-usados-con-margen-resolve` | editor-asistente | 1 | documentado; procedimiento con evidencia de pantalla, **no probado en host** |
 | `evaluar-edicion-automatica-y-subtitulos-con-claude` | editor-asistente, video-con-ia | 8 | documentado; procedimiento con evidencia de pantalla, **no probado en host** |
 | `transicion-golpe-y-barrido-fight-transition` | editor-asistente, cinematografia | 1 | documentado; procedimiento con evidencia de pantalla, **no probado en host** |
@@ -83,7 +83,7 @@ Sysmon evento 3 (conexión, no malware); licencia exclusiva ≠ cesión (OMPI; n
 8. Comprobar el repositorio `github.com/openai/codex-plugin-cc` y los demás enlaces vistos en pantalla (no auditados).
 
 ## No hecho, a propósito
-- Skills nuevas: **solo `kiwa-equipo-de-camara`**, creada porque Bryan lo aprobó (quiere recordar tips de cámara y rigs cuando tenga una duda). No se crearon Kiwas para IA/automatización, manualidades, moda ni ciberseguridad. Las skills que el documento sugería como destino (`claude-automation-recommender`, `makin-plugin`, `task-observer`, `mukiwa-ui-plugins`) **no existen en este repositorio**: `mukiwa-ui-plugins` vive en el Mac de Bryan (aquí solo existe su complemento `kiwa-ui-plugins`) y de las otras tres no se verificó dónde están (`kiwa-control` ya recoge el enfoque de Task Observer). Los reels de IA y automatización quedaron como lecciones de biblioteca (`herramientas-ia`).
+- Skills nuevas: **solo `kiwa-camhacks`**, creada porque Bryan lo aprobó (quiere recordar tips de cámara y rigs cuando tenga una duda). No se crearon Kiwas para IA/automatización, manualidades, moda ni ciberseguridad. Las skills que el documento sugería como destino (`claude-automation-recommender`, `makin-plugin`, `task-observer`, `mukiwa-ui-plugins`) **no existen en este repositorio**: `mukiwa-ui-plugins` vive en el Mac de Bryan (aquí solo existe su complemento `kiwa-ui-plugins`) y de las otras tres no se verificó dónde están (`kiwa-control` ya recoge el enfoque de Task Observer). Los reels de IA y automatización quedaron como lecciones de biblioteca (`herramientas-ia`).
 - Los 17 enlaces de `PENDIENTES-VISIBLES.json` **no estaban en el documento**: no se analizaron ni se sumaron a las 67.
 - Dos elementos de la cola del 30 oct (`Dex6OSDxeII`, `DeskEkOhnHI`) **siguen sin analizar**: no estaban en este traspaso.
 - La transcripción de `De1o2dFi44O` sigue siendo poco fiable; no se completó por intuición.
@@ -115,7 +115,7 @@ En `composicion-visual` queda un `[12]` repetido que **ya existía** antes de es
 | 17 | `DdT3kUPvfxm` | SFX descritos a Claude mediante ElevenLabs | Audio y SFX | lección nueva | `sfx-con-elevenlabs-conectado-a-claude` |
 | 18 | `DeMhnk-NKhL` | Presupuesto de fotografía: producción y uso | Negocio creativo y marketing | lección nueva | `presupuestar-rodaje-propuesta-y-derechos-de-uso` |
 | 19 | `DfErDx0RE40` | Estilos de animación mediante prompts en Claude Code | Motion y diseño de interfaces | lección nueva | `estilos-de-animacion-como-vocabulario-y-recetas-reutilizables` |
-| 20 | `DceFHGDiHPR` | Sony Family Studio — dibujo sobre video analógico | Gadgets y equipo | lección nueva | `rigs-y-equipo-de-camara-tres-referencias` (Kiwa nuevo `equipo-de-camara`) |
+| 20 | `DceFHGDiHPR` | Sony Family Studio — dibujo sobre video analógico | Gadgets y equipo | lección nueva | `rigs-y-equipo-de-camara-tres-referencias` (Kiwa nuevo `camhacks`) |
 | 21 | `De2o5v3JhRn` | Jabones con molde improvisado | Manualidades y emprendimiento | referencia archivada | Manualidades y emprendimiento (jabones): sin cantidades ni validación; sin nueva skill de fabricación |
 | 22 | `DfFuycPPdP-` | Trabajar como filmmaker de creadores | Negocio creativo y marketing | lección nueva | `presupuestar-rodaje-propuesta-y-derechos-de-uso` |
 | 23 | `DfFMiD6SRLs` | Cocina con lenguaje de videojuego — referencia Zelda | Edición y VFX | referencia archivada | Referencia narrativa/visual de cocina con lenguaje de videojuego («No AI» es declaración del autor); sin receta |
@@ -155,11 +155,11 @@ En `composicion-visual` queda un `[12]` repetido que **ya existía** antes de es
 | 57 | `DfBAOi7xUy_` | Music Video Essentials y VFX HUB | Edición y VFX | lección nueva | `evaluar-edicion-automatica-y-subtitulos-con-claude` |
 | 58 | `DfBJ6q6IIQA` | Quince relaciones de aspecto | Composición y cinematografía | ya integrado + verificado | lección «15 formatos» (composicion-visual): se recalcularon las 30 parejas ancho/alto (desvío máx. 0,17 %) |
 | 59 | `De-1NxJBQme` | Mostrar el proceso para construir portfolio | Edición y VFX | referencia archivada | Referencia de presentación de proceso antes/después para portfolio; eficacia comercial no probada |
-| 60 | `DfBAjDSBxMc` | Rig modular Sigma FP | Gadgets y equipo | lección nueva | `rigs-y-equipo-de-camara-tres-referencias` (Kiwa nuevo `equipo-de-camara`) |
+| 60 | `DfBAjDSBxMc` | Rig modular Sigma FP | Gadgets y equipo | lección nueva | `rigs-y-equipo-de-camara-tres-referencias` (Kiwa nuevo `camhacks`) |
 | 61 | `DfAyGDMSgdT` | PowerGrade con aspecto Kodak Gold | Color grading, máscaras, balance de blanco y LUTs | lección nueva | `sony-s-log3-ajustes-de-grabacion-y-powergrade-vs-lut` |
 | 62 | `DezW2rNh5fB` | Guardar el cordón de unas Salomon | Moda y cuidado de prendas | referencia archivada | Archivo personal (moda y cuidado de prendas): un solo truco |
 | 63 | `DfAEetmoMHf` | Hook de un comentario que se quema | Edición y VFX | lección nueva | `efectos-con-video-ia-construccion-comentario-en-llamas-y-juego-a-calle` |
 | 64 | `De-hWOZhYcm` | Personaje 3D y humor de prioridades | Ilustración y referencias | referencia archivada | Referencia de personaje estilizado **3D**; **no se añade a retro-cartoon** |
-| 65 | `De6K8eziOlu` | Montaje vertical de una FX3 | Gadgets y equipo | lección nueva | `rigs-y-equipo-de-camara-tres-referencias` (Kiwa nuevo `equipo-de-camara`) |
+| 65 | `De6K8eziOlu` | Montaje vertical de una FX3 | Gadgets y equipo | lección nueva | `rigs-y-equipo-de-camara-tres-referencias` (Kiwa nuevo `camhacks`) |
 | 66 | `De9b8vEOgil` | Montaje de concierto Wireless y Drake | Edición y VFX | lección nueva | `montaje-de-concierto-y-entrevista-musical` |
 | 67 | `De9T7TEKDcU` | Túnel infinito con planos 3D en Fusion | Edición y VFX | ampliación | lección «Endless zoom» (efectos-visuales): se añadieron Rectangle Mask, Z de ejemplo, clips de igual duración y Render Cache; sin construir en el Resolve de Bryan |

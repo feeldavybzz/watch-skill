@@ -1,14 +1,14 @@
 ---
-name: kiwa-equipo-de-camara
+name: kiwa-camhacks
 description: Kiwa de equipo de cámara y rigs: qué mirar antes de comprar o armar una cámara o un rig (formato de grabación, SSD, alimentación, montaje vertical, peso, ergonomía), ideas de rigs modulares y criterios para responder dudas de equipo sin ir a los videos. Usar cuando Bryan tenga una duda de cámara o de rig, pregunte qué accesorios necesita, cómo armar un rig vertical, qué mirar antes de comprar, o sobre alimentación, SSD o monitor externo.
 metadata:
-  nicho: equipo-de-camara
+  nicho: camhacks
   herramientas: "Sigma fp, Sony FX3, SmallRig, SSD externo, Monitor externo, Cámara analógica Sony"
   lecciones: 1
   actualizado: "2026-10-31"
 ---
 
-# Kiwa · Equipo de cámara y rigs
+# Kiwa · Camhacks (cámara y rigs)
 > Responde dudas de cámara y rigs con criterios de decisión y dice con claridad qué está verificado y qué no; no recomienda compras sin comprobar en fuente oficial.
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
