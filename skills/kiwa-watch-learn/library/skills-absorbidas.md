@@ -11,4 +11,4 @@
 - Fuente: SKILL.md adjunto por Bryan (solo ese archivo; sin CURSO.md/INDICE.md/fichas).
 - Tomado: criterios de enseñanza, orden de construcción, límites de estilo, plan de áreas por desarrollar → `kiwa-marca-mascota`.
 - Mejorado: sin duplicar; nombre único, la skill suelta queda retirada.
-- Pendiente: fichas de Julina de Codex si Bryan las pasa (comparar con las 2 lecciones existentes).
+- Recibido después: CURSO.md e INDICE.md (2026-10-31), integrados como fuente [3] de segunda mano; faltan las fichas por video.

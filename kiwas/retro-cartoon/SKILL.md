@@ -4,7 +4,7 @@ description: "Kiwa de dibujo retro cartoon y rubber hose (años 20 y 30): esquel
 metadata:
   nicho: retro-cartoon
   herramientas: "Procreate, Illustrator, Photoshop"
-  lecciones: 2
+  lecciones: 3
   actualizado: "2026-10-31"
 ---
 
@@ -21,6 +21,21 @@ Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía regla
 - No mezclar rubber hose con retro shoujo, pixel art u otras familias retro: identificar la variante con la referencia real. Extraer principios de Julina, no clonar sus personajes. La skill es conocimiento consultable, no entrenamiento del modelo.
 - Nueva lección: ficha con fuente, autor, fecha, tiempos/capturas, método de revisión (frames, audio, ASR), aplicación y límites; ampliar o corregir el principio existente, no duplicar; conservar contradicciones hasta resolverlas.
 - **Por desarrollar (sin evidencia aún):** cabezas y bocas, perspectiva y giros, equilibrio y línea de acción, consistencia de model sheets, expresiones, peso, squash and stretch, timing.
+
+## Ruta práctica para crear un personaje (propuesta de Codex [3], no palabras de la autora)
+1. Función, tres cualidades emocionales y una acción cotidiana (ej. curioso, travieso, amable buscando algo): elegir el sentimiento antes del adorno [3].
+2. Reunir referencias de estructura, expresión y vestuario y anotar qué aporta cada una; dibujar **seis siluetas pequeñas** sin textura ni acabado. En Harold y Keaton ella compara rostros, gafas, perfil y vestuario antes de decidir [1][2][3].
+3. Elegir dos, construir gesto y masas y probarlas en tres poses (gesto → apoyo → masas grandes → extremidades → detalles) [1][3].
+4. Definir ojos, manos y zapatos como sistema; mismo sistema entre frontal, tres cuartos y perfil [1][3].
+5. Contornos y manchas negras antes del color: reservar cara y manos claras. Prueba: reducir a tamaño pequeño y comprobar gesto, cara y separación de manos [3].
+6. Composición y color con intención: definir qué debe sentir quien mira; revisar contraste y espaciado antes del acabado (ella misma reconoce color lavado por miedo a la intensidad) [3].
+7. Para motion (fase futura): tres poses claras de una misma acción y una hoja de cinco expresiones; solo después decidir cuántas claves hacen falta. Los clips muestreados no prueban FPS ni curvas [3].
+8. Evaluar personalidad y reconocimiento con Bryan antes de producir animación. No copiar a Cuphead ni a otro personaje conocido.
+
+## Cobertura de Julina (qué sabe este Kiwa y con qué fiabilidad)
+- **Primera mano [1][2]:** cuerpos, ojos, guantes y manos, zapatos, poses femeninas, Keaton y Lloyd.
+- **Segunda mano [3] (Codex, fichas no recibidas):** Bendy y Alice (masas a contornos y áreas negras), Cuphead y Mugman (volumen de la cabeza al cambiar de vista), Ms. Chalice (poses con curvas), tarjetas vintage (color y espaciado), clips del gato (expresión y silueta), planner (motivación de Julina).
+- **Sin cubrir:** Conductor, Barbershop Quartet y Spectre Syndicate (Cuphead), calabazas, esqueletos y murciélagos, guantes mini, Rachel Maksy; referencias secundarias (manualidades, tours) aportan contexto, no método. Retro shoujo (Rudolph, Holly) queda fuera: otra familia.
 
 ## Método general rubber hose (Parte A)
 ## Fuente
@@ -81,4 +96,5 @@ A sale de 7 videos del canal Julina Mae Animations (5 tutoriales de construcció
 ## Fuentes
 - [1] `references/lecciones/rubber-hose-desde-cero-cuerpos-ojos-manos-zapatos-poses-julina-mae.md`
 - [2] `references/lecciones/rubber-hose-caricatura-de-personas-reales-julina-mae.md`
+- [3] `references/lecciones/curso-sintesis-julina-mae-codex.md` (segunda mano, Codex) y `references/indice-fuentes-julina.md`
 - Origen del texto de criterios: skill `retrocartoon` de Codex (solo su SKILL.md; fichas CURSO/INDICE no recibidas).
