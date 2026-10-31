@@ -1,6 +1,6 @@
 ---
 name: kiwa-control
-description: Coordinar el centro de control de skills MUKIWA entre ChatGPT Work, Codex, Claude Code y Claude web. Usar al instalar, fusionar, actualizar, inventariar o sincronizar skills, revisar correcciones repetidas, recuperar decisiones de trabajo o configurar memoria, compresión y proveedores. Conectar con kiwa-watch-learn y kiwa-watch-learn sin reemplazar sus bibliotecas.
+description: Coordinar el centro de control de skills MUKIWA entre ChatGPT Work, Codex, Claude Code y Claude web. Usar al instalar, fusionar, actualizar, inventariar o sincronizar skills, revisar correcciones repetidas, recuperar decisiones de trabajo o configurar memoria, compresión y proveedores. Conectar con kiwa-watch-learn sin reemplazar sus bibliotecas.
 ---
 
 # KIWA Control
