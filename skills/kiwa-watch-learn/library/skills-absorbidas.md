@@ -13,3 +13,8 @@
 - Mejorado: sin duplicar; nombre único, la skill suelta queda retirada.
 - Recibido después: CURSO.md, INDICE.md y fichas por video (2026-10-31, leídas en la carpeta de iCloud de Bryan); integrados como [3] y [10] de segunda mano.
 - 2026-10-31: analizados en primera mano (frames) Conductor, Barbershop Quartet, Spectre Syndicate, calabaza/esqueleto/murciélago, guantes mini y Rachel Maksy; Bendy, Alice, Cuphead, Mugman y Ms. Chalice también analizados en primera mano (2026-10-31); en segunda mano solo tarjetas vintage, clips del gato y planner.
+
+## kiwa-orbit (2026-10-31)
+- Fuente: skill propia de Bryan `organizar-chats` (título interno ORBIT), copia en iCloud `SKILLS KIWA/01 PROPIAS KIWA/organizar-chats` (SKILL.md del 2026-10-30). No es de un tercero.
+- Integrada sin cambios de contenido (solo nombre `kiwa-orbit` y nota de origen) en `skills/kiwa-orbit/`. Sirve para ordenar chats, proyectos y sesiones por marca/tema con títulos NICHO · TEMA.
+- Pendiente: Bryan dice que en ChatGPT la mejoró; no encontré su chat para compararla. Si pasa esa versión, fusionar.

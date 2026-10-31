@@ -1,0 +1,4 @@
+interface:
+  display_name: "🗂️ ORGANIZAR CHATS"
+  short_description: "Ordena chats y revisa duplicados sin borrar a ciegas"
+  default_prompt: "Usa $kiwa-orbit para ordenar mis chats por tema, marca o actividad, con MAYÚSCULAS y emojis, y mostrar candidatos a limpieza."
