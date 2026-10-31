@@ -8,6 +8,7 @@ Mini skills por nicho que crecen con cada video analizado (ver skills/kiwa-watch
 - **diseno-grafico** — 22 lecciones · Illustrator, Photoshop, Figma, Procreate · actualizado 2026-10-31
 - **editor-asistente** — 18 lecciones · Premiere Pro, DaVinci Resolve, Claude Code, Remotion · actualizado 2026-10-31
 - **efectos-visuales** — 7 lecciones · Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis · actualizado 2026-10-31
+- **equipo-de-camara** — 1 lección · Sigma fp, Sony FX3, SmallRig, SSD externo, Monitor externo, Cámara analógica Sony · actualizado 2026-10-31
 - **iluminacion** — 7 lecciones · Tungsteno, HMI, LED, Kino Flo, Fotómetro · actualizado 2026-10-31
 - **imagenes-ia** — 4 lecciones · Higgsfield (Soul Cinema, Seedream), GPT Image, Claude · actualizado 2026-10-28
 - **motion-graphics** — 19 lecciones · After Effects, Blender, Remotion, HyperFrames, código HTML · actualizado 2026-10-31

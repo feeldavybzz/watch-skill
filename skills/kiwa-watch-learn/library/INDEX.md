@@ -71,6 +71,10 @@
 - [CGI vs VFX vs SFX: qué es cada uno y cómo se combinan (StudioBinder, con Ian Failes)](efectos-visuales/cgi-vfx-sfx-diferencias-y-1917.md) — Un video explica la diferencia entre efectos especiales (SFX, hechos en el set), efectos visuales (VFX, añadidos a lo filmado) y CGI (imagen creada solo con computadora), con las técnicas, los departamentos y un análisis de cómo *1917* combina los tres en una sola secuencia.
 - [«Endless zoom» en DaVinci Resolve: portal de papel verde + Fusion 3D](efectos-visuales/endless-zoom-fusion-davinci-melikazaghari.md) — Zoom infinito por apilamiento de tomas en un Fusion Clip con cámara 3D.
 
+## equipo
+
+- [Rigs y equipo de cámara: qué mirar en un rig modular, un montaje vertical y un equipo analógico](equipo/rigs-y-equipo-de-camara-tres-referencias.md) — Tres referencias de equipo convertidas en criterios para decidir y para responder dudas, sin dar por ciertas especificaciones que no se vieron.
+
 ## herramientas-ia
 
 - [Arquitectura de un asistente con agentes («Jarvis»): capas, orden y criterio de selección](herramientas-ia/arquitectura-de-asistentes-con-agentes.md) — Una sola lección que consolida nueve reels que repiten la misma idea: separar equipo, modelo, arnés, contexto, herramientas, memoria, skills, tareas programadas, canales e interfaz.
