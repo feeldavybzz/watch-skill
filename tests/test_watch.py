@@ -10,7 +10,7 @@ from urllib.error import HTTPError
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'skills/mukiwa-learn/scripts'
+SCRIPTS = ROOT / 'skills/kiwa-watch-learn/scripts'
 sys.path.insert(0, str(SCRIPTS))
 import cues  # noqa: E402
 import extract_frames as ef  # noqa: E402
@@ -218,7 +218,7 @@ if __name__ == '__main__':
 
 import importlib.util  # noqa: E402
 import zipfile  # noqa: E402
-_spec = importlib.util.spec_from_file_location('grab', ROOT / 'skills/mukiwa-grab/scripts/grab.py')
+_spec = importlib.util.spec_from_file_location('grab', ROOT / 'skills/kiwa-watch-learn/scripts/grab.py')
 grab = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(grab)
 
@@ -249,17 +249,17 @@ class CaptionTrackTests(unittest.TestCase):
 class PackageTests(unittest.TestCase):
     def test_new_uncommitted_professor_is_packaged_and_ignored_files_are_not(self):
         import shutil
-        new = ROOT / 'profes' / 'zz-prueba-sin-commit'
+        new = ROOT / 'kiwas' / 'zz-prueba-sin-commit'
         try:
             (new / 'references').mkdir(parents=True)
-            (new / 'SKILL.md').write_text('---\nname: profe-zz-prueba-sin-commit\ndescription: prueba\n---\n# x\n', encoding='utf-8')
+            (new / 'SKILL.md').write_text('---\nname: kiwa-zz-prueba-sin-commit\ndescription: prueba\n---\n# x\n', encoding='utf-8')
             (new / 'references' / '._oculto.md').write_bytes(b'\x00\x05')      # metadatos de macOS: no deben entrar
             with tempfile.TemporaryDirectory() as d:
                 r = subprocess.run([sys.executable, str(ROOT / 'tools/build_skills.py'), '--out', d, '--allow-dirty'], capture_output=True, text=True)
                 self.assertEqual(r.returncode, 0, r.stderr + r.stdout)
-                with zipfile.ZipFile(Path(d) / 'profe-zz-prueba-sin-commit.skill') as z:
+                with zipfile.ZipFile(Path(d) / 'kiwa-zz-prueba-sin-commit.skill') as z:
                     names = z.namelist()
-                self.assertEqual(names, ['profe-zz-prueba-sin-commit/SKILL.md'])
+                self.assertEqual(names, ['kiwa-zz-prueba-sin-commit/SKILL.md'])
         finally:
             shutil.rmtree(new, ignore_errors=True)
 
@@ -269,38 +269,38 @@ class PackageTests(unittest.TestCase):
             r = subprocess.run([sys.executable, str(ROOT / 'tools/build_skills.py'), '--out', d, '--allow-dirty'],
                                capture_output=True, text=True)
             self.assertEqual(r.returncode, 0, r.stderr)
-            for name in ('mukiwa-grab', 'mukiwa-learn'):
+            for name in ('kiwa-watch-learn',):
                 with zipfile.ZipFile(Path(d) / f'{name}.skill') as z:
                     names = z.namelist()
                 self.assertTrue(all(n.startswith(name + '/') for n in names))
                 self.assertEqual([n for n in names if n.endswith('SKILL.md')], [f'{name}/SKILL.md'])
                 self.assertFalse([n for n in names if '/._' in n or '_descargas' in n or '/work/' in n])
                 self.assertLess(len(names), 200)
-            with zipfile.ZipFile(Path(d) / 'mukiwa-learn.skill') as z:
+            with zipfile.ZipFile(Path(d) / 'kiwa-watch-learn.skill') as z:
                 names = z.namelist()
-            self.assertIn('mukiwa-learn/scripts/grab.py', names)
-            self.assertIn('mukiwa-learn/library/INDEX.md', names)
-            self.assertIn('mukiwa-learn/scripts/watch.py', names)
-            self.assertTrue((Path(d) / 'profe-diseno-grafico.skill').exists())
+            self.assertIn('kiwa-watch-learn/scripts/grab.py', names)
+            self.assertIn('kiwa-watch-learn/library/INDEX.md', names)
+            self.assertIn('kiwa-watch-learn/scripts/watch.py', names)
+            self.assertTrue((Path(d) / 'kiwa-diseno-grafico.skill').exists())
 
 
 class ProfesTests(unittest.TestCase):
     def run_profes(self, env, *args):
-        return subprocess.run([sys.executable, str(SCRIPTS / 'profes.py'), *args], capture_output=True, text=True, env=env)
+        return subprocess.run([sys.executable, str(SCRIPTS / 'kiwas.py'), *args], capture_output=True, text=True, env=env)
 
     def test_create_feed_install_and_existing_skill(self):
         import os
         with tempfile.TemporaryDirectory() as d:
             d = Path(d)
-            env = dict(os.environ, MUKIWA_PROFES=str(d / 'profes'), HOME=str(d / 'home'))
+            env = dict(os.environ, MUKIWA_KIWAS=str(d / 'kiwas'), HOME=str(d / 'home'))
             lesson = d / 'grading-basico.md'
             lesson.write_text('# Grading básico en DaVinci\n> x\n\n- **Fuente**: https://youtu.be/abc · canal\n', encoding='utf-8')
             r = self.run_profes(env, 'ensure', '--nicho', 'color-grading', '--nombre', 'Color grading',
                                 '--herramientas', 'DaVinci Resolve,Premiere Pro', '--cuando', 'gradear o crear un look')
             self.assertEqual(r.returncode, 0, r.stderr)
-            skill = d / 'profes/color-grading/SKILL.md'
+            skill = d / 'kiwas/color-grading/SKILL.md'
             text = skill.read_text(encoding='utf-8')
-            self.assertIn('name: profe-color-grading', text)
+            self.assertIn('name: kiwa-color-grading', text)
             self.assertIn('### DaVinci Resolve', text)
             self.assertIn('### Premiere Pro', text)
             self.assertIn('gradear o crear un look', text)
@@ -309,10 +309,10 @@ class ProfesTests(unittest.TestCase):
             text = skill.read_text(encoding='utf-8')
             self.assertEqual(text.count('- [1] Grading básico en DaVinci'), 1)
             self.assertIn('  lecciones: 1', text)
-            self.assertTrue((d / 'profes/color-grading/references/lecciones/grading-basico.md').exists())
-            self.assertIn('1 lección', (d / 'profes/INDEX.md').read_text(encoding='utf-8'))
+            self.assertTrue((d / 'kiwas/color-grading/references/lecciones/grading-basico.md').exists())
+            self.assertIn('1 lección', (d / 'kiwas/INDEX.md').read_text(encoding='utf-8'))
             self.assertEqual(self.run_profes(env, 'install').returncode, 0)
-            link = d / 'home/.claude/skills/profe-color-grading'
+            link = d / 'home/.claude/skills/kiwa-color-grading'
             self.assertTrue(link.is_symlink())
             self.assertEqual(self.run_profes(env, 'check').returncode, 0)
             # Skill propia existente: se añade una línea y el conocimiento va a references/
@@ -330,6 +330,6 @@ class ProfesTests(unittest.TestCase):
     def test_rejects_bad_niche(self):
         import os
         with tempfile.TemporaryDirectory() as d:
-            env = dict(os.environ, MUKIWA_PROFES=str(Path(d) / 'p'), HOME=d)
+            env = dict(os.environ, MUKIWA_KIWAS=str(Path(d) / 'p'), HOME=d)
             r = self.run_profes(env, 'ensure', '--nicho', 'Color Grading', '--nombre', 'x')
             self.assertNotEqual(r.returncode, 0)

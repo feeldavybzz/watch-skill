@@ -7,7 +7,7 @@ import unittest
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'skills/mukiwa-learn/scripts'
+SCRIPTS = ROOT / 'skills/kiwa-watch-learn/scripts'
 spec = importlib.util.spec_from_file_location('ingest', SCRIPTS / 'ingest_transcript.py')
 ingest = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(ingest)
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
 class DescargaOkTests(unittest.TestCase):
     def setUp(self):
-        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "kiwa-watch-learn", "scripts"))
         import grab
         self.g = grab
 
@@ -116,20 +116,20 @@ class VideoRealTests(unittest.TestCase):
         return d
 
     def test_la_miniatura_nunca_es_video(self):
-        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "kiwa-watch-learn", "scripts"))
         import grab
         d = self._carpeta(["video.jpg", "video.webp", "video.png", "video.en.srt", "video.info.json"])
         self.assertIsNone(grab.video_en(d))
 
     def test_reconoce_cualquier_extension_de_video(self):
-        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "kiwa-watch-learn", "scripts"))
         import grab
         for ext in (".mp4", ".mkv", ".webm", ".mov", ".m4v"):
             d = self._carpeta(["video" + ext, "video.jpg"])
             self.assertTrue(grab.video_en(d).endswith("video" + ext), ext)
 
     def test_prefiere_mp4_e_ignora_appledouble(self):
-        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-grab", "scripts"))
+        import os; sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "skills", "kiwa-watch-learn", "scripts"))
         import grab
         d = self._carpeta(["._video.mp4", "video.mkv", "video.mp4", "video.jpg"])
         self.assertTrue(grab.video_en(d).endswith("video.mp4"))
@@ -138,7 +138,7 @@ class VideoRealTests(unittest.TestCase):
 
     def test_watch_usa_el_mismo_criterio(self):
         import os, importlib.util
-        spec = importlib.util.spec_from_file_location("watch_t", os.path.join(os.path.dirname(__file__), "..", "skills", "mukiwa-learn", "scripts", "watch.py"))
+        spec = importlib.util.spec_from_file_location("watch_t", os.path.join(os.path.dirname(__file__), "..", "skills", "kiwa-watch-learn", "scripts", "watch.py"))
         m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
         d = self._carpeta(["video.jpg", "video.info.json"]); self.assertIsNone(m.find_video(d))
         d = self._carpeta(["video.webm", "video.jpg"]); self.assertTrue(m.find_video(d).endswith("video.webm"))

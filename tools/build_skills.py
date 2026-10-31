@@ -3,11 +3,11 @@
 (Configuración → Capacidades → Skills → Subir).
 
 Uso: python3 tools/build_skills.py [--out dist] [--allow-dirty]
-Genera dist/mukiwa-grab.skill, dist/mukiwa-learn.skill y un dist/profe-<nicho>.skill por profesor.
+Genera dist/kiwa-watch-learn.skill, las skills propias fusionadas (kiwa-web, kiwa-marca-mascota, kiwa-instagram, kiwa-ui-plugins) y un dist/kiwa-<nicho>.skill por Kiwa.
 
 - Entra lo que Git conoce y lo nuevo sin commit, respetando .gitignore: nada de _descargas/, work/, ._*, venv ni claves.
-- mukiwa-learn lleva una copia de grab.py en scripts/ para descargar aunque se suba sola.
-- La biblioteca de lecciones viaja dentro de mukiwa-learn.
+- kiwa-watch-learn ya trae grab.py en scripts/: bajar y aprender viajan en un solo paquete.
+- La biblioteca de lecciones viaja dentro de kiwa-watch-learn.
 - Se comprueba: una sola carpeta raíz, un solo SKILL.md, frontmatter válido y menos de 200 archivos.
 
 En claude.ai el entorno suele bloquear YouTube/Instagram: ahí conviene subir el archivo de video.
@@ -16,8 +16,8 @@ import argparse, os, re, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ["mukiwa-grab", "mukiwa-learn"]
-EXTRA = {"mukiwa-learn": {"scripts/grab.py": "skills/mukiwa-grab/scripts/grab.py"}}
+SKILLS = ["kiwa-watch-learn", "kiwa-web", "kiwa-marca-mascota", "kiwa-instagram", "kiwa-ui-plugins"]
+EXTRA = {}
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 MAX_FILES = 200
 
@@ -33,8 +33,8 @@ def frontmatter_keys(text):
 
 
 def build(name, out):
-    base = f"skills/{name}" if name in SKILLS else f"profes/{name}"   # profesores: profes/<nicho> -> profe-<nicho>.skill
-    # Archivos de Git más los nuevos todavía sin commit (p. ej. un profesor que la tarea de la noche acaba de crear),
+    base = f"skills/{name}" if name in SKILLS else f"kiwas/{name}"   # Kiwas: kiwas/<nicho> -> kiwa-<nicho>.skill
+    # Archivos de Git más los nuevos todavía sin commit (p. ej. un Kiwa que la tarea de la noche acaba de crear),
     # respetando .gitignore: nada de _descargas/, work/, venv, ._* ni claves.
     files = [f for f in git("ls-files", "-z", "--cached", "--others", "--exclude-standard", base).split("\0") if f]
     files = [f for f in files if not Path(f).name.startswith(".") and (ROOT / f).is_file()]
@@ -48,7 +48,7 @@ def build(name, out):
     if len(entries) > MAX_FILES:
         raise SystemExit(f"{name}: {len(entries)} archivos (máximo {MAX_FILES})")
     out.mkdir(parents=True, exist_ok=True)
-    pkg = name if name in SKILLS else f"profe-{name}"
+    pkg = name if name in SKILLS else f"kiwa-{name}"
     dst = out / f"{pkg}.skill"
     with zipfile.ZipFile(dst, "w", zipfile.ZIP_DEFLATED) as z:
         for arc, src in sorted(entries.items()):
@@ -63,10 +63,10 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default=str(ROOT / "dist"))
     ap.add_argument("--allow-dirty", action="store_true", help="empaquetar aunque haya cambios sin commit")
     a = ap.parse_args()
-    dirty = git("status", "--porcelain", "--untracked-files=no", "skills/", "profes/").strip()
+    dirty = git("status", "--porcelain", "--untracked-files=no", "skills/", "kiwas/").strip()
     if dirty and not a.allow_dirty:
         sys.exit("Hay cambios sin commit en skills/: haz commit antes de empaquetar (o usa --allow-dirty).\n" + dirty)
-    for name in SKILLS + sorted(p.parent.name for p in (ROOT / "profes").glob("*/SKILL.md")):
+    for name in SKILLS + sorted(p.parent.name for p in (ROOT / "kiwas").glob("*/SKILL.md")):
         dst, n = build(name, Path(a.out))
         print(f"OK {dst} — {n} archivos, {dst.stat().st_size // 1024} KB")
 

@@ -1,0 +1,26 @@
+# Skills descargadas o hechas por otras personas (una por línea, nombre de la carpeta en ~/.claude/skills).
+# sync_drive.py las copia a «Descargadas de otros»; todo lo demás va a «Creadas por mí».
+# Un amigo que sume sus skills puede apuntar las suyas aquí o ponerlas en tools/skills-de-colaboradores.txt.
+adrian-saenz-hostinger-premium-website
+crear-web-afiliados-amazon
+crear-web-como-servicio
+crear-web-micro-saas
+crear-web-portfolio
+crear-web-saas-suscripcion
+youtube-downloader
+porter-metrics
+built-in-browser
+chrome-browser
+computer-use
+deep-research
+docs
+docx
+google-workspace
+import-memory
+morning
+pdf
+pptx
+setup-writing-style
+skill-creator
+xlsx
+session-start-hook
