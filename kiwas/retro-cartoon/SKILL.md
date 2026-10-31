@@ -4,12 +4,12 @@ description: "Kiwa de dibujo retro cartoon y rubber hose (años 20 y 30): esquel
 metadata:
   nicho: retro-cartoon
   herramientas: "Procreate, Illustrator, Photoshop"
-  lecciones: 7
+  lecciones: 9
   actualizado: "2026-10-31"
 ---
 
 # Kiwa Retro Cartoon
-> Método de dibujo rubber hose y criterios para enseñarlo. Fuente inicial: Julina Mae Animations [1][2][4][5][6][7]; sus ejemplos no agotan el estilo. La mascota de MUKIWA y la dirección de marca están en `kiwa-marca-mascota`.
+> Método de dibujo rubber hose y criterios para enseñarlo. Fuente inicial: Julina Mae Animations [1][2][4][5][6][7][8][9]; sus ejemplos no agotan el estilo. La mascota de MUKIWA y la dirección de marca están en `kiwa-marca-mascota`.
 
 Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía reglas de método; las fichas `CURSO.md`/`INDICE.md` de Codex no llegaron, así que **no se absorbió su contenido** (pendiente si Bryan las pasa).
 - Antes de adornos: intención emocional, función y acción del personaje. Si aún se estudia, explicar y proponer ejercicios; no presentar un personaje como aprobado.
@@ -33,8 +33,8 @@ Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía regla
 8. Evaluar personalidad y reconocimiento con Bryan antes de producir animación. No copiar a Cuphead ni a otro personaje conocido.
 
 ## Cobertura de Julina (qué sabe este Kiwa y con qué fiabilidad)
-- **Primera mano [1][2][4][5][6][7]:** cuerpos, ojos, guantes y manos, zapatos, poses femeninas, Keaton y Lloyd, Conductor, Barbershop Quartet, Spectre Syndicate, calabaza/esqueleto/murciélago, guantes mini, Rachel Maksy.
-- **Segunda mano [3] (Codex, fichas no recibidas):** Bendy y Alice (masas a contornos y áreas negras), Cuphead y Mugman (volumen de la cabeza al cambiar de vista), Ms. Chalice, tarjetas vintage (color y espaciado), clips del gato, planner.
+- **Primera mano [1][2][4][5][6][7][8][9]:** Bendy, Alice Angel, Cuphead (frente y perfil), Mugman, Ms. Chalice, cuerpos, ojos, guantes y manos, zapatos, poses femeninas, Keaton y Lloyd, Conductor, Barbershop Quartet, Spectre Syndicate, calabaza/esqueleto/murciélago, guantes mini, Rachel Maksy.
+- **Segunda mano [3] (Codex, fichas no recibidas):** tarjetas vintage (color y espaciado), clips del gato, planner.
 - **Sin cubrir:** el resto de referencias secundarias (manualidades, tours); retro shoujo (Rudolph, Holly) queda fuera: otra familia.
 
 ## Técnicas de los estudios de personajes (primera mano)
@@ -46,6 +46,10 @@ Los tutoriales se enseñan con **tarjetas de texto, sin voz**; es un personaje a
 - **Negro de relleno [4][7]:** cuencas, nariz, costillas, cuerpo y patas del murciélago, chaqueta; da lectura a tamaño pequeño. **Espacios entre costillas/varillas rellenos** para dar masa [6].
 - **Forma repetida para el entorno [4]:** tren = arcos redondeados repetidos + ventanas en fila + ruedas, **debajo** del personaje (composición: mano–cráneo–mano arriba, entorno abajo).
 - **Formas con reglas [6]:** ojos y orejas del murciélago en "D"; brazos y piernas curvos (pierna izquierda menos curva que la derecha); calabaza con borde festoneado, ojos entornados, nariz triangular y dientes con divisiones verticales; esqueleto: pose en palitos primero, huesos curvos o rectos, ojos ovalados.
+- **Negro como masa, cara y manos claras [8]:** Bendy y Alice se entintan por partes y luego se rellena en negro (cabeza, brazos, cuerpo, zapatos, pelo); la cara y los guantes quedan claros. Alice usa tinta diluida con pincel plano; Bendy, rotulador y pincel. Probar al personaje en solo silueta negra.
+- **Cuerpo con 2–3 formas simples [8]:** Bendy = círculo + óvalo + brazos curvos; Alice = triángulo invertido (torso) + triángulo normal más grande (falda), brazos negros y guantes blancos.
+- **Cabeza-objeto en dos vistas [9]:** Cuphead frente (copa con línea central) vs perfil (se ve el interior, "el ojo llega hasta el borde", pie en forma de cacahuate); Mugman de tres cuartos (nariz unida a la cara con línea plana, cabeza un poco más alta que Cuphead). Orden de Mugman: cabeza → cuerpo → extremidades → detalles.
+- **Una anatomía, varias poses [9]:** Ms. Chalice cambia de "señalar" a "saltar" cambiando brazos y **el ángulo de los pies**; es el cambio de peso más barato.
 - **Color:** tinta + color plano o lavado ligero (acuarela rosa en fantasmas, gris en alas); paleta de las piezas vistas: rojo/azul-verdoso/naranja sobre papel verde claro (Quartet), magenta + amarillo en el sombrero (Conductor) [4][5].
 - **De referencia real a personaje [7]:** fotos del atuendo → gesto en palitos → ropa y accesorios → línea limpia → negros planos → color plano y mejillas; cerrar con un recurso de época (iris circular, tarjeta de título).
 - **Producción de la serie:** título "Cherry Deluxe presents", fondo de pizarra, lista de pasos "Things to remember", cierre "The End": un formato de tarjetas repetible que se puede imitar como **estructura de tutorial propia** (idea nuestra).
@@ -113,5 +117,7 @@ A sale de 7 videos del canal Julina Mae Animations (5 tutoriales de construcció
 - [5] `references/lecciones/rubber-hose-cuphead-quartet-y-fantasmas-julina-mae.md`
 - [6] `references/lecciones/rubber-hose-halloween-calabaza-esqueleto-murcielago-julina-mae.md`
 - [7] `references/lecciones/rubber-hose-guantes-mini-y-rachel-maksy-julina-mae.md`
+- [8] `references/lecciones/rubber-hose-bendy-y-alice-julina-mae.md`
+- [9] `references/lecciones/rubber-hose-cuphead-mugman-ms-chalice-julina-mae.md`
 - [3] `references/lecciones/curso-sintesis-julina-mae-codex.md` (segunda mano, Codex) y `references/indice-fuentes-julina.md`
 - Origen del texto de criterios: skill `retrocartoon` de Codex (solo su SKILL.md; fichas CURSO/INDICE no recibidas).

@@ -103,8 +103,10 @@
 
 ## retro-cartoon
 
+- [Rubber hose: Bendy y Alice Angel — del boceto a la tinta y al relleno en negro (Julina Mae)](retro-cartoon/rubber-hose-bendy-y-alice-julina-mae.md) — 
 - [Rubber hose aplicado a personas reales: de referencia de cine mudo a caricatura entintada (Julina Mae, "Shenanigans" Keaton y Lloyd)](retro-cartoon/rubber-hose-caricatura-de-personas-reales-julina-mae.md) — Dos vlogs muestran el proceso completo: ver películas mudas como referencia → bocetos a lápiz de poses y caras → entintar con fineliner → lavado gris con pincel.
 - [Rubber hose: el Conductor de Cuphead — calavera, manos de huesos y tren, de lápiz a tinta y color (Julina Mae)](retro-cartoon/rubber-hose-cuphead-conductor-julina-mae.md) — 
+- [Rubber hose: Cuphead (frente y perfil), Mugman y Ms. Chalice (Julina Mae)](retro-cartoon/rubber-hose-cuphead-mugman-ms-chalice-julina-mae.md) — 
 - [Rubber hose: personajes simples — Barbershop Quartet (Cuphead) y fantasmas del Spectre Syndicate (Julina Mae)](retro-cartoon/rubber-hose-cuphead-quartet-y-fantasmas-julina-mae.md) — 
 - [Rubber hose desde cero: cuerpos, ojos, manos, zapatos y poses (Julina Mae Animations, serie "Rubber Hose Tutorial")](retro-cartoon/rubber-hose-desde-cero-cuerpos-ojos-manos-zapatos-poses-julina-mae.md) — Cinco tutoriales cortos construyen un personaje estilo años 20–30 con formas básicas: esqueleto → óvalos y círculos → contorno grueso, con variantes por tipo de cuerpo, ojo, mano, zapato y pose femenina.
 - [Rubber hose: guantes en un minuto y de foto real a personaje (Julina Mae: mini tutorial de guantes y Rachel Maksy)](retro-cartoon/rubber-hose-guantes-mini-y-rachel-maksy-julina-mae.md) — 
