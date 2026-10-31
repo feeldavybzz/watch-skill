@@ -6,7 +6,7 @@ Mini skills por nicho que crecen con cada video analizado (ver skills/kiwa-watch
 - **color-grading** — 2 lecciones · DaVinci Resolve, Premiere Pro · actualizado 2026-10-30
 - **composicion-visual** — 10 lecciones · Premiere Pro, DaVinci Resolve, Photoshop, Procreate · actualizado 2026-10-28
 - **diseno-grafico** — 20 lecciones · Illustrator, Photoshop, Figma, Procreate · actualizado 2026-10-30
-- **editor-asistente** — 8 lecciones · Premiere Pro, DaVinci Resolve, Claude Code, Remotion · actualizado 2026-10-28
+- **editor-asistente** — 12 lecciones · Premiere Pro, DaVinci Resolve, Claude Code, Remotion · actualizado 2026-10-31
 - **efectos-visuales** — 2 lecciones · Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis · actualizado 2026-10-28
 - **iluminacion** — 6 lecciones · Tungsteno, HMI, LED, Kino Flo, Fotómetro · actualizado 2026-10-30
 - **imagenes-ia** — 4 lecciones · Higgsfield (Soul Cinema, Seedream), GPT Image, Claude · actualizado 2026-10-28

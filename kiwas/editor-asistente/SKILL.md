@@ -4,12 +4,12 @@ description: "Kiwa de editor asistente: corte por significado, pausas, música, 
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 8
-  actualizado: "2026-10-28"
+  lecciones: 12
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Editor asistente
-> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), cubre con B-roll, respeta la línea de 180° y usa la velocidad como recurso, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas. Tiene **6 lecciones propias** y **3 complementarias** ([7] whip pan, [8] match cut en video de IA, [9] overlays en Premiere).
+> Prepara el material y entrega la primera versión del montaje: corta por significado y con intención (eyeline match, cross cutting, eye trace, J/L cut, montaje intelectual, corte en acción), cubre con B-roll, respeta la línea de 180° y usa la velocidad como recurso, ajusta pausas, mezcla la música, subtitula con animación y deriva reels y carruseles de un video largo. Incluye valores de partida de corte apretado y verificación de huecos ([12], sin validar con un clip). Conoce el flujo de editar con IA (Claude Code, Whisper, ffmpeg, Remotion) con valores de partida concretos; faltan los pasos manuales en Premiere y DaVinci y valores validados con ediciones terminadas. Tiene **6 lecciones propias** y **3 complementarias** ([7] whip pan, [8] match cut en video de IA, [9] overlays en Premiere).
 
 Instrucciones para HACER el trabajo, no resúmenes de videos. Cada técnica aparece una sola vez;
 la fuente va entre corchetes [n] (ver Fuentes). Valores exactos solo si se vieron o dijeron;
@@ -56,7 +56,13 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `kiwa-diseno-graf
 - Base de todo: un mapa de palabras con tiempos; los pasos siguientes (efectos, subtítulos, tarjetas) se anclan a él [2].
 - **Pausas entre palabras ≈ 0,2 s** (probado de 0,15 a 0,35): por debajo suena comprimido, por encima de 0,25 s ya no se nota la mejora [2]. **Muletillas**: quitarlas en explicaciones técnicas, dejarlas en momentos narrativos, porque dan ritmo humano [2].
 - Quitar silencios, tomas con error y repeticiones; el video resultante debe ser más corto y dinámico [1].
-- Sin valores de umbral todavía (qué duración de silencio se corta): ver Dudas abiertas.
+- **Corte apretado de un clip hablado: valores de partida** [12] (de un código leído, sin validar con un clip; el estilo humano de [2] con pausas ≈0,2 s es más suave):
+  - Pausa entre palabras conservadas **> 0,12 s** → cortar, dejando **0,035 s** tras la palabra y **0,025 s** antes de la siguiente.
+  - Los bordes de palabra se miden por energía, no por los tiempos del transcriptor: el borde es donde hay **≥100 ms bajo −46 dBFS**. Un hueco corto (<0,4 s) con sonido sostenido (≥60 ms sobre −40 dBFS) es parte de una palabra: no se corta.
+  - **Respiraciones**: cortar si hay ≥0,18 s sin voz (autocorrelación <0,45) y silencio (<−30 dB) entre palabras. Recortar el inicio hasta 0,1 s antes de la primera palabra y el final 0,12 s tras la última.
+  - **Tomas falladas: conserva la ÚLTIMA toma completa**; escribe a mano los rangos a quitar y deja que un guardia impida que un corte se coma una palabra conservada [12].
+  - **Verifica antes de renderizar** [12]: transcribe cada hueco quitado que tenga sonido sostenido (si aparece una palabra real, protégela o corrige el rango) y transcribe el audio ya editado entero; léelo como guion: sin repeticiones, sin palabras cortadas, sin frases a medias.
+  - Pasa el fps real del clip a cada paso (un fps equivocado hace caer los cortes en el cuadro equivocado) y une cada corte con un fundido de audio de ≈8 ms [12].
 - **Marca de audio**: voz a −13,5 LUFS y música de fondo que baja sola mientras se habla (ducking) [1].
 - **Música** (valores de partida, de una guía): instrumental, 80–110 BPM, al menos 90 s más larga que el video; `volume=0.13` (≈ −18 dB) bajo la voz, fade-in de 2 s y fade-out de 3 s [2]. Una biblioteca de efectos y música normalizada a ≈ −20 LUFS con techo de −1,5 dBFS [2].
 - **Voz**: limpiar solo el ruido conservando los niveles; RNNoise es gratis y local, ElevenLabs de pago para ruido difícil [2]. Colocar efectos sobre palabras exactas y revisar la lista de efectos a mano antes de mezclar [2].
@@ -96,9 +102,11 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `kiwa-diseno-graf
 - Instalar las skills oficiales: `claude plugin marketplace add remotion-dev/claude-code-plugin` y `claude plugin install remotion@remotion`, o `npx remotion skills add` (usar una vía, no las dos); reiniciar Claude Code [2]. Skills útiles: `/remotion-captions`, `/remotion-markup`, `/remotion-studio`, `/remotion-render` [2].
 - **Cómo pedir**: duración, dimensiones, fps, orden y tiempos de escenas, texto literal, rutas de recursos permitidas, colores, fuentes y estilo de movimiento; **un cambio por vez**; movimiento contenido; revisar en Remotion Studio y no renderizar a cada paso; pedir que preserve lo existente y revisar el diff [2].
 - Si la vista previa va lenta en videos largos, renderiza segmentos cortos y no decidas el ritmo con el scrubber [2]. Si se añaden o renombran tomas hay que regenerar el registro (`npm run gen` en una guía); el texto de marca, los colores y las fuentes deben coincidir en todos los archivos o falla en silencio [2].
+- **Subtítulos simples (alternativa sin animación)** [12]: frases de **2 a 4 palabras**, blancas, un solo estilo, bajo la barbilla, sin tapar la boca ni salirse de los lados. Escribe el texto a mano (una línea por subtítulo, todas las palabras habladas en orden) y alinéalo con un script contra las palabras con tiempo: si una palabra no coincide debe fallar en voz alta, no desfasarse. Arreglos del reconocimiento con alias «mostrado=oído»; cada subtítulo dura hasta el siguiente, máximo 0,5 s tras su última palabra [12].
 - Una vista previa que funciona no garantiza el render: fuentes y recursos externos pueden comportarse distinto [2].
 
 ### ffmpeg
+- **Recorte a 9:16 con la cara centrada** [12]: desde 3840×2160 ventana 1215×2160; desde 1920×1080 ventana 608×1080; luego escalar a 1080×1920 (lanczos, x264 CRF 16, AAC 320 k). Mira un fotograma antes de seguir; un clip ya vertical solo se escala. Para cortar por cuadros exactos con muchos tramos, el filtro `select` de ffmpeg falla con muchos términos `between()`: trocear en grupos de ≈50 y unir [12].
 - Extraer audio para transcribir: mono, 16 kHz, PCM s16le [2]. Mezclar música con `volume=0.13` y fades de 2 s y 3 s [2].
 
 ### Premiere Pro
@@ -130,6 +138,7 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [ ] Reels en 1080×1920 y carrusel en 1080×1350, numerado.
 - [ ] Llamado a la acción y su automatización coinciden.
 - [ ] Verificación técnica: palabras cortadas por la mitad y desfase de audio (una guía cita un desfase de 200 ms como problema; tolerancia sin definir) [2].
+- [ ] Cada hueco quitado con sonido sostenido transcrito y el audio editado leído como guion [12].
 - [ ] Cortes a mitad de palabra revisados (minutos marcados por el asistente) y volumen de la música aprobado.
 - [ ] Revisión final a 1,5x con audio por una persona (≈ 4–6 min por 10 min de video) [2].
 - [ ] Video completo visto y escuchado por una persona.
@@ -142,7 +151,8 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [3] Los porcentajes de la regla de los seis salen de un gráfico a baja resolución del video; coinciden con los valores publicados de Murch pero el narrador no los recita. Faltan duraciones recomendadas por tipo de plano y los pasos de J/L cut y de corte en acción en Premiere o DaVinci.
 - [2] Valores de pausas, música y subtítulos salen de guías escritas (autores con herramientas y afiliados propios) y no se han comprobado con una edición terminada de referencia: validar antes de fijarlos como estándar MUKIWA.
 - [2] AssemblyAI frente a Whisper: una guía prefiere AssemblyAI, otra usa Whisper; ambas dan tiempos por palabra. Aquí se usa Whisper local.
-- Siguen sin valor: umbral de silencio en dB, relleno de los cortes (padding), lista de muletillas y tolerancia de desfase.
+- Umbral de silencio y relleno de cortes: ya hay valores de partida en [12] (−46/−30 dBFS, 0,12 s, 0,035/0,025 s) pero salen de un código leído, sin probar con un clip ni comparar con [2]; siguen sin valor la lista de muletillas y la tolerancia de desfase.
+- [12] La skill de origen es un gancho de venta (rechaza ganchos, gráficos, música y subtítulos animados): solo se aprovecha su método de corte, no su estilo. Su video-guía no se vio.
 - La guía escrita de [3] añade técnicas que el video no desarrolla: continuity editing, disolvencia, fundido, jump cut, match cut y montaje; la **regla de los 180°** ya tiene fuente propia [5]. No hay fuente para ejecutarlas en software.
 - Sin fuente para Premiere y DaVinci (ya hay un oficio de corte por transcripción en ambos, pero no se ha aprendido de un video real).
 - [1] es una demostración comercial: la skill y su prompt no se muestran, así que faltan umbrales de silencio, tipografía y tamaños de subtítulos y reglas de animación (solo se ve el estilo general).
@@ -164,3 +174,4 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [9] Guideify 2: cómo un plugin de Premiere muestra interfaz social y guías — https://youtu.be/ZcDtrjVuR5k · `references/lecciones/guideify-2-overlay-social-y-guias-en-premiere.md`
 - [10] Transición «frame flash» en DaVinci Resolve (@ramrylie) — reel de Instagram, archivo local · `references/lecciones/flash-transition-davinci-ramrylie.md`
 - [11] Edit de concierto: flashes, latigazos, zoom radial, glitch y espejo (@acreyyyyy) — reel de Instagram, archivo local · `references/lecciones/edit-concierto-flashes-zoom-glitch-acreyyyyy.md`
+- [12] Clean Cut (gratis): corte apretado y subtítulos simples para un clip hablado (Ajene Pinnock) — skill ajena leída como texto; página de Notion del autor · `references/lecciones/clean-cut-corte-tight-subtitulos-ajene-pinnock.md`
