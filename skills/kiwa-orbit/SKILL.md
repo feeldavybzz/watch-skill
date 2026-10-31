@@ -5,7 +5,7 @@ description: Organiza chats, sesiones y proyectos en ChatGPT, Claude o Codex por
 
 # ORBIT (kiwa-orbit)
 
-> Origen: skill `organizar-chats` de Bryan (ChatGPT/Codex), copia de iCloud del 2026-10-30, integrada tal cual, más el índice maestro en `references/`. Si la versión mejorada en ChatGPT difiere, fusionar (no sobrescribir).
+> Origen: skill `organizar-chats` de Bryan (ChatGPT/Codex), copia de iCloud del 2026-10-30, integrada tal cual, más el índice maestro en `references/` y, el 2026-10-31, ruta de ejecución, nota para Claude y registro (`scripts/orbit_registro.py`). Si la versión mejorada en ChatGPT difiere, fusionar (no sobrescribir).
 
 Organiza las conversaciones accesibles dentro de la plataforma autorizada. Adapta la estructura a la persona; no importes marcas, nombres, relaciones personales ni categorías de cuentas anteriores.
 
@@ -81,3 +81,24 @@ La skill no concede acceso a otras cuentas ni autoriza enviar mensajes, subir in
 ## Entrega
 
 Muestra la estructura final, algunos títulos representativos, cambios verificados, proyectos fijados si se solicitaron y pendientes reales. Distingue resultados observados de reportes de otro asistente. Adjunta evidencia visual cuando uses la interfaz. No confundas una solicitud aceptada con un cambio guardado ni prometas continuidad automática sin una programación expresamente solicitada.
+
+## Ruta de ejecución (paso a paso)
+
+1. **Contexto**: lee `references/indice-maestro-bryan.md` si es la cuenta de Bryan; si no, pregunta rubro y agrupaciones (una sola ronda).
+2. **Inventario**: lista los chats con la herramienta de la plataforma (en Claude: búsqueda y chats recientes, solo lectura). Di cuántos viste y cuántos faltan; nunca declares la cuenta completa si el listado está limitado.
+3. **Filtro incremental**: consulta `scripts/orbit_registro.py seen --id ID`. Si ya está `verificado` y el tema no cambió, sáltalo.
+4. **Clasificación**: para cada chat da título propuesto (NICHO · TEMA) y destino, con una línea de motivo. Marca **confianza alta** solo si el contexto del chat decide el destino; el resto es **«revisar»**.
+5. **Propuesta**: muestra una tabla `chat → título nuevo → proyecto`. Lo ambiguo va aparte, sin tocar. Espera aprobación del lote.
+6. **Aplicar por lotes de ≤10**, solo lo aprobado. Tras cada lote, recarga y verifica por ID/enlace; registra con `orbit_registro.py add --estado verificado` (o `pendiente` si no se pudo comprobar).
+7. **Detente** al primer límite de solicitudes, error de acceso o pantalla que pida permiso nativo. Reporta lo confirmado y lo pendiente.
+
+## En Claude (claude.ai y la app)
+
+- Las herramientas de chat (conversaciones recientes, búsqueda, leer un chat) son **solo lectura**: sirven para el inventario y para entender el contexto, no para cambiar nada.
+- Renombrar o añadir un chat a un proyecto se hace desde la interfaz (menú ⋯ del chat → Renombrar / Añadir al proyecto) con el navegador autorizado, un chat a la vez, verificando en la lista. Pide acceso al sitio antes; no uses sesiones de otra cuenta.
+- Los chats de Claude Code o tareas locales no se mueven de carpeta ni se editan por archivo: solo se les sugiere título.
+- Un proyecto nuevo solo se crea con aprobación; si ya existe uno parecido, reutilízalo.
+
+## Registro de correcciones (privado)
+
+`scripts/orbit_registro.py` guarda en `~/.mukiwa/orbit-registro.jsonl` (fuera del repo) ID, título anterior y nuevo, proyecto, motivo y estado. Si Bryan corrige un destino, regístralo con `--estado verificado` y el título corregido: esa decisión gana sobre cualquier clasificación futura. No se guarda contenido de los chats.
