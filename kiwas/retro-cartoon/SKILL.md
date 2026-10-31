@@ -4,12 +4,12 @@ description: "Kiwa de dibujo retro cartoon y rubber hose (años 20 y 30): esquel
 metadata:
   nicho: retro-cartoon
   herramientas: "Procreate, Illustrator, Photoshop"
-  lecciones: 3
+  lecciones: 7
   actualizado: "2026-10-31"
 ---
 
 # Kiwa Retro Cartoon
-> Método de dibujo rubber hose y criterios para enseñarlo. Fuente inicial: Julina Mae Animations [1][2]; sus ejemplos no agotan el estilo. La mascota de MUKIWA y la dirección de marca están en `kiwa-marca-mascota`.
+> Método de dibujo rubber hose y criterios para enseñarlo. Fuente inicial: Julina Mae Animations [1][2][4][5][6][7]; sus ejemplos no agotan el estilo. La mascota de MUKIWA y la dirección de marca están en `kiwa-marca-mascota`.
 
 Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía reglas de método; las fichas `CURSO.md`/`INDICE.md` de Codex no llegaron, así que **no se absorbió su contenido** (pendiente si Bryan las pasa).
 - Antes de adornos: intención emocional, función y acción del personaje. Si aún se estudia, explicar y proponer ejercicios; no presentar un personaje como aprobado.
@@ -33,9 +33,22 @@ Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía regla
 8. Evaluar personalidad y reconocimiento con Bryan antes de producir animación. No copiar a Cuphead ni a otro personaje conocido.
 
 ## Cobertura de Julina (qué sabe este Kiwa y con qué fiabilidad)
-- **Primera mano [1][2]:** cuerpos, ojos, guantes y manos, zapatos, poses femeninas, Keaton y Lloyd.
-- **Segunda mano [3] (Codex, fichas no recibidas):** Bendy y Alice (masas a contornos y áreas negras), Cuphead y Mugman (volumen de la cabeza al cambiar de vista), Ms. Chalice (poses con curvas), tarjetas vintage (color y espaciado), clips del gato (expresión y silueta), planner (motivación de Julina).
-- **Sin cubrir:** Conductor, Barbershop Quartet y Spectre Syndicate (Cuphead), calabazas, esqueletos y murciélagos, guantes mini, Rachel Maksy; referencias secundarias (manualidades, tours) aportan contexto, no método. Retro shoujo (Rudolph, Holly) queda fuera: otra familia.
+- **Primera mano [1][2][4][5][6][7]:** cuerpos, ojos, guantes y manos, zapatos, poses femeninas, Keaton y Lloyd, Conductor, Barbershop Quartet, Spectre Syndicate, calabaza/esqueleto/murciélago, guantes mini, Rachel Maksy.
+- **Segunda mano [3] (Codex, fichas no recibidas):** Bendy y Alice (masas a contornos y áreas negras), Cuphead y Mugman (volumen de la cabeza al cambiar de vista), Ms. Chalice, tarjetas vintage (color y espaciado), clips del gato, planner.
+- **Sin cubrir:** el resto de referencias secundarias (manualidades, tours); retro shoujo (Rudolph, Holly) queda fuera: otra familia.
+
+## Técnicas de los estudios de personajes (primera mano)
+Los tutoriales se enseñan con **tarjetas de texto, sin voz**; es un personaje ajeno cada vez: se toma el método, no el diseño.
+- **Cabeza = forma básica primero [4]:** rectángulo → óvalo/cráneo dentro, línea guía vertical y horizontal, sombrero como bloque, cuello como cilindro. Las curvas de ojo y de pómulo se dibujan juntas y **el punto más bajo de la ceja cae en la parte baja de la curva del ojo** (gesto enojado).
+- **Manos [4][6]:** empezar con una **caja** (personaje) o un **círculo de palma + óvalo de pulgar + óvalo de puño en la muñeca** (guante); marcar cada falange; muñeca simple; hueco solo en antebrazos de hueso. Ejercicio: hoja de 7–8 poses de mano (plana, V, puño, señalar, pulgar arriba…).
+- **Una construcción, varios personajes [5]:** Quartet = mismo cilindro rayado con brazo recto y brazo curvo y ojos de punto; fantasmas = óvalo + cola ondulada + brazos + cara. Cambiar solo cara y accesorios (sombrero, bigote, moño) crea familia coherente; la expresión se cambia redibujando solo la cara.
+- **Orden de repaso:** boceto muy suave → silueta completa clara → repasar en oscuro o tinta empezando por el **sombrero/accesorio**, luego cabeza, manos y entorno [4][5].
+- **Negro de relleno [4][7]:** cuencas, nariz, costillas, cuerpo y patas del murciélago, chaqueta; da lectura a tamaño pequeño. **Espacios entre costillas/varillas rellenos** para dar masa [6].
+- **Forma repetida para el entorno [4]:** tren = arcos redondeados repetidos + ventanas en fila + ruedas, **debajo** del personaje (composición: mano–cráneo–mano arriba, entorno abajo).
+- **Formas con reglas [6]:** ojos y orejas del murciélago en "D"; brazos y piernas curvos (pierna izquierda menos curva que la derecha); calabaza con borde festoneado, ojos entornados, nariz triangular y dientes con divisiones verticales; esqueleto: pose en palitos primero, huesos curvos o rectos, ojos ovalados.
+- **Color:** tinta + color plano o lavado ligero (acuarela rosa en fantasmas, gris en alas); paleta de las piezas vistas: rojo/azul-verdoso/naranja sobre papel verde claro (Quartet), magenta + amarillo en el sombrero (Conductor) [4][5].
+- **De referencia real a personaje [7]:** fotos del atuendo → gesto en palitos → ropa y accesorios → línea limpia → negros planos → color plano y mejillas; cerrar con un recurso de época (iris circular, tarjeta de título).
+- **Producción de la serie:** título "Cherry Deluxe presents", fondo de pizarra, lista de pasos "Things to remember", cierre "The End": un formato de tarjetas repetible que se puede imitar como **estructura de tutorial propia** (idea nuestra).
 
 ## Método general rubber hose (Parte A)
 ## Fuente
@@ -96,5 +109,9 @@ A sale de 7 videos del canal Julina Mae Animations (5 tutoriales de construcció
 ## Fuentes
 - [1] `references/lecciones/rubber-hose-desde-cero-cuerpos-ojos-manos-zapatos-poses-julina-mae.md`
 - [2] `references/lecciones/rubber-hose-caricatura-de-personas-reales-julina-mae.md`
+- [4] `references/lecciones/rubber-hose-cuphead-conductor-julina-mae.md`
+- [5] `references/lecciones/rubber-hose-cuphead-quartet-y-fantasmas-julina-mae.md`
+- [6] `references/lecciones/rubber-hose-halloween-calabaza-esqueleto-murcielago-julina-mae.md`
+- [7] `references/lecciones/rubber-hose-guantes-mini-y-rachel-maksy-julina-mae.md`
 - [3] `references/lecciones/curso-sintesis-julina-mae-codex.md` (segunda mano, Codex) y `references/indice-fuentes-julina.md`
 - Origen del texto de criterios: skill `retrocartoon` de Codex (solo su SKILL.md; fichas CURSO/INDICE no recibidas).

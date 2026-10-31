@@ -12,3 +12,4 @@
 - Tomado: criterios de enseñanza, orden de construcción, límites de estilo, plan de áreas por desarrollar → `kiwa-marca-mascota`.
 - Mejorado: sin duplicar; nombre único, la skill suelta queda retirada.
 - Recibido después: CURSO.md e INDICE.md (2026-10-31), integrados como fuente [3] de segunda mano; faltan las fichas por video.
+- 2026-10-31: analizados en primera mano (frames) Conductor, Barbershop Quartet, Spectre Syndicate, calabaza/esqueleto/murciélago, guantes mini y Rachel Maksy; quedan en segunda mano Bendy, Alice, Cuphead, Mugman y Ms. Chalice.
