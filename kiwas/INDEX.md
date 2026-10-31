@@ -13,6 +13,6 @@ Mini skills por nicho que crecen con cada video analizado (ver skills/kiwa-watch
 - **motion-graphics** — 16 lecciones · After Effects, Blender, Remotion, HyperFrames, código HTML · actualizado 2026-10-31
 - **narrativa-y-direccion** — 4 lecciones · Storyboard, Lista de planos · actualizado 2026-10-11
 - **negocio-creativo** — 9 lecciones · LinkedIn, Notion, Loom · actualizado 2026-10-30
-- **retro-cartoon** — 9 lecciones · Procreate, Illustrator, Photoshop · actualizado 2026-10-31
+- **retro-cartoon** — 10 lecciones · Procreate, Illustrator, Photoshop · actualizado 2026-10-31
 - **sfx-audio** — 6 lecciones · ffmpeg, ElevenLabs, RNNoise, Premiere Pro, DaVinci Resolve · actualizado 2026-10-28
 - **video-con-ia** — 5 lecciones · Higgsfield Cinema Studio, Seedance, Seedream, Claude · actualizado 2026-10-28

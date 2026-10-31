@@ -4,7 +4,7 @@ description: "Kiwa de dibujo retro cartoon y rubber hose (años 20 y 30): esquel
 metadata:
   nicho: retro-cartoon
   herramientas: "Procreate, Illustrator, Photoshop"
-  lecciones: 9
+  lecciones: 10
   actualizado: "2026-10-31"
 ---
 
@@ -34,7 +34,7 @@ Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía regla
 
 ## Cobertura de Julina (qué sabe este Kiwa y con qué fiabilidad)
 - **Primera mano [1][2][4][5][6][7][8][9]:** Bendy, Alice Angel, Cuphead (frente y perfil), Mugman, Ms. Chalice, cuerpos, ojos, guantes y manos, zapatos, poses femeninas, Keaton y Lloyd, Conductor, Barbershop Quartet, Spectre Syndicate, calabaza/esqueleto/murciélago, guantes mini, Rachel Maksy.
-- **Segunda mano [3] (Codex, fichas no recibidas):** tarjetas vintage (color y espaciado), clips del gato, planner.
+- **Segunda mano [3][10] (Codex, leídas en sus fichas; no vistas en video):** tarjetas vintage, planner, clips del gato, guirnalda, fieltro, cartel de cine mudo, mascota evolucionando.
 - **Sin cubrir:** el resto de referencias secundarias (manualidades, tours); retro shoujo (Rudolph, Holly) queda fuera: otra familia.
 
 ## Técnicas de los estudios de personajes (primera mano)
@@ -119,5 +119,6 @@ A sale de 7 videos del canal Julina Mae Animations (5 tutoriales de construcció
 - [7] `references/lecciones/rubber-hose-guantes-mini-y-rachel-maksy-julina-mae.md`
 - [8] `references/lecciones/rubber-hose-bendy-y-alice-julina-mae.md`
 - [9] `references/lecciones/rubber-hose-cuphead-mugman-ms-chalice-julina-mae.md`
+- [10] `references/lecciones/julina-referencias-secundarias-codex.md`
 - [3] `references/lecciones/curso-sintesis-julina-mae-codex.md` (segunda mano, Codex) y `references/indice-fuentes-julina.md`
-- Origen del texto de criterios: skill `retrocartoon` de Codex (solo su SKILL.md; fichas CURSO/INDICE no recibidas).
+- Origen del texto de criterios: skill `retrocartoon` de Codex (SKILL.md, CURSO.md, INDICE.md y fichas leídas desde iCloud).
