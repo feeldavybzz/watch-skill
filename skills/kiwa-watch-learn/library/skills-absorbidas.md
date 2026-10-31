@@ -17,4 +17,4 @@
 ## kiwa-orbit (2026-10-31)
 - Fuente: skill propia de Bryan `organizar-chats` (título interno ORBIT), copia en iCloud `SKILLS KIWA/01 PROPIAS KIWA/organizar-chats` (SKILL.md del 2026-10-30). No es de un tercero.
 - Integrada sin cambios de contenido (solo nombre `kiwa-orbit` y nota de origen) en `skills/kiwa-orbit/`. Sirve para ordenar chats, proyectos y sesiones por marca/tema con títulos NICHO · TEMA.
-- Pendiente: Bryan dice que en ChatGPT la mejoró; no encontré su chat para compararla. Si pasa esa versión, fusionar.
+- 2026-10-31: añadido `references/indice-maestro-bryan.md` desde su chat de ChatGPT «Automatizar organización de chats» (leído en el navegador). Si hay otra versión mejorada del SKILL.md en ChatGPT, fusionar.

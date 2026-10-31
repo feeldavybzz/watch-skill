@@ -5,11 +5,13 @@ description: Organiza chats, sesiones y proyectos en ChatGPT, Claude o Codex por
 
 # ORBIT (kiwa-orbit)
 
-> Origen: skill `organizar-chats` de Bryan (ChatGPT/Codex), copia de iCloud del 2026-10-30, integrada tal cual. Si la versión mejorada en ChatGPT difiere, fusionar (no sobrescribir).
+> Origen: skill `organizar-chats` de Bryan (ChatGPT/Codex), copia de iCloud del 2026-10-30, integrada tal cual, más el índice maestro en `references/`. Si la versión mejorada en ChatGPT difiere, fusionar (no sobrescribir).
 
 Organiza las conversaciones accesibles dentro de la plataforma autorizada. Adapta la estructura a la persona; no importes marcas, nombres, relaciones personales ni categorías de cuentas anteriores.
 
 ## Conocer el contexto
+
+Para la cuenta de Bryan (MUKIWA), parte de `references/indice-maestro-bryan.md` (nueve áreas y reglas aprobadas), y confírmalo contra los proyectos reales.
 
 Antes de clasificar, pregunta brevemente por el rubro o actividad principal, el uso profesional/personal de la cuenta y cualquier agrupación importante que el contenido no permita deducir. Usa las respuestas ya dadas; no repitas preguntas resueltas. Mientras esperas, puedes revisar títulos, proyectos y capacidades sin hacer movimientos que dependan de la respuesta.
 
