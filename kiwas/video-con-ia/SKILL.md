@@ -138,6 +138,10 @@ Para el blocking y la narrativa, combínalo con `kiwa-narrativa-y-direccion`; pa
 - [9][10] Genjutsu: no se vio el costo en créditos ni la calidad en planos largos; el nombre del modelo de imagen de [10] viene mal oído por Whisper (≈ Seedream 5 Pro).
 - [7][8] Son reels de creadores que venden/regalan prompts por comentario: lo mostrado son resultados escogidos.
 
+## Referencias incorporadas — Instagram 2026-10-30
+Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas del disco; sin análisis nuevo). Consúltalas al evaluar referencias o una revisión de video por planos.
+- [revision-por-planos-claude.md](references/instagram-2026-10-30/revision-por-planos-claude.md)
+
 ## Fuentes
 - [1] Dirigir un anuncio de 30 s con video de IA: personajes, locaciones, prompt cronometrado y arreglo de fallos (Higgsfield, con Claude Opus 5.5 y Seedance 2.5) — https://youtu.be/kFKpcCHkuPI · `references/lecciones/dirigir-anuncio-con-video-ia-higgsfield-seedance.md`
 - [2] Escenas consistentes con Seedance (guía pública de AiLendra Labs, https://ailendra.com/ailab/lite/seedance-25-escenas/; fuente: página pública, resumen propio, registrada en `library/skills-absorbidas.md`)

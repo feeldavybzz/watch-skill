@@ -162,6 +162,11 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - [10] No se leen los valores numéricos por fotograma y el preset no se obtuvo (se entrega por comentario).
 - [11] Sin voz: no se sabe con qué efectos se hizo cada recurso ni si los cortes caen en el beat.
 
+## Referencias incorporadas — Instagram 2026-10-30
+Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas del disco; sin análisis nuevo). Consúltalas al evaluar referencias o una revisión de video por planos.
+- [criterios-motion.md](references/instagram-2026-10-30/criterios-motion.md)
+- [revision-por-planos-claude.md](references/instagram-2026-10-30/revision-por-planos-claude.md)
+
 ## Fuentes
 - [1] Editar un video en crudo con Claude: video largo, reels y carrusel — https://youtu.be/viztypMn7D0 · `references/lecciones/editor-asistente-claude-flujo-reels-carrusel.md`
 - [2] Editar video con Claude Code: tres guías escritas (cortes, pausas, música, subtítulos, Remotion) — https://learnwithhasan.com/guide/claude-code-video-editing/ · https://www.mejba.me/es/blog/claude-code-video-editing-workflow · https://www.tella.com/blog/how-to-use-remotion-agent-skills-with-claude-code.md · `references/lecciones/guias-claude-code-cortes-pausas-musica-subtitulos.md`

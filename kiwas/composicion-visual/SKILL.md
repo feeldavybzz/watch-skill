@@ -214,6 +214,11 @@ Principio: definir cada guía en coordenadas **relativas al cuadro (0 a 1)** y *
 - [12] Es una tabla sin criterio de cuándo usar cada formato.
 - [13][14] Que Instagram muestre el 4:3 sin barras en publicación es afirmación de los autores; falta ver el resultado en el feed y el grid.
 
+## Referencias incorporadas — Instagram 2026-10-30
+Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas del disco; sin análisis nuevo). Consúltalas al evaluar referencias o una revisión de video por planos.
+- [alaire-jerarquia.md](references/instagram-2026-10-30/alaire-jerarquia.md)
+- [criterios-diseno.md](references/instagram-2026-10-30/criterios-diseno.md)
+
 ## Fuentes
 - [1] Composición: 9 esquemas de la hoja de arte (tercios, áurea, triángulos, V, diagonal, radial, curva S, pirámide, espiral) — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
 - [2] Reel de 24 s: 8 recursos de composición dibujados sobre fotos (espiral, marco, tercios, yuxtaposición, diagonales, líneas guía, punto de fuga, centrado) — archivo · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`

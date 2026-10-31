@@ -27,3 +27,6 @@ Une tres skills que se repetían: `direccion-de-marca-y-mascota`, `retro-cartoon
 
 ## Contexto de marca MUKIWA
 La marca valora a las personas por quiénes son hoy, no por origen, color de piel ni clase social. La referencia cultural es inspiración, no tema. El punto de la "i" del logo puede funcionar como pupila y conecta con el personaje Arenio. No reemplaces el logo (MU en tratamiento Knerd, KIWA en Satoshi Black, ajustados a mano) por una tipografía genérica salvo petición expresa.
+
+## Lecciones de rubber hose (Julina Mae)
+Dos lecciones completas viven en `references/lecciones/`: `rubber-hose-desde-cero-cuerpos-ojos-manos-zapatos-poses-julina-mae.md` (5 tutoriales: cuerpos, ojos, guantes y manos, zapatos y poses femeninas; solo-visual, enseñanza en tarjetas) y `rubber-hose-caricatura-de-personas-reales-julina-mae.md` (de referencia de cine mudo a caricatura entintada). Úsalas junto a la Parte A.

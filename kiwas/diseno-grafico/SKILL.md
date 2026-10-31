@@ -4,8 +4,8 @@ description: "Kiwa de diseño gráfico completo: briefing, identidad, tipografí
 metadata:
   nicho: diseno-grafico
   herramientas: "Illustrator, Photoshop, Figma, Procreate"
-  lecciones: 20
-  actualizado: "2026-10-30"
+  lecciones: 21
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Diseño gráfico
@@ -154,6 +154,11 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 ### Sonido de marca (opcional)
 - Un sonido corto de marca (como los de Intel o Netflix) para podcasts, anuncios y notificaciones añade una capa a la identidad; el creador no da método [11].
 
+### Halftone vectorial en Illustrator [30]
+- Flujo (vídeo de Ollie Spicer): copia la forma de sombra, rellénala con degradado negro→blanco, **Effect > Pixelate > Color Halftone** con Max Radius ≈ 8 y los **cuatro canales iguales** (100); luego **Object > Rasterize** (RGB, 300 ppi, fondo transparente) y **Image Trace** en blanco y negro (threshold 128) con **Ignore Color** y **Expand** para obtener puntos vectoriales recoloreables [30].
+- Radio mayor = puntos más grandes (≈18 los agranda); al vectorizar los círculos quedan algo ásperos; para puntos más suaves sube Document Raster Effects Settings de 72 a 150–300 ppi (el archivo se vuelve más lento) [30].
+- Es halftone (trama de puntos), no duotone [30].
+
 ## Errores comunes
 - Copiar la identidad visual de una marca sin tener concepto propio: queda pura estética [29].
 - Repetir la misma foto o pose en el mismo lugar en varias piezas seguidas: se lee como descuido [29].
@@ -210,6 +215,11 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 
 - [29] Método de marca personal de un creador de contenido; el documento de esencia visual que menciona no se muestra; subtítulos automáticos sin cotejo con Whisper.
 
+## Referencias incorporadas — Instagram 2026-10-30
+Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas del disco; sin análisis nuevo). Consúltalas al evaluar referencias o una revisión de video por planos.
+- [alaire-jerarquia.md](references/instagram-2026-10-30/alaire-jerarquia.md)
+- [criterios-diseno.md](references/instagram-2026-10-30/criterios-diseno.md)
+
 ## Fuentes
 - [1] Proceso de identidad visual, parte 1: investigación y concepto — https://youtu.be/A4wBq1D6lt4 · `references/lecciones/identidad-visual-pt1-investigacion-concepto.md`
 - [2] Ahorra horas en Illustrator: interfaz, herramientas clave, Pathfinder no destructivo y para qué sí o no usarlo (Eze Cichello) — https://youtu.be/WWKGy5nBft8 · `references/lecciones/ahorra-horas-illustrator-eze-cichello.md`
@@ -231,3 +241,4 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - [27] Composición: 9 esquemas de la hoja de arte — https://youtu.be/bJ6Mg603lW8 · `references/lecciones/composicion-9-esquemas-clase-de-arte.md`
 - [28] Tienda web de zapatillas con estante 3D y página de producto (@ascenta.studio) — reel de Instagram, archivo local · `references/lecciones/tienda-web-zapatillas-3d-ascenta-studio.md`
 - [29] Marca personal premium: concepto, forma y percepción (en ese orden) — https://youtu.be/-R4VeoyHR1E · `references/lecciones/marca-personal-premium-concepto-forma-percepcion-arles.md`
+- [30] Halftone en Illustrator: de gradiente a puntos vectoriales (Ollie Spicer) — https://youtu.be/CZVk55d7H5A · `references/lecciones/halftone-puntos-illustrator-gradiente-a-vector-ollie-spicer.md`

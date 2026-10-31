@@ -4,8 +4,8 @@ description: "Kiwa de motion graphics: tipografía cinética en After Effects, e
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects, Blender, Remotion, HyperFrames, código HTML"
-  lecciones: 15
-  actualizado: "2026-10-30"
+  lecciones: 16
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Motion graphics
@@ -106,6 +106,13 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 ### Blender
 - Dibujo 2D cuadro a cuadro con capas, piel de cebolla y barra de pinceles, línea de tiempo con un keyframe por cuadro, y vista 3D con cámara vertical 9:16 [3]. Nombres de menús y valores: no vistos; el creador no los dice.
 
+### Composición y texturas con CC Composite (After Effects) [16]
+- CC Composite hace otra operación de composición dentro de la pila de efectos. **Contraste sin duplicar capa**: aplícalo al mapa con Top Layer = None y prueba Overlay (Soft Light es más suave, Hard Light más agresivo) bajando Opacity; la opacidad se puede animar [16].
+- **Imagen dentro del texto**: CC Composite en el texto, Top Layer = el mapa; con RGB Only desactivado se conserva el recorte a las letras. Oculta la capa fuente y revisa la cuadrícula alfa antes de exportar [16].
+- **Textura dentro de una forma**: CC Composite en la silueta con una textura de papel como Top Layer; ajusta Transfer Mode y Opacity [16].
+- **Escala**: el mapa no hereda su escala visible porque el efecto lee una etapa anterior a las transformaciones. Arréglalo con un Transform en la capa fuente y eligiendo **Effects & Masks** en el selector de fuente, o precomponiendo con Move all attributes [16].
+- Técnica vista en video, aún sin probar en el After Effects de Bryan; no automatizar por índices de parámetros [16].
+
 ## Errores comunes
 - Crear la cámara 3D sin marcar **Enable Depth of Field** y luego no ver desenfoque: viene desmarcado por defecto, actívalo en el diálogo o en Camera Options [15].
 - Confundir zoom con dolly: el zoom no cambia la perspectiva; el dolly sí [15].
@@ -145,6 +152,11 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 
 - [15] Tutorial de principiante con un solo ejemplo animado (logo sobre anillos); subtítulos automáticos sin Whisper. No muestra atajos de las herramientas de cámara, animar Focus Distance/Aperture con keyframes, Create Orbit Null ni Stereo 3D Rig, ni el render final; el efecto de Highlight no se cambia.
 
+## Referencias incorporadas — Instagram 2026-10-30
+Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas del disco; sin análisis nuevo). Consúltalas al evaluar referencias o una revisión de video por planos.
+- [criterios-motion.md](references/instagram-2026-10-30/criterios-motion.md)
+- [revision-por-planos-claude.md](references/instagram-2026-10-30/revision-por-planos-claude.md)
+
 ## Fuentes
 - [1] Tipografía cinética en After Effects: 3 técnicas con una sola capa — https://www.youtube.com/watch?v=f3nb-MQyshQ · `references/lecciones/tipografia-cinetica-after-effects-3-tecnicas.md`
 - [2] Reel de 24 s con 8 recursos de composición dibujados sobre fotos — archivo local · `references/lecciones/reel-8-recursos-composicion-guias-sobre-fotos.md`
@@ -161,3 +173,4 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - [13] Motion en código: render determinista con seek(t), springs y motion blur (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/motion-en-codigo-render-determinista-seek-springs-y-motion-blur.md`
 - [14] Lanzamiento de producto en código: dirección, beats y prohibidos (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/lanzamiento-producto-en-codigo-direccion-beats-prohibidos.md`
 - [15] Cámara 3D de After Effects: crear, controlar, profundidad de campo y mover con keyframes — https://youtu.be/qO3_WBYCe-E · `references/lecciones/camara-3d-after-effects-controles-peter-kasilo.md`
+- [16] CC Composite: contraste, relleno de texto y texturas — Boone Loves Video · https://youtu.be/aHLMdk9W7Rc · `references/lecciones/cc-composite-after-effects-boone.md`
