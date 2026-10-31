@@ -97,7 +97,8 @@ Muestra la estructura final, algunos títulos representativos, cambios verificad
 - Las herramientas de chat (conversaciones recientes, búsqueda, leer un chat) son **solo lectura**: sirven para el inventario y para entender el contexto, no para cambiar nada.
 - Renombrar o mover un chat se hace desde la interfaz con el navegador autorizado, un chat a la vez, verificando en la lista. Ruta probada el 2026-10-31 en claude.ai: abrir el chat → flecha junto al título → **Añadir al proyecto** (abrir el submenú con flecha derecha, escribir parte del nombre del proyecto y elegir el existente, no «Crear») → aparece «Movido a …»; luego flecha del título → **Cambiar nombre** → Cmd+A, escribir, Enter. Cuidado: el mismo menú tiene **Eliminar** y **Archivar**; no los uses.
 - Los enlaces `claude.ai/chat/ID` que devuelven las herramientas de lectura pueden pertenecer a otra cuenta o sesión y abrir «Esa sesión ya no está disponible»; para actuar, abre el chat desde la barra lateral de la cuenta activa y usa el ID de la URL real.
-- Los proyectos ya existentes y sus emojis mandan: reutiliza el emoji del proyecto o del nicho que Bryan ya usa en esa cuenta. Pide acceso al sitio antes; no uses sesiones de otra cuenta.
+- Los proyectos ya existentes y sus emojis mandan: reutiliza el emoji del proyecto o del nicho que Bryan ya usa en esa cuenta.
+- Pide acceso al sitio antes de abrir la interfaz y no uses sesiones de otra cuenta.
 - Los chats de Claude Code o tareas locales no se mueven de carpeta ni se editan por archivo: solo se les sugiere título.
 - Un proyecto nuevo solo se crea con aprobación; si ya existe uno parecido, reutilízalo.
 
