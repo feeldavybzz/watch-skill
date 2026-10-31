@@ -42,6 +42,12 @@ Voz y tabla coinciden; el audio solo lista nombres.
 ## Límites
 - No hay criterio de cuándo usar cada formato, solo la tabla. Los valores 4:3 «Academy» (1440×1080) coinciden con los de otros reels de este lote.
 
+## Verificación (2026-10-31) — ficha `DfBJ6q6IIQA`
+La misma publicación (https://www.instagram.com/p/DfBJ6q6IIQA/) aparece en la revisión de guardados del 31 oct. Se **recalculó ancho ÷ alto de las 30 parejas** de la tabla: todas coinciden con su proporción con un desvío máximo de 0,17 % (redondeo a píxel entero). Aclaraciones:
+- Una misma proporción admite **varias resoluciones**: 4:5 → 864×1080 y 1728×2160; 2:1 → 1920×960 y 3840×1920. 1080p y 4K no fijan por sí solos estas dimensiones.
+- Elige el encuadre según destino y composición, y calcula ancho/alto después. Antes de reutilizar una tabla, recalcula el cociente.
+- Los nombres históricos de cada formato son simplificaciones del autor. No distingue composición creativa de requisitos actuales de plataforma: compruébalos aparte.
+
 ## Conecta con
 - [[post-4x3-sin-barras-negras-instagram-billycreative]]
 - [[editar-en-4x3-after-effects-maxwalz4k]]

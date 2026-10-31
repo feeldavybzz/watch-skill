@@ -62,3 +62,10 @@ Estos elementos están identificados en la cola reciente, no analizados en este 
 - Las diez fichas `*-ANÁLISIS.md` del mismo directorio, especialmente DdWcINERW1U, DdRQqPJRSxl, DcOYRTHQs-3, DdnNYi3oLsh, DeBJT3fIKoC y Dc1B1azzQKf.
 
 No se ha actualizado el contador de videos analizados: esta tarea reutiliza conocimiento existente.
+
+## Actualización (2026-10-31) — estado de la cola priorizada
+Los cuatro elementos de la cola recibieron análisis en la revisión de guardados del 31 oct:
+1. DfDEPNBtWHO → lección `animacion-por-palabra-con-text-plus-follower-resolve` (procedimiento **parcial**; falta la expresión).
+2. DfAomLvu2ey → `evaluar-edicion-automatica-y-subtitulos-con-claude`. Dex6OSDxeII sigue **sin analizar** (no estaba en esa revisión).
+3. DfBJ6q6IIQA → ya estaba como lección de 15 formatos; se **verificaron** las dimensiones. DeskEkOhnHI sigue sin analizar.
+4. De9T7TEKDcU → ampliación de la lección «Endless zoom»; **pendiente de construir y probar** en Resolve.

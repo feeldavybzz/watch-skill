@@ -4,7 +4,7 @@ description: "Kiwa de motion graphics: tipografía cinética en After Effects, e
 metadata:
   nicho: motion-graphics
   herramientas: "After Effects, Blender, Remotion, HyperFrames, código HTML"
-  lecciones: 16
+  lecciones: 19
   actualizado: "2026-10-31"
 ---
 
@@ -97,8 +97,23 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - **Foco automático**: Layer → Camera → **Link Focus Distance to Layer** (elegida por el autor): el foco se queda en la capa (por ejemplo el logo) mientras la cámara hace dolly. También: Link to Point of Interest y Set Focus Distance to Layer (esta última no se probó) [15].
 - Vistas: Active Camera para ver lo que ve la cámara; vistas Top/Front/Right/Left para ver dónde está; en AE 2023 el menú de vistas, en versiones anteriores un icono de cámara [15].
 
+### Revelado con ruido y goteo (After Effects) [17]
+- Separa **revelado** (ruido + mapa de desplazamiento o máscara) de **deformación localizada** (goteo). No resuelvas ambos bajando la opacidad de forma uniforme.
+- Precompón la palabra o el logo; mantén texto y logo en precomposiciones separadas. Revelado: *Fractal Noise* en un sólido o precomp + *Displacement Map* que use ese ruido.
+- Goteo: *CC Smear* con fotogramas clave en *From* y *To* y desplazamiento de los manejadores para estirar la zona. Prueba **un solo estiramiento** antes de duplicar el efecto para varios goteos.
+- No copies coordenadas: dependen del tamaño y de la composición.
+
+### Animación por palabra con Text+ en DaVinci Resolve [18] (parcial)
+- Separa el movimiento de cada palabra del movimiento del bloque con modificadores (*Follower*, retraso, *Offset* con *XY Path*, *Anim Curves*). Receta incompleta: guardada como prueba pendiente.
+
+### Estilos de animación como recetas reutilizables [19]
+- Un nombre de estilo (Glassmorphism, Swiss grid, Blueprint, Pixel Art, CRT…) describe **apariencia**, no animación. Para pedir movimiento añade sujeto, acción, disparador, duración, easing, límites y salida.
+- Convierte una estética repetible en una receta con **nombre corto, variables de texto y reglas de composición** (retícula y márgenes, colores, familia tipográfica, ritmo de entrada y salida, contenido intercambiable).
+- Los comandos con barra de un creador son definiciones suyas: no existen en tu instalación hasta que las crees. «CRT» es estética de pantalla, no de dibujo retro.
+
 ## Por herramienta
 ### After Effects
+- **Revelado y goteo** [17]: *Fractal Noise* + *Displacement Map*; *CC Smear* (*From*, *To*, manejadores) duplicado para varios goteos.
 - Atajos: **R** rotación, **P** posición, **S** escala, **U** ver keyframes, **F9** easy ease [1].
 - Emparentar a un null con **Pick Whip** [1].
 - Cámara 3D: Ctrl+Alt+Shift+C; las capas deben ser 3D para reaccionar a la cámara (≈, no se vio el interruptor) [15].
@@ -140,6 +155,9 @@ Todo lo animado vive aquí, en su área. El diseño estático va a `kiwa-diseno-
 - Reels 9:16: ola de Fill Color lima barriendo las palabras clave.
 - **Motion en código**: usa lime #C5ED2E y blue #0068FB sobre negro/#232323, sin degradados neón ni glassmorphism en el cuerpo; glass solo en controles; el punto de la I (pupila) como hilo entre escenas [14].
 ## Dudas abiertas
+- [17] El stack exacto del revelado final (tras consultar a Claude) no se ve completo; no se reconstruyó.
+- [18] Expresión del Text+ incompleta. Estaba en la cola de «ampliar evidencia» del 30 oct: se resuelve solo en parte.
+- [19] Sin prompts ni código de los estilos; no se midió rendimiento ni accesibilidad.
 - Valores de easing/bezier no visibles en [1]; los ≈12 frames son lo que se dijo.
 - De [3] no hay fps, pinceles ni cómo se arma el fondo curvo; falta un tutorial completo de animación 2D en Blender.
 - [4][5][6][7][8] Son lecciones de cine y edición real, no de motion: dan criterio, no pasos de After Effects ni valores.
@@ -174,3 +192,6 @@ Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas de
 - [14] Lanzamiento de producto en código: dirección, beats y prohibidos (promptsmotion.com) — https://www.promptsmotion.com/ · `references/lecciones/lanzamiento-producto-en-codigo-direccion-beats-prohibidos.md`
 - [15] Cámara 3D de After Effects: crear, controlar, profundidad de campo y mover con keyframes — https://youtu.be/qO3_WBYCe-E · `references/lecciones/camara-3d-after-effects-controles-peter-kasilo.md`
 - [16] CC Composite: contraste, relleno de texto y texturas — Boone Loves Video · https://youtu.be/aHLMdk9W7Rc · `references/lecciones/cc-composite-after-effects-boone.md`
+- [17] Revelado de un logo con ruido y goteo con CC Smear en After Effects — https://www.instagram.com/p/DfF8uSkRgmx/ · `references/lecciones/revelado-con-ruido-y-goteo-cc-smear-after-effects.md`
+- [18] Animación por palabra dentro de un solo Text+ en DaVinci Resolve (procedimiento parcial) — https://www.instagram.com/p/DfDEPNBtWHO/ · `references/lecciones/animacion-por-palabra-con-text-plus-follower-resolve.md`
+- [19] Estilos de animación como vocabulario y como recetas reutilizables — https://www.instagram.com/p/DfIob_ZOC7s/ · `references/lecciones/estilos-de-animacion-como-vocabulario-y-recetas-reutilizables.md`

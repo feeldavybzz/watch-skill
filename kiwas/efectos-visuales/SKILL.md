@@ -4,8 +4,8 @@ description: "Kiwa de efectos visuales: distingue y combina SFX, VFX y CGI, y pl
 metadata:
   nicho: efectos-visuales
   herramientas: "Croma (pantalla verde), Composición, Pantalla LED (producción virtual), Pre-vis"
-  lecciones: 2
-  actualizado: "2026-10-28"
+  lecciones: 7
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Efectos visuales
@@ -68,6 +68,15 @@ Para animar o componer gráficos en software, combínalo con `kiwa-motion-graphi
 ### «Endless zoom» (portal dentro del portal) en DaVinci Resolve [5]
 - Rodaje: trípode fijo, foco manual y un papel verde en el marco que será el portal de la siguiente toma. Fusion: quitar el verde con Delta Keyer + máscara; cortar los clips a la misma duración y apilarlos en un Fusion Clip; cada clip → Image Plane 3D → mismo Merge 3D → Renderer 3D → MediaOut, con Camera 3D al mismo Merge; empujar las capas atrás en Z; animar la cámara 3D con spline suave y activar Render Cache. Se cuentan 8 clips en el árbol.
 
+### Efectos con video de IA: fondo generado + recorte [6]
+- Un efecto de «construcción» mezcla **dos tareas**: transformar el fondo (generado a partir de una foto del lugar) y **separar al sujeto** (recorte con transparencia en Fusion). Resuélvelas por separado.
+- Revisa escala, bordes (cabello y manos), iluminación y continuidad del fondo con la cámara real **en movimiento**, no en un fotograma.
+- Para un gesto con transformación (p. ej. un comentario que se quema): prepara la actuación y la posición del elemento antes del efecto. Alternativa local a estudiar: fuego autorizado + máscaras.
+- La generación tiene coste (la pantalla lo muestra): no lo trates como flujo gratuito.
+
+### Revelado y deformación de títulos [7]
+- Ver el procedimiento (*Fractal Noise* + *Displacement Map* y *CC Smear*) en `motion-graphics`; aquí solo importa que revelado y goteo son operaciones distintas.
+
 ## Por herramienta
 ### Croma (pantalla verde o azul)
 - Sin fuentes todavía (iluminación del fondo, recorte, spill).
@@ -102,6 +111,9 @@ Para animar o componer gráficos en software, combínalo con `kiwa-motion-graphi
 - Motion graphics: composición, croma, rotoscopia y borrado se hacen en software; los pasos aún no están aprendidos.
 
 ## Dudas abiertas
+- [5] **Ampliación 31 oct** (reel `De9T7TEKDcU`, misma cadena de nodos; no se confirmó que sea el mismo reel de [5]): la descripción completa añade rodaje con **espacio alrededor del sujeto y portal iluminado**, *Rectangle Mask* junto a *Delta Keyer* (para no afectar otros verdes), **clips de igual duración**, capas en Z de ejemplo **0, −1, −2, −3** (ajustar escala y alineación) y *Render Cache* para reproducir (no sustituye el render). Procedimiento aún **sin construir en el Resolve de Bryan**.
+- [6] Costes, disponibilidad y modelo exacto de InVideo, Artlist y el modelo nombrado sin verificar; el prompt completo no se recuperó.
+- [7] Stack exacto del revelado final no visible.
 - **Definiciones en conflicto**: el video separa SFX (en el set) de VFX (añadido después) y dice que el VFX *puede incluir* CGI [1]; la guía escrita del mismo creador dice que **VFX es la categoría madre que incluye CGI y SFX** [1 (guía escrita)]. Aquí se usa la del video.
 - Faltan los pasos de ejecución en software, y valores (costos, tiempos).
 - [2][3][4] son de cine real y no hablan de software de VFX; la aplicación al CGI es mía y no está probada.
@@ -114,3 +126,5 @@ Para animar o componer gráficos en software, combínalo con `kiwa-motion-graphi
 - [3] Iluminación de cine, parte 1 (StudioBinder, ep. 12) — https://youtu.be/r2nD_knsNrc · `references/lecciones/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md`
 - [4] Los 9 elementos de la composición en cine (StudioBinder, ep. 11) — https://youtu.be/hUmZldt0DTg · `references/lecciones/nueve-elementos-composicion-cine-studiobinder.md`
 - [5] «Endless zoom» en DaVinci Resolve: portal de papel verde + Fusion 3D (@melikazaghari) — reel de Instagram, archivo local · `references/lecciones/endless-zoom-fusion-davinci-melikazaghari.md`
+- [6] Efectos con video de IA: fondo generado + recorte, gesto + comentario en llamas, juego → calle — https://www.instagram.com/p/DeMmA5AP9QQ/ · `references/lecciones/efectos-con-video-ia-construccion-comentario-en-llamas-y-juego-a-calle.md`
+- [7] Revelado de un logo con ruido y goteo con CC Smear en After Effects — https://www.instagram.com/p/DfF8uSkRgmx/ · `references/lecciones/revelado-con-ruido-y-goteo-cc-smear-after-effects.md`

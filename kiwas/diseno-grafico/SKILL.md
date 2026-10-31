@@ -4,7 +4,7 @@ description: "Kiwa de diseño gráfico completo: briefing, identidad, tipografí
 metadata:
   nicho: diseno-grafico
   herramientas: "Illustrator, Photoshop, Figma, Procreate"
-  lecciones: 21
+  lecciones: 22
   actualizado: "2026-10-31"
 ---
 
@@ -125,6 +125,9 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 ### Web de producto con estante y página de detalle (patrón visto) [28]
 - Overview en grid con todos los productos → al elegir uno, transición lateral a una página con el producto enorme, nombre grande arriba a la izquierda, panel de compra (talla, botón pastel) arriba a la derecha y un acento de color por producto; misma identidad en celular. Solo se ve, sin método.
 
+### Estilos como vocabulario de dirección visual [23]
+- Los nombres de estilo (Glassmorphism, Swiss grid, Blueprint, Pixel Art…) sirven para briefs de motion e interfaz, pero describen apariencia: completa con retícula, márgenes, paleta, tipografía y reglas de composición. Catálogo y detalle de producto: la misma identidad debe sobrevivir a ambos (fondo, escala del producto, navegación). Detalle en `motion-graphics`.
+
 ## Por herramienta
 ### Illustrator
 - **Vectorial**: escala sin pérdida; **una foto no puede ser vectorial** [2]. **Varias mesas de trabajo en un archivo** (todas las piezas de una identidad, de distintos tamaños) [2].
@@ -198,6 +201,7 @@ piezas) vive aquí, en su área. Lo animado va al Kiwa `kiwa-motion-graphics`.
 - Portfolio: qué mostrar y cómo presentarlo está en `portfolio-marca-personal`, en su archivo de lo aprendido [10].
 
 ## Dudas abiertas
+- [23] No se midió rendimiento, accesibilidad ni responsive del catálogo de referencia.
 - [26][27] vienen de cine y de una clase de arte para niños; dan vocabulario de composición y color, no medidas para piezas gráficas ni para cada formato (las medidas por formato de [27] son cálculo de la lección, no del video).
 - [11] Es introductorio: no se ve a nadie diseñar, no hay valores ni método de investigación; la promesa «dominar en 8 minutos» es de marketing. Las tarjetas son de una plataforma de terceros; su guía de color y los 60 prompts son de pago.
 - Vectorizado, sistema de marca, manual, color a fondo, retícula de redes y editorial: sin fuentes con valores.
@@ -242,3 +246,4 @@ Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas de
 - [28] Tienda web de zapatillas con estante 3D y página de producto (@ascenta.studio) — reel de Instagram, archivo local · `references/lecciones/tienda-web-zapatillas-3d-ascenta-studio.md`
 - [29] Marca personal premium: concepto, forma y percepción (en ese orden) — https://youtu.be/-R4VeoyHR1E · `references/lecciones/marca-personal-premium-concepto-forma-percepcion-arles.md`
 - [30] Halftone en Illustrator: de gradiente a puntos vectoriales (Ollie Spicer) — https://youtu.be/CZVk55d7H5A · `references/lecciones/halftone-puntos-illustrator-gradiente-a-vector-ollie-spicer.md`
+- [23] Estilos de animación como vocabulario y como recetas reutilizables — https://www.instagram.com/p/DfIob_ZOC7s/ · `references/lecciones/estilos-de-animacion-como-vocabulario-y-recetas-reutilizables.md`

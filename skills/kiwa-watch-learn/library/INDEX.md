@@ -4,10 +4,14 @@
 ## cinematografia
 
 - [B-roll: qué es y tres consejos para rodarlo (StudioBinder, Elliot Rosen)](cinematografia/b-roll-que-es-y-como-rodarlo-studiobinder.md) — Un video corto define el B-roll (lo que cortas para tapar y completar la historia), muestra cómo un plano de B-roll puede simbolizar una idea y da tres consejos —planéalo, trabaja inteligente y aprovecha el tiempo— con un ejemplo en que **los mismos planos cambian de significado según las especificaciones del plano**.
+- [Cuarenta encuadres y técnicas visuales como glosario de decisiones](cinematografia/cuarenta-encuadres-como-glosario-de-decisiones.md) — La lista mezcla variables distintas (escala, ángulo, movimiento, óptica, composición): se combinan, no se acumulan.
+- [Directorio de 24 herramientas y referencias de filmmaking](cinematografia/directorio-de-24-herramientas-de-filmmaking.md) — Fuentes agrupadas por el problema que resuelven; licencia y plan se comprueban en cada una.
 - [Frame rate: 25 para look cine, 30 para redes y 50+ para cámara lenta](cinematografia/fps-cine-redes-slow-motion-chrlypn.md) — Elegir fps según el resultado: el desenfoque de movimiento natural y cuándo rompe.
 - [Frame rate: capturar y presentar a distintas velocidades (StudioBinder, Shot List ep. 8)](cinematografia/frame-rate-captura-presentacion-camara-lenta-studiobinder.md) — Un video explica por qué existe el movimiento en cine (persistencia de la visión), por qué 24 fps es «lo cinematográfico», qué pasa con 48 y 120 fps, cómo se logra el movimiento rápido (subexponer o *under-crank*, *step printing*) y el lento (sobre-cranking, rampas de velocidad), y cómo decidir con la **tasa de captura** y la **tasa de presentación**.
 - [Los 15 movimientos de cámara y lo que cuenta cada uno (StudioBinder, Shot List ep. 6)](cinematografia/movimientos-de-camara-15-studiobinder.md) — Un curso en video recorre cada movimiento de cámara con su definición, su uso narrativo y ejemplos de película: plano estático, paneo, whip pan, tilt, push in, pull out, zoom, crash zoom, dolly zoom, roll, tracking, trucking, arc, boom y movimiento aleatorio; y termina combinándolos en una escena. Es una fuente con teoría hablada y práctica en pantalla.
 - [Los 9 ángulos o alturas de cámara y lo que comunica cada uno (StudioBinder, Shot List ep. 3)](cinematografia/nueve-angulos-de-camara-studiobinder.md) — Un curso en video recorre nueve ángulos o alturas de cámara (bajo, alto, cenital, holandés, a la altura de los ojos, del hombro, de la cadera, de la rodilla y a ras de suelo), con su definición, su efecto en el público y ejemplos de película. Complementa los movimientos de cámara: el ángulo decide cómo percibimos al sujeto.
+- [El número f: relación entre focal y diámetro de apertura, y cuánta luz se pierde](cinematografia/numero-f-apertura-y-paradas.md) — Entender el número f como una fracción para razonar exposición y profundidad de campo, sin recetas universales.
+- [Preproducción por responsabilidades: director, DOP y productor (pitch, shotlist, recce)](cinematografia/preproduccion-director-dop-productor-pitch-shotlist-recce.md) — Tres listas de control —intención creativa, viabilidad técnica y recursos— aunque trabajes solo.
 - [La regla de los 180°: seguirla, romperla y doblarla (StudioBinder)](cinematografia/regla-de-los-180-grados-studiobinder.md) — Un video de 5:44 explica la línea imaginaria entre dos sujetos y por qué mantener todas las cámaras de un mismo lado da orientación y dirección de pantalla; cómo romperla crea caos o cambia la relación de poder y cómo doblarla con un plano neutral o con un movimiento de cámara.
 - [Los 12 soportes de cámara (rigs) y lo que cuenta cada uno (StudioBinder, Shot List ep. 5)](cinematografia/soportes-de-camara-12-rigs-studiobinder.md) — Un video recorre 12 soportes de cámara, del más básico al más raro (en mano, trípode, pedestal, grúa o jib, cenital, dolly, estabilizador, Snorricam, montaje en vehículo, dron, control de movimiento y carcasa submarina), con qué hace sentir cada uno y ejemplos de película.
 
@@ -15,6 +19,7 @@
 
 - [Color en DaVinci: un sistema ordenado de nodos, scopes, máscaras y matching (AlwaysJoan)](color-grading/color-en-davinci-sistema-de-nodos-scopes-mascaras-y-matching-alwaysjoan.md) — Método completo para colorizar cualquier plano en Resolve: ajustes de proyecto, CST, 4 nodos con orden fijo (exposición, balance, contraste, saturación HSV), LUT suave, Power Windows en nodo paralelo y matching de planos con PowerGrades.
 - [S-Log3: cómo rodarlo y gradearlo bien (Gaku Lange)](color-grading/s-log3-rodaje-y-grade-en-resolve-gaku-lange.md) — 
+- [Ajustes de grabación Sony (S-Log3) y la diferencia entre PowerGrade y LUT](color-grading/sony-s-log3-ajustes-de-grabacion-y-powergrade-vs-lut.md) — Qué preguntarse antes de copiar una receta de cámara o instalar un look, y por qué un antes/después Log vs. terminado no prueba nada.
 
 ## composicion
 
@@ -50,24 +55,37 @@
 
 ## edicion
 
+- [Archivar solo el material usado, con margen (handles), en DaVinci Resolve](edicion/archivar-medios-usados-con-margen-resolve.md) — Cómo copiar a un archivo solo lo que usan las timelines elegidas, conservando margen para revisiones, y qué probar antes de borrar originales.
 - [Edit de concierto: flashes, latigazos, zoom radial, glitch y espejo](edicion/edit-concierto-flashes-zoom-glitch-acreyyyyy.md) — Catálogo de recursos de montaje de un teaser de gira, visto solo en imagen.
 - [Editar un video en crudo con Claude Code: flujo de editor asistente (video largo, reels y carrusel)](edicion/editor-asistente-claude-flujo-reels-carrusel.md) — Una creadora le pasa a Claude Code un video grabado en crudo y una skill empaquetada; Claude responde unas preguntas de estilo y devuelve el MP4 editado, reels verticales y un carrusel. Sirve como flujo de trabajo, no como receta de cortes: la skill en sí no se muestra.
+- [Evaluar edición y subtítulos automáticos con Claude antes de adoptar una herramienta](edicion/evaluar-edicion-automatica-y-subtitulos-con-claude.md) — Una lista de criterios para probar con un clip real cualquier flujo de «Claude edita tu video», separando lo que se muestra de lo que se demuestra.
+- [Ajustes de exportación para Instagram: MP4 H.264, 1080×1920 y 12 000 Kb/s](edicion/exportar-para-instagram-h264-1080x1920.md) — Receta de un creador para exportar un reel vertical, con aclaraciones de contenedor, códec y bitrate.
 - [Transición «frame flash» en DaVinci Resolve: tratamiento por fotograma](edicion/flash-transition-davinci-ramrylie.md) — Una transición de Fusion de 4 fotogramas con inversión/desenfoque direccional por fotograma.
 - [Editar video con Claude Code: tres guías escritas (cortes, pausas, música, subtítulos, Remotion)](edicion/guias-claude-code-cortes-pausas-musica-subtitulos.md) — Tres guías públicas coinciden en el mismo patrón: transcripción con tiempo por palabra, corte decidido por el significado (no por silencios), animaciones y subtítulos en Remotion, y revisión humana final. Aportan valores concretos que el video de Melina Blanco no daba.
+- [Montaje de concierto y estructura de una entrevista musical](edicion/montaje-de-concierto-y-entrevista-musical.md) — Cobertura de concierto en tres escalas y entrevista con orden emocional, con B-roll para cubrir cortes.
 - [Seis formas de editar una escena: eyeline match, cross cutting, eye trace, split edit, montaje intelectual y corte en acción (StudioBinder, Shot List ep. 10)](edicion/seis-formas-de-editar-una-escena-studiobinder.md) — Un curso en video resume cómo decide un editor qué mostrar, cuándo cortar y a qué cortar, con la regla de los seis de Walter Murch y seis técnicas de corte dentro de una escena, cada una con ejemplos de película y líneas de tiempo dibujadas en pantalla.
+- [Transición de golpe y barrido (fight transition) entre dos lugares](edicion/transicion-golpe-y-barrido-fight-transition.md) — Rodar un golpe hacia cámara con barrido rápido y unir dos planos grabados en lugares distintos, con sonido que refuerce el impacto.
 
 ## efectos-visuales
 
 - [CGI vs VFX vs SFX: qué es cada uno y cómo se combinan (StudioBinder, con Ian Failes)](efectos-visuales/cgi-vfx-sfx-diferencias-y-1917.md) — Un video explica la diferencia entre efectos especiales (SFX, hechos en el set), efectos visuales (VFX, añadidos a lo filmado) y CGI (imagen creada solo con computadora), con las técnicas, los departamentos y un análisis de cómo *1917* combina los tres en una sola secuencia.
 - [«Endless zoom» en DaVinci Resolve: portal de papel verde + Fusion 3D](efectos-visuales/endless-zoom-fusion-davinci-melikazaghari.md) — Zoom infinito por apilamiento de tomas en un Fusion Clip con cámara 3D.
 
+## equipo
+
+- [Rigs y equipo de cámara: qué mirar en un rig modular, un montaje vertical y un equipo analógico](equipo/rigs-y-equipo-de-camara-tres-referencias.md) — Tres referencias de equipo convertidas en criterios para decidir y para responder dudas, sin dar por ciertas especificaciones que no se vieron.
+
 ## herramientas-ia
 
+- [Arquitectura de un asistente con agentes («Jarvis»): capas, orden y criterio de selección](herramientas-ia/arquitectura-de-asistentes-con-agentes.md) — Una sola lección que consolida nueve reels que repiten la misma idea: separar equipo, modelo, arnés, contexto, herramientas, memoria, skills, tareas programadas, canales e interfaz.
+- [Plugins y recursos para Claude Code: qué prometen, qué hay que verificar](herramientas-ia/plugins-para-claude-code-promesas-y-verificacion.md) — Un índice de capacidades (navegador, ruteo, memoria, compresión, investigación, reparto de código) con las correcciones de interpretación que evitan instalar por promesa.
 - [Efectos de sonido con Adobe Firefly guiados por tu voz, y After Effects con proyecto en capas](herramientas-ia/sfx-adobe-firefly-guia-de-voz-tcastro-motion.md) — Grabar tu voz haciendo el «whoosh» para controlar duración y volumen del efecto generado.
+- [Pedir efectos de sonido a Claude con el conector de ElevenLabs](herramientas-ia/sfx-con-elevenlabs-conectado-a-claude.md) — Generar variantes de un efecto para elegir su carácter, y organizar después la biblioteca sonora.
 - [Watch en Claude Code: cómo hacer que Claude "vea" un video](herramientas-ia/watch-claude-code-video.md) — Skill /watch (bradautomates/claude-video): yt-dlp descarga, ffmpeg saca fotogramas, subtítulos nativos o Whisper (Groq/OpenAI) ponen el texto, y Claude lee ambos con tiempos. Útil para auditar hooks, entender charlas largas y documentar sesiones grabadas.
 
 ## iluminacion
 
+- [Entender la luz: reflejos, rebote y modificadores con un balón y lámparas pequeñas](iluminacion/entender-la-luz-reflejos-con-un-balon-y-modificadores.md) — Observar cómo cambia el reflejo al mover una luz y un panel blanco antes de comprar un modificador.
 - [Iluminación de cine, parte 1: tipos de luz, términos y equipo (StudioBinder, Shot List ep. 12)](iluminacion/iluminacion-cine-parte-1-tipos-terminos-equipo-studiobinder.md) — Un video explica los fundamentos de la luz de cine: natural y artificial, ambiente, práctica y motivada; cómo se mide (lúmenes, lux, ley del cuadrado inverso, Kelvin); los términos del set (exposición, contraste, clave alta y baja, luz dura y suave, lado ciego y lado corto, destellos, bokeh) y el equipo (tungsteno, HMI, fluorescente, Kino Flo, LED, geles, difusión, banderas, cookies, C-stands).
 
 ## motion-codigo
@@ -79,19 +97,23 @@
 ## motion-edicion
 
 - [Base: motion y edición](motion-edicion/_base.md) — Marco de observación para lecciones de edición, motion graphics y post. Se enriquece con cada lección.
+- [Animación por palabra dentro de un solo Text+ en DaVinci Resolve (procedimiento parcial)](motion-edicion/animacion-por-palabra-con-text-plus-follower-resolve.md) — Separar el movimiento de cada palabra del movimiento del bloque usando modificadores del Text+; receta incompleta que hay que probar.
 - [Botón «let's collaborate» tirado con una mano dibujada (micro-interacción)](motion-edicion/boton-collaborate-con-cuerdas-xitij.md) — Reel humorístico de una interacción de UI con física elástica.
 - [Cámara 3D de After Effects: crear, controlar, profundidad de campo y mover con keyframes](motion-edicion/camara-3d-after-effects-controles-peter-kasilo.md) — Qué hace cada ajuste de la cámara 3D de After Effects (tipo, focal, profundidad de campo, iris), cómo se mueve con las herramientas o con keyframes y cómo dejarla enfocada en una capa.
 - [CC Composite en After Effects — Boone Loves Video](motion-edicion/cc-composite-after-effects-boone.md) — 
 - [Explainer de motion graphics con Claude Motion y un conector de editor de video](motion-edicion/claude-motion-explainer-papel-collage-aangel.md) — Pedirle a Claude un explainer de 30 s en estilo collage de papel y abrirlo como proyecto editable en un editor de video.
 - [Clean Cut (gratis): corte apretado + subtítulos simples para un clip hablado — Ajene Pinnock](motion-edicion/clean-cut-corte-tight-subtitulos-ajene-pinnock.md) — Skill gratis que convierte un clip hablado crudo en vertical con corte apretado y subtítulos simples; se aprovechan sus umbrales y su verificación de huecos, no su estilo.
 - [Dibujo animado clásico en Blender: boceto, limpio, tinta, color y fondo 3D curvo](motion-edicion/dibujo-animado-clasico-blender-youpie-toons.md) — Flujo de 7 pasos para un cartoon "edad de oro" (estilo Popeye) hecho en Blender: animación 2D cuadro a cuadro con capas por parte del cuerpo, puesta en un escenario 3D con fondo curvo y ajuste del paso para que los pies no patinen.
+- [Estilos de animación como vocabulario y como recetas reutilizables](motion-edicion/estilos-de-animacion-como-vocabulario-y-recetas-reutilizables.md) — Un nombre de estilo (Glassmorphism, Swiss grid…) describe apariencia, no animación: para pedir movimiento hay que añadir sujeto, disparador, duración, easing y límites.
 - [Radial blur en Premiere con el plugin gratuito Any Radial Blur y máscara de la persona](motion-edicion/radial-blur-premiere-con-mascara-colo-sparta.md) — Efecto de giro/zoom borroso animado, con la persona nítida sobre el fondo desenfocado.
+- [Revelado de un logo con ruido y goteo con CC Smear en After Effects](motion-edicion/revelado-con-ruido-y-goteo-cc-smear-after-effects.md) — Separar el revelado (ruido + mapa de desplazamiento) de la deformación localizada (goteo) en un título o logo.
 - [Tipografía cinética en After Effects: 3 técnicas con una sola capa](motion-edicion/tipografia-cinetica-after-effects-3-tecnicas.md) — Animar caracteres/palabras con Animator + Range Selector, armar bloques de texto rotados que forman un gran bloque, y dar jerarquía con color — sin una capa por palabra.
 
 ## narrativa-direccion
 
 - [Blocking en cine: espacio, formas y líneas con subtexto (StudioBinder, Visual Storytelling ep. 3)](narrativa-direccion/blocking-espacio-formas-lineas-studiobinder.md) — En menos de cinco minutos, un video explica cómo la colocación de los actores en el cuadro (blocking) hace emocionante una conversación: tres elementos visuales (espacio, formas y líneas), ejemplos de película con las figuras dibujadas encima y la idea de usar el contraste como subtexto.
 - [El círculo de la historia de Dan Harmon: 8 pasos aplicados a *El caballero oscuro* (StudioBinder)](narrativa-direccion/circulo-de-la-historia-dan-harmon-8-pasos.md) — Un video explica los ocho pasos del círculo de la historia de Dan Harmon (tú, necesidad, ir, buscar, encontrar, tomar, volver, cambiar) y los aplica a *El caballero oscuro* de Christopher Nolan, con un diagrama que marca en qué paso va cada escena y la división entre el mundo del orden y el del caos.
+- [Guion de retención (hook, contexto y re-hooks), 31 formatos de contenido y embudo de corto a largo](narrativa-direccion/guion-de-retencion-hook-re-hooks-y-formatos-de-contenido.md) — Una estructura de guion con bucles abiertos, un menú de formatos y la idea de conectar piezas cortas con una larga.
 
 ## negocio-creativo
 
@@ -99,6 +121,7 @@
 - [Qué poner en el presupuesto de un filmmaker: anticipo, plazo de pago, correcciones](negocio-creativo/clausulas-presupuesto-filmmaker-jaleoproducciones.md) — Condiciones de contrato dichas en un debate entre dos creativos (fragmento).
 - [Estudio de marca independiente: cinco cosas (mentalidad, nicho, contenido, oferta, venta) y el proceso SPARK de cinco etapas con su entrega](negocio-creativo/estudio-de-marca-cinco-cosas-y-proceso-spark-pete-brennan.md) — Charla de negocio, no de oficio: cómo vender diseño de marca siendo una o dos personas. Lo aprovechable para diseñar es la lámina del proceso SPARK, que enumera qué se entrega en cada etapa de una identidad, y la idea de la entrega final con guía para que el cliente no vuelva con dudas.
 - [Marca personal premium: concepto, forma y percepción (en ese orden)](negocio-creativo/marca-personal-premium-concepto-forma-percepcion-arles.md) — Un método de tres pasos para construir una marca que se perciba cara: primero la identidad de marca (concepto), luego la identidad visual (forma) y al final cuidar la percepción, que se influye pero no se controla.
+- [Presupuestar un rodaje: costes reales, propuesta en tres opciones y derechos de uso](negocio-creativo/presupuestar-rodaje-propuesta-y-derechos-de-uso.md) — Qué sumar al precio de un trabajo de video/foto, cómo estructurar una propuesta y por qué licencia exclusiva y cesión no son lo mismo.
 - [Sala de consejo con 7 asesores IA hecha en Claude (repositorio gratuito)](negocio-creativo/sala-de-consejo-ia-7-asesores-claude-tonyia.md) — Siete «personalidades» simuladas debaten una decisión de negocio y entregan un veredicto.
 
 ## retro-cartoon
@@ -117,6 +140,7 @@
 
 - [Dirigir un anuncio de 30 s con video de IA: personajes, locaciones, prompt cronometrado y arreglo de fallos (Higgsfield, con Claude Opus 5.5 y Seedance 2.5)](video-ia/dirigir-anuncio-con-video-ia-higgsfield-seedance.md) — Un video muestra el flujo completo de un anuncio de 30 segundos hecho con IA: fijar personajes y locaciones como referencias, escribir con Claude un prompt cronometrado por planos, y arreglar los fallos (asientos, ángulo inverso, mesa con un puesto de más) con anclas, un plano general y un mapa de blocking. Está dentro de la plataforma Higgsfield.
 - [Efecto «doom scroll»: cara estirada hacia el celular con imagen IA + video IA](video-ia/doom-scroll-efecto-nano-banana-kling-artzenmedia.md) — Flujo de dos pasos en Artlist: editar un fotograma con Nano Banana y animarlo con Kling.
+- [Efectos con video de IA: fondo generado + recorte, gesto + comentario en llamas, juego → calle](video-ia/efectos-con-video-ia-construccion-comentario-en-llamas-y-juego-a-calle.md) — Tres recetas de reels que combinan acción real con transformación generada, con las comprobaciones que hay que hacer y lo que cuestan.
 - [Escenas consistentes con Seedance 2.5: referencias, audio primero y dirección de escena (AiLendra Labs)](video-ia/escenas-consistentes-seedance-ailendra.md) — Una guía pública enseña a dirigir una escena de video IA decidiendo primero qué no puede cambiar, preparando hojas de referencia y el audio antes de gastar en el video.
 - [Genjutsu de Higgsfield: cambiar ropa, objetos y lugar manteniendo el movimiento](video-ia/genjutsu-higgsfield-cambiar-ropa-y-entorno-elmundoderabbit.md) — Motion transfer: un video original + referencias visuales = misma acción con otro mundo.
 - [Genjutsu: rodar en casa y convertir el fondo en un vagón de lujo (motion transfer)](video-ia/genjutsu-motion-transfer-seedream-tseily.md) — Editar un fotograma con una imagen IA y usarlo como referencia visual mientras el clip original manda el movimiento.

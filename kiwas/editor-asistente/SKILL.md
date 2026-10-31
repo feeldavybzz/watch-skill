@@ -1,10 +1,10 @@
 ---
 name: kiwa-editor-asistente
-description: "Kiwa de editor asistente: corte por significado, pausas, música, subtítulos, Remotion, reels y carruseles, criterio de edición y flujo con Claude Code."
+description: "Kiwa de editor asistente: corte por significado, pausas, música, subtítulos, Remotion, reels y carruseles, criterio de edición y flujo con Claude Code. También: archivar proyectos con el material usado, exportar para Instagram, transición de golpe y barrido, evaluar herramientas de edición con IA"
 metadata:
   nicho: editor-asistente
   herramientas: "Premiere Pro, DaVinci Resolve, Claude Code, Remotion"
-  lecciones: 12
+  lecciones: 18
   actualizado: "2026-10-31"
 ---
 
@@ -91,6 +91,27 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `kiwa-diseno-graf
 ### Vocabulario de recursos de un teaser de gira [11]
 - Mezcla de planos limpios con «planos efecto»: zoom radial con bloom, latigazo, estática tipo VHS, fogonazos de color, un fotograma negro como golpe, espejo simétrico y cierre de espaldas. Ritmo ≈ 1 corte por segundo (≈). Solo visual: no se verificó el corte al beat.
 
+### Transición de golpe y barrido entre dos lugares [15]
+- Rueda el plano A con un golpe hacia cámara y un barrido rápido a la derecha; rueda el plano B en otra locación con un barrido de izquierda a derecha que continúe la acción. Mantén igual la **dirección y la velocidad** del barrido.
+- Corta donde ambos movimientos más se parezcan. El desenfoque del barrido deja un tramo con poco detalle donde el cambio de lugar se nota menos (interpretación nuestra).
+- Refuerza golpe y desplazamiento con SFX ajustados al impacto visual. La fuente no da milisegundos, obturación ni focal: pruébalos tú con dos planos propios.
+- Distinta del «frame flash» [10]: aquí el disimulo lo da el movimiento de cámara, no un destello.
+
+### Cobertura de concierto y entrevista musical [16]
+- Concierto: alterna **emoción del artista, escala del escenario y reacción del público**; usa barridos y destellos como puntuación entre planos.
+- Entrevista: ordena presente del artista → emoción y proceso → conexión con el público local → significado, y cubre los cortes con B-roll de lo que se dice. Verifica nombres y datos antes de publicar: la transcripción no los garantiza.
+
+### Evaluar una herramienta de edición con IA antes de adoptarla [14]
+- Pruébala con **un clip propio con voz en español** y una salida concreta (p. ej. quitar pausas de un reel de 30 s y subtitularlo).
+- Revisa: transcripción en español, corrección de nombres, edición por palabra, estilos reutilizables, vista previa sobre el clip real, color por palabra, tipografías y animación editable.
+- Comprueba que **se conserva el significado al cortar** y revisa cada corte a mano. Aprueba una muestra antes del lote.
+- Exige **salida editable**: corregir una frase, un color o un fondo sin rehacer el video. Verifica que lo entregado vuelva abierto a Premiere o Resolve.
+- No instales ni te suscribas por una demo; comprueba coste, licencia y consumo de créditos en la fuente oficial. Un ZIP adjunto al chat no entrena al modelo ni asegura memoria entre sesiones.
+
+### Exportar vertical para Instagram [17]
+- Punto de partida de un creador: **MP4, H.264, 1080×1920, ≈12 000 Kb/s** (= 12 Mb/s, no MB/s), redimensionamiento e interpolación en máxima calidad y subida con la calidad más alta de Instagram.
+- Contenedor, códec, dimensiones y bitrate son decisiones distintas; las casillas de calidad no recuperan detalle que no existía. Revisa siempre el archivo **ya subido**.
+
 ## Por herramienta
 ### Claude Code
 - Piezas que usa [1]: ffmpeg (cortar y mezclar), Whisper en Python (transcribir y apoyar la detección de la cara) y **Remotion** con Node 18+ (dibuja las animaciones); pide 16 GB de RAM y grabación en 4K o 1080p [1].
@@ -114,7 +135,9 @@ Para el estilo gráfico de tarjetas y títulos, combínalo con `kiwa-diseno-graf
 - Sin fuentes todavía para corte por silencios, secuencias para vertical y subtítulos de texto a voz.
 
 ### DaVinci Resolve
-- Sin fuentes todavía (corte rápido, subtítulos, reencuadre a vertical).
+- **Archivar solo lo usado, con margen** [13]: File → Media Management → Timelines → Copy → *Used media and trim*, conservando handles. Selecciona **todas** las timelines que deban sobrevivir; convierte el margen a segundos con los fps (50 fotogramas ≈ 2 s a 25 fps); guarda el proyecto; prueba relink, audio, efectos y reproducción en la copia **antes** de retirar fuentes, y conserva los originales hasta entonces.
+- **Animación por palabra dentro de un Text+** [18] (procedimiento parcial): modificador *Follower* con retraso entre elementos, *Offset* con *XY Path* y *Anim Curves*; progresión 0→1 en ≈25 fotogramas. Falta la expresión completa: pruébalo antes de prometerlo.
+- Sin fuentes todavía para corte rápido, subtítulos y reencuadre a vertical.
 
 ## Recetas
 ### De un crudo largo a video + reels + carrusel
@@ -148,6 +171,11 @@ Objetivo: tener la primera versión publicable en minutos y revisarla tú.
 - Para aprender los criterios de corte, subtítulos y animación hace falta ver ediciones terminadas o tutoriales de Premiere/DaVinci.
 
 ## Dudas abiertas
+- [13] La consolidación **no se ha probado** en el Resolve de Bryan; hazlo sobre una copia. El ahorro de 166 → 21 GB es un caso del creador, no una garantía.
+- [14] Ninguna de las herramientas nombradas se instaló ni se verificó; compatibilidad con Premiere, precio y licencia pendientes. No está demostrado que varias demos sean el mismo producto.
+- [15][16] Sin milisegundos ni sincronía musical verificados; «dos horas de edición» es afirmación del autor.
+- [17] Receta del autor; no se validó la compresión final de Instagram.
+- [18] La expresión del Text+ se perdió en la transcripción (video en francés); no inventar el código.
 - [3] Los porcentajes de la regla de los seis salen de un gráfico a baja resolución del video; coinciden con los valores publicados de Murch pero el narrador no los recita. Faltan duraciones recomendadas por tipo de plano y los pasos de J/L cut y de corte en acción en Premiere o DaVinci.
 - [2] Valores de pausas, música y subtítulos salen de guías escritas (autores con herramientas y afiliados propios) y no se han comprobado con una edición terminada de referencia: validar antes de fijarlos como estándar MUKIWA.
 - [2] AssemblyAI frente a Whisper: una guía prefiere AssemblyAI, otra usa Whisper; ambas dan tiempos por palabra. Aquí se usa Whisper local.
@@ -180,3 +208,9 @@ Notas de evidencia y criterio de la tanda de Instagram del 30-oct (rescatadas de
 - [10] Transición «frame flash» en DaVinci Resolve (@ramrylie) — reel de Instagram, archivo local · `references/lecciones/flash-transition-davinci-ramrylie.md`
 - [11] Edit de concierto: flashes, latigazos, zoom radial, glitch y espejo (@acreyyyyy) — reel de Instagram, archivo local · `references/lecciones/edit-concierto-flashes-zoom-glitch-acreyyyyy.md`
 - [12] Clean Cut (gratis): corte apretado y subtítulos simples para un clip hablado (Ajene Pinnock) — skill ajena leída como texto; página de Notion del autor · `references/lecciones/clean-cut-corte-tight-subtitulos-ajene-pinnock.md`
+- [13] Archivar solo el material usado, con margen (handles), en DaVinci Resolve — https://www.instagram.com/p/De82N99A-a8/ · `references/lecciones/archivar-medios-usados-con-margen-resolve.md`
+- [14] Evaluar edición y subtítulos automáticos con Claude antes de adoptar una herramienta — https://www.instagram.com/p/DfAomLvu2ey/ · `references/lecciones/evaluar-edicion-automatica-y-subtitulos-con-claude.md`
+- [15] Transición de golpe y barrido (fight transition) entre dos lugares — https://www.instagram.com/p/DaXuXv_t3uu/ · `references/lecciones/transicion-golpe-y-barrido-fight-transition.md`
+- [16] Montaje de concierto y estructura de una entrevista musical — https://www.instagram.com/p/De9b8vEOgil/ · `references/lecciones/montaje-de-concierto-y-entrevista-musical.md`
+- [17] Ajustes de exportación para Instagram: MP4 H.264, 1080×1920 y 12 000 Kb/s — https://www.instagram.com/p/DenmuIbkYm0/ · `references/lecciones/exportar-para-instagram-h264-1080x1920.md`
+- [18] Animación por palabra dentro de un solo Text+ en DaVinci Resolve (procedimiento parcial) — https://www.instagram.com/p/DfDEPNBtWHO/ · `references/lecciones/animacion-por-palabra-con-text-plus-follower-resolve.md`

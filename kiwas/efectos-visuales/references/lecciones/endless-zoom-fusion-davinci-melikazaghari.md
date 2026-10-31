@@ -34,5 +34,14 @@ No aplica.
 - **No entendido**: distancias en Z, keyframes de cámara, cuántas tomas por segundo ni cómo se alinea el marco entre tomas; no hay voz.
 - Texto del paso 6 de nodos leído a baja resolución (≈).
 
+## Ampliación (2026-10-31) — descripción completa del reel `De9T7TEKDcU`
+Fuente adicional: https://www.instagram.com/p/De9T7TEKDcU/ · descripción de ocho pasos leída en Chrome, 9 fotogramas, sin voz detectada. Tiene **la misma cadena de nodos** que esta lección; **no se confirmó que sea el mismo reel** ni el mismo autor (se trata como la misma técnica).
+- Rodaje: trípode fijo, enfoque manual, **espacio alrededor del sujeto** y portal verde **iluminado**.
+- Fusion: *Delta Keyer* para la transparencia y *Rectangle Mask* para delimitar la región (evita afectar otros verdes). Clips de **igual duración**.
+- Cada clip → *Image Plane 3D*; todos al mismo *Merge 3D* con *Camera 3D*; *Renderer 3D* convierte la escena a imagen para *MediaOut*.
+- Capas sucesivas en Z de ejemplo **0, −1, −2, −3**: son ejemplos, hay que ajustar escala, encuadre y recorrido para que los portales se alineen.
+- Animar la cámara entre capas da la ilusión de entrar en mundos repetidos; suavizar con *Spline*. *Render Cache* mejora la reproducción pero **no sustituye el render**.
+- Estado: procedimiento del creador contrastado con imágenes; **pendiente de construir y probar en el Resolve de Bryan**.
+
 ## Conecta con
 - [[soportes-de-camara-12-rigs-studiobinder]]

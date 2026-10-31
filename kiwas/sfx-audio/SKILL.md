@@ -4,8 +4,8 @@ description: "Kiwa de sonido para video: música, voz, efectos de sonido, ambien
 metadata:
   nicho: sfx-audio
   herramientas: "ffmpeg, ElevenLabs, RNNoise, Premiere Pro, DaVinci Resolve"
-  lecciones: 6
-  actualizado: "2026-10-28"
+  lecciones: 7
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · SFX y audio
@@ -47,6 +47,9 @@ Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visual
 ### SFX con IA guiados por tu voz (Adobe Firefly) [6]
 - Prompt corto del sonido («sfx transiciones whoosh»), duración (8–10 s) y un **audio guía**: se graba la voz imitando el ritmo y el volumen que quieres y el generador respeta duración y pulsos. Salen variaciones; se elige y se alinea a los impactos de la animación (en After Effects, proyecto en capas con nulos). El resultado sonoro no se pudo evaluar.
 
+### SFX por conector de ElevenLabs desde Claude [7]
+- Conecta ElevenLabs en el panel de conectores con tu cuenta; pide **varias variantes** de cada efecto (impacto, transición, ambiente) para elegir el carácter. Guarda nombre descriptivo, duración, licencia y origen. Generar un sonido y **encontrarlo dentro del editor** son problemas distintos.
+
 ## Por herramienta
 ### ffmpeg
 - Para transcribir, extraer el audio en mono, 16 kHz, PCM s16le [2]. La música se mezcla con `volume=0.13` y fades de 2 s y 3 s [2].
@@ -80,6 +83,7 @@ Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visual
 - Pendiente de fusionar (`docs/pendientes-de-fusionar/`): el flujo de reel de marca incluye elegir voz y música escuchando opciones antes de montar y exportar a ≈ −14 LUFS.
 
 ## Dudas abiertas
+- [7] La oferta de 10 000 créditos de prueba no prueba gratuidad permanente; no se midió mezcla ni calidad auditiva (solo fotogramas y transcripción).
 - Los valores de [2] (BPM, −18 dB, fades, −20 LUFS con techo −1,5 dBFS) salen de **guías escritas** con herramientas y afiliados propios y no se han comprobado con una edición terminada de referencia.
 - [1] dice que −13,5 LUFS es el nivel de YouTube: no se verificó con una fuente de la plataforma. El flujo de reel de marca (pendiente de fusionar) exporta a ≈ −14 LUFS: dos números cercanos sin criterio para elegir.
 - [4] es una guía pública resumida sin oír el MP3 de ejemplo; el prompt completo de audio no se reproduce aquí.
@@ -94,3 +98,4 @@ Aquí «SFX» es **sonido**. Los efectos especiales de rodaje (SFX) y los visual
 - [4] Escenas consistentes con Seedance 2.5: referencias, audio primero y dirección de escena (AiLendra Labs) — https://ailendra.com/ailab/lite/seedance-25-escenas/ · `references/lecciones/escenas-consistentes-seedance-ailendra.md`
 - [5] Seis formas de editar una escena (StudioBinder, Shot List ep. 10), sección J cut y L cut — https://youtu.be/FVR8zz8ci2k · `references/lecciones/seis-formas-de-editar-una-escena-studiobinder.md`
 - [6] Efectos de sonido con Adobe Firefly guiados por tu voz (@tcastro.motion) — reel de Instagram, archivo local · `references/lecciones/sfx-adobe-firefly-guia-de-voz-tcastro-motion.md`
+- [7] Pedir efectos de sonido a Claude con el conector de ElevenLabs — https://www.instagram.com/p/DdT3kUPvfxm/ · `references/lecciones/sfx-con-elevenlabs-conectado-a-claude.md`

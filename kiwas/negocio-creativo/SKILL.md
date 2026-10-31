@@ -1,11 +1,11 @@
 ---
 name: kiwa-negocio-creativo
-description: "Kiwa de negocio creativo: nicho, oferta en una frase, proceso con rondas, tres niveles de precio, contenido, portfolio y llamada de venta."
+description: "Kiwa de negocio creativo: nicho, oferta en una frase, proceso con rondas, tres niveles de precio, contenido, portfolio y llamada de venta. También: presupuestar rodajes, propuestas en tres opciones, derechos de uso y guion de retención"
 metadata:
   nicho: negocio-creativo
   herramientas: "LinkedIn, Notion, Loom"
-  lecciones: 9
-  actualizado: "2026-10-30"
+  lecciones: 12
+  actualizado: "2026-10-31"
 ---
 
 # Kiwa · Negocio creativo
@@ -83,6 +83,25 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 ### Decidir precios y ofertas con asesores IA en debate [8]
 - Un repositorio gratuito en Claude Code pone a 7 asesores simulados (estrategia, producto, oferta y ventas, marketing, personas/tiempo, operaciones, dinero) a debatir tu decisión con puntajes y un veredicto final descargable en PDF. Ejemplo visto: «cobro por proyecto o abono mensual» con tres opciones. No se abrió el repositorio.
 
+### Presupuestar un rodaje de principio a fin [10]
+- Suma **coste base = trabajo + equipo + logística + otros costes** y aplica después tu margen y las obligaciones que correspondan. Separa horas por etapa: preproducción (llamadas, briefing, plan), **jornada completa** (17:00–01:00 son ocho horas), uso y desgaste del equipo propio, transporte y dietas, edición real (montaje, color, audio), revisiones y urgencia. No cobres solo la duración del show.
+- No calcules tarifas, impuestos ni precios locales a partir de un reel.
+
+### Propuesta en tres opciones [10]
+- Estructura: portada, «Sobre mí», trabajos propios, metodología en tres fases (brief/estrategia, concepto/preproducción, producción) y una página de **inversión con tres columnas** (inicial, profesional, premium). Añade alcance, revisiones y plazos (no estaban garantizados en la fuente). No copies logos, textos ni credenciales ajenas.
+- Un servicio recurrente para creadores que publican a diario vende **continuidad, criterio editorial y fiabilidad**, no solo cámara.
+
+### Derechos de uso: licencia exclusiva frente a cesión [10]
+- Antes de presupuestar fotos o video pregunta **medios, finalidad, plazo, territorio, exclusividad y alcance de autorizaciones** y regístralo.
+- **Licencia exclusiva ≠ cesión**: la licencia generalmente no transfiere el derecho de autorizar a terceros como sí lo hace una cesión; depende del acuerdo (OMPI). No es asesoría para Panamá: revisa con un abogado local. Que «renovar cuesta X» no es regla automática.
+
+### Preproducción: tres listas de control [11]
+- Aunque trabajes solo, separa **director** (intención, referencias, planos indispensables), **DOP** (luz, cámara, ópticas, sol, pruebas de lentes) y **productor** (presupuesto, calendario, entregables, reservas, acceso, estacionamiento, permisos). Etapas: pitch → shotlist → recce.
+
+### Guion de retención y menú de formatos [12]
+- Estructura: Hook → Super Hook → Open Loop → Body 1 → Re-hook 1 → Body 2 → Re-hook 2 → Body 3 → CTA. Abre con un problema concreto, promete una salida medible y **cierra el bucle**. Usa solo los re-hooks que ayuden a entender.
+- Los 31 formatos de contenido (antes/después, voz en off, pantalla compartida, POV…) son presentaciones, no nichos: prueba un mismo tema en varios y compara. La retención no se garantiza con una estructura.
+
 ## Por herramienta
 ### LinkedIn
 - Publicaciones largas o cortas con plantilla; la fuente no muestra controles [1].
@@ -121,6 +140,9 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - Portfolio feeldavybz: menos proyectos y mejores, cada uno con brief + proceso + aplicaciones [2]. Plantilla de briefing con pregunta extra «qué le da miedo parecer / qué no debe sentirse» (idea de la lección [4], aplicada a MUKIWA).
 
 ## Dudas abiertas
+- [10] Cifras, calculadoras y plantillas externas no obtenidas; un código promocional no prueba gratuidad. Campañas de clipping (Ssemble): requisitos, derechos y pagos sin comprobar.
+- [11] Recurso extra no solicitado; no se pidió.
+- [12] Dataset de «250 videos» sin verificar; disponibilidad del botón/enlace de Instagram en la cuenta de Bryan sin comprobar.
 - Las cifras de ingresos de [1] («meses de seis cifras», 29.000 $ por una publicación, 1,1 M $/año) son afirmaciones del autor o ejemplos hipotéticos; no usarlas como dato.
 - [1] vende un programa propio; faltan fuentes independientes sobre precios y nichos. [2]–[5] son de diseño, no de negocio: aportan prácticas de proyecto, no cifras ni precios.
 - Método de moodboard: [1] usa tres tableros exagerados con direcciones distintas; [4] usa uno validado con palabras clave. No se contradicen del todo, pero no se probó cuál rinde mejor.
@@ -140,3 +162,6 @@ si no, con ≈. Si dos fuentes se contradicen, anotarlo en "Dudas abiertas".
 - [7] Los documentos de preproducción de un rodaje, vistos 6 de 8 (@artesaudiovisuales.unab) — reel de Instagram, archivo local · `references/lecciones/8-documentos-preproduccion-rodaje-artesaudiovisuales-unab.md`
 - [8] Sala de consejo con 7 asesores IA hecha en Claude (@tony.ia_) — reel de Instagram, archivo local · `references/lecciones/sala-de-consejo-ia-7-asesores-claude-tonyia.md`
 - [9] Marca personal premium: concepto, forma y percepción (en ese orden) — https://youtu.be/-R4VeoyHR1E · `references/lecciones/marca-personal-premium-concepto-forma-percepcion-arles.md`
+- [10] Presupuestar un rodaje: costes reales, propuesta en tres opciones y derechos de uso — https://www.instagram.com/p/DenC6wcu002/ · `references/lecciones/presupuestar-rodaje-propuesta-y-derechos-de-uso.md`
+- [11] Preproducción por responsabilidades: director, DOP y productor (pitch, shotlist, recce) — https://www.instagram.com/p/DfDpX2bo1P1/ · `references/lecciones/preproduccion-director-dop-productor-pitch-shotlist-recce.md`
+- [12] Guion de retención (hook, contexto y re-hooks), 31 formatos de contenido y embudo de corto a largo — https://www.instagram.com/p/De4NlF9BL6W/ · `references/lecciones/guion-de-retencion-hook-re-hooks-y-formatos-de-contenido.md`
