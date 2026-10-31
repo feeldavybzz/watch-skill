@@ -9,57 +9,8 @@ A sale de 7 videos del canal Julina Mae Animations (5 tutoriales de construcció
 
 ---
 
-# PARTE A — Método general rubber hose
 
-## Esqueleto y construcción
-- Empieza con el esqueleto: cabeza, torso, extremidades, manos y pies, hombros y caderas marcados. Se puede simplificar a una sola línea por extremidad, sin articulaciones.
-- Todo son formas básicas: óvalos y círculos solapados. Brazos y piernas son mangueras: sin codos ni rodillas.
-- Para poses, el esqueleto simple y la línea de acción se leen antes que el detalle.
-- Secuencia fija de trabajo: esqueleto → formas → boceto → entintado (línea negra gruesa y uniforme). Simplificar pesa más que detallar.
-
-## 4 tipos de cuerpo
-- Pequeño: torso y extremidades cortas; óvalo de torso + círculo abajo.
-- Grande: dos óvalos grandes solapados.
-- Fuerte: óvalo ancho arriba + círculo menor abajo; brazos enormes con piernas flacas y rectas = efecto cómico.
-- Largo y flaco: cabeza menor y extremidades largas.
-- No hay set fijo de brazos/piernas por tipo; probar combinaciones.
-
-## Ojos
-- Base: pie eye = círculo/óvalo negro con una rebanada quitada (el reflejo). Misma posición de la rebanada en ambos ojos, o se ve bizco.
-- 3 familias: simple, con contorno (círculo/óvalo/semicírculo alrededor) y unidos (dos curvas altas con pie eyes dentro, típico de animales).
-- Femenino: pestañas sueltas; el ojo con contorno facilita las pestañas. Cerrado: dos curvas o línea de párpado.
-- Mirada: líneas arriba/abajo indican hacia dónde mira; óvalo estirado = sorpresa; círculo ondulado = miedo.
-- Las curvas de los ojos unidos hacen de cejas: su forma cambia la emoción.
-
-## Manos y guantes
-- Reducir toda mano a círculos: círculo (palma) + óvalo en la muñeca (puño) + óvalos para dedos y pulgar. Perfil: la palma es óvalo.
-- 3 dedos + pulgar (cuatro en total), incluso en gestos como la paz.
-- Con guante: sirve para cualquier personaje; pliegues en el dorso. Sin guante: dedos sueltos de la palma y banda en la muñeca.
-- Femeninas: manos pequeñas, dedos finos y yemas puntiagudas; los dedos finos lucen mejor sin guante.
-
-## Zapatos
-- Clásico: dos óvalos solapados + óvalo pequeño de tobillo + línea de suela y banda de goma. Para otros ángulos, solapar los óvalos de otra manera.
-- Simple (fondo): un óvalo largo tipo globo desinflado, sin suela, pantalón cubre el tobillo (relleno negro).
-- Tacón: almendra con punta más baja + rectángulo de tacón. Mantenerlo simple.
-
-## Cuerpos y poses femeninos
-- Esqueleto: torso largo hasta los tobillos, caderas marcadas.
-- Curvas: óvalo de huevo invertido arriba + óvalo horizontal abajo.
-- Brazos más detallados que el rubber hose clásico (dos óvalos finos: brazo y antebrazo). Piernas con muslo y pantorrilla como óvalos solapados; pies diminutos puntiagudos o tacones bajos clásicos.
-- Hoja de pose en 4 pasos: esqueleto, formas, boceto, entintado.
-
-## Caricatura de personas reales (confianza baja)
-- Referencias primero (fotos y fotogramas), varias poses y expresiones.
-- Bocetos de cuerpo entero a lápiz suave exagerando; después hoja de caras con la misma cabeza en 6-8 expresiones.
-- Fijar 2-3 rasgos que identifiquen al sujeto (lentes, peinado, sombrero) y variar solo la expresión.
-- Entintar con fineliner, borrar el lápiz, lavado gris diluido solo para volumen básico.
-- Se registra el método; no se copian caricaturas ni diseños de terceros.
-
-## Acabado y ambiente retro
-- Línea negra gruesa y uniforme; tono gris plano; papel envejecido/crema con grano; tarjetas de cine mudo como formato (marco ornamentado, tipografía de época, "The End").
-- Retro opcional: halftone en sombras e imperfecciones de impresión.
-
----
+> La **Parte A** (método general rubber hose) se movió a `kiwa-retro-cartoon` (`kiwas/retro-cartoon/SKILL.md`). Aquí queda la Parte B.
 
 # PARTE B — Mascota cartoon retro de MUKIWA DEPT (Bryan)
 

@@ -166,7 +166,7 @@ Reglas de honestidad:
 
 La lección es la memoria; el **Kiwa** es lo que después HACE el trabajo. Cada video alimenta a uno o varios Kiwas, sin que Bryan lo pida.
 
-**Kiwas que existen** (un SKILL.md por oficio): `kiwa-color-grading`, `kiwa-iluminacion`, `kiwa-cinematografia`, `kiwa-composicion-visual`, `kiwa-diseno-grafico`, `kiwa-editor-asistente`, `kiwa-efectos-visuales`, `kiwa-motion-graphics`, `kiwa-narrativa-y-direccion`, `kiwa-negocio-creativo`, `kiwa-video-con-ia`. Mira cuáles están instalados (lista de skills) y, si el disco de Bryan está conectado, `…/watch-skill/kiwas/INDEX.md`. También existe `retro-cartoon` (dibujo y diseño cartoon retro / rubber hose y la mascota de MUKIWA): los videos de ese estilo la alimentan directamente.
+**Kiwas que existen** (un SKILL.md por oficio): `kiwa-color-grading`, `kiwa-iluminacion`, `kiwa-cinematografia`, `kiwa-composicion-visual`, `kiwa-diseno-grafico`, `kiwa-editor-asistente`, `kiwa-efectos-visuales`, `kiwa-motion-graphics`, `kiwa-narrativa-y-direccion`, `kiwa-negocio-creativo`, `kiwa-video-con-ia`, `kiwa-retro-cartoon`, `kiwa-sfx-audio`, `kiwa-imagenes-ia`. Mira cuáles están instalados (lista de skills) y, si el disco de Bryan está conectado, `…/watch-skill/kiwas/INDEX.md`. `kiwa-retro-cartoon` es el Kiwa del dibujo rubber hose (la mascota de MUKIWA va en `kiwa-marca-mascota`): los videos de ese estilo lo alimentan directamente.
 
 **Cómo se hace:**
 1. **Clasifica por oficio o resultado, no por herramienta.** Un tutorial de nodos en DaVinci va a `color-grading` (en su sección "DaVinci Resolve"), no a un Kiwa "davinci". Un video puede alimentar a varios (color + iluminación). Todo diseño gráfico va a `diseno-grafico`; toda animación a `motion-graphics`; personajes retro a `retro-cartoon`.
