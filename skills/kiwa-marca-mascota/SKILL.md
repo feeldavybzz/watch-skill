@@ -30,3 +30,15 @@ La marca valora a las personas por quiénes son hoy, no por origen, color de pie
 
 ## Lecciones de rubber hose (Julina Mae)
 Dos lecciones completas viven en `references/lecciones/`: `rubber-hose-desde-cero-cuerpos-ojos-manos-zapatos-poses-julina-mae.md` (5 tutoriales: cuerpos, ojos, guantes y manos, zapatos y poses femeninas; solo-visual, enseñanza en tarjetas) y `rubber-hose-caricatura-de-personas-reales-julina-mae.md` (de referencia de cine mudo a caricatura entintada). Úsalas junto a la Parte A.
+
+## Criterios de enseñanza retro cartoon (fusionado de la skill `retrocartoon` de Codex, 2026-10-31)
+Esa skill suelta se retiró: aquí queda una sola. Su SKILL.md solo traía reglas de método; las fichas `CURSO.md`/`INDICE.md` de Codex no llegaron, así que **no se absorbió su contenido** (pendiente si Bryan las pasa).
+- Antes de adornos: intención emocional, función y acción del personaje. Si aún se estudia, explicar y proponer ejercicios; no presentar un personaje como aprobado.
+- Orden de construcción: gesto y apoyo → masas de torso y cadera → extremidades → rostro, vestuario, accesorios. Comparar siluetas y proporciones, no aplicar curvas arbitrarias.
+- Sistema coherente de ojos, manos y zapatos. Guantes, pie eyes y número de dedos son **elecciones**, no requisitos; conservar volumen entre frontal, tres cuartos y perfil.
+- Contornos y áreas negras para legibilidad antes de textura y color; revisar la silueta a tamaño pequeño.
+- Al explicar: principio, evidencia concreta, razón visual y ejercicio; separar lo que la fuente demuestra, lo que relata y nuestra interpretación. Ejercicios propios = propuestas, no palabras del creador.
+- Animación: los clips terminados no prueban FPS, rigs ni timing exacto; pedir evidencia específica antes de enseñarlos.
+- No mezclar rubber hose con retro shoujo, pixel art u otras familias retro: identificar la variante con la referencia real. Extraer principios de Julina, no clonar sus personajes. La skill es conocimiento consultable, no entrenamiento del modelo.
+- Nueva lección: ficha con fuente, autor, fecha, tiempos/capturas, método de revisión (frames, audio, ASR), aplicación y límites; ampliar o corregir el principio existente, no duplicar; conservar contradicciones hasta resolverlas.
+- **Por desarrollar (sin evidencia aún):** cabezas y bocas, perspectiva y giros, equilibrio y línea de acción, consistencia de model sheets, expresiones, peso, squash and stretch, timing.
