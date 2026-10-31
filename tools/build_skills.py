@@ -16,7 +16,7 @@ import argparse, os, re, subprocess, sys, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ["kiwa-watch-learn", "kiwa-web", "kiwa-marca-mascota", "kiwa-instagram", "kiwa-ui-plugins"]
+SKILLS = ["kiwa-watch-learn", "kiwa-web", "kiwa-marca-mascota", "kiwa-instagram", "kiwa-ui-plugins", "kiwa-control"]
 EXTRA = {}
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 MAX_FILES = 200

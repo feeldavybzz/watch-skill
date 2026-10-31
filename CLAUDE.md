@@ -17,3 +17,6 @@ Oídos (texto del audio) fuera del Mac: python3 skills/kiwa-watch-learn/scripts/
 Después de cada lección: clasificar en nichos y alimentar los Kiwas de kiwas/ (skills/kiwa-watch-learn/references/kiwas.md). No borrar ni reescribir Kiwas enteros: fusionar.
 
 Descargas: si fallan, retransmitir CAUSA/HAZ de grab.py; plan B = «Para analizar» del buzón. Cookies del navegador: solo para los sitios de ~/.config/mukiwa/permisos.json (hoy instagram.com, Chrome) y solo ante un fallo por sesión; para otros sitios, permiso explícito de Bryan en esa descarga. Nunca imprimir ni guardar valores de cookies. Buzón: skills/kiwa-watch-learn/scripts/inbox.py.
+
+## Centro de control de skills
+Para inventario, instalación, fusión, continuidad o mejoras por correcciones, leer `skills/kiwa-control/SKILL.md` (viene de ChatGPT/Codex, PR #10 original, ya con los nombres actuales). Diferenciar una guía de integración de un servicio instalado y probado. La memoria privada queda fuera de este repositorio público. Los cambios entre ChatGPT, Claude web y el Mac requieren instalación/verificación en cada destino; no asumir sincronización automática. Nombres vigentes: kiwa-watch-learn (única skill de ver/bajar/aprender), kiwas/<nicho>; no quedan mukiwa-learn, mukiwa-grab ni profes/.

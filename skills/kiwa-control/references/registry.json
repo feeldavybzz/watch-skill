@@ -1,0 +1,69 @@
+{
+ "schema": 1,
+ "source_repository": "https://github.com/feeldavybzz/watch-skill",
+ "snapshot_date": "2026-10-31",
+ "skills": [
+  {
+   "name": "kiwa-control",
+   "role": "coordinacion, observaciones, continuidad e integraciones",
+   "path": "skills/kiwa-control"
+  },
+  {
+   "name": "kiwa-watch-learn",
+   "role": "ver, oir, analizar, aprender y alimentar los Kiwas (incluye la descarga)",
+   "path": "skills/kiwa-watch-learn"
+  },
+  {
+   "name": "kiwa-web",
+   "role": "web y diseno web",
+   "path": "skills/kiwa-web"
+  },
+  {
+   "name": "kiwa-marca-mascota",
+   "role": "marca y mascota",
+   "path": "skills/kiwa-marca-mascota"
+  },
+  {
+   "name": "kiwa-instagram",
+   "role": "estudio de feed de Instagram",
+   "path": "skills/kiwa-instagram"
+  },
+  {
+   "name": "kiwa-ui-plugins",
+   "role": "animar la interfaz de plugins",
+   "path": "skills/kiwa-ui-plugins"
+  },
+  {
+   "name": "kiwas/<nicho>",
+   "role": "un Kiwa por oficio (editor, color, motion, etc.)",
+   "path": "kiwas"
+  }
+ ],
+ "external_services": [
+  {
+   "name": "Task Observer",
+   "mode": "adaptacion conceptual integrada",
+   "original_installed": false
+  },
+  {
+   "name": "Claude-Mem",
+   "mode": "guia de integracion",
+   "runtime_status": "no verificado"
+  },
+  {
+   "name": "Headroom",
+   "mode": "guia de integracion",
+   "runtime_status": "no verificado"
+  },
+  {
+   "name": "Claude Code Setup",
+   "mode": "diagnostico adaptado y guia",
+   "runtime_status": "no verificado"
+  },
+  {
+   "name": "OmniRoute",
+   "mode": "guia de integracion",
+   "runtime_status": "no verificado"
+  }
+ ]
+}

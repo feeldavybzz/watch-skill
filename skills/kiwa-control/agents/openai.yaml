@@ -1,0 +1,4 @@
+interface:
+  display_name: "KIWA Control"
+  short_description: "Gestiona skills, memoria y mejoras entre entornos"
+  default_prompt: "Usa $kiwa-control para revisar mis skills y coordinar sus versiones en ChatGPT y Claude."
