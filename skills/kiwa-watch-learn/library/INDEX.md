@@ -63,6 +63,7 @@
 
 ## herramientas-ia
 
+- [Qué IA usa cada quien: reparto por tarea (entrevista a Nate Gentile)](herramientas-ia/ia-reparto-por-tarea-nate-gentile.md) — Un creador tech cuenta qué IA usa para qué; sirve como ejemplo de repartir herramientas por tarea y por costo, no como receta para ganar dinero.
 - [Efectos de sonido con Adobe Firefly guiados por tu voz, y After Effects con proyecto en capas](herramientas-ia/sfx-adobe-firefly-guia-de-voz-tcastro-motion.md) — Grabar tu voz haciendo el «whoosh» para controlar duración y volumen del efecto generado.
 - [Watch en Claude Code: cómo hacer que Claude "vea" un video](herramientas-ia/watch-claude-code-video.md) — Skill /watch (bradautomates/claude-video): yt-dlp descarga, ffmpeg saca fotogramas, subtítulos nativos o Whisper (Groq/OpenAI) ponen el texto, y Claude lee ambos con tiempos. Útil para auditar hooks, entender charlas largas y documentar sesiones grabadas.
 
